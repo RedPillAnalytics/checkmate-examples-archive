@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="mc0000013-6e3d-15ec-920f-ac1058640000" name="PROSPECT" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Schema/c000015c-6e3d-15ec-920f-ac1058640000.xml#mc000015c-6e3d-15ec-920f-ac1058640000">
+<PhysicalColumn mdsid="mc000008e-6e3d-15ec-920f-ac1058640000" name="ADDRESS1" dataType="VARCHAR" precision="80" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000092-6e3d-15ec-920f-ac1058640000" name="ADDRESS2" dataType="VARCHAR" precision="80" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000096-6e3d-15ec-920f-ac1058640000" name="AGE" dataType="INT" precision="3" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000009a-6e3d-15ec-920f-ac1058640000" name="AGENCY_ID" dataType="VARCHAR" precision="30" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000009e-6e3d-15ec-920f-ac1058640000" name="CITY" dataType="VARCHAR" precision="25" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000a2-6e3d-15ec-920f-ac1058640000" name="COUNTRY" dataType="VARCHAR" precision="24" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000a6-6e3d-15ec-920f-ac1058640000" name="CREDIT_RATING" dataType="INT" precision="4" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000aa-6e3d-15ec-920f-ac1058640000" name="EMPLOYER" dataType="VARCHAR" precision="30" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000ae-6e3d-15ec-920f-ac1058640000" name="FIRST_NAME" dataType="VARCHAR" precision="30" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000b2-6e3d-15ec-920f-ac1058640000" name="GENDER" dataType="VARCHAR" precision="1" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000b6-6e3d-15ec-920f-ac1058640000" name="INCOME" dataType="DOUBLE" precision="12" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000ba-6e3d-15ec-920f-ac1058640000" name="LAST_NAME" dataType="VARCHAR" precision="30" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000be-6e3d-15ec-920f-ac1058640000" name="MARITAL_STATUS" dataType="VARCHAR" precision="1" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000c2-6e3d-15ec-920f-ac1058640000" name="MIDDLE_INITIAL" dataType="VARCHAR" precision="1" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000c7-6e3d-15ec-920f-ac1058640000" name="NET_WORTH" dataType="DOUBLE" precision="12" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000cb-6e3d-15ec-920f-ac1058640000" name="NUMBER_CARS" dataType="INT" precision="2" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000cf-6e3d-15ec-920f-ac1058640000" name="NUMBER_CHILDREN" dataType="INT" precision="2" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000d3-6e3d-15ec-920f-ac1058640000" name="NUMBER_CREDIT_CARDS" dataType="INT" precision="2" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000d7-6e3d-15ec-920f-ac1058640000" name="OWNERSHIP_FLAG" dataType="VARCHAR" precision="1" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000da-6e3d-15ec-920f-ac1058640000" name="PHONE" dataType="VARCHAR" precision="30" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000de-6e3d-15ec-920f-ac1058640000" name="POSTAL_CODE" dataType="VARCHAR" precision="12" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc00000e0-6e3d-15ec-920f-ac1058640000" name="STATE" dataType="VARCHAR" precision="20" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+</PhysicalTable>

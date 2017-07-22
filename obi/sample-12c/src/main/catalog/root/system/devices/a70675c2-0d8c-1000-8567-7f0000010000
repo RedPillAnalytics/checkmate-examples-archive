@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:DeviceMetrics xmlns:saw="com.siebel.analytics.web/report/v1.1"><saw:DeviceType Enabled="true" Category="4" DeliveryMethod="1" DeliveryFormat="0" BufferSize="65535" Flags="0" SystemCreated="true"><saw:Name>PagemartAdv</saw:Name><saw:Description>Pagemart Advanced and 2-Way</saw:Description><saw:Domain>airmessage.net</saw:Domain><saw:GUID Low="2802218434" Mid="3468" Hi="4096" ClockHi="133" ClockLow="103" Node0="127" Node1="0" Node2="0" Node3="1" Node4="0" Node5="0"/></saw:DeviceType></saw:DeviceMetrics>

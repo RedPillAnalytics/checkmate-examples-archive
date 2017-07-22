@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+   <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Brokerage&quot;" withinHierarchy="true">
+      <saw:columns>
+         <saw:column xsi:type="saw:regularColumn" columnID="cd8e1ef413c3ed1ef">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Security&quot;.&quot;Symbol&quot;</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec suppress="suppress" wrapText="true" interaction="action">
+                  <saw:actionLinks showPopupMenuForOneLink="false" appliesToTotal="false">
+                     <saw:actionLink actionLinkID="cd8e1ef413c3ed1ef_al731099faa796b3d7">
+                        <saw:action>
+                           <saw:actionName>Navigate - https://www.google.com/finance</saw:actionName>
+                           <saw:parameters allowExtraParameters="true">
+                              <saw:parameter name="1" type="string" mandatory="true" removable="true" order="0" multiValues="false">
+                                 <saw:prompt>q</saw:prompt>
+                                 <saw:description/></saw:parameter></saw:parameters>
+                           <saw:assignments/>
+                           <saw:implementation xsi:type="saw:URLActionType" executeOnClient="true">
+                              <saw:url aliasedLocation="false">https://www.google.com/finance?q=@{1}</saw:url>
+                              <saw:request>GET</saw:request></saw:implementation>
+                           <saw:clientImplementation>
+                              <saw:customisation invokeConfirmation="false"/></saw:clientImplementation></saw:action>
+                        <saw:caption>
+                           <saw:text>Google Finance</saw:text></saw:caption>
+                        <saw:paramMapping>
+                           <saw:assign xsi:type="saw:anyTypeAssign" name="1" fixed="true" hidden="true">
+                              <saw:mapping xsi:type="saw:contextColumnMappingType">
+                                 <sawx:columnRefExpr columnID="cd8e1ef413c3ed1ef"/></saw:mapping></saw:assign></saw:paramMapping></saw:actionLink></saw:actionLinks></saw:formatSpec></saw:displayFormat>
+            <saw:columnHeading>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="cfb2a4f4462ece3ff">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;Trades&quot;.&quot;Quantity&quot; USING (&quot;Conformed Date&quot;.&quot;Calendar Year ID&quot; = 2013))</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec suppress="repeat" wrapText="true">
+                  <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/></saw:formatSpec></saw:displayFormat>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Trades</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>2013 Quantity</saw:text></saw:caption>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c1e7b7850e2c3f82e">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">RANK(FILTER(&quot;Trades&quot;.&quot;Quantity&quot; USING (&quot;Conformed Date&quot;.&quot;Calendar Year ID&quot; = 2013)))</sawx:expr></saw:columnFormula>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Trades</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>2013 Quantity Rank</saw:text></saw:caption></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c6f4d65b282069da6">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">FILTER(&quot;Trades&quot;.&quot;Quantity&quot; USING (&quot;Conformed Date&quot;.&quot;Calendar Year ID&quot; = 2015))</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec suppress="repeat" wrapText="true">
+                  <saw:dataFormat xsi:type="saw:number" minDigits="0" maxDigits="0" commas="true" negativeType="minus"/></saw:formatSpec></saw:displayFormat>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Trades</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>2015 Quantity</saw:text></saw:caption>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c107381f4dff60c07">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">RANK(FILTER(&quot;Trades&quot;.&quot;Quantity&quot; USING (&quot;Conformed Date&quot;.&quot;Calendar Year ID&quot; = 2015)))</sawx:expr></saw:columnFormula>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Trades</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>2015 Quantity Rank</saw:text></saw:caption></saw:columnHeading></saw:column></saw:columns>
+      <saw:filter>
+         <sawx:expr xsi:type="sawx:logical" op="and">
+            <sawx:expr xsi:type="sawx:comparison" op="between">
+               <sawx:expr xsi:type="sawx:sqlExpression">RANK(FILTER(&quot;Trades&quot;.&quot;Quantity&quot; USING (&quot;Conformed Date&quot;.&quot;Calendar Year ID&quot; = 2013)))</sawx:expr>
+               <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+               <sawx:expr xsi:type="xsd:decimal">20</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:comparison" op="between">
+               <sawx:expr xsi:type="sawx:sqlExpression">RANK(FILTER(&quot;Trades&quot;.&quot;Quantity&quot; USING (&quot;Conformed Date&quot;.&quot;Calendar Year ID&quot; = 2015)))</sawx:expr>
+               <sawx:expr xsi:type="xsd:decimal">1</sawx:expr>
+               <sawx:expr xsi:type="xsd:decimal">20</sawx:expr></sawx:expr></sawx:expr></saw:filter></saw:criteria>
+   <saw:views currentView="0">
+      <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+         <saw:cvTable>
+            <saw:cvRow>
+               <saw:cvCell viewName="titleView!1"/></saw:cvRow>
+            <saw:cvRow>
+               <saw:cvCell viewName="tableView!1"/></saw:cvRow></saw:cvTable></saw:view>
+      <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="none"/>
+      <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="true" repeat="false">
+         <saw:edges>
+            <saw:edge axis="page" showColumnHeader="true"/>
+            <saw:edge axis="section"/>
+            <saw:edge axis="row" showColumnHeader="true">
+               <saw:columnOrder>
+                  <saw:columnOrderRef columnID="cfb2a4f4462ece3ff" direction="descending"/></saw:columnOrder>
+               <saw:edgeLayers>
+                  <saw:edgeLayer type="column" columnID="cd8e1ef413c3ed1ef">
+                     <saw:memberFormat>
+                        <saw:displayFormat>
+                           <saw:formatSpec/></saw:displayFormat></saw:memberFormat></saw:edgeLayer>
+                  <saw:edgeLayer type="column" columnID="cfb2a4f4462ece3ff">
+                     <saw:memberFormat>
+                        <saw:displayFormat>
+                           <saw:formatSpec/></saw:displayFormat></saw:memberFormat></saw:edgeLayer>
+                  <saw:edgeLayer type="column" columnID="c1e7b7850e2c3f82e"/>
+                  <saw:edgeLayer type="column" columnID="c6f4d65b282069da6"/>
+                  <saw:edgeLayer type="column" columnID="c107381f4dff60c07"/></saw:edgeLayers></saw:edge>
+            <saw:edge axis="column" showColumnHeader="rollover"/></saw:edges>
+         <saw:greenBarFormat greenBar="allLayers" enabled="true">
+            <saw:formatSpec backgroundColor="#deebf7" borderPosition="10" borderStyle="single"/></saw:greenBarFormat>
+         <saw:sectionContent>
+            <saw:displayFormat>
+               <saw:formatSpec/></saw:displayFormat></saw:sectionContent></saw:view></saw:views></saw:report>

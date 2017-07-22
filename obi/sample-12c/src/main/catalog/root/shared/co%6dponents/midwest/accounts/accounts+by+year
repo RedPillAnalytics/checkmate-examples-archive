@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">     
+   <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Brokerage&quot;" withinHierarchy="true">           
+      <saw:columns>                                  
+         <saw:column xsi:type="saw:regularColumn" columnID="c42ec47dc0ec737a4">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Conformed Date&quot;.&quot;Calendar Year Description&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c39cb95e0f2189b14">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Account&quot;.&quot;Account ID&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c6fad1211c944d049">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Account&quot;.&quot;Account ID&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+      <saw:filter>
+         <sawx:expr xsi:type="sawx:savedFilter" path="/shared/Components/_filters/Brokerage/Customer - Region Filter" name="Customer - Region Filter"/></saw:filter></saw:criteria>     
+   <saw:views currentView="0">           
+      <saw:view xsi:type="saw:compoundView" name="compoundView!1">                 
+         <saw:cvTable>
+            <saw:cvRow>
+               <saw:cvCell viewName="titleView!1"/></saw:cvRow>
+            <saw:cvRow>
+               <saw:cvCell viewName="tableView!1"/></saw:cvRow></saw:cvTable></saw:view>           
+      <saw:view xsi:type="saw:titleView" name="titleView!1" includeName="false" startedDisplay="none">
+         <saw:title>
+            <saw:caption fmt="text">
+               <saw:text>Accounts by Year</saw:text></saw:caption></saw:title></saw:view>           
+      <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="true">                 
+         <saw:edges>
+            <saw:edge axis="page" showColumnHeader="true"/>
+            <saw:edge axis="section"/>
+            <saw:edge axis="row" showColumnHeader="true">                                                          
+               <saw:edgeLayers>
+                  <saw:edgeLayer type="column" columnID="c42ec47dc0ec737a4"/>
+                  <saw:edgeLayer type="column" columnID="c39cb95e0f2189b14"/></saw:edgeLayers></saw:edge>
+            <saw:edge axis="column" showColumnHeader="rollover"/></saw:edges></saw:view>           </saw:views></saw:report>

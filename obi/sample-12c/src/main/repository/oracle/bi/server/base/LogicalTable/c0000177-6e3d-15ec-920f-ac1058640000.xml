@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="mc0000177-6e3d-15ec-920f-ac1058640000" name="Conformed Date" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
+<LogicalColumn mdsid="mc00001dd-6e3d-15ec-920f-ac1058640000" name="Date Key" isWriteable="false">
+<AttributeDefn mdsid="m00000001-01f4-0000-7305-5ad600000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."DATE_KEY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-7305-5ad600000000-mc0000079-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000079-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000019e-6e3d-15ec-920f-ac1058640000" name="SQL Date" isWriteable="false">
+<AttributeDefn mdsid="m00000002-01f4-0000-100d-c85700000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."SQL_DATE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-100d-c85700000000-mc0000089-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000089-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001b8-6e3d-15ec-920f-ac1058640000" name="Calendar Month Description" isWriteable="false">
+<AttributeDefn mdsid="m00000003-01f4-0000-7af2-6e3200000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."CALENDAR_MONTH_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-7af2-6e3200000000-mc0000069-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000069-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001bd-6e3d-15ec-920f-ac1058640000" name="Calendar Month ID" isWriteable="false">
+<AttributeDefn mdsid="m00000004-01f4-0000-0b8b-fb2900000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."CALENDAR_MONTH_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-0b8b-fb2900000000-mc000006b-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc000006b-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001c2-6e3d-15ec-920f-ac1058640000" name="Calendar Quarter Description" isWriteable="false">
+<AttributeDefn mdsid="m00000005-01f4-0000-7000-ec7000000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."CALENDAR_QTR_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-7000-ec7000000000-mc000006d-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc000006d-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001c7-6e3d-15ec-920f-ac1058640000" name="Calendar Quarter ID" isWriteable="false">
+<AttributeDefn mdsid="m00000006-01f4-0000-934d-8ea500000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."CALENDAR_QTR_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-934d-8ea500000000-mc000006f-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc000006f-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001cc-6e3d-15ec-920f-ac1058640000" name="Calendar Week Description" isWriteable="false">
+<AttributeDefn mdsid="m00000007-01f4-0000-4514-115000000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."CALENDAR_WEEK_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-4514-115000000000-mc0000071-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000071-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001d1-6e3d-15ec-920f-ac1058640000" name="Calendar Week ID" isWriteable="false">
+<AttributeDefn mdsid="m00000008-01f4-0000-721d-6b1f00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."CALENDAR_WEEK_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-721d-6b1f00000000-mc0000072-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000072-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001d6-6e3d-15ec-920f-ac1058640000" name="Calendar Year Description" isWriteable="false">
+<AttributeDefn mdsid="m00000009-01f4-0000-727e-990600000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."CALENDAR_YEAR_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-727e-990600000000-mc0000073-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000073-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001da-6e3d-15ec-920f-ac1058640000" name="Calendar Year ID" isWriteable="false">
+<AttributeDefn mdsid="m0000000a-01f4-0000-1357-4fa300000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."CALENDAR_YEAR_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-1357-4fa300000000-mc0000075-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000075-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001dc-6e3d-15ec-920f-ac1058640000" name="Date Description" isWriteable="false">
+<AttributeDefn mdsid="m0000000b-01f4-0000-bcf6-c47500000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."DATE_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-bcf6-c47500000000-mc0000077-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000077-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000017f-6e3d-15ec-920f-ac1058640000" name="Day Of Week Description" isWriteable="false">
+<AttributeDefn mdsid="m0000000c-01f4-0000-6066-4d8600000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."DAY_OF_WEEK_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-6066-4d8600000000-mc000007b-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc000007b-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000180-6e3d-15ec-920f-ac1058640000" name="Day Of Week Number" isWriteable="false">
+<AttributeDefn mdsid="m0000000d-01f4-0000-a36c-96c100000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."DAY_OF_WEEK_NUM"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-a36c-96c100000000-mc000007d-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc000007d-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000182-6e3d-15ec-920f-ac1058640000" name="Fiscal Quarter Description" isWriteable="false">
+<AttributeDefn mdsid="m0000000e-01f4-0000-931d-3b8b00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."FISCAL_QTR_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-931d-3b8b00000000-mc000007f-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc000007f-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000186-6e3d-15ec-920f-ac1058640000" name="Fiscal Quarter ID" isWriteable="false">
+<AttributeDefn mdsid="m0000000f-01f4-0000-f267-c37300000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."FISCAL_QTR_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-f267-c37300000000-mc0000081-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000081-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000189-6e3d-15ec-920f-ac1058640000" name="Fiscal Year Description" isWriteable="false">
+<AttributeDefn mdsid="m00000010-01f4-0000-3646-10b300000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."FISCAL_YEAR_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-3646-10b300000000-mc0000083-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000083-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000190-6e3d-15ec-920f-ac1058640000" name="Fiscal Year ID" isWriteable="false">
+<AttributeDefn mdsid="m00000011-01f4-0000-7d43-ef4400000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."FISCAL_YEAR_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-7d43-ef4400000000-mc0000085-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000085-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000196-6e3d-15ec-920f-ac1058640000" name="Holiday Flag" isWriteable="false">
+<AttributeDefn mdsid="m00000012-01f4-0000-2b46-449400000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Conformed Date"."HOLIDAY_FLAG"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-2b46-449400000000-mc0000087-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000a-6e3d-15ec-920f-ac1058640000.xml#mc0000087-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalKey mdsid="mc000023d-6e3d-15ec-920f-ac1058640000" name="Date Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000023d-6e3d-15ec-920f-ac1058640000-mc00001dd-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001dd-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="mc0000177-6e3d-15ec-920f-ac1058640000-mc000020a-6e3d-15ec-920f-ac1058640000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c000020a-6e3d-15ec-920f-ac1058640000.xml#mc000020a-6e3d-15ec-920f-ac1058640000"/>
+</RefTableSources>
+</LogicalTable>

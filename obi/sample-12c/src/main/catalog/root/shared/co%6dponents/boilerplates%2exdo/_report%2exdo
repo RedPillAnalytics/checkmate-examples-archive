@@ -1,0 +1,25 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="false" useBipParameters="" producerName="" parameterVOName="" parameterTaskFlow="" customDataControl="" cachePerUser="false" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <description/>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="false"/>
+   <property name="showReportLinks" value="false"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="false"/>
+   <property name="cacheDuration" value="false"/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3" style=""/>
+   <templates default="Chart">
+      <template label="Chart" url="Chart.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,excel,pptx" defaultFormat="analyze" active="true" viewOnline="true"/>
+      <template label="Table" url="Table.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,excel,pptx" defaultFormat="analyze" active="true" viewOnline="true"/>
+      <template label="Chart and Table" url="Chart_and_Table.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,excel,pptx" defaultFormat="analyze" active="true" viewOnline="true"/>
+      <template label="Dashboard" url="Dashboard.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,excel,pptx" defaultFormat="analyze" active="true" viewOnline="true"/>
+      <template label="iPhone" url="Mobile_Apple_iPhone.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,excel,pptx" defaultFormat="analyze" active="true" viewOnline="true"/>
+      <template label="Oracle Header Footer (Portrait)" url="Oracle Header Footer - Portrait.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,excel,pptx" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+      <template label="Oracle Header Footer (Landscape)" url="Oracle Header Footer - Landscape.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,excel,pptx" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+      <template label="2 Dimensional Analysis (Landscape)" url="2 Dimensional Analysis Landscape.xpt" type="xpt" outputFormat="analyze,html,pptx" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+   </templates>
+</report>

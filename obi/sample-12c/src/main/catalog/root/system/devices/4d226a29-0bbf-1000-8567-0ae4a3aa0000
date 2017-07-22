@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:DeviceMetrics xmlns:saw="com.siebel.analytics.web/report/v1.1"><saw:DeviceType Enabled="true" Category="3" DeliveryMethod="1" DeliveryFormat="0" BufferSize="65535" Flags="0" SystemCreated="true"><saw:Name>phonecomcast</saw:Name><saw:Description>Comcast Cellular</saw:Description><saw:Domain>cellularone.tstmsg.com</saw:Domain><saw:GUID Low="1294101033" Mid="3007" Hi="4096" ClockHi="133" ClockLow="103" Node0="10" Node1="228" Node2="163" Node3="170" Node4="0" Node5="0"/></saw:DeviceType></saw:DeviceMetrics>

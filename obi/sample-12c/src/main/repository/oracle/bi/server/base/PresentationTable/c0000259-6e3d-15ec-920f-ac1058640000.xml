@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="mc0000259-6e3d-15ec-920f-ac1058640000" name="Trades" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/c0000252-6e3d-15ec-920f-ac1058640000.xml#mc0000252-6e3d-15ec-920f-ac1058640000">
+<PresentationColumn mdsid="mc00002ba-6e3d-15ec-920f-ac1058640000" name="Trade ID" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001a7-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000025d-6e3d-15ec-920f-ac1058640000" name="Cash Flag" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc0000192-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000260-6e3d-15ec-920f-ac1058640000" name="Executed By" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc0000198-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000263-6e3d-15ec-920f-ac1058640000" name="Status" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001a3-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000266-6e3d-15ec-920f-ac1058640000" name="Type" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001b1-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002ab-6e3d-15ec-920f-ac1058640000" name="Bid Price" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000173-6e3d-15ec-920f-ac1058640000.xml#mc000018e-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002ad-6e3d-15ec-920f-ac1058640000" name="Commission" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000173-6e3d-15ec-920f-ac1058640000.xml#mc0000194-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002af-6e3d-15ec-920f-ac1058640000" name="Fee" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000173-6e3d-15ec-920f-ac1058640000.xml#mc000019c-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002b1-6e3d-15ec-920f-ac1058640000" name="Quantity" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000173-6e3d-15ec-920f-ac1058640000.xml#mc00001a0-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002b4-6e3d-15ec-920f-ac1058640000" name="Tax" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000173-6e3d-15ec-920f-ac1058640000.xml#mc00001a5-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002b7-6e3d-15ec-920f-ac1058640000" name="Trade Price" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000173-6e3d-15ec-920f-ac1058640000.xml#mc00001ab-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<RefHierarchies>
+<RefPresentationHierarchy refId="mc0000259-6e3d-15ec-920f-ac1058640000-m80000012-b4c5-1605-806e-ac1f0ae00000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/80000012-b4c5-1605-806e-ac1f0ae00000.xml#m80000012-b4c5-1605-806e-ac1f0ae00000"/>
+<RefPresentationHierarchy refId="mc0000259-6e3d-15ec-920f-ac1058640000-m80000013-b4c5-1605-806e-ac1f0ae00000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/80000013-b4c5-1605-806e-ac1f0ae00000.xml#m80000013-b4c5-1605-806e-ac1f0ae00000"/>
+<RefPresentationHierarchy refId="mc0000259-6e3d-15ec-920f-ac1058640000-m80000014-b4c5-1605-806e-ac1f0ae00000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/80000014-b4c5-1605-806e-ac1f0ae00000.xml#m80000014-b4c5-1605-806e-ac1f0ae00000"/>
+</RefHierarchies>
+</PresentationTable>

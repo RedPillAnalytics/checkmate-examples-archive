@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Variable mdsid="mc0000001-2489-1617-b23b-ac1f1d820000" name="current-date" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" initBlockRef="/oracle/bi/server/base/InitBlock/40000000-248d-1617-b23b-ac1f1d820000.xml#m40000000-248d-1617-b23b-ac1f1d820000">
+<Expr mdsid="m00000001-01f4-0000-082d-d48700000000" name="Expr">
+<ExprText><![CDATA[ TIMESTAMP '2016-12-23 14:10:49']]></ExprText>
+<ExprTextDesc><![CDATA[ TIMESTAMP '2016-12-23 14:10:49']]></ExprTextDesc>
+</Expr>
+</Variable>

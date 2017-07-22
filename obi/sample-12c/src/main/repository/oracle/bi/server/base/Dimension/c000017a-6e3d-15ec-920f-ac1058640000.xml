@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Dimension mdsid="mc000017a-6e3d-15ec-920f-ac1058640000" name="Conformed Date" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isValueBased="false" isRagged="false" isSkipped="false" defaultRootLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001fd-6e3d-15ec-920f-ac1058640000" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
+<LogicalLevel mdsid="mc00001fd-6e3d-15ec-920f-ac1058640000" name="Total" isGTA="true" isFDUC="true" memberCount="1" levelConst="&apos;Total&apos;">
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001fd-6e3d-15ec-920f-ac1058640000_mc00001fe-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001fe-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalLevel refId="mc00001fd-6e3d-15ec-920f-ac1058640000_mc0000203-6e3d-15ec-920f-ac1058640000_2" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc0000203-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalLevel refId="mc00001fd-6e3d-15ec-920f-ac1058640000_mc00001f6-6e3d-15ec-920f-ac1058640000_3" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001f6-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001fe-6e3d-15ec-920f-ac1058640000" name="Calender Year" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Calender Year&apos;">
+<LogicalKey mdsid="mc000020f-6e3d-15ec-920f-ac1058640000" name="Calendar Year Description" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000020f-6e3d-15ec-920f-ac1058640000-mc00001d6-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001d6-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc0000242-6e3d-15ec-920f-ac1058640000" name="Calendar Year ID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000242-6e3d-15ec-920f-ac1058640000-mc00001da-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001da-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001fe-6e3d-15ec-920f-ac1058640000_mc00001e0-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001e0-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001fe-6e3d-15ec-920f-ac1058640000-mc00001d6-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001d6-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc00001fe-6e3d-15ec-920f-ac1058640000-mc00001da-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001da-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001e0-6e3d-15ec-920f-ac1058640000" name="Calendar Quarter" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Calendar Quarter&apos;">
+<LogicalKey mdsid="mc000023b-6e3d-15ec-920f-ac1058640000" name="Calendar Qtr ID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000023b-6e3d-15ec-920f-ac1058640000-mc00001c7-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001c7-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc000023f-6e3d-15ec-920f-ac1058640000" name="Calendar Qtr Description" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000023f-6e3d-15ec-920f-ac1058640000-mc00001c2-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001c2-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001e0-6e3d-15ec-920f-ac1058640000_mc00001e3-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001e3-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001e0-6e3d-15ec-920f-ac1058640000-mc00001c2-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001c2-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc00001e0-6e3d-15ec-920f-ac1058640000-mc00001c7-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001c7-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001e3-6e3d-15ec-920f-ac1058640000" name="Calendar Month" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Calendar Month&apos;">
+<LogicalKey mdsid="mc0000212-6e3d-15ec-920f-ac1058640000" name="Calendar Month ID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000212-6e3d-15ec-920f-ac1058640000-mc00001bd-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001bd-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc0000213-6e3d-15ec-920f-ac1058640000" name="Calendar Month Description" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000213-6e3d-15ec-920f-ac1058640000-mc00001b8-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001b8-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001e3-6e3d-15ec-920f-ac1058640000_mc00001df-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001df-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001e3-6e3d-15ec-920f-ac1058640000-mc00001b8-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001b8-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc00001e3-6e3d-15ec-920f-ac1058640000-mc00001bd-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001bd-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001df-6e3d-15ec-920f-ac1058640000" name="Detail" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Detail&apos;">
+<LogicalKey mdsid="mc0000229-6e3d-15ec-920f-ac1058640000" name="Date Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000229-6e3d-15ec-920f-ac1058640000-mc00001dd-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001dd-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc000022f-6e3d-15ec-920f-ac1058640000" name="SQL Date" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000022f-6e3d-15ec-920f-ac1058640000-mc000019e-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc000019e-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001df-6e3d-15ec-920f-ac1058640000-mc000019e-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc000019e-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc00001df-6e3d-15ec-920f-ac1058640000-mc00001dd-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001dd-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc0000203-6e3d-15ec-920f-ac1058640000" name="Calendar Week" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Calendar Week&apos;">
+<LogicalKey mdsid="mc0000214-6e3d-15ec-920f-ac1058640000" name="Calendar Week ID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000214-6e3d-15ec-920f-ac1058640000-mc00001d1-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001d1-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc0000218-6e3d-15ec-920f-ac1058640000" name="Calendar Week Description" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000218-6e3d-15ec-920f-ac1058640000-mc00001cc-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001cc-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc0000203-6e3d-15ec-920f-ac1058640000_mc00001df-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001df-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc0000203-6e3d-15ec-920f-ac1058640000-mc00001cc-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001cc-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc0000203-6e3d-15ec-920f-ac1058640000-mc00001d1-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc00001d1-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001f6-6e3d-15ec-920f-ac1058640000" name="Fiscal Year" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Fiscal Year&apos;">
+<LogicalKey mdsid="mc000021d-6e3d-15ec-920f-ac1058640000" name="Fiscal Year ID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000021d-6e3d-15ec-920f-ac1058640000-mc0000190-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc0000190-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc000021f-6e3d-15ec-920f-ac1058640000" name="Fiscal Year Description" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000021f-6e3d-15ec-920f-ac1058640000-mc0000189-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc0000189-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001f6-6e3d-15ec-920f-ac1058640000_mc00001f0-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001f0-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001f6-6e3d-15ec-920f-ac1058640000-mc0000189-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc0000189-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc00001f6-6e3d-15ec-920f-ac1058640000-mc0000190-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc0000190-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001f0-6e3d-15ec-920f-ac1058640000" name="Fiscal Quarter" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Fiscal Quarter&apos;">
+<LogicalKey mdsid="mc000022a-6e3d-15ec-920f-ac1058640000" name="Fiscal Quarter ID" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000022a-6e3d-15ec-920f-ac1058640000-mc0000186-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc0000186-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc000022e-6e3d-15ec-920f-ac1058640000" name="Fiscal Quarter Description" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000022e-6e3d-15ec-920f-ac1058640000-mc0000182-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc0000182-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001f0-6e3d-15ec-920f-ac1058640000_mc00001df-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001df-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001f0-6e3d-15ec-920f-ac1058640000-mc0000182-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc0000182-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc00001f0-6e3d-15ec-920f-ac1058640000-mc0000186-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000177-6e3d-15ec-920f-ac1058640000.xml#mc0000186-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+</Dimension>

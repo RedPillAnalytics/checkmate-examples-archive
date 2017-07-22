@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="mc0000256-6e3d-15ec-920f-ac1058640000" name="Customer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/c0000252-6e3d-15ec-920f-ac1058640000.xml#mc0000252-6e3d-15ec-920f-ac1058640000">
+<PresentationColumn mdsid="mc000029d-6e3d-15ec-920f-ac1058640000" name="Customer Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001c6-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a0-6e3d-15ec-920f-ac1058640000" name="Customer ID" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001c3-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a4-6e3d-15ec-920f-ac1058640000" name="Tax ID" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001d3-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a8-6e3d-15ec-920f-ac1058640000" name="First Name" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001cf-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002ac-6e3d-15ec-920f-ac1058640000" name="Middle Initial" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001b3-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002b0-6e3d-15ec-920f-ac1058640000" name="Last Name" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001d4-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002b6-6e3d-15ec-920f-ac1058640000" name="Address Line 1" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001b9-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000025c-6e3d-15ec-920f-ac1058640000" name="Address Line 2" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001bc-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000025f-6e3d-15ec-920f-ac1058640000" name="City" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001be-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000262-6e3d-15ec-920f-ac1058640000" name="Country" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001c1-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000265-6e3d-15ec-920f-ac1058640000" name="Date Of Birth" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001c8-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000293-6e3d-15ec-920f-ac1058640000" name="Email 1" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001cb-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000296-6e3d-15ec-920f-ac1058640000" name="Email 2" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001cd-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000299-6e3d-15ec-920f-ac1058640000" name="Gender" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001d2-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000029c-6e3d-15ec-920f-ac1058640000" name="Local Tax Rate ID" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001b0-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000029f-6e3d-15ec-920f-ac1058640000" name="National Tax Rate ID" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001b5-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a2-6e3d-15ec-920f-ac1058640000" name="Phone 1" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001ba-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a6-6e3d-15ec-920f-ac1058640000" name="Phone 2" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001bf-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002aa-6e3d-15ec-920f-ac1058640000" name="Phone 3" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001c4-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002ae-6e3d-15ec-920f-ac1058640000" name="Postal Code" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001c9-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002b3-6e3d-15ec-920f-ac1058640000" name="State / Province" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001ce-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002b9-6e3d-15ec-920f-ac1058640000" name="Tier" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001d7-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000268-6e3d-15ec-920f-ac1058640000" name="City Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000170-6e3d-15ec-920f-ac1058640000.xml#mc00001bb-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<RefHierarchies>
+<RefPresentationHierarchy refId="mc0000256-6e3d-15ec-920f-ac1058640000-mc00002bd-6e3d-15ec-920f-ac1058640000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/c00002bd-6e3d-15ec-920f-ac1058640000.xml#mc00002bd-6e3d-15ec-920f-ac1058640000"/>
+<RefPresentationHierarchy refId="mc0000256-6e3d-15ec-920f-ac1058640000-mc00002be-6e3d-15ec-920f-ac1058640000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/c00002be-6e3d-15ec-920f-ac1058640000.xml#mc00002be-6e3d-15ec-920f-ac1058640000"/>
+<RefPresentationHierarchy refId="mc0000256-6e3d-15ec-920f-ac1058640000-mc00002bf-6e3d-15ec-920f-ac1058640000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/c00002bf-6e3d-15ec-920f-ac1058640000.xml#mc00002bf-6e3d-15ec-920f-ac1058640000"/>
+</RefHierarchies>
+</PresentationTable>

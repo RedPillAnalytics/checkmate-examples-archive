@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="mc000000f-6e3d-15ec-920f-ac1058640000" name="ACCOUNT_ACTIVITY_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Schema/c000015d-6e3d-15ec-920f-ac1058640000.xml#mc000015d-6e3d-15ec-920f-ac1058640000">
+<PhysicalColumn mdsid="mc00000a9-6e3d-15ec-920f-ac1058640000" name="ACTIVITY_ID" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000012d-6e3d-15ec-920f-ac1058640000" name="ACCOUNT_KEY" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000012e-6e3d-15ec-920f-ac1058640000" name="ACTIVITY_COUNT" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000012f-6e3d-15ec-920f-ac1058640000" name="ACTIVITY_DATE" dataType="DATETIME" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000130-6e3d-15ec-920f-ac1058640000" name="ACTIVITY_DATE_KEY" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000131-6e3d-15ec-920f-ac1058640000" name="ACTIVITY_TYPE" dataType="VARCHAR" precision="20" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000132-6e3d-15ec-920f-ac1058640000" name="BATCH_ID" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000133-6e3d-15ec-920f-ac1058640000" name="BROKER_KEY" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000134-6e3d-15ec-920f-ac1058640000" name="CUSTOMER_KEY" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalForeignKey mdsid="mc0000168-6e3d-15ec-920f-ac1058640000" name="ACCT_ACTIVITY_BROKER_FK" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/c000000d-6e3d-15ec-920f-ac1058640000.xml#mc0000154-6e3d-15ec-920f-ac1058640000">
+<RefColumns>
+<RefColumn refId="mc0000168-6e3d-15ec-920f-ac1058640000-mc0000133-6e3d-15ec-920f-ac1058640000" columnRef="/oracle/bi/server/base/PhysicalTable/c000000f-6e3d-15ec-920f-ac1058640000.xml#mc0000133-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Variable mdsid="mc0000000-929d-1604-9ce9-ac1f0ae00000" name="service-orcl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository">
+<Expr mdsid="m00000001-01f4-0000-88ba-a4c800000000" name="Expr">
+<ExprText><![CDATA['(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = services.cv6xgykurerg.us-east-1.rds.amazonaws.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = SERVICES)))']]></ExprText>
+<ExprTextDesc><![CDATA['(DESCRIPTION = (ADDRESS = (PROTOCOL = TCP)(HOST = services.cv6xgykurerg.us-east-1.rds.amazonaws.com)(PORT = 1521))(CONNECT_DATA = (SERVER = DEDICATED)(SERVICE_NAME = SERVICES)))']]></ExprTextDesc>
+</Expr>
+</Variable>

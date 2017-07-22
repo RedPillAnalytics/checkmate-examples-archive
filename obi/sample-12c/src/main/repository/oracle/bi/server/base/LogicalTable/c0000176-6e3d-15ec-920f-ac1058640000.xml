@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="mc0000176-6e3d-15ec-920f-ac1058640000" name="Security" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
+<LogicalColumn mdsid="mc00001b7-6e3d-15ec-920f-ac1058640000" name="Security Key" isWriteable="false">
+<AttributeDefn mdsid="m00000001-01f4-0000-63f8-810600000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."SECURITY_KEY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-63f8-810600000000-mc000010e-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc000010e-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001ad-6e3d-15ec-920f-ac1058640000" name="Name" isWriteable="false">
+<AttributeDefn mdsid="m00000002-01f4-0000-f0ee-9d8d00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-f0ee-9d8d00000000-mc000010d-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc000010d-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000018b-6e3d-15ec-920f-ac1058640000" name="Symbol" isWriteable="false">
+<AttributeDefn mdsid="m00000003-01f4-0000-39e0-fa3900000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."SYMBOL"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-39e0-fa3900000000-mc0000111-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc0000111-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000018c-6e3d-15ec-920f-ac1058640000" name="Exchange ID" isWriteable="false">
+<AttributeDefn mdsid="m00000004-01f4-0000-8ff9-f47500000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."EXCHANGE_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-8ff9-f47500000000-mc0000107-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc0000107-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001a9-6e3d-15ec-920f-ac1058640000" name="Issue" isWriteable="false">
+<AttributeDefn mdsid="m00000005-01f4-0000-9e51-42b500000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."ISSUE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-9e51-42b500000000-mc000010b-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc000010b-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000183-6e3d-15ec-920f-ac1058640000" name="Dividend" isWriteable="false">
+<AttributeDefn mdsid="m00000006-01f4-0000-e5a1-bfe300000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."DIVIDEND"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-e5a1-bfe300000000-mc0000105-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc0000105-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000019a-6e3d-15ec-920f-ac1058640000" name="First Trade" isWriteable="false">
+<AttributeDefn mdsid="m00000007-01f4-0000-8559-f3aa00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."FIRST_TRADE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-8559-f3aa00000000-mc0000109-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc0000109-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001a1-6e3d-15ec-920f-ac1058640000" name="First Trade On Exchange" isWriteable="false">
+<AttributeDefn mdsid="m00000008-01f4-0000-eef8-492700000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."FIRST_TRADE_ON_EXCHANGE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-eef8-492700000000-mc000010a-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc000010a-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000185-6e3d-15ec-920f-ac1058640000" name="Shares Outstanding" isWriteable="false">
+<AttributeDefn mdsid="m00000009-01f4-0000-6b21-e88200000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."SHARES_OUTSTANDING"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-6b21-e88200000000-mc000010f-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc000010f-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000188-6e3d-15ec-920f-ac1058640000" name="Status" isWriteable="false">
+<AttributeDefn mdsid="m0000000a-01f4-0000-9adf-967200000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Security"."STATUS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-9adf-967200000000-mc0000110-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000016-6e3d-15ec-920f-ac1058640000.xml#mc0000110-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalKey mdsid="mc0000225-6e3d-15ec-920f-ac1058640000" name="Security_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000225-6e3d-15ec-920f-ac1058640000-mc00001b7-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000176-6e3d-15ec-920f-ac1058640000.xml#mc00001b7-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="mc0000176-6e3d-15ec-920f-ac1058640000-mc0000209-6e3d-15ec-920f-ac1058640000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c0000209-6e3d-15ec-920f-ac1058640000.xml#mc0000209-6e3d-15ec-920f-ac1058640000"/>
+</RefTableSources>
+</LogicalTable>

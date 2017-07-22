@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="mc0000005-6e3d-15ec-920f-ac1058640000" name="CUSTOMER_D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Schema/c000015d-6e3d-15ec-920f-ac1058640000.xml#mc000015d-6e3d-15ec-920f-ac1058640000">
+<PhysicalColumn mdsid="mc0000033-6e3d-15ec-920f-ac1058640000" name="ADDRESS_LINE_1" dataType="VARCHAR" precision="80" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000034-6e3d-15ec-920f-ac1058640000" name="ADDRESS_LINE_2" dataType="VARCHAR" precision="80" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000035-6e3d-15ec-920f-ac1058640000" name="BATCH_ID" dataType="INT" precision="5" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000036-6e3d-15ec-920f-ac1058640000" name="CITY" dataType="VARCHAR" precision="25" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000037-6e3d-15ec-920f-ac1058640000" name="COUNTRY" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000038-6e3d-15ec-920f-ac1058640000" name="CUSTOMER_ID" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000039-6e3d-15ec-920f-ac1058640000" name="CUSTOMER_KEY" dataType="DOUBLE" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000003a-6e3d-15ec-920f-ac1058640000" name="DATE_OF_BIRTH" dataType="DATETIME" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000003b-6e3d-15ec-920f-ac1058640000" name="EFFECTIVE_DATE" dataType="DATETIME" precision="22" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000003c-6e3d-15ec-920f-ac1058640000" name="EMAIL_1" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000003d-6e3d-15ec-920f-ac1058640000" name="EMAIL_2" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000003e-6e3d-15ec-920f-ac1058640000" name="EXPIRATION_DATE" dataType="DATETIME" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000003f-6e3d-15ec-920f-ac1058640000" name="FIRST_NAME" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000040-6e3d-15ec-920f-ac1058640000" name="GENDER" dataType="VARCHAR" precision="1" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000041-6e3d-15ec-920f-ac1058640000" name="IS_CURRENT" dataType="VARCHAR" precision="1" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000042-6e3d-15ec-920f-ac1058640000" name="LAST_NAME" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000043-6e3d-15ec-920f-ac1058640000" name="LOCAL_TAX_RATE_ID" dataType="VARCHAR" precision="5" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000044-6e3d-15ec-920f-ac1058640000" name="MIDDLE_INITIAL" dataType="VARCHAR" precision="1" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000045-6e3d-15ec-920f-ac1058640000" name="NATIONAL_TAX_RATE_ID" dataType="VARCHAR" precision="5" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000046-6e3d-15ec-920f-ac1058640000" name="PHONE_1" dataType="VARCHAR" precision="30" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000047-6e3d-15ec-920f-ac1058640000" name="PHONE_2" dataType="VARCHAR" precision="30" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000048-6e3d-15ec-920f-ac1058640000" name="PHONE_3" dataType="VARCHAR" precision="30" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000049-6e3d-15ec-920f-ac1058640000" name="POSTAL_CODE" dataType="VARCHAR" precision="12" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000004a-6e3d-15ec-920f-ac1058640000" name="STATE_PROV" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000004b-6e3d-15ec-920f-ac1058640000" name="TAX_ID" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000004c-6e3d-15ec-920f-ac1058640000" name="TIER" dataType="INT" precision="1" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+</PhysicalTable>

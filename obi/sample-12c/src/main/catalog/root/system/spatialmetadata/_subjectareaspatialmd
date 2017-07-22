@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sawspatial:mapmetadata xmlns:sawspatial="com.siebel.analytics.web/spatial/mapmetadata/v1" xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema"> <sawspatial:semtiles/><sawspatial:semlayers/><sawspatial:semstyles><sawspatial:semmarkers/></sawspatial:semstyles></sawspatial:mapmetadata>

@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Dimension mdsid="mc000017b-6e3d-15ec-920f-ac1058640000" name="Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isValueBased="false" isRagged="false" isSkipped="false" defaultRootLevelRef="/oracle/bi/server/base/Dimension/c000017b-6e3d-15ec-920f-ac1058640000.xml#mc00001e7-6e3d-15ec-920f-ac1058640000" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
+<LogicalLevel mdsid="mc00001e7-6e3d-15ec-920f-ac1058640000" name="Total" isGTA="true" isFDUC="true" memberCount="1" levelConst="&apos;Total&apos;">
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001e7-6e3d-15ec-920f-ac1058640000_mc00001e6-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017b-6e3d-15ec-920f-ac1058640000.xml#mc00001e6-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalLevel refId="mc00001e7-6e3d-15ec-920f-ac1058640000_mc00001ee-6e3d-15ec-920f-ac1058640000_2" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017b-6e3d-15ec-920f-ac1058640000.xml#mc00001ee-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001e6-6e3d-15ec-920f-ac1058640000" name="Status" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Status&apos;">
+<LogicalKey mdsid="mc0000230-6e3d-15ec-920f-ac1058640000" name="Status" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000230-6e3d-15ec-920f-ac1058640000-mc00001d8-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d8-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001e6-6e3d-15ec-920f-ac1058640000_mc00001fa-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017b-6e3d-15ec-920f-ac1058640000.xml#mc00001fa-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001e6-6e3d-15ec-920f-ac1058640000-mc00001d8-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d8-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001fa-6e3d-15ec-920f-ac1058640000" name="Detail" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Detail&apos;">
+<LogicalKey mdsid="mc0000228-6e3d-15ec-920f-ac1058640000" name="Account Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000228-6e3d-15ec-920f-ac1058640000-mc00001d5-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d5-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc000022c-6e3d-15ec-920f-ac1058640000" name="Account Description" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000022c-6e3d-15ec-920f-ac1058640000-mc00001ca-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001ca-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001fa-6e3d-15ec-920f-ac1058640000-mc00001ca-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001ca-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc00001fa-6e3d-15ec-920f-ac1058640000-mc00001d0-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d0-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc00001fa-6e3d-15ec-920f-ac1058640000-mc00001d5-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d5-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc00001ee-6e3d-15ec-920f-ac1058640000" name="Tax Status" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Tax Status&apos;">
+<LogicalKey mdsid="mc0000226-6e3d-15ec-920f-ac1058640000" name="Tax Status" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000226-6e3d-15ec-920f-ac1058640000-mc00001db-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001db-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001ee-6e3d-15ec-920f-ac1058640000_mc00001fa-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017b-6e3d-15ec-920f-ac1058640000.xml#mc00001fa-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc00001ee-6e3d-15ec-920f-ac1058640000-mc00001db-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001db-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+</Dimension>

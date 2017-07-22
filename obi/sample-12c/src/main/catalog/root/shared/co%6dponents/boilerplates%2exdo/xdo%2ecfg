@@ -1,0 +1,3 @@
+<config version="1.0.0" xmlns="http://xmlns.oracle.com/oxp/config/">
+   <properties><property name="xdk-secure-io-mode">true</property></properties>
+<fonts><font family="BC 3of9" style="normal" weight="normal"><truetype path="B39R00.TTF"/></font></fonts></config>

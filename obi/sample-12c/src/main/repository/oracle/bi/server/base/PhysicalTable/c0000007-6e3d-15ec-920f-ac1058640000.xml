@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="mc0000007-6e3d-15ec-920f-ac1058640000" name="TRADE_TYPE_S" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Schema/c000015d-6e3d-15ec-920f-ac1058640000.xml#mc000015d-6e3d-15ec-920f-ac1058640000">
+<PhysicalColumn mdsid="mc0000017-6e3d-15ec-920f-ac1058640000" name="IS_MRKT" dataType="DOUBLE" precision="12" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000018-6e3d-15ec-920f-ac1058640000" name="IS_SELL" dataType="DOUBLE" precision="12" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000019-6e3d-15ec-920f-ac1058640000" name="TRADE_ID" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000146-6e3d-15ec-920f-ac1058640000" name="TRADE_NAME" dataType="VARCHAR" precision="50" nullable="true" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+</PhysicalTable>

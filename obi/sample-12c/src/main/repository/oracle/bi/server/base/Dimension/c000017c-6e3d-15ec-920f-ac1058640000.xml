@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Dimension mdsid="mc000017c-6e3d-15ec-920f-ac1058640000" name="Broker" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isValueBased="false" isRagged="false" isSkipped="false" defaultRootLevelRef="/oracle/bi/server/base/Dimension/c000017c-6e3d-15ec-920f-ac1058640000.xml#mc00001ff-6e3d-15ec-920f-ac1058640000" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
+<LogicalLevel mdsid="mc00001ff-6e3d-15ec-920f-ac1058640000" name="Total" isGTA="true" isFDUC="true" memberCount="1" levelConst="&apos;Total&apos;">
+<RefChildLevels>
+<RefLogicalLevel refId="mc00001ff-6e3d-15ec-920f-ac1058640000_mc0000200-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017c-6e3d-15ec-920f-ac1058640000.xml#mc0000200-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalLevel refId="mc00001ff-6e3d-15ec-920f-ac1058640000_mc0000202-6e3d-15ec-920f-ac1058640000_2" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017c-6e3d-15ec-920f-ac1058640000.xml#mc0000202-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc0000200-6e3d-15ec-920f-ac1058640000" name="Branch" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Branch&apos;">
+<LogicalKey mdsid="mc0000233-6e3d-15ec-920f-ac1058640000" name="Branch" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000233-6e3d-15ec-920f-ac1058640000-mc00001de-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc00001de-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc0000200-6e3d-15ec-920f-ac1058640000_mc0000204-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017c-6e3d-15ec-920f-ac1058640000.xml#mc0000204-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc0000200-6e3d-15ec-920f-ac1058640000-mc00001de-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc00001de-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc0000204-6e3d-15ec-920f-ac1058640000" name="Detail" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Detail&apos;">
+<LogicalKey mdsid="mc0000235-6e3d-15ec-920f-ac1058640000" name="Broker Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000235-6e3d-15ec-920f-ac1058640000-mc0000184-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000184-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<LogicalKey mdsid="mc0000239-6e3d-15ec-920f-ac1058640000" name="Broker ID" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000239-6e3d-15ec-920f-ac1058640000-mc0000181-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000181-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc0000204-6e3d-15ec-920f-ac1058640000-mc0000181-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000181-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc0000204-6e3d-15ec-920f-ac1058640000-mc0000184-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000184-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc0000204-6e3d-15ec-920f-ac1058640000-mc0000187-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000187-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc0000204-6e3d-15ec-920f-ac1058640000-mc000018a-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc000018a-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc0000204-6e3d-15ec-920f-ac1058640000-mc000018d-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc000018d-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc0000204-6e3d-15ec-920f-ac1058640000-mc000018f-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc000018f-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="mc0000204-6e3d-15ec-920f-ac1058640000-mc0000193-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000193-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="mc0000202-6e3d-15ec-920f-ac1058640000" name="Office" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Office&apos;">
+<LogicalKey mdsid="mc000022d-6e3d-15ec-920f-ac1058640000" name="Office" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc000022d-6e3d-15ec-920f-ac1058640000-mc0000191-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000191-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="mc0000202-6e3d-15ec-920f-ac1058640000_mc0000204-6e3d-15ec-920f-ac1058640000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017c-6e3d-15ec-920f-ac1058640000.xml#mc0000204-6e3d-15ec-920f-ac1058640000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="mc0000202-6e3d-15ec-920f-ac1058640000-mc0000191-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000191-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+</Dimension>

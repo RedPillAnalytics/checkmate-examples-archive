@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="mc0000175-6e3d-15ec-920f-ac1058640000" name="Activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
+<LogicalColumn mdsid="mc00001d9-6e3d-15ec-920f-ac1058640000" name="Activity Count" isWriteable="false">
+<MeasureDefn mdsid="mc0000038-6e3e-15ec-816a-ac1058640000" name="Measure" isCommutative="false">
+<AggrRule mdsid="mc0000040-6e3e-15ec-816a-ac1058640000" name="AggRule_2050:44081457021367" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-4dbd-8b5500000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "Brokerage"."Activity"."Activity Count")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-4dbd-8b5500000000-mc00001d9-6e3d-15ec-920f-ac1058640000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000175-6e3d-15ec-920f-ac1058640000.xml#mc00001d9-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+<OverrideAggrRule mdsid="mc0000046-6e3e-15ec-816a-ac1058640000" name="OvAggRule_2054:44091457021367" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c000020c-6e3d-15ec-920f-ac1058640000.xml#mc000020c-6e3d-15ec-920f-ac1058640000">
+<Expr mdsid="m00000002-01f4-0000-e233-c11800000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("Brokerage"."Activity"."Activity Count")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-e233-c11800000000-mc00001d9-6e3d-15ec-920f-ac1058640000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000175-6e3d-15ec-920f-ac1058640000.xml#mc00001d9-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</Expr>
+</OverrideAggrRule>
+</MeasureDefn>
+<AttributeDefn mdsid="m00000003-01f4-0000-b8fc-042f00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Account Activity"."ACTIVITY_COUNT"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-b8fc-042f00000000-mc0000126-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c000000c-6e3d-15ec-920f-ac1058640000.xml#mc0000126-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="mc0000175-6e3d-15ec-920f-ac1058640000-mc000020c-6e3d-15ec-920f-ac1058640000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c000020c-6e3d-15ec-920f-ac1058640000.xml#mc000020c-6e3d-15ec-920f-ac1058640000"/>
+</RefTableSources>
+</LogicalTable>

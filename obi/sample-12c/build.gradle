@@ -1,0 +1,90 @@
+plugins {
+  // apply the Checkmate plugin, which is pulled down automatically from the Plugin Portal
+  id 'com.redpillanalytics.checkmate.obi' version '8.0.1'
+  // apply the maven publishing plugin
+  id 'maven-publish'
+  // additional plugins used by checkmate
+  // These are only necessary if 'checkmate.useScmRelease = true'
+  //id 'pl.allegro.tech.build.axion-release' version '1.7.0'
+  //id "co.riiid.gradle" version '0.4.2'
+}
+
+dependencies {
+  // Checkmate library dependencies for regression testing
+  // We are using the Checkmate library, which is recommended
+  obiee group: 'com.redpillanalytics', name: 'checkmate', version: '+'
+  // You can also use Baseline Validation Tool
+  // The installation needs to be available in one of your Maven repositories
+  // If it exists, Checkmate will unzip and install it for you
+  //obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
+
+  // Dependencies on previous OBIEE builds
+  // Used for building incremental patches, regression testing, and deployments
+  //feature group: 'obiee', name: 'brokerage-build', version: '+'
+  //release group: 'obiee', name: 'brokerage-build', version: '1.0.0'
+  //promote group: 'obiee', name: 'brokerage-deploy', version: project.version
+  //promote group: 'obiee', name: 'brokerage-bar', version: project.version
+
+  // Dependencies for Analytics
+}
+
+repositories {
+  // resolve local maven repository for published distributions, which is usually ~/.m2
+  // this is really only for testing purposes
+  mavenLocal()
+  // You really want to resolve content using a real Maven repository
+  // At least use an S3 bucket
+  // maven {
+  //   url 's3://bucket-name/path/to/directory'
+  //   credentials(AwsCredentials) {
+  //     accessKey 'access key'
+  //     secretKey 'secret key'
+  //   }
+  // }
+}
+
+publishing {
+  repositories {
+    // publish to Maven local repository, which is usually ~/.m2
+    // This is only for testing purposes
+    mavenLocal()
+    // You really want to publish content using a real Maven repository
+    // At least use an S3 bucket
+    // maven {
+    //   url 's3://bucket-name/path/to/directory'
+    //   credentials(AwsCredentials) {
+    //     accessKey 'access key'
+    //     secretKey 'secret key'
+    //   }
+    // }
+  }
+}
+
+// OBIEE installation details
+// these can be overriden by environment variables or '-P' properties
+obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.2/obi1'
+obi.domainHome = '/home/oracle/fmw/config/domains/bi'
+obi.compatibility = '12.2.1.2'
+
+// Define the regression "Test Groups" for regression testing
+// This recreate several tasks beginning with "regression" for testing that catalog
+// You can create as many Test groups as desired
+obi.testGroups {
+  regression {
+    // the catalog folder to test. Recursively tests all analyses in that folder
+    // accepts a colon (:) separeted list of directories
+    libraryFolder = '/shared/regression'
+    // By default, hash values are used for comparision of results
+    // You can force the full comparision of logical SQL and results (takes longer)
+    compareText = true
+    // Provide more output
+    showOutput = true
+  }
+}
+
+// We can generate and publish the 12c BAR file as part of publication
+obi.publishBar = true
+// Use built in version generation based on Git repository pointers (tags, branches, etc.)
+// Override with a simple 'version = <version number>' or an environment variable or '-Pversion=<version number>'
+//checkmate.useScmRelease = true
+version = '0.0.9'

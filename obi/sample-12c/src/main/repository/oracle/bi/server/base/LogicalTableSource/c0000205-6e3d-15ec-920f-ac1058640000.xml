@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTableSource mdsid="mc0000205-6e3d-15ec-920f-ac1058640000" name="Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc0000171-6e3d-15ec-920f-ac1058640000">
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000001-01f4-0000-392c-c27f00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Brokerage"."Account"."Account Description"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-392c-c27f00000000-mc00001ca-6e3d-15ec-920f-ac1058640000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001ca-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000002-01f4-0000-3fc5-147600000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Account"."ACCOUNT_DESC"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-3fc5-147600000000-mc000009b-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000012-6e3d-15ec-920f-ac1058640000.xml#mc000009b-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000003-01f4-0000-7a5a-de7c00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Brokerage"."Account"."Account ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-7a5a-de7c00000000-mc00001d0-6e3d-15ec-920f-ac1058640000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d0-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000004-01f4-0000-e026-6b9700000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Account"."ACCOUNT_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-e026-6b9700000000-mc000009d-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000012-6e3d-15ec-920f-ac1058640000.xml#mc000009d-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000005-01f4-0000-da60-125a00000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Brokerage"."Account"."Account Key"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-da60-125a00000000-mc00001d5-6e3d-15ec-920f-ac1058640000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d5-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000006-01f4-0000-bd44-34fa00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Account"."ACCOUNT_KEY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-bd44-34fa00000000-mc000009f-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000012-6e3d-15ec-920f-ac1058640000.xml#mc000009f-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000007-01f4-0000-e04e-e83000000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Brokerage"."Account"."Status"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-e04e-e83000000000-mc00001d8-6e3d-15ec-920f-ac1058640000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d8-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m00000008-01f4-0000-d182-e4b300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Account"."STATUS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-d182-e4b300000000-mc00000ab-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000012-6e3d-15ec-920f-ac1058640000.xml#mc00000ab-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<ColumnMapping>
+<LogicalColumnExpr mdsid="m00000009-01f4-0000-dde2-dd3300000000" name="LogicalColumnExpr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Brokerage"."Account"."Tax Status"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-dde2-dd3300000000-mc00001db-6e3d-15ec-920f-ac1058640000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001db-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</LogicalColumnExpr>
+<Expr mdsid="m0000000a-01f4-0000-d9ec-64e300000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Account"."TAX_STATUS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-d9ec-64e300000000-mc00000ad-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000012-6e3d-15ec-920f-ac1058640000.xml#mc00000ad-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</Expr>
+</ColumnMapping>
+<Link startNodeTableRef="/oracle/bi/server/base/PhysicalTable/c0000012-6e3d-15ec-920f-ac1058640000.xml#mc0000012-6e3d-15ec-920f-ac1058640000">
+</Link>
+<WhereClause mdsid="m0000000b-01f4-0000-9ae3-531800000000" name="WhereClause">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</WhereClause>
+<GroupBy mdsid="m0000000c-01f4-0000-09b6-e64e00000000" name="GroupBy">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</GroupBy>
+<FragmentContent mdsid="m0000000d-01f4-0000-c4f3-ea2800000000" name="FragmentContent">
+<ExprText></ExprText>
+<ExprTextDesc></ExprTextDesc>
+</FragmentContent>
+</LogicalTableSource>

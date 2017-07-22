@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="mc000016e-6e3d-15ec-920f-ac1058640000" name="Company" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
+<LogicalColumn mdsid="mc000019f-6e3d-15ec-920f-ac1058640000" name="Company Key" isWriteable="false">
+<AttributeDefn mdsid="m00000001-01f4-0000-8e66-0d8e00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."COMPANY_KEY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-8e66-0d8e00000000-mc00000d6-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000d6-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000019d-6e3d-15ec-920f-ac1058640000" name="Company ID" isWriteable="false">
+<AttributeDefn mdsid="m00000002-01f4-0000-9f85-0e5400000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."COMPANY_ID"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-9f85-0e5400000000-mc00000d4-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000d4-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001ac-6e3d-15ec-920f-ac1058640000" name="Name" isWriteable="false">
+<AttributeDefn mdsid="m00000003-01f4-0000-7c71-a10200000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."NAME"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-7c71-a10200000000-mc00000e5-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e5-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001a4-6e3d-15ec-920f-ac1058640000" name="Description" isWriteable="false">
+<AttributeDefn mdsid="m00000004-01f4-0000-12d5-786200000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."DESCRIPTION"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-12d5-786200000000-mc00000db-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000db-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001b6-6e3d-15ec-920f-ac1058640000" name="Status" isWriteable="false">
+<AttributeDefn mdsid="m00000005-01f4-0000-d827-d82200000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."STATUS"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-d827-d82200000000-mc00000e9-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e9-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000195-6e3d-15ec-920f-ac1058640000" name="Address Line 1" isWriteable="false">
+<AttributeDefn mdsid="m00000006-01f4-0000-1619-3bd000000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."ADDRESS_LINE_1"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-1619-3bd000000000-mc00000ca-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000ca-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000197-6e3d-15ec-920f-ac1058640000" name="Address Line 2" isWriteable="false">
+<AttributeDefn mdsid="m00000007-01f4-0000-cb20-4c6100000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."ADDRESS_LINE_2"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-cb20-4c6100000000-mc00000cc-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000cc-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc0000199-6e3d-15ec-920f-ac1058640000" name="CEO" isWriteable="false">
+<AttributeDefn mdsid="m00000008-01f4-0000-ad69-2fa900000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."CEO"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-ad69-2fa900000000-mc00000d0-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000d0-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc000019b-6e3d-15ec-920f-ac1058640000" name="City" isWriteable="false">
+<AttributeDefn mdsid="m00000009-01f4-0000-07cb-a98a00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."CITY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-07cb-a98a00000000-mc00000d2-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000d2-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001a2-6e3d-15ec-920f-ac1058640000" name="Country" isWriteable="false">
+<AttributeDefn mdsid="m0000000a-01f4-0000-ace4-69f500000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."COUNTRY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-ace4-69f500000000-mc00000d9-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000d9-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001a6-6e3d-15ec-920f-ac1058640000" name="Founding Date" isWriteable="false">
+<AttributeDefn mdsid="m0000000b-01f4-0000-3401-573800000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."FOUNDING_DATE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-3401-573800000000-mc00000e1-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e1-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001a8-6e3d-15ec-920f-ac1058640000" name="Industry" isWriteable="false">
+<AttributeDefn mdsid="m0000000c-01f4-0000-7133-318e00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."INDUSTRY"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-7133-318e00000000-mc00000e2-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e2-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001aa-6e3d-15ec-920f-ac1058640000" name="Is Low Grade" isWriteable="false">
+<AttributeDefn mdsid="m0000000d-01f4-0000-6b36-31a000000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."IS_LOW_GRADE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-6b36-31a000000000-mc00000e4-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e4-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001ae-6e3d-15ec-920f-ac1058640000" name="Postal Code" isWriteable="false">
+<AttributeDefn mdsid="m0000000e-01f4-0000-f762-c76800000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."POSTAL_CODE"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-f762-c76800000000-mc00000e6-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e6-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001b2-6e3d-15ec-920f-ac1058640000" name="SP Rating" isWriteable="false">
+<AttributeDefn mdsid="m0000000f-01f4-0000-4ffe-525000000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."SP_RATING"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-4ffe-525000000000-mc00000e7-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e7-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001b4-6e3d-15ec-920f-ac1058640000" name="State / Province" isWriteable="false">
+<AttributeDefn mdsid="m00000010-01f4-0000-a772-ab2900000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."STATE_PROV"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-a772-ab2900000000-mc00000e8-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e8-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="mc00001c0-6e3d-15ec-920f-ac1058640000" name="City Key" isWriteable="false">
+<AttributeDefn mdsid="m00000011-01f4-0000-40ca-796a00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1" || '-' || "%2" ]]></ExprText>
+<ExprTextDesc><![CDATA["services-orcl".""."EDW"."Company"."STATE_PROV" || '-' || "services-orcl".""."EDW"."Company"."CITY" ]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000011-01f4-0000-40ca-796a00000000-mc00000e8-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000e8-6e3d-15ec-920f-ac1058640000"/>
+<RefObject refId="m00000011-01f4-0000-40ca-796a00000000-mc00000d2-6e3d-15ec-920f-ac1058640000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/c0000014-6e3d-15ec-920f-ac1058640000.xml#mc00000d2-6e3d-15ec-920f-ac1058640000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalKey mdsid="mc0000237-6e3d-15ec-920f-ac1058640000" name="Company_Key" isPrimary="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000237-6e3d-15ec-920f-ac1058640000-mc000019f-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c000016e-6e3d-15ec-920f-ac1058640000.xml#mc000019f-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefTableSources>
+<RefLogicalTableSource refId="mc000016e-6e3d-15ec-920f-ac1058640000-mc000020b-6e3d-15ec-920f-ac1058640000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/c000020b-6e3d-15ec-920f-ac1058640000.xml#mc000020b-6e3d-15ec-920f-ac1058640000"/>
+</RefTableSources>
+</LogicalTable>

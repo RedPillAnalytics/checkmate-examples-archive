@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="mc0000004-6e3d-15ec-920f-ac1058640000" name="SECURITY_D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Schema/c000015d-6e3d-15ec-920f-ac1058640000.xml#mc000015d-6e3d-15ec-920f-ac1058640000">
+<PhysicalColumn mdsid="mc000005f-6e3d-15ec-920f-ac1058640000" name="BATCH_ID" dataType="INT" precision="5" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000060-6e3d-15ec-920f-ac1058640000" name="DIVIDEND" dataType="DOUBLE" precision="22" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000061-6e3d-15ec-920f-ac1058640000" name="EFFECTIVE_DATE" dataType="DATETIME" precision="22" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000062-6e3d-15ec-920f-ac1058640000" name="EXCHANGE_ID" dataType="VARCHAR" precision="6" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000063-6e3d-15ec-920f-ac1058640000" name="EXPIRATION_DATE" dataType="DATETIME" precision="6" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000064-6e3d-15ec-920f-ac1058640000" name="FIRST_TRADE" dataType="DATETIME" precision="6" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000065-6e3d-15ec-920f-ac1058640000" name="FIRST_TRADE_ON_EXCHANGE" dataType="DATETIME" precision="6" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000066-6e3d-15ec-920f-ac1058640000" name="ISSUE" dataType="VARCHAR" precision="6" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000067-6e3d-15ec-920f-ac1058640000" name="IS_CURRENT" dataType="VARCHAR" precision="1" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000068-6e3d-15ec-920f-ac1058640000" name="NAME" dataType="VARCHAR" precision="70" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000006a-6e3d-15ec-920f-ac1058640000" name="SECURITY_KEY" dataType="DOUBLE" precision="22" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000006c-6e3d-15ec-920f-ac1058640000" name="SHARES_OUTSTANDING" dataType="DOUBLE" precision="22" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc000006e-6e3d-15ec-920f-ac1058640000" name="STATUS" dataType="VARCHAR" precision="10" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="mc0000070-6e3d-15ec-920f-ac1058640000" name="SYMBOL" dataType="VARCHAR" precision="15" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="mc000014e-6e3d-15ec-920f-ac1058640000" name="SECURITY_D_PK">
+<RefColumns>
+<RefColumn refId="mc000014e-6e3d-15ec-920f-ac1058640000-mc000006a-6e3d-15ec-920f-ac1058640000" columnRef="/oracle/bi/server/base/PhysicalTable/c0000004-6e3d-15ec-920f-ac1058640000.xml#mc000006a-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

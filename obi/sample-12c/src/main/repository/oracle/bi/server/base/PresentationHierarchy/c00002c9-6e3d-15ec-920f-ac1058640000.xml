@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationHierarchy mdsid="mc00002c9-6e3d-15ec-920f-ac1058640000" name="Conformed Date - Fiscal Year" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationTable/c000025a-6e3d-15ec-920f-ac1058640000.xml#mc000025a-6e3d-15ec-920f-ac1058640000" logicalDimensionRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc000017a-6e3d-15ec-920f-ac1058640000">
+<PresentationLevel mdsid="mc00002e4-6e3d-15ec-920f-ac1058640000" name="Total" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/c00002c9-6e3d-15ec-920f-ac1058640000.xml#mc00002c9-6e3d-15ec-920f-ac1058640000" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001fd-6e3d-15ec-920f-ac1058640000">
+</PresentationLevel>
+<PresentationLevel mdsid="mc00002e5-6e3d-15ec-920f-ac1058640000" name="Fiscal Year" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/c00002c9-6e3d-15ec-920f-ac1058640000.xml#mc00002c9-6e3d-15ec-920f-ac1058640000" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001f6-6e3d-15ec-920f-ac1058640000">
+<RefDisplayColumns>
+<RefPresentationColumn refId="mc00002e5-6e3d-15ec-920f-ac1058640000-mc0000273-6e3d-15ec-920f-ac1058640000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/c000025a-6e3d-15ec-920f-ac1058640000.xml#mc0000273-6e3d-15ec-920f-ac1058640000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+<PresentationLevel mdsid="mc00002e6-6e3d-15ec-920f-ac1058640000" name="Fiscal Quarter" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/c00002c9-6e3d-15ec-920f-ac1058640000.xml#mc00002c9-6e3d-15ec-920f-ac1058640000" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001f0-6e3d-15ec-920f-ac1058640000">
+<RefDisplayColumns>
+<RefPresentationColumn refId="mc00002e6-6e3d-15ec-920f-ac1058640000-mc000026f-6e3d-15ec-920f-ac1058640000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/c000025a-6e3d-15ec-920f-ac1058640000.xml#mc000026f-6e3d-15ec-920f-ac1058640000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+<PresentationLevel mdsid="mc00002e7-6e3d-15ec-920f-ac1058640000" name="Detail" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/c00002c9-6e3d-15ec-920f-ac1058640000.xml#mc00002c9-6e3d-15ec-920f-ac1058640000" logicalLevelRef="/oracle/bi/server/base/Dimension/c000017a-6e3d-15ec-920f-ac1058640000.xml#mc00001df-6e3d-15ec-920f-ac1058640000">
+<RefDisplayColumns>
+<RefPresentationColumn refId="mc00002e7-6e3d-15ec-920f-ac1058640000-mc0000288-6e3d-15ec-920f-ac1058640000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/c000025a-6e3d-15ec-920f-ac1058640000.xml#mc0000288-6e3d-15ec-920f-ac1058640000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+</PresentationHierarchy>

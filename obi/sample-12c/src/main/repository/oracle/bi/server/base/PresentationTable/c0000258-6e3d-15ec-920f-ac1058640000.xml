@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="mc0000258-6e3d-15ec-920f-ac1058640000" name="Broker" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/c0000252-6e3d-15ec-920f-ac1058640000.xml#mc0000252-6e3d-15ec-920f-ac1058640000">
+<PresentationColumn mdsid="mc0000295-6e3d-15ec-920f-ac1058640000" name="Broker Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000184-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000297-6e3d-15ec-920f-ac1058640000" name="Broker ID" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000181-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000029b-6e3d-15ec-920f-ac1058640000" name="Manager ID" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc000018d-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000029e-6e3d-15ec-920f-ac1058640000" name="Branch" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc00001de-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a1-6e3d-15ec-920f-ac1058640000" name="First Name" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000187-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a3-6e3d-15ec-920f-ac1058640000" name="Middle Name" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc000018f-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a5-6e3d-15ec-920f-ac1058640000" name="Last Name" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc000018a-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a7-6e3d-15ec-920f-ac1058640000" name="Office" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000191-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc00002a9-6e3d-15ec-920f-ac1058640000" name="Phone" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000172-6e3d-15ec-920f-ac1058640000.xml#mc0000193-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<RefHierarchies>
+<RefPresentationHierarchy refId="mc0000258-6e3d-15ec-920f-ac1058640000-mc00002c2-6e3d-15ec-920f-ac1058640000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/c00002c2-6e3d-15ec-920f-ac1058640000.xml#mc00002c2-6e3d-15ec-920f-ac1058640000"/>
+<RefPresentationHierarchy refId="mc0000258-6e3d-15ec-920f-ac1058640000-mc00002c3-6e3d-15ec-920f-ac1058640000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/c00002c3-6e3d-15ec-920f-ac1058640000.xml#mc00002c3-6e3d-15ec-920f-ac1058640000"/>
+</RefHierarchies>
+</PresentationTable>

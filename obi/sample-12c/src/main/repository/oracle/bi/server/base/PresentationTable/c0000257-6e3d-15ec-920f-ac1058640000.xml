@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="mc0000257-6e3d-15ec-920f-ac1058640000" name="Account" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/c0000252-6e3d-15ec-920f-ac1058640000.xml#mc0000252-6e3d-15ec-920f-ac1058640000">
+<PresentationColumn mdsid="mc000026b-6e3d-15ec-920f-ac1058640000" name="Account Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d5-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000026e-6e3d-15ec-920f-ac1058640000" name="Account ID" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d0-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000028c-6e3d-15ec-920f-ac1058640000" name="Account Description" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001ca-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc000028f-6e3d-15ec-920f-ac1058640000" name="Tax Status" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001db-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<PresentationColumn mdsid="mc0000291-6e3d-15ec-920f-ac1058640000" name="Status" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000171-6e3d-15ec-920f-ac1058640000.xml#mc00001d8-6e3d-15ec-920f-ac1058640000">
+</PresentationColumn>
+<RefHierarchies>
+<RefPresentationHierarchy refId="mc0000257-6e3d-15ec-920f-ac1058640000-mc00002c0-6e3d-15ec-920f-ac1058640000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/c00002c0-6e3d-15ec-920f-ac1058640000.xml#mc00002c0-6e3d-15ec-920f-ac1058640000"/>
+<RefPresentationHierarchy refId="mc0000257-6e3d-15ec-920f-ac1058640000-mc00002c1-6e3d-15ec-920f-ac1058640000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/c00002c1-6e3d-15ec-920f-ac1058640000.xml#mc00002c1-6e3d-15ec-920f-ac1058640000"/>
+</RefHierarchies>
+</PresentationTable>

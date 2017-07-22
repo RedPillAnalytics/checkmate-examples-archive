@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Dimension mdsid="mc0000000-b487-1605-aa74-ac1f0ae00000" name="Trade" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isValueBased="false" isRagged="false" isSkipped="false" defaultRootLevelRef="/oracle/bi/server/base/Dimension/c0000000-b487-1605-aa74-ac1f0ae00000.xml#m80000000-b48b-1605-aa74-ac1f0ae00000" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
+<LogicalLevel mdsid="m80000000-b48b-1605-aa74-ac1f0ae00000" name="Total" isGTA="true" isFDUC="true" memberCount="1" levelConst="&apos;Total&apos;">
+<RefChildLevels>
+<RefLogicalLevel refId="m80000000-b48b-1605-aa74-ac1f0ae00000_m00000000-b48f-1605-aa74-ac1f0ae00000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c0000000-b487-1605-aa74-ac1f0ae00000.xml#m00000000-b48f-1605-aa74-ac1f0ae00000"/>
+<RefLogicalLevel refId="m80000000-b48b-1605-aa74-ac1f0ae00000_m80000000-b490-1605-aa74-ac1f0ae00000_2" logicalLevelRef="/oracle/bi/server/base/Dimension/c0000000-b487-1605-aa74-ac1f0ae00000.xml#m80000000-b490-1605-aa74-ac1f0ae00000"/>
+<RefLogicalLevel refId="m80000000-b48b-1605-aa74-ac1f0ae00000_m00000000-b493-1605-aa74-ac1f0ae00000_3" logicalLevelRef="/oracle/bi/server/base/Dimension/c0000000-b487-1605-aa74-ac1f0ae00000.xml#m00000000-b493-1605-aa74-ac1f0ae00000"/>
+</RefChildLevels>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m00000000-b48f-1605-aa74-ac1f0ae00000" name="Status" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Status&apos;">
+<LogicalKey mdsid="m80000000-b4b2-1605-aa74-ac1f0ae00000" name="Status" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80000000-b4b2-1605-aa74-ac1f0ae00000-mc00001a3-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001a3-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m00000000-b48f-1605-aa74-ac1f0ae00000_m00000000-b496-1605-aa74-ac1f0ae00000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c0000000-b487-1605-aa74-ac1f0ae00000.xml#m00000000-b496-1605-aa74-ac1f0ae00000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m00000000-b48f-1605-aa74-ac1f0ae00000-mc00001a3-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001a3-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m00000000-b496-1605-aa74-ac1f0ae00000" name="Detail" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Detail&apos;">
+<LogicalKey mdsid="m40000000-b4a9-1605-aa74-ac1f0ae00000" name="Trade ID" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m40000000-b4a9-1605-aa74-ac1f0ae00000-mc00001a7-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001a7-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m00000000-b496-1605-aa74-ac1f0ae00000-mc00001a7-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001a7-6e3d-15ec-920f-ac1058640000"/>
+<RefLogicalColumn refId="m00000000-b496-1605-aa74-ac1f0ae00000-mc0000198-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc0000198-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80000000-b490-1605-aa74-ac1f0ae00000" name="Type" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Type&apos;">
+<LogicalKey mdsid="mc0000000-b4b3-1605-aa74-ac1f0ae00000" name="Type" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000000-b4b3-1605-aa74-ac1f0ae00000-mc00001b1-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001b1-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m80000000-b490-1605-aa74-ac1f0ae00000_m00000000-b496-1605-aa74-ac1f0ae00000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c0000000-b487-1605-aa74-ac1f0ae00000.xml#m00000000-b496-1605-aa74-ac1f0ae00000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80000000-b490-1605-aa74-ac1f0ae00000-mc00001b1-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc00001b1-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m00000000-b493-1605-aa74-ac1f0ae00000" name="Cash Flag" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Cash Flag&apos;">
+<LogicalKey mdsid="mc0000000-b4b0-1605-aa74-ac1f0ae00000" name="Cash Flag" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="mc0000000-b4b0-1605-aa74-ac1f0ae00000-mc0000192-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc0000192-6e3d-15ec-920f-ac1058640000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m00000000-b493-1605-aa74-ac1f0ae00000_m00000000-b496-1605-aa74-ac1f0ae00000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/c0000000-b487-1605-aa74-ac1f0ae00000.xml#m00000000-b496-1605-aa74-ac1f0ae00000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m00000000-b493-1605-aa74-ac1f0ae00000-mc0000192-6e3d-15ec-920f-ac1058640000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/c0000174-6e3d-15ec-920f-ac1058640000.xml#mc0000192-6e3d-15ec-920f-ac1058640000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+</Dimension>

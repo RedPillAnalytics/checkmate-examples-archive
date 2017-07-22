@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+   <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Brokerage - Canada&quot;" withinHierarchy="true">
+      <saw:columns>
+         <saw:column xsi:type="saw:regularColumn" columnID="ca0433eb0a57806d3">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Conformed Date&quot;.&quot;Calendar Year Description&quot;</sawx:expr></saw:columnFormula><saw:displayFormat><saw:formatSpec suppress="suppress" wrapText="true"/></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>Conformed Date</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:displayFormat><saw:formatSpec/></saw:displayFormat><saw:caption fmt="text"><saw:text>Year </saw:text></saw:caption></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="cf7da51c09f4b71bc">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Broker&quot;.&quot;Office&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c0b778405fca6b8d2">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Trades&quot;.&quot;Quantity&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns><saw:filter><sawx:expr xsi:type="sawx:savedFilter" path="/shared/Components/_filters/Brokerage - Canada/Region Filter" name="Region Filter"/></saw:filter><saw:columnOrder><saw:columnOrderRef columnID="c0b778405fca6b8d2" direction="descending"/></saw:columnOrder></saw:criteria>
+   <saw:views currentView="0">
+      <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+         <saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="dvtchart!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="legendView!1"/></saw:cvRow></saw:cvTable></saw:view>
+      <saw:view xsi:type="saw:titleView" name="titleView!1"/>
+      <saw:view xsi:type="saw:tableView" name="tableView!1" scrollingEnabled="true">
+         <saw:edges>
+            <saw:edge axis="page" showColumnHeader="true"/>
+            <saw:edge axis="section"/>
+            <saw:edge axis="row" showColumnHeader="true">
+               <saw:columnOrder>
+                  <saw:columnOrderRef columnID="c0b778405fca6b8d2" direction="descending"/></saw:columnOrder>
+               <saw:edgeLayers>
+                  <saw:edgeLayer type="column" columnID="cf7da51c09f4b71bc"/>
+                  <saw:edgeLayer type="column" columnID="c0b778405fca6b8d2"/>
+                  <saw:edgeLayer type="column" columnID="ca0433eb0a57806d3"/></saw:edgeLayers></saw:edge>
+            <saw:edge axis="column" showColumnHeader="rollover"/></saw:edges></saw:view>
+      <saw:view xsi:type="saw:dvtchart" name="dvtchart!1">
+         <saw:display type="bar" subtype="basic" renderFormat="default" mode="online">
+            <saw:style barStyle="default" lineStyle="default" scatterStyle="default" fillStyle="default" bubblePercentSize="100" effect="3d"/></saw:display>
+         <saw:canvasFormat height="330" width="640">
+            <saw:dataLabels display="default" label="default" position="below" transparentBackground="true" valueAs="default"/>
+            <saw:gridlines default="false"/><saw:title mode="custom"/></saw:canvasFormat>
+         <saw:selections>
+            <saw:categories>
+               <saw:category><saw:columnRef columnID="cf7da51c09f4b71bc"/></saw:category></saw:categories>
+            <saw:measures showMeasureLabelsOnCategory="false">
+               <saw:column measureType="y">
+                  <saw:columnRef columnID="c0b778405fca6b8d2"/></saw:column></saw:measures>
+            <saw:seriesGenerators>
+               <saw:measureLabels/></saw:seriesGenerators>
+            <saw:page/></saw:selections>
+         <saw:legendFormat position="default" transparentFill="true"/><saw:seriesFormats><saw:seriesFormatGroup name="bar"><saw:seriesFormatRule><saw:seriesCondition position="1"/><saw:visualFormats><saw:visualFormat/></saw:visualFormats></saw:seriesFormatRule><saw:seriesFormatRule><saw:seriesCondition columnID="c0b778405fca6b8d2" position="0"><saw:condition><sawx:expr xsi:type="sawx:comparison" op="greaterOrEqual"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0b778405fca6b8d2"/><sawx:expr xsi:type="xsd:decimal">6000000</sawx:expr></sawx:expr></saw:condition></saw:seriesCondition><saw:visualFormats><saw:visualFormat color="#336699"/></saw:visualFormats></saw:seriesFormatRule><saw:seriesFormatRule><saw:seriesCondition columnID="c0b778405fca6b8d2" position="1"><saw:condition><sawx:expr xsi:type="sawx:comparison" op="less"><sawx:expr xsi:type="sawx:columnRefExpr" columnID="c0b778405fca6b8d2"/><sawx:expr xsi:type="xsd:decimal">6000000</sawx:expr></sawx:expr></saw:condition></saw:seriesCondition><saw:visualFormats><saw:visualFormat color="#F1E87D"/></saw:visualFormats></saw:seriesFormatRule></saw:seriesFormatGroup></saw:seriesFormats><saw:axesFormats><saw:axisFormat axis="Y1" displayScaleLabels="true"><saw:labels rotate="0" rotateLabels="false" skipLabels="true" abbreviation="m"/><saw:textFormat/></saw:axisFormat></saw:axesFormats></saw:view>
+      <saw:view xsi:type="saw:legendView" name="legendView!1" across="2"><saw:captionFormat position="right"/><saw:legendList><saw:legendItem><saw:legendCaption><saw:caption><saw:text>High Trade Amount</saw:text></saw:caption></saw:legendCaption><saw:displayFormat><saw:formatSpec backgroundColor="#336699" wrapText="true"/></saw:displayFormat></saw:legendItem><saw:legendItem><saw:legendCaption><saw:caption><saw:text>Low Trade Amount</saw:text></saw:caption></saw:legendCaption><saw:displayFormat><saw:formatSpec backgroundColor="#F1E87D" wrapText="true"/></saw:displayFormat></saw:legendItem></saw:legendList><saw:title/></saw:view></saw:views></saw:report>
