@@ -1,9 +1,8 @@
 # No log files
 *.log
 
-#IntelliJ stuff
-.idea/
-*.iml
+# No bootstrap app roles
+bootstrapapproles.xml
 
 # Gradle Cache directory
 .gradle
