@@ -1,0 +1,34 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="true" useBipParameters="true" producerName="fin-financialCommon" parameterVOName="" parameterTaskFlow="" customDataControl="" cachePerUser="true" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <dataModel url="/Sample Lite/Published Reporting/Data Models/Company Sales - Currency Based.xdm"/>
+   <description>
+      <![CDATA[Uses%20currency%20exchange%20rates%20stored%20in%20a%20XLS%20file%20to%20convert%20revenue%20coming%20from%20Bi%20Server%20from%20USD%20to%20other%20types%20of%20currencies.]]>
+   </description>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="true"/>
+   <property name="showReportLinks" value="true"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="false"/>
+   <property name="cacheDuration" value="30"/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3" style="parameterLocation:in-vertical;promptLocation:top;displayApply:false;">
+      <parameter id="P_CURR" label="Currency" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+      <parameter id="P_YEAR" label="Year" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+      <parameter id="P_COMPANY" label="Company Name" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+      <parameter id="P_ORG" label="Company Org Name" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+   </parameters>
+   <templates default="Quarterly Sales by Currency">
+      <template label="Quarterly Sales by Currency" url="Quarterly Sales by Currency.xpt" type="xpt" outputFormat="analyze,html,pdf,xlsx,pptx" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+   </templates>
+</report>

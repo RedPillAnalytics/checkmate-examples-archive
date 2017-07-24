@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationHierarchy mdsid="m80cb6c21-0fbc-0000-714b-e31d00000000" name="Products Hierarchy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationTable/80cb6c15-0fa8-0000-714b-e31d00000000.xml#m80cb6c15-0fa8-0000-714b-e31d00000000" logicalDimensionRef="/oracle/bi/server/base/Dimension/80cb6804-07e3-0000-714b-e31d00000000.xml#m80cb6804-07e3-0000-714b-e31d00000000">
+<Alias name="H1 Products"/>
+<PresentationLevel mdsid="m80cb6c2f-0fbe-0000-714b-e31d00000000" name="All Products" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6c21-0fbc-0000-714b-e31d00000000.xml#m80cb6c21-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6804-07e3-0000-714b-e31d00000000.xml#m80cb6907-07e9-0000-714b-e31d00000000">
+<Alias name="Products Total"/>
+</PresentationLevel>
+<PresentationLevel mdsid="m80cb6c2b-0fbe-0000-714b-e31d00000000" name="Brands" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6c21-0fbc-0000-714b-e31d00000000.xml#m80cb6c21-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6804-07e3-0000-714b-e31d00000000.xml#m80cb690a-07e9-0000-714b-e31d00000000">
+<Alias name="Products Brand"/>
+<RefDisplayColumns>
+<RefPresentationColumn refId="m80cb6c2b-0fbe-0000-714b-e31d00000000-m80cb6d73-0faa-0000-714b-e31d00000000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/80cb6c15-0fa8-0000-714b-e31d00000000.xml#m80cb6d73-0faa-0000-714b-e31d00000000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+<PresentationLevel mdsid="m80cb6c2c-0fbe-0000-714b-e31d00000000" name="LOBs" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6c21-0fbc-0000-714b-e31d00000000.xml#m80cb6c21-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6804-07e3-0000-714b-e31d00000000.xml#m80cb6909-07e9-0000-714b-e31d00000000">
+<Alias name="Products LOB"/>
+<RefDisplayColumns>
+<RefPresentationColumn refId="m80cb6c2c-0fbe-0000-714b-e31d00000000-m80cb6d72-0faa-0000-714b-e31d00000000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/80cb6c15-0fa8-0000-714b-e31d00000000.xml#m80cb6d72-0faa-0000-714b-e31d00000000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+<PresentationLevel mdsid="m80cb6c2d-0fbe-0000-714b-e31d00000000" name="Product Types" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6c21-0fbc-0000-714b-e31d00000000.xml#m80cb6c21-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6804-07e3-0000-714b-e31d00000000.xml#m80cb6908-07e9-0000-714b-e31d00000000">
+<Alias name="Products Type"/>
+<RefDisplayColumns>
+<RefPresentationColumn refId="m80cb6c2d-0fbe-0000-714b-e31d00000000-m80cb6d71-0faa-0000-714b-e31d00000000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/80cb6c15-0fa8-0000-714b-e31d00000000.xml#m80cb6d71-0faa-0000-714b-e31d00000000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+<PresentationLevel mdsid="m80cb6c2e-0fbe-0000-714b-e31d00000000" name="Products" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6c21-0fbc-0000-714b-e31d00000000.xml#m80cb6c21-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6804-07e3-0000-714b-e31d00000000.xml#m80cb690b-07e9-0000-714b-e31d00000000">
+<Alias name="Products Detail"/>
+<RefDisplayColumns>
+<RefPresentationColumn refId="m80cb6c2e-0fbe-0000-714b-e31d00000000-m80cb6d6f-0faa-0000-714b-e31d00000000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/80cb6c15-0fa8-0000-714b-e31d00000000.xml#m80cb6d6f-0faa-0000-714b-e31d00000000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+</PresentationHierarchy>

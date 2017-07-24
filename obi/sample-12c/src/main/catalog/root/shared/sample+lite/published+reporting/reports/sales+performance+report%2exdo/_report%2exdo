@@ -1,0 +1,32 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="true" useBipParameters="true" producerName="fin-financialCommon" parameterVOName="" parameterTaskFlow="" customDataControl="" cachePerUser="true" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <dataModel url="/Sample Lite/Published Reporting/Data Models/Sales Performance Data Model.xdm"/>
+   <description>
+      <![CDATA[Data%20Source%20-%20Sales%20Performance%20Data%20Model;%20Features%20-%20Cascading%20parameters%20displayed%20on%20vertical%20region%20using%20radio%20button%20controls;%20Drill-down%20charts]]>
+   </description>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="true"/>
+   <property name="showReportLinks" value="true"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="false"/>
+   <property name="cacheDuration" value="30"/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3" style="parameterLocation:in-vertical;promptLocation:top;displayApply:false;">
+      <parameter id="P_YEAR" label="Calendar Year" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+      <parameter id="P_COMPANY" label="Company Name" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+      <parameter id="P_ORG" label="Organization Name" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+   </parameters>
+   <templates default="Actual Vs Targets">
+      <template label="Actual Vs Targets" url="Actual Vs Targets -v2.0.xpt" type="xpt" outputFormat="analyze,html,pdf,xlsx,pptx" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+      <template label="Product Sales Details" url="Default.xpt" type="xpt" outputFormat="analyze,html,pdf,xlsx,pptx,csv" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+   </templates>
+</report>

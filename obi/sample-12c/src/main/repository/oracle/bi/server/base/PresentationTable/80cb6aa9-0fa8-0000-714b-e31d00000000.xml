@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cb6aa9-0fa8-0000-714b-e31d00000000" name="Calculated Facts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6a2e-0fa4-0000-714b-e31d00000000.xml#m80cb6a2e-0fa4-0000-714b-e31d00000000">
+<Description><![CDATA[Following folders contain various metrics directly calculated by OBIEE server.]]></Description>
+<PresentationColumn mdsid="m80cb6cff-0faa-0000-714b-e31d00000000" name="Actual Unit Price" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb68aa-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This logical object calculates the Actua Unit Price by dividing Revenue by Units.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d01-0faa-0000-714b-e31d00000000" name="Avg Order Size" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb68ae-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This logical object calculates the Actual Average Oder Size by dividing Total Revenue by number of Distinct Orders.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6cfc-0faa-0000-714b-e31d00000000" name="# of Orders" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6841-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric counts the distinct number of orders in the query population. The aggregation is a Count Distinct aggregation]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6cfd-0faa-0000-714b-e31d00000000" name="# of Products with Orders" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6842-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric counts the distinct number of Products in the query population. The aggregation is a Count Distinct aggregation]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6cfb-0faa-0000-714b-e31d00000000" name="# of Offices with Orders" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6840-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This metric counts the distinct number of orders in the query population. The aggregation is a Count Distinct aggregation]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d03-0faa-0000-714b-e31d00000000" name="Full Month Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6865-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the full month sum of revenue.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d05-0faa-0000-714b-e31d00000000" name="Full Quarter Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6868-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the full quarter sum of revenue.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d07-0faa-0000-714b-e31d00000000" name="All Offices Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb686f-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the sum of revenue for all offices.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d09-0faa-0000-714b-e31d00000000" name="All Products Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6870-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the sum of revenue for all products.]]></Description>
+</PresentationColumn>
+</PresentationTable>

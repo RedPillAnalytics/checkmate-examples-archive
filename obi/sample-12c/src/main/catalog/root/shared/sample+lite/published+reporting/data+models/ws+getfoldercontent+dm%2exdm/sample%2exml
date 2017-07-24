@@ -1,0 +1,194 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<getFolderContentsResponse xmlns="http://xmlns.oracle.com/oxp/service/v2">
+   <getFolderContentsReturn>
+      <catalogContents>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Annual Appraisal Report.xdo</absolutePath>
+            <creationDate>2011-10-11T10:52:12.000Z</creationDate>
+            <displayName>Annual Appraisal Report</displayName>
+            <fileName>Annual Appraisal Report.xdo</fileName>
+            <lastModified>2011-10-11T10:52:12.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>BIAdministrator</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Balance Letter.xdo</absolutePath>
+            <creationDate>2011-10-11T10:52:12.000Z</creationDate>
+            <displayName>Balance Letter</displayName>
+            <fileName>Balance Letter.xdo</fileName>
+            <lastModified>2011-10-11T10:52:12.000Z</lastModified>
+            <lastModifier>Unknown</lastModifier>
+            <owner>BIAdministrator</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Brand Revenue Details.xdo</absolutePath>
+            <creationDate>2011-10-21T00:14:01.000Z</creationDate>
+            <displayName>Brand Revenue Details</displayName>
+            <fileName>Brand Revenue Details.xdo</fileName>
+            <lastModified>2011-10-21T00:14:01.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>BIAdministrator</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Company Sales Report.xdo</absolutePath>
+            <creationDate>2011-10-21T23:38:26.000Z</creationDate>
+            <displayName>Company Sales Report</displayName>
+            <fileName>Company Sales Report.xdo</fileName>
+            <lastModified>2011-10-21T23:38:26.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Customer Orders Report.xdo</absolutePath>
+            <creationDate>2011-10-21T23:41:04.000Z</creationDate>
+            <displayName>Customer Orders Report</displayName>
+            <fileName>Customer Orders Report.xdo</fileName>
+            <lastModified>2011-10-21T23:41:04.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Employees by Department Report.xdo</absolutePath>
+            <creationDate>2011-10-11T10:52:12.000Z</creationDate>
+            <displayName>Employees by Department Report</displayName>
+            <fileName>Employees by Department Report.xdo</fileName>
+            <lastModified>2011-10-11T10:52:12.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>BIAdministrator</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Product Listing.xdo</absolutePath>
+            <creationDate>2011-10-11T10:52:12.000Z</creationDate>
+            <displayName>Product Listing</displayName>
+            <fileName>Product Listing.xdo</fileName>
+            <lastModified>2011-10-11T10:52:12.000Z</lastModified>
+            <lastModifier>Unknown</lastModifier>
+            <owner>BIAdministrator</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Product Sales.xdo</absolutePath>
+            <creationDate>2011-10-21T18:57:00.000Z</creationDate>
+            <displayName>Product Sales</displayName>
+            <fileName>Product Sales.xdo</fileName>
+            <lastModified>2011-10-21T18:57:00.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Revenue Budget Actual and Detail.xdo</absolutePath>
+            <creationDate>2011-10-11T10:52:12.000Z</creationDate>
+            <displayName>Revenue Budget Actual and Detail</displayName>
+            <fileName>Revenue Budget Actual and Detail.xdo</fileName>
+            <lastModified>2011-10-11T10:52:12.000Z</lastModified>
+            <lastModifier>Unknown</lastModifier>
+            <owner>BIAdministrator</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Salary Report - Checkboxes.xdo</absolutePath>
+            <creationDate>2011-10-21T23:06:37.000Z</creationDate>
+            <displayName>Salary Report - Checkboxes</displayName>
+            <fileName>Salary Report - Checkboxes.xdo</fileName>
+            <lastModified>2011-10-21T23:06:37.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Salary Report - No Parameters.xdo</absolutePath>
+            <creationDate>2011-10-11T10:52:12.000Z</creationDate>
+            <displayName>Salary Report - No Parameters</displayName>
+            <fileName>Salary Report - No Parameters.xdo</fileName>
+            <lastModified>2011-10-11T10:52:12.000Z</lastModified>
+            <lastModifier>Unknown</lastModifier>
+            <owner>BIAdministrator</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Salary Report - Search.xdo</absolutePath>
+            <creationDate>2011-10-21T01:05:46.000Z</creationDate>
+            <displayName>Salary Report - Search</displayName>
+            <fileName>Salary Report - Search.xdo</fileName>
+            <lastModified>2011-10-21T01:05:46.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Sales Performance Report.xdo</absolutePath>
+            <creationDate>2011-10-21T23:54:43.000Z</creationDate>
+            <displayName>Sales Performance Report</displayName>
+            <fileName>Sales Performance Report.xdo</fileName>
+            <lastModified>2011-10-21T23:54:43.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/Sales Report - BI Analysis Source.xdo</absolutePath>
+            <creationDate>2011-10-21T23:59:17.000Z</creationDate>
+            <displayName>Sales Report - BI Analysis Source</displayName>
+            <fileName>Sales Report - BI Analysis Source.xdo</fileName>
+            <lastModified>2011-10-21T23:59:17.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/SFO Passenger Count Report.xdo</absolutePath>
+            <creationDate>2011-10-18T19:48:06.000Z</creationDate>
+            <displayName>SFO Passenger Count Report</displayName>
+            <fileName>SFO Passenger Count Report.xdo</fileName>
+            <lastModified>2011-10-18T19:48:06.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/W2 2010.xdo</absolutePath>
+            <creationDate>2011-10-11T10:52:12.000Z</creationDate>
+            <displayName>W2 2010</displayName>
+            <fileName>W2 2010.xdo</fileName>
+            <lastModified>2011-10-11T10:52:12.000Z</lastModified>
+            <lastModifier>Unknown</lastModifier>
+            <owner>BIAdministrator</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+         <item>
+            <absolutePath>/Sample Lite/Published Reporting/Reports/WS getFolderContent Report.xdo</absolutePath>
+            <creationDate>2011-10-22T00:07:41.000Z</creationDate>
+            <displayName>WS getFolderContent Report</displayName>
+            <fileName>WS getFolderContent Report.xdo</fileName>
+            <lastModified>2011-10-22T00:07:41.000Z</lastModified>
+            <lastModifier>weblogic</lastModifier>
+            <owner>weblogic</owner>
+            <parentAbsolutePath>/Sample Lite/Published Reporting/Reports</parentAbsolutePath>
+            <type>Report</type>
+         </item>
+      </catalogContents>
+   </getFolderContentsReturn>
+</getFolderContentsResponse>

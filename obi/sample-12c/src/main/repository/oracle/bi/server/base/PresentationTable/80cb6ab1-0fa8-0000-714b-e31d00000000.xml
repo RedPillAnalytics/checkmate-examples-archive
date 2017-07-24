@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cb6ab1-0fa8-0000-714b-e31d00000000" name="Time Series" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6a2e-0fa4-0000-714b-e31d00000000.xml#m80cb6a2e-0fa4-0000-714b-e31d00000000">
+<Description><![CDATA[->
+This folder contains several Period-To-Date and Period-Ago metrics based on Revenue fact.]]></Description>
+<PresentationColumn mdsid="m80cb6d0b-0faa-0000-714b-e31d00000000" name="Period Ago Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb684c-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the period Ago Revenue. This calculation is dependent on the time grain that is set in the query by the user. If day object is in the query, then this metric will return Day Ago, if month then month ago...]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d0d-0faa-0000-714b-e31d00000000" name="Revenue Variation to Last Period" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb684e-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the variation between current period and period Ago Revenu. This calculation is dependent on the time grain that is set in the query by the user. If day object is in the query, then this metric will return variation to Day Ago, if month then variation to month ago...]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d0f-0faa-0000-714b-e31d00000000" name="Revenue Pct Var. to Last Period" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb684f-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the percentage variation between current period and period Ago Revenue. This calculation is dependent on the time grain that is set in the query by the user. If day object is in the query, then this metric will return variation to Day Ago, if month then variation to month ago...]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d11-0faa-0000-714b-e31d00000000" name="Trailing 3 Periods Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6860-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the sum of current period plus 2 past Ago Revenue. This calculation is dependent on the time grain that is set in the query by the user. If day object is in the query, then this metric will return trailing 3 Days, if month then trailing 3 months...]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d13-0faa-0000-714b-e31d00000000" name="Month Ago Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6851-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the Month Ago Revenue. This calculation is not dependent on the query time grain and will always return the value as of month ago.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d15-0faa-0000-714b-e31d00000000" name="Quarter Ago Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6852-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the Quarter Ago Revenue. This calculation is not dependent on the query time grain and will always return the value as of Quarter ago.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d17-0faa-0000-714b-e31d00000000" name="Year Ago Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6853-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the Year Ago Revenue. This calculation is not dependent on the query time grain and will always return the value as of Year ago.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d19-0faa-0000-714b-e31d00000000" name="Quarter to Date Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6856-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Shows the Quarter to date sum of Revenue. This calculation is not dependent on the query time grain.]]></Description>
+</PresentationColumn>
+</PresentationTable>

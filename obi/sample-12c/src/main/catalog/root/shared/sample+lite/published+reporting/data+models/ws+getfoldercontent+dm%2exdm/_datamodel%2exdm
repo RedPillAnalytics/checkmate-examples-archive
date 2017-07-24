@@ -1,0 +1,58 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="demo">
+   <description>
+      <![CDATA[Data%20Source:%20BIP%20WS%20getFolderContent%20%0A%5Bhttp://localhost:%3Cport%3E/xmlpserver/services/v2/CatalogService?wsdl%5D%0A--%20Web%20Service:%20CatalogService%0A--%20Method:%20GetFolderContents%0A--%20Parameters:%20User%20ID,%20Password,%20Folder%20Path%20%0A--%20Note:%20Edit%20the%20data%20set%20and%20change%20host%20name%20&%20port%20to%20match%20the%20BIP%20server's%20host%20and%20port%20in%20your%20environment.]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="false"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="Folder Contents" type="simple">
+         <webService operation="getFolderContents" timeout="" service="CatalogService" security="2002" username="" password="" xpath="" complex="true" option="false">
+            <wsdl>http://localhost:7001/xmlpserver/services/v2/CatalogService?wsdl</wsdl>
+            <soapRequest>
+               <![CDATA[<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/">
+      <soap:Body>
+            <ns1:getFolderContents xmlns:ns1="http://xmlns.oracle.com/oxp/service/v2">
+                  <ns1:folderAbsolutePath>%LABEL_1%</ns1:folderAbsolutePath>
+                  <ns1:userID>%LABEL_2%</ns1:userID>
+                  <ns1:password>%LABEL_3%</ns1:password>
+        </ns1:getFolderContents>
+    </soap:Body>
+</soap:Envelope>]]>
+            </soapRequest>
+         </webService>
+         <input name="%LABEL_2%" value="${p_User_ID}"/>
+         <input name="%LABEL_1%" value="${p_Path}"/>
+         <input name="%LABEL_3%" value="${p_Password}"/>
+      </dataSet>
+   </dataSets>
+   <output rootName="DATA_DS" uniqueRowName="false">
+      <nodeList name="Folder Contents"/>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets/>
+   <parameters>
+      <parameter name="p_User_ID" defaultValue="weblogic" dataType="xsd:string" rowPlacement="1">
+         <input label="User ID  " size="20"/>
+      </parameter>
+      <parameter name="p_Password" defaultValue="Admin123" dataType="xsd:string" rowPlacement="1">
+         <input label="Password  " size="20"/>
+      </parameter>
+      <parameter name="p_Path" defaultValue="/Sample Lite/Published Reporting/Reports" dataType="xsd:string" rowPlacement="1">
+         <input label="Folder Absolute Path  " size="60"/>
+      </parameter>
+   </parameters>
+   <bursting/>
+   <display>
+      <layouts>
+         <layout name="Folder Contents" left="274px" top="28px"/>
+         <layout name="DATA_DS" left="5px" top="28px"/>
+      </layouts>
+      <groupLinks/>
+   </display>
+</dataModel>

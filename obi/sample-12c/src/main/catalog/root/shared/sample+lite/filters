@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160" xmlns:sawx="com.siebel.analytics.web/expression/v1.1">
+   <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Sample Targets Lite&quot;" withinHierarchy="true">
+      <saw:columns>
+         <saw:column xsi:type="saw:regularColumn" columnID="cec7a5bc3771ff688">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Time&quot;.&quot;Per Name Year&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+      <saw:filter>
+         <sawx:expr xsi:type="sawx:logical" op="and">
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Company&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Time&quot;.&quot;Per Name Year&quot;</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:special" op="prompted">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;More Time Objects&quot;.&quot;Day Of Year&quot;</sawx:expr></sawx:expr>
+            <sawx:expr xsi:type="sawx:special" op="prompted">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Sample Sales Lite&quot;.&quot;Orders&quot;.&quot;Order Type&quot;</sawx:expr></sawx:expr></sawx:expr></saw:filter></saw:criteria>
+   <saw:views currentView="0">
+      <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+         <saw:cvTable>
+            <saw:cvRow>
+               <saw:cvCell viewName="filtersView!1">
+                  <saw:displayFormat>
+                     <saw:formatSpec width="140" paddingLeft="0" paddingRight="0" paddingTop="0" paddingBottom="0"/></saw:displayFormat></saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+      <saw:view xsi:type="saw:dvtgauge" name="dvtgauge!1">
+         <saw:display type="gauge" subtype="dial" renderFormat="default" mode="online" clientEventEnabled="true" clientEventChannels="MD1">
+            <saw:style effect="2d"/></saw:display>
+         <saw:selections>
+            <saw:categories>
+               <saw:category>
+                  <saw:columnRef columnID="c3e2e4e5835f4d661"/></saw:category></saw:categories>
+            <saw:measures showMeasureLabelsOnCategory="false">
+               <saw:column measureType="y">
+                  <saw:columnRef columnID="c403a5d6670d4bbd6"/></saw:column></saw:measures>
+            <saw:seriesGenerators>
+               <saw:measureLabels/></saw:seriesGenerators>
+            <saw:sections displayAsSlider="true">
+               <saw:section>
+                  <saw:columnRef columnID="cec7a5bc3771ff688"/></saw:section></saw:sections></saw:selections>
+         <saw:gaugeProperties gaugeSize="custom" showBorder="false" width="120" height="155" bgColor="" borderColor="">
+            <saw:gaugePointers>
+               <saw:gaugePointer>
+                  <saw:pointerFormat color="#7EB679" needleStyle="fill"/>
+                  <saw:columnRef columnID="c403a5d6670d4bbd6"/></saw:gaugePointer></saw:gaugePointers>
+            <saw:scale labelsDisplay="actual" defaultTicks="true" scaleDefault="false">
+               <saw:majorTicks display="false"/>
+               <saw:minorTicks display="false"/>
+               <saw:labels abbreviation="default">
+                  <saw:textFormat fontSize="10"/></saw:labels>
+               <saw:scaleMin>
+                  <sawx:expr xsi:type="xsd:decimal">50</sawx:expr></saw:scaleMin>
+               <saw:scaleMax>
+                  <sawx:expr xsi:type="xsd:decimal">150</sawx:expr></saw:scaleMax></saw:scale>
+            <saw:gaugeRanges>
+               <saw:colorRange color="#FF0000">
+                  <saw:markerLabel>
+                     <saw:caption captionID="cp0">
+                        <saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+                  <saw:rangeLow>
+                     <sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+                  <saw:rangeHigh/></saw:colorRange>
+               <saw:colorRange color="#FFFF00">
+                  <saw:markerLabel>
+                     <saw:caption captionID="cp1">
+                        <saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+                  <saw:rangeLow>
+                     <sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+                  <saw:rangeHigh/></saw:colorRange>
+               <saw:colorRange color="#008000">
+                  <saw:markerLabel>
+                     <saw:caption captionID="cp2">
+                        <saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+                  <saw:rangeLow>
+                     <sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+                  <saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+            <saw:gaugeGoal goalType="high"/>
+            <saw:typeSpecificFormat thickness="1" arcLength="220"/>
+            <saw:gaugeTitles>
+               <saw:gaugeTitle name="title">
+                  <saw:caption truncate="false" truncateLength="0">
+                     <saw:text/></saw:caption>
+                  <saw:textFormat/></saw:gaugeTitle>
+               <saw:gaugeTitle name="footer">
+                  <saw:caption>
+                     <saw:text/></saw:caption>
+                  <saw:textFormat/></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+         <saw:gaugeCanvasFormat gaugesPerRow="3" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+            <saw:gaugeTitle name="title">
+               <saw:caption truncate="false" truncateLength="0">
+                  <saw:text>Target Completion  (Rev Pct)</saw:text></saw:caption>
+               <saw:textFormat fontSize="11"/></saw:gaugeTitle>
+            <saw:dataLabels abbreviation="default" display="always" label="default" valueAs="default">
+               <saw:textFormat fontSize="10"/>
+               <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/></saw:dataLabels></saw:gaugeCanvasFormat>
+         <saw:legendFormat transparentFill="true" position="none">
+            <saw:textFormat/></saw:legendFormat></saw:view>
+      <saw:view xsi:type="saw:filtersView" name="filtersView!1"/></saw:views></saw:report>

@@ -1,0 +1,326 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<LogicalTable mdsid="m80cb6833-07f3-0000-714b-e31d00000000" name="F0 Revenue Base Measures" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="852" y="224" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80cb6802-07d0-0000-714b-e31d00000000.xml#m80cb6802-07d0-0000-714b-e31d00000000">
+<Description><![CDATA[This logical table contains metrics like Revenue, Billed Qty, with different types of aggregations like Sum, Count Distinct and logical calculations.
+This logical table is at the order level grain but is sourced from 3 alternate Logical Table Sources : one detail source at the order grain level, one aggregate source at the product-month grain, and one at the product-office-month grain. BIEE server will automatically go to the most appropriate source based on the level included in each user query.]]></Description>
+<LogicalColumn mdsid="m80cb6835-07d6-0000-714b-e31d00000000" name="Revenue" isWriteable="false">
+<Description><![CDATA[Returns the Revenue from the Revenue Facts table with a Sum aggregation]]></Description>
+<MeasureDefn mdsid="m00000222-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m0000022a-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434561273647807" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-f7d9-31b900000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("SampleApp Lite"."F0 Revenue Base Measures"."Revenue")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000001-01f4-0000-f7d9-31b900000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttributeDefn mdsid="m00000002-01f4-0000-dddf-a73800000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000002-01f4-0000-dddf-a73800000000-m80ca651d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca651d-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb683b-07d6-0000-714b-e31d00000000" name="Billed Quantity" isWriteable="false">
+<Description><![CDATA[Returns the Billed Quantity from the Revenue Facts table with a Sum aggregation]]></Description>
+<MeasureDefn mdsid="m00000223-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m0000022b-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434571273647807" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-ac2a-b26a00000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("SampleApp Lite"."F0 Revenue Base Measures"."Billed Quantity")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000003-01f4-0000-ac2a-b26a00000000-m80cb683b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb683b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttributeDefn mdsid="m00000004-01f4-0000-f780-476100000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Units"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000004-01f4-0000-f780-476100000000-m80ca6524-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca6524-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb683d-07d6-0000-714b-e31d00000000" name="Discount Amount" isWriteable="false">
+<Description><![CDATA[Returns the Discount Amount from the Revenue Facts table with a Sum aggregation]]></Description>
+<MeasureDefn mdsid="m0000021c-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000224-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434581273647807" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-ed93-dc8400000000" name="Expr">
+<ExprText><![CDATA[ SUM("%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ SUM("SampleApp Lite"."F0 Revenue Base Measures"."Discount Amount")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000005-01f4-0000-ed93-dc8400000000-m80cb683d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb683d-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttributeDefn mdsid="m00000006-01f4-0000-8e2a-ab0600000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Discnt_Value"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000006-01f4-0000-8e2a-ab0600000000-m80ca65af-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca65af-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6840-07d6-0000-714b-e31d00000000" name="# of Offices with Orders" isWriteable="false">
+<Description><![CDATA[This metric counts the distinct number of orders in the query population. The aggregation is a Count Distinct aggregation]]></Description>
+<MeasureDefn mdsid="m0000021d-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000227-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:437391273849636" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-dcbb-201700000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "SampleApp Lite"."F0 Revenue Base Measures"."# of Offices with Orders")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000007-01f4-0000-dcbb-201700000000-m80cb6840-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6840-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttributeDefn mdsid="m00000008-01f4-0000-3844-bc1600000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Office_Key"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000008-01f4-0000-3844-bc1600000000-m80caa8e3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80caa8e3-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6841-07d6-0000-714b-e31d00000000" name="# of Orders" isWriteable="false">
+<Description><![CDATA[This metric counts the distinct number of orders in the query population. The aggregation is a Count Distinct aggregation]]></Description>
+<MeasureDefn mdsid="m0000021e-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000226-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434621273647807" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-e834-84c300000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "SampleApp Lite"."F0 Revenue Base Measures"."# of Orders")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000009-01f4-0000-e834-84c300000000-m80cb6841-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6841-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttributeDefn mdsid="m0000000a-01f4-0000-7e57-cd0800000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Order_Number"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000a-01f4-0000-7e57-cd0800000000-m80ca651f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca651f-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6842-07d6-0000-714b-e31d00000000" name="# of Products with Orders" isWriteable="false">
+<Description><![CDATA[This metric counts the distinct number of Products in the query population. The aggregation is a Count Distinct aggregation]]></Description>
+<MeasureDefn mdsid="m0000021f-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000225-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434611273647807" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-9115-c61100000000" name="Expr">
+<ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
+<ExprTextDesc><![CDATA[ COUNT(DISTINCT "SampleApp Lite"."F0 Revenue Base Measures"."# of Products with Orders")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000b-01f4-0000-9115-c61100000000-m80cb6842-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6842-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</AggrRule>
+</MeasureDefn>
+<AttributeDefn mdsid="m0000000c-01f4-0000-23e9-903e00000000" name="AttributeDefn">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Prod_Key"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000c-01f4-0000-23e9-903e00000000-m80ca6522-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca6522-0bbb-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</AttributeDefn>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb68aa-07d6-0000-714b-e31d00000000" name="Actual Unit Price" isDerived="true" isWriteable="false">
+<Description><![CDATA[This logical object calculates the Actua Unit Price by dividing Revenue by Units.]]></Description>
+<Expr mdsid="m0000000d-01f4-0000-ff1f-cd8200000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue" / "SampleApp Lite"."F0 Revenue Base Measures"."Billed Quantity"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000d-01f4-0000-ff1f-cd8200000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-ff1f-cd8200000000-m80cb683b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb683b-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb68ab-07d6-0000-714b-e31d00000000" name="Target Unit Price" isDerived="true" isWriteable="false">
+<Description><![CDATA[This logical object calculates the Target Unit Price by dividing Target Revenue by Target Units.]]></Description>
+<Expr mdsid="m0000000e-01f4-0000-313d-ce7a00000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F1 Targets Base Measures"."Target Revenue" / "SampleApp Lite"."F1 Targets Base Measures"."Target Quantity"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000e-01f4-0000-313d-ce7a00000000-m80cb68a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a4-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-313d-ce7a00000000-m80cb68a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a5-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb68ae-07d6-0000-714b-e31d00000000" name="Avg Order Size" isDerived="true" isWriteable="false">
+<Description><![CDATA[This logical object calculates the Actual Average Oder Size by dividing Total Revenue by number of Distinct Orders.]]></Description>
+<Expr mdsid="m0000000f-01f4-0000-9dbf-0a3500000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue" / "SampleApp Lite"."F0 Revenue Base Measures"."# of Orders"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000000f-01f4-0000-9dbf-0a3500000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000f-01f4-0000-9dbf-0a3500000000-m80cb6841-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6841-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb68af-07d6-0000-714b-e31d00000000" name="Target Completion  (Rev Pct)" isDerived="true" isWriteable="false">
+<Description><![CDATA[Calculates the completion percentage by dividing Actual revenue by Target Revenue. The result is then multiplied by 100.]]></Description>
+<Expr mdsid="m00000010-01f4-0000-4406-c0c600000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2" * 100]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue" / "SampleApp Lite"."F1 Targets Base Measures"."Target Revenue" * 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000010-01f4-0000-4406-c0c600000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000010-01f4-0000-4406-c0c600000000-m80cb68a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a4-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb684b-07d6-0000-714b-e31d00000000" name="---------- Dynamic Time Level ---------------------" iconIndex="86" isDerived="true" isWriteable="false">
+<Description><![CDATA[Header object, dummy not to be used in any queries]]></Description>
+<Expr mdsid="m00000011-01f4-0000-2669-7b5100000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb684c-07d6-0000-714b-e31d00000000" name="Period Ago Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the period Ago Revenue. This calculation is dependent on the time grain that is set in the query by the user. If day object is in the query, then this metric will return Day Ago, if month then month ago...]]></Description>
+<Expr mdsid="m00000012-01f4-0000-9055-c6a100000000" name="Expr">
+<ExprText><![CDATA[ AGO("%1", 1)]]></ExprText>
+<ExprTextDesc><![CDATA[ AGO("SampleApp Lite"."F0 Revenue Base Measures"."Revenue", 1)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000012-01f4-0000-9055-c6a100000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb684e-07d6-0000-714b-e31d00000000" name="Revenue Variation to Last Period" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the variation between current period and period Ago Revenu. This calculation is dependent on the time grain that is set in the query by the user. If day object is in the query, then this metric will return variation to Day Ago, if month then variation to month ago...]]></Description>
+<Expr mdsid="m00000013-01f4-0000-509b-548900000000" name="Expr">
+<ExprText><![CDATA["%1" - "%2"]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue" - "SampleApp Lite"."F0 Revenue Base Measures"."Period Ago Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000013-01f4-0000-509b-548900000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000013-01f4-0000-509b-548900000000-m80cb684c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb684c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb684f-07d6-0000-714b-e31d00000000" name="Revenue Pct Var. to Last Period" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the percentage variation between current period and period Ago Revenue. This calculation is dependent on the time grain that is set in the query by the user. If day object is in the query, then this metric will return variation to Day Ago, if month then variation to month ago...]]></Description>
+<Expr mdsid="m00000014-01f4-0000-3f81-2b2a00000000" name="Expr">
+<ExprText><![CDATA["%1" / "%2" * 100]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue Variation to Last Period" / "SampleApp Lite"."F0 Revenue Base Measures"."Period Ago Revenue" * 100]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000014-01f4-0000-3f81-2b2a00000000-m80cb684e-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb684e-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000014-01f4-0000-3f81-2b2a00000000-m80cb684c-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb684c-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6860-07d6-0000-714b-e31d00000000" name="Trailing 3 Periods Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the sum of current period plus 2 past Ago Revenue. This calculation is dependent on the time grain that is set in the query by the user. If day object is in the query, then this metric will return trailing 3 Days, if month then trailing 3 months...]]></Description>
+<Expr mdsid="m00000015-01f4-0000-03b9-e6e500000000" name="Expr">
+<ExprText><![CDATA[ PeriodRolling("%1", -(2), 0)]]></ExprText>
+<ExprTextDesc><![CDATA[ PeriodRolling("SampleApp Lite"."F0 Revenue Base Measures"."Revenue", -(2), 0)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000015-01f4-0000-03b9-e6e500000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6850-07d6-0000-714b-e31d00000000" name="---------- Fixed Time Level ---------------------------" iconIndex="86" isDerived="true" isWriteable="false">
+<Description><![CDATA[Header object, dummy not to be used in any queries]]></Description>
+<Expr mdsid="m00000016-01f4-0000-851c-e00900000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6851-07d6-0000-714b-e31d00000000" name="Month Ago Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the Month Ago Revenue. This calculation is not dependent on the query time grain and will always return the value as of month ago.]]></Description>
+<Expr mdsid="m00000017-01f4-0000-ae19-f5b500000000" name="Expr">
+<ExprText><![CDATA[ AGO("%1", "%2", 1)]]></ExprText>
+<ExprTextDesc><![CDATA[ AGO("SampleApp Lite"."F0 Revenue Base Measures"."Revenue", "SampleApp Lite"."H0 Time"."Month", 1)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000017-01f4-0000-ae19-f5b500000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000017-01f4-0000-ae19-f5b500000000-m80cb68ff-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68ff-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6852-07d6-0000-714b-e31d00000000" name="Quarter Ago Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the Quarter Ago Revenue. This calculation is not dependent on the query time grain and will always return the value as of Quarter ago.]]></Description>
+<Expr mdsid="m00000018-01f4-0000-70d9-4dd900000000" name="Expr">
+<ExprText><![CDATA[ AGO("%1", "%2", 1)]]></ExprText>
+<ExprTextDesc><![CDATA[ AGO("SampleApp Lite"."F0 Revenue Base Measures"."Revenue", "SampleApp Lite"."H0 Time"."Quarter", 1)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000018-01f4-0000-70d9-4dd900000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000018-01f4-0000-70d9-4dd900000000-m80cb68fe-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68fe-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6853-07d6-0000-714b-e31d00000000" name="Year Ago Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the Year Ago Revenue. This calculation is not dependent on the query time grain and will always return the value as of Year ago.]]></Description>
+<Expr mdsid="m00000019-01f4-0000-24b0-f80b00000000" name="Expr">
+<ExprText><![CDATA[ AGO("%1", "%2", 1)]]></ExprText>
+<ExprTextDesc><![CDATA[ AGO("SampleApp Lite"."F0 Revenue Base Measures"."Revenue", "SampleApp Lite"."H0 Time"."Year", 1)]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m00000019-01f4-0000-24b0-f80b00000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000019-01f4-0000-24b0-f80b00000000-m80cb68fc-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68fc-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6856-07d6-0000-714b-e31d00000000" name="Quarter to Date Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the Quarter to date sum of Revenue. This calculation is not dependent on the query time grain.]]></Description>
+<Expr mdsid="m0000001a-01f4-0000-a492-4e2800000000" name="Expr">
+<ExprText><![CDATA[ TODATE("%1", "%2")]]></ExprText>
+<ExprTextDesc><![CDATA[ TODATE("SampleApp Lite"."F0 Revenue Base Measures"."Revenue", "SampleApp Lite"."H0 Time"."Quarter")]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001a-01f4-0000-a492-4e2800000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000001a-01f4-0000-a492-4e2800000000-m80cb68fe-07e9-0000-714b-e31d00000000" objectTypeId="2025" objectRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68fe-07e9-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb685c-07d6-0000-714b-e31d00000000" name="----------- Level Based Measures -----------------" iconIndex="86" isDerived="true" isWriteable="false">
+<Description><![CDATA[Header object, dummy not to be used in any queries]]></Description>
+<Expr mdsid="m0000001b-01f4-0000-6d77-5bba00000000" name="Expr">
+<ExprText><![CDATA[1]]></ExprText>
+<ExprTextDesc><![CDATA[1]]></ExprTextDesc>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6865-07d6-0000-714b-e31d00000000" name="Full Month Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the full month sum of revenue.]]></Description>
+<Expr mdsid="m0000001c-01f4-0000-e783-715000000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001c-01f4-0000-e783-715000000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6868-07d6-0000-714b-e31d00000000" name="Full Quarter Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the full quarter sum of revenue.]]></Description>
+<Expr mdsid="m0000001d-01f4-0000-4e24-ed1f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001d-01f4-0000-4e24-ed1f00000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb686f-07d6-0000-714b-e31d00000000" name="All Offices Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the sum of revenue for all offices.]]></Description>
+<Expr mdsid="m0000001e-01f4-0000-4501-1bfd00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001e-01f4-0000-4501-1bfd00000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<LogicalColumn mdsid="m80cb6870-07d6-0000-714b-e31d00000000" name="All Products Revenue" isDerived="true" isWriteable="false">
+<Description><![CDATA[Shows the sum of revenue for all products.]]></Description>
+<Expr mdsid="m0000001f-01f4-0000-7ac8-263f00000000" name="Expr">
+<ExprText><![CDATA["%1"]]></ExprText>
+<ExprTextDesc><![CDATA["SampleApp Lite"."F0 Revenue Base Measures"."Revenue"]]></ExprTextDesc>
+<ObjectRefList>
+<RefObject refId="m0000001f-01f4-0000-7ac8-263f00000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+</ObjectRefList>
+</Expr>
+</LogicalColumn>
+<RefTableSources>
+<RefLogicalTableSource refId="m80cb6833-07f3-0000-714b-e31d00000000-m80cb6a17-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb6a17-07f5-0000-714b-e31d00000000.xml#m80cb6a17-07f5-0000-714b-e31d00000000"/>
+<RefLogicalTableSource refId="m80cb6833-07f3-0000-714b-e31d00000000-m80cb6db6-07f5-0000-714b-e31d00000000" logicalTableSourceRef="/oracle/bi/server/base/LogicalTableSource/80cb6db6-07f5-0000-714b-e31d00000000.xml#m80cb6db6-07f5-0000-714b-e31d00000000"/>
+</RefTableSources>
+</LogicalTable>

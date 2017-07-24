@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<PhysicalDisplayFolder mdsid="mc000015b-6e3d-15ec-920f-ac1058640000" name="Reference" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" databaseRef="/oracle/bi/server/base/Database/c0000002-6e3d-15ec-920f-ac1058640000.xml#mc0000002-6e3d-15ec-920f-ac1058640000">
-<RefTables>
-<RefPhysicalTable refId="mc000015b-6e3d-15ec-920f-ac1058640000-mc000000b-6e3d-15ec-920f-ac1058640000" tableRef="/oracle/bi/server/base/PhysicalTable/c000000b-6e3d-15ec-920f-ac1058640000.xml#mc000000b-6e3d-15ec-920f-ac1058640000"/>
-</RefTables>
-</PhysicalDisplayFolder>

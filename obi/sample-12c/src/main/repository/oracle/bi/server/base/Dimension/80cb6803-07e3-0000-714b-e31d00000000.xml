@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Dimension mdsid="m80cb6803-07e3-0000-714b-e31d00000000" name="H0 Time" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isTimeDim="true" isValueBased="false" isRagged="false" isSkipped="false" defaultRootLevelRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68fb-07e9-0000-714b-e31d00000000" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80cb6802-07d0-0000-714b-e31d00000000.xml#m80cb6802-07d0-0000-714b-e31d00000000">
+<Description><![CDATA[Time Level Based Dimension Hierarchy ]]></Description>
+<LogicalLevel mdsid="m80cb68fb-07e9-0000-714b-e31d00000000" name="Total Time" isGTA="true" isFDUC="true" memberCount="1" levelConst="&apos;Total Time&apos;">
+<RefChildLevels>
+<RefLogicalLevel refId="m80cb68fb-07e9-0000-714b-e31d00000000_m80cb68fc-07e9-0000-714b-e31d00000000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68fc-07e9-0000-714b-e31d00000000"/>
+</RefChildLevels>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80cb68fc-07e9-0000-714b-e31d00000000" name="Year" isGTA="false" isFDUC="true" memberCount="3" levelConst="&apos;Year&apos;">
+<LogicalKey mdsid="m80cb692a-07d8-0000-714b-e31d00000000" name="Per_Name_Year" isPrimary="true" isChronKey="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb692a-07d8-0000-714b-e31d00000000-m80cb681a-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb681a-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m80cb68fc-07e9-0000-714b-e31d00000000_m80cb68fd-07e9-0000-714b-e31d00000000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68fd-07e9-0000-714b-e31d00000000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80cb68fc-07e9-0000-714b-e31d00000000-m80cb681a-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb681a-07d6-0000-714b-e31d00000000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80cb68fd-07e9-0000-714b-e31d00000000" name="Half" isGTA="false" isFDUC="true" memberCount="6" levelConst="&apos;Half&apos;">
+<LogicalKey mdsid="m80cb692b-07d8-0000-714b-e31d00000000" name="Per_Name_Half" isPrimary="true" isChronKey="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb692b-07d8-0000-714b-e31d00000000-m80cb6819-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6819-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m80cb68fd-07e9-0000-714b-e31d00000000_m80cb68fe-07e9-0000-714b-e31d00000000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68fe-07e9-0000-714b-e31d00000000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80cb68fd-07e9-0000-714b-e31d00000000-m80cb6819-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6819-07d6-0000-714b-e31d00000000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80cb68fe-07e9-0000-714b-e31d00000000" name="Quarter" isGTA="false" isFDUC="true" memberCount="30" levelConst="&apos;Quarter&apos;">
+<LogicalKey mdsid="m80cb692c-07d8-0000-714b-e31d00000000" name="Per_Name_Qtr" isPrimary="true" isChronKey="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb692c-07d8-0000-714b-e31d00000000-m80cb6818-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6818-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m80cb68fe-07e9-0000-714b-e31d00000000_m80cb68ff-07e9-0000-714b-e31d00000000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68ff-07e9-0000-714b-e31d00000000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80cb68fe-07e9-0000-714b-e31d00000000-m80cb6818-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6818-07d6-0000-714b-e31d00000000"/>
+<RefLogicalColumn refId="m80cb68fe-07e9-0000-714b-e31d00000000-m80cb6868-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6868-07d6-0000-714b-e31d00000000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80cb68ff-07e9-0000-714b-e31d00000000" name="Month" isGTA="false" isFDUC="true" memberCount="120" levelConst="&apos;Month&apos;">
+<LogicalKey mdsid="m80cb692d-07d8-0000-714b-e31d00000000" name="Per_Name_Month" isPrimary="true" isChronKey="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb692d-07d8-0000-714b-e31d00000000-m80cb6817-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6817-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m80cb68ff-07e9-0000-714b-e31d00000000_m80cb6900-07e9-0000-714b-e31d00000000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb6900-07e9-0000-714b-e31d00000000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80cb68ff-07e9-0000-714b-e31d00000000-m80cb6817-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6817-07d6-0000-714b-e31d00000000"/>
+<RefLogicalColumn refId="m80cb68ff-07e9-0000-714b-e31d00000000-m80cb6865-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6865-07d6-0000-714b-e31d00000000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80cb6900-07e9-0000-714b-e31d00000000" name="Week" isGTA="false" isFDUC="true" memberCount="500" levelConst="&apos;Week&apos;">
+<LogicalKey mdsid="m80cb692e-07d8-0000-714b-e31d00000000" name="Per Name Week" isPrimary="true" isChronKey="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb692e-07d8-0000-714b-e31d00000000-m80cb6816-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6816-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m80cb6900-07e9-0000-714b-e31d00000000_m80cb6901-07e9-0000-714b-e31d00000000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb6901-07e9-0000-714b-e31d00000000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80cb6900-07e9-0000-714b-e31d00000000-m80cb6816-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6816-07d6-0000-714b-e31d00000000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80cb6901-07e9-0000-714b-e31d00000000" name="Day Detail" isGTA="false" isFDUC="true" memberCount="2000" levelConst="&apos;Day Detail&apos;">
+<LogicalKey mdsid="m80cb692f-07d8-0000-714b-e31d00000000" name="Calendar_Date" isPrimary="true" isChronKey="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb692f-07d8-0000-714b-e31d00000000-m80cb6815-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6815-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80cb6901-07e9-0000-714b-e31d00000000-m80cb6815-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6815-07d6-0000-714b-e31d00000000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+</Dimension>

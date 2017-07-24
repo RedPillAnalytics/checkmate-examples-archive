@@ -1,0 +1,140 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="demo">
+   <description>
+      <![CDATA[Requires%20that%20the%20demo%20JDBC%20connection%20for%20BI%20Publisher%20is%20set%20up.]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="false"/>
+      <property name="include_null_Element" value="true"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+      <property name="db_fetch_size" value="300"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="employees" type="complex">
+         <sql>
+            <![CDATA[select 
+       e.first_name || ' ' || e.last_name name,
+       e.first_name,
+       e.last_name,
+       e.salary,
+       e.salary*12 ANNUAL_SALARY,
+       e.salary*12*0.28 FED_WITHHELD,       
+       j.job_title,
+       d.department_name,
+       m.first_name || ' ' || m.last_name manager
+from employees e,
+     employees m,
+     departments d,
+     jobs j
+where e.department_id = d.department_id
+  and j.job_id = e.job_id
+  and e.manager_id = m.employee_id
+  and e.department_id in(:dept)
+  and e.employee_id in(:emp)]]>
+         </sql>
+      </dataSet>
+   </dataSets>
+   <output rootName="ROWSET" uniqueRowName="false">
+      <nodeList name="data-structure">
+         <dataStructure tagName="ROWSET">
+            <group name="ROW" label="Employees" source="employees">
+               <element name="NAME" value="NAME" label="Full Name" dataType="xsd:string" breakOrder="None" fieldOrder="1"/>
+               <element name="FIRST_NAME" value="FIRST_NAME" label="First Name" dataType="xsd:string" breakOrder="None" fieldOrder="2"/>
+               <element name="LAST_NAME" value="LAST_NAME" label="Last Name" dataType="xsd:string" breakOrder="None" fieldOrder="3"/>
+               <element name="SALARY" value="SALARY" label="Monthly Salary" dataType="xsd:double" breakOrder="None" fieldOrder="4"/>
+               <element name="ANNUAL_SALARY" value="ANNUAL_SALARY" label="Annual Salary" dataType="xsd:integer" breakOrder="None" fieldOrder="5"/>
+               <element name="FED_WITHHELD" value="FED_WITHHELD" label="Federal Tax Withheld" dataType="xsd:integer" breakOrder="None" fieldOrder="6"/>
+               <element name="JOB_TITLE" value="JOB_TITLE" label="Title" dataType="xsd:string" breakOrder="None" fieldOrder="7"/>
+               <element name="DEPARTMENT_NAME" value="DEPARTMENT_NAME" label="Department" dataType="xsd:string" breakOrder="None" fieldOrder="8"/>
+               <element name="MANAGER" value="MANAGER" label="Manager" dataType="xsd:string" breakOrder="None" fieldOrder="9"/>
+            </group>
+         </dataStructure>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets>
+      <valueSet id="depList">
+         <sql dataSourceRef="demo">
+            <![CDATA[select	DISTINCT  "DEPARTMENTS"."DEPARTMENT_NAME" as "DEPARTMENT_NAME",
+	 "EMPLOYEES"."DEPARTMENT_ID" as "DEPARTMENT_ID" 
+ from	"OE"."DEPARTMENTS" "DEPARTMENTS",
+	"OE"."EMPLOYEES" "EMPLOYEES" 
+ where   "DEPARTMENTS"."DEPARTMENT_ID"="EMPLOYEES"."DEPARTMENT_ID"
+ order by "EMPLOYEES"."DEPARTMENT_ID"]]>
+         </sql>
+      </valueSet>
+      <valueSet id="empList">
+         <sql dataSourceRef="demo">
+            <![CDATA[select first_name || ' ' || last_name name,
+          employee_id 
+from   employees e
+where  department_id in (:dept)
+order by department_id]]>
+         </sql>
+         <input id="dept" value="${dept}" dataType="xsd:string"/>
+      </valueSet>
+   </valueSets>
+   <parameters>
+      <parameter name="dept" defaultValue="*" dataType="xsd:string">
+         <select label="Department" valueSet="depList" noOfRecords="5" multiple="true" all="true" allValue="lov" refreshParameters="true"/>
+      </parameter>
+      <parameter name="emp" defaultValue="*" dataType="xsd:string">
+         <select label="Employee" valueSet="empList" noOfRecords="10" multiple="true" all="true" allValue="lov"/>
+      </parameter>
+   </parameters>
+   <bursting>
+      <burst name="Burst to File" enabled="true">
+         <property name="BURSTING_NODE" value="/ROWSET/ROW/DEPARTMENT_NAME"/>
+         <property name="DELIVERY_KEY" value="/ROWSET/ROW/DEPARTMENT_NAME"/>
+         <dataSet>
+            <sql>
+               <![CDATA[select 
+     d.department_name KEY,
+     'Simple' TEMPLATE,
+     'RTF' TEMPLATE_FORMAT,
+     'en-US' LOCALE,
+     'PDF' OUTPUT_FORMAT,
+     'FILE' DEL_CHANNEL,
+     '<full path to destination folder: for example, C:/Temp>'  PARAMETER1,
+     d.department_name || '.pdf' OUTPUT_NAME
+ from 
+     departments d]]>
+            </sql>
+         </dataSet>
+      </burst>
+      <burst name="Burst to Email" enabled="true">
+         <property name="BURSTING_NODE" value="/ROWSET/ROW/DEPARTMENT_NAME"/>
+         <property name="DELIVERY_KEY" value="/ROWSET/ROW/DEPARTMENT_NAME"/>
+         <dataSet>
+            <sql>
+               <![CDATA[select 
+     d.department_name KEY,
+     'Simple' TEMPLATE,
+     'RTF' TEMPLATE_FORMAT,
+     'en-US' LOCALE,
+     'PDF' OUTPUT_FORMAT,
+     'EMAIL' DEL_CHANNEL,
+     d.department_name||' Department Salary Report' OUTPUT_NAME,
+     'to@mycompany.com' PARAMETER1,
+     'cc@mycompany.com' PARAMETER2,
+     'bipublisher@oracle.com' PARAMETER3,
+     'Publisher Bursting Dept: '||d.department_name  PARAMETER4,
+     'BODY: Bursting Sample for Department: '||d.department_name  PARAMETER5,
+     'true' PARAMETER6,
+     'reply_to@mycompany.com' PARAMETER7
+from 
+     departments d]]>
+            </sql>
+         </dataSet>
+      </burst>
+   </bursting>
+   <display>
+      <layouts>
+         <layout name="employees" left="232px" top="122px"/>
+         <layout name="ROWSET" left="5px" top="28px"/>
+      </layouts>
+      <groupLinks/>
+   </display>
+</dataModel>

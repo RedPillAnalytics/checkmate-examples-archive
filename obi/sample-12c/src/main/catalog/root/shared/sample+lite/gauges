@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160" xmlns:sawx="com.siebel.analytics.web/expression/v1.1">
+	<saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Sample Sales Lite&quot;" withinHierarchy="true">
+		<saw:columns>
+			<saw:column xsi:type="saw:regularColumn" columnID="ca61584c43bf332ff">
+				<saw:columnFormula>
+					<sawx:expr xsi:type="sawx:sqlExpression">cast(&quot;Base Facts&quot;.&quot;Discount Amount&quot; as double)/&quot;Base Facts&quot;.&quot;Revenue&quot;*100</sawx:expr></saw:columnFormula>
+				<saw:displayFormat><saw:formatSpec suppress="repeat" wrapText="true"><saw:dataFormat minDigits="1" maxDigits="1" commas="true" negativeType="minus" xsi:type="saw:percent"/></saw:formatSpec></saw:displayFormat><saw:tableHeading><saw:caption fmt="text"><saw:text>Base Facts</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Discount Ratio</saw:text></saw:caption><saw:displayFormat><saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+			<saw:column xsi:type="saw:regularColumn" columnID="c9b7e99ad38d2d4de">
+				<saw:columnFormula>
+					<sawx:expr xsi:type="sawx:sqlExpression">&quot;Calculated Facts&quot;.&quot;Actual Unit Price&quot;</sawx:expr></saw:columnFormula>
+			</saw:column>
+			<saw:column xsi:type="saw:regularColumn" columnID="cd86aa3510ffcb8f7">
+				<saw:columnFormula>
+					<sawx:expr xsi:type="sawx:sqlExpression">&quot;Calculated Facts&quot;.&quot;Avg Order Size&quot;</sawx:expr></saw:columnFormula>
+			</saw:column><saw:column xsi:type="saw:regularColumn" columnID="cee1eeb8c0365918b"><saw:columnFormula><sawx:expr xsi:type="sawx:sqlExpression">&quot;Time&quot;.&quot;Per Name Qtr&quot;</sawx:expr></saw:columnFormula><saw:tableHeading><saw:caption fmt="text"><saw:text>Time</saw:text></saw:caption></saw:tableHeading><saw:columnHeading><saw:caption fmt="text"><saw:text>Quarter</saw:text></saw:caption></saw:columnHeading></saw:column></saw:columns><saw:filter><sawx:expr xsi:type="sawx:savedFilter" path="/shared/Sample Lite/_filters/Sample Sales Lite/Prompted Filters" name="Prompted Filters"/></saw:filter></saw:criteria>
+	<saw:interactionOptions drill="true" movecolumns="true" sortcolumns="true" addremovevalues="true" groupoperations="true" calcitemoperations="true" showhidesubtotal="true" showhiderunningsum="true" inclexclcolumns="true"/><saw:views textDelivery="compoundView!1" parentsBefore="true" includeNewColumns="true" nullSuppress="true" currentView="0">
+		<saw:view xsi:type="saw:compoundView" name="compoundView!1">
+			<saw:cvTable><saw:cvRow><saw:cvCell viewName="dvtgauge!6"/><saw:cvCell viewName="dvtgauge!7"/><saw:cvCell viewName="dvtgauge!8"/></saw:cvRow></saw:cvTable></saw:view>
+		<saw:view xsi:type="saw:titleView" name="titleView!1"/>
+		<saw:view xsi:type="saw:tableView" name="tableView!1">
+			<saw:edges>
+				<saw:edge axis="page" showColumnHeader="true"/>
+				<saw:edge axis="section"/>
+				<saw:edge axis="row" showColumnHeader="true">
+					<saw:edgeLayers>
+						<saw:edgeLayer type="column" columnID="c83e85cd26c6d8bfd"/>
+						<saw:edgeLayer type="column" columnID="c51d11d961595355b"/>
+						<saw:edgeLayer type="column" columnID="cd0b8b3f3e0b51c3c"/><saw:edgeLayer type="column" columnID="c2878a6536165c6dc"/></saw:edgeLayers></saw:edge>
+				<saw:edge axis="column"/></saw:edges></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!1">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="false">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column><saw:columnRef columnID="c2878a6536165c6dc"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="110" height="110" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					
+					<saw:gaugePointer><saw:pointerFormat needleStyle="needle"/><saw:columnRef columnID="c2878a6536165c6dc"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="default" defaultTicks="false" scaleDefault="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/>
+					<saw:scaleMin>
+						<sawx:expr xsi:type="xsd:decimal">1</sawx:expr></saw:scaleMin>
+					<saw:scaleMax>
+						<sawx:expr xsi:type="xsd:decimal">100</sawx:expr></saw:scaleMax></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:tableView" name="tableView!2">
+			<saw:edges>
+				<saw:edge axis="page" showColumnHeader="true"/>
+				<saw:edge axis="section"/>
+				<saw:edge axis="row" showColumnHeader="true">
+					<saw:edgeLayers>
+						<saw:edgeLayer type="column" columnID="c83e85cd26c6d8bfd"/>
+						<saw:edgeLayer type="column" columnID="c51d11d961595355b"/>
+						<saw:edgeLayer type="column" columnID="cd0b8b3f3e0b51c3c"/>
+						<saw:edgeLayer type="column" columnID="ca61584c43bf332ff"/>
+						<saw:edgeLayer type="column" columnID="c9b7e99ad38d2d4de"/>
+						<saw:edgeLayer type="column" columnID="cd86aa3510ffcb8f7"/><saw:edgeLayer type="column" columnID="c2878a6536165c6dc"/></saw:edgeLayers></saw:edge>
+				<saw:edge axis="column"/></saw:edges></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!2" autoPreview="true">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="false">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column>
+						<saw:columnRef columnID="cd0b8b3f3e0b51c3c"/></saw:column><saw:column><saw:columnRef columnID="c2878a6536165c6dc"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="110" height="110" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle"/>
+						<saw:columnRef columnID="c51d11d961595355b"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c9b7e99ad38d2d4de"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="cd0b8b3f3e0b51c3c"/></saw:gaugePointer><saw:gaugePointer><saw:pointerFormat needleStyle="needle"/><saw:columnRef columnID="c2878a6536165c6dc"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="default" defaultTicks="false" scaleDefault="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/>
+					<saw:scaleMin>
+						<sawx:expr xsi:type="xsd:decimal">1</sawx:expr></saw:scaleMin>
+					<saw:scaleMax>
+						<sawx:expr xsi:type="xsd:decimal">100</sawx:expr></saw:scaleMax></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!3" autoPreview="true">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="false">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column>
+						<saw:columnRef columnID="c51d11d961595355b"/></saw:column><saw:column><saw:columnRef columnID="c2878a6536165c6dc"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="110" height="110" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c9b7e99ad38d2d4de"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c51d11d961595355b"/></saw:gaugePointer><saw:gaugePointer><saw:pointerFormat needleStyle="needle"/><saw:columnRef columnID="c2878a6536165c6dc"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="percentage" defaultTicks="false" scaleDefault="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/>
+					<saw:labels abbreviation="none">
+						<saw:textFormat/></saw:labels>
+					<saw:scaleMin>
+						<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:scaleMin>
+					<saw:scaleMax>
+						<sawx:expr xsi:type="xsd:decimal">100</sawx:expr></saw:scaleMax></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle>
+				<saw:dataLabels abbreviation="default" display="default" label="default" valueAs="default">
+					<saw:textFormat/></saw:dataLabels></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!4">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="false">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column>
+						<saw:columnRef columnID="ca61584c43bf332ff"/></saw:column><saw:column><saw:columnRef columnID="c2878a6536165c6dc"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="110" height="110" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle"/>
+						<saw:columnRef columnID="c51d11d961595355b"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c9b7e99ad38d2d4de"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle"/>
+						<saw:columnRef columnID="ca61584c43bf332ff"/></saw:gaugePointer><saw:gaugePointer><saw:pointerFormat needleStyle="needle"/><saw:columnRef columnID="c2878a6536165c6dc"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="default" defaultTicks="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!5">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="false">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column>
+						<saw:columnRef columnID="cd86aa3510ffcb8f7"/></saw:column><saw:column><saw:columnRef columnID="c2878a6536165c6dc"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="110" height="110" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle"/>
+						<saw:columnRef columnID="c51d11d961595355b"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c9b7e99ad38d2d4de"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle"/>
+						<saw:columnRef columnID="cd86aa3510ffcb8f7"/></saw:gaugePointer><saw:gaugePointer><saw:pointerFormat needleStyle="needle"/><saw:columnRef columnID="c2878a6536165c6dc"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="default" defaultTicks="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!6" autoPreview="true">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="true" clientEventChannels="MD2">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column>
+						<saw:columnRef columnID="c9b7e99ad38d2d4de"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators><saw:sections displayAsSlider="true"/><saw:page><saw:column><saw:columnRef columnID="cee1eeb8c0365918b"/></saw:column></saw:page></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="200" height="150" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c9b7e99ad38d2d4de"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="actual" defaultTicks="false" scaleDefault="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/>
+					<saw:labels abbreviation="none">
+						<saw:textFormat fontSize="10"/><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/></saw:labels>
+					<saw:scaleMin>
+						<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:scaleMin>
+					<saw:scaleMax>
+						<sawx:expr xsi:type="xsd:decimal">15</sawx:expr></saw:scaleMax></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption truncate="false" truncateLength="0">
+							<saw:text>@1</saw:text></saw:caption><saw:textFormat fontSize="10"/></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle>
+				<saw:dataLabels abbreviation="default" display="always" label="default" valueAs="default">
+					<saw:textFormat/></saw:dataLabels></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!7" autoPreview="true">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="true" clientEventChannels="MD2">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column><saw:columnRef columnID="cd86aa3510ffcb8f7"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators><saw:page><saw:column><saw:columnRef columnID="cee1eeb8c0365918b"/></saw:column></saw:page></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="200" height="150" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					
+					<saw:gaugePointer><saw:pointerFormat needleStyle="needle" color=""/><saw:columnRef columnID="cd86aa3510ffcb8f7"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="actual" defaultTicks="false" scaleDefault="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/>
+					<saw:labels abbreviation="k">
+						<saw:textFormat fontSize="10"/><saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/></saw:labels>
+					<saw:scaleMin>
+						<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:scaleMin>
+					<saw:scaleMax>
+						<sawx:expr xsi:type="xsd:decimal">12500</sawx:expr></saw:scaleMax></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle>
+				<saw:dataLabels abbreviation="default" display="always" label="default" valueAs="default">
+					<saw:textFormat/></saw:dataLabels></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!8" autoPreview="true">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="true" clientEventChannels="MD2">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column>
+						<saw:columnRef columnID="ca61584c43bf332ff"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators><saw:page><saw:column><saw:columnRef columnID="cee1eeb8c0365918b"/></saw:column></saw:page></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="200" height="150" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="ca61584c43bf332ff"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="actual" defaultTicks="false" scaleDefault="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/>
+					<saw:labels abbreviation="none">
+						<saw:textFormat fontSize="10"/><saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/></saw:labels>
+					<saw:scaleMin>
+						<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:scaleMin>
+					<saw:scaleMax>
+						<sawx:expr xsi:type="xsd:decimal">10</sawx:expr></saw:scaleMax></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#00FF00" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#FF0000">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="low"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle>
+				<saw:dataLabels abbreviation="default" display="always" label="default" valueAs="default">
+					<saw:textFormat/><saw:dataFormat xsi:type="saw:percent" commas="false" negativeType="minus" minDigits="1" maxDigits="1"/></saw:dataLabels></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!9" autoPreview="true">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="false">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column>
+						<saw:columnRef columnID="cd86aa3510ffcb8f7"/></saw:column><saw:column><saw:columnRef columnID="c2878a6536165c6dc"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="110" height="110" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c9b7e99ad38d2d4de"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c51d11d961595355b"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle"/>
+						<saw:columnRef columnID="cd86aa3510ffcb8f7"/></saw:gaugePointer><saw:gaugePointer><saw:pointerFormat needleStyle="needle"/><saw:columnRef columnID="c2878a6536165c6dc"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="percentage" defaultTicks="false" scaleDefault="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/>
+					<saw:labels abbreviation="none">
+						<saw:textFormat/></saw:labels>
+					<saw:scaleMin>
+						<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:scaleMin>
+					<saw:scaleMax>
+						<sawx:expr xsi:type="xsd:decimal">100</sawx:expr></saw:scaleMax></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle>
+				<saw:dataLabels abbreviation="default" display="default" label="default" valueAs="default">
+					<saw:textFormat/></saw:dataLabels></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view>
+		<saw:view xsi:type="saw:dvtgauge" name="dvtgauge!10" autoPreview="true">
+			<saw:display type="gauge" subtype="default" renderFormat="default" mode="online" clientEventEnabled="false">
+				<saw:style effect="2d"/></saw:display>
+			<saw:selections>
+				<saw:categories/>
+				<saw:measures showMeasureLabelsOnCategory="false">
+					<saw:column>
+						<saw:columnRef columnID="c51d11d961595355b"/></saw:column><saw:column><saw:columnRef columnID="c2878a6536165c6dc"/></saw:column></saw:measures>
+				<saw:seriesGenerators>
+					<saw:measureLabels/></saw:seriesGenerators></saw:selections>
+			<saw:gaugeProperties gaugeSize="default" showBorder="false" width="110" height="110" bgColor="" borderColor="">
+				<saw:gaugePointers>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c9b7e99ad38d2d4de"/></saw:gaugePointer>
+					<saw:gaugePointer>
+						<saw:pointerFormat needleStyle="needle" color=""/>
+						<saw:columnRef columnID="c51d11d961595355b"/></saw:gaugePointer><saw:gaugePointer><saw:pointerFormat needleStyle="needle"/><saw:columnRef columnID="c2878a6536165c6dc"/></saw:gaugePointer></saw:gaugePointers>
+				<saw:scale labelsDisplay="percentage" defaultTicks="false" scaleDefault="false">
+					<saw:majorTicks display="false"/>
+					<saw:minorTicks display="true" number="1"/>
+					<saw:labels abbreviation="none">
+						<saw:textFormat/></saw:labels>
+					<saw:scaleMin>
+						<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:scaleMin>
+					<saw:scaleMax>
+						<sawx:expr xsi:type="xsd:decimal">100</sawx:expr></saw:scaleMax></saw:scale>
+				<saw:gaugeRanges>
+					<saw:colorRange color="#FF0000" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp0">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC3333" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp1">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC6600" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp2">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#CC9933" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp3">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#F1E87D" rangeType="dynamic" labelType="dynamic">
+						<saw:markerLabel>
+							<saw:caption captionID="cp4">
+								<saw:text>0</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#7EB679">
+						<saw:markerLabel>
+							<saw:caption captionID="cp5">
+								<saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#669966">
+						<saw:markerLabel>
+							<saw:caption captionID="cp6">
+								<saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange>
+					<saw:colorRange color="#00FF00">
+						<saw:markerLabel>
+							<saw:caption captionID="cp7">
+								<saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+						<saw:rangeLow>
+							<sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+						<saw:rangeHigh/></saw:colorRange></saw:gaugeRanges>
+				<saw:gaugeGoal goalType="high"/>
+				<saw:typeSpecificFormat thickness="1" arcLength="220"/>
+				<saw:gaugeTitles>
+					<saw:gaugeTitle name="footer">
+						<saw:caption>
+							<saw:text>@1</saw:text></saw:caption></saw:gaugeTitle></saw:gaugeTitles></saw:gaugeProperties>
+			<saw:gaugeCanvasFormat gaugesPerRow="1" showGradient="true" useMeasureNameAsTitle="true" bgColor="" borderColor="">
+				<saw:gaugeTitle name="title">
+					<saw:textFormat fontSize="11"/></saw:gaugeTitle>
+				<saw:dataLabels abbreviation="default" display="default" label="default" valueAs="default">
+					<saw:textFormat/></saw:dataLabels></saw:gaugeCanvasFormat>
+			<saw:legendFormat transparentFill="true" position="none"/></saw:view></saw:views></saw:report>

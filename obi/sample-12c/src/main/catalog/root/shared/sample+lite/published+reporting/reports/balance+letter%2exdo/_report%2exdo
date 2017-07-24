@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="true" useBipParameters="true" producerName="fin-financialCommon" parameterVOName="" parameterTaskFlow="" customDataControl="" cachePerUser="false" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <dataModel url="/Sample Lite/Published Reporting/Data Models/Balance Letter Datamodel.xdm" cache="true"/>
+   <description>
+      <![CDATA[Data%20Model:%20Balance%20Letter%20Data%20Model%20--Layouts:%20RTF,%20XPT%20--%20Features:%20Style%20Template]]>
+   </description>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="false"/>
+   <property name="showReportLinks" value="true"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="true"/>
+   <property name="cacheDuration" value="null"/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3" style="parameterLocation:in-horizontal;promptLocation:side;"/>
+   <templates default="Publisher Template">
+      <masterTemplate>
+         <![CDATA[/Sample Lite/Published Reporting/Style Templates/Corp Styles Template.xss]]>
+      </masterTemplate>
+      <template label="Publisher Template" url="Untitled.xpt" type="xpt" outputFormat="analyze,html,pdf,xlsx,pptx,csv" defaultFormat="pdf" locale="en_US" disableMasterTemplate="true" active="true" viewOnline="true"/>
+      <template label="RTF Template" url="Balance Letter.rtf" type="rtf" outputFormat="html,pdf,rtf,xlsx,pptx,csv" defaultFormat="pdf" locale="en_US" disableMasterTemplate="true" active="true" viewOnline="true"/>
+      <template label="RTF Corp Styles" url="Balance Letter2.rtf" type="rtf" outputFormat="html,pdf,rtf,xlsx,pptx,csv" defaultFormat="pdf" locale="en_US" active="true" viewOnline="true"/>
+   </templates>
+</report>

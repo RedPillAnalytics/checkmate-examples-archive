@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cb6c15-0fa8-0000-714b-e31d00000000" name="Products" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6c12-0fa4-0000-714b-e31d00000000.xml#m80cb6c12-0fa4-0000-714b-e31d00000000">
+<Description><![CDATA[Product dimension objects and attributes]]></Description>
+<PresentationColumn mdsid="m80cb6d6f-0faa-0000-714b-e31d00000000" name="Product" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6807-07f3-0000-714b-e31d00000000.xml#m80cb6809-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the product description from the Product dimension. This column is logically sorted by BIEE server according to the Product Sequence column value, and is filtered by BIEE server using the Product Number column value. Naturally drills into Office Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d71-0faa-0000-714b-e31d00000000" name="Product Type" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6807-07f3-0000-714b-e31d00000000.xml#m80cb680a-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Product Type description from the Product dimension. This column is logically filtered by BIEE server using the Product Type Key column value.  Naturally drills into Product Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d72-0faa-0000-714b-e31d00000000" name="LOB" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6807-07f3-0000-714b-e31d00000000.xml#m80cb680c-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Product LOB description from the Product dimension. This column is logically filtered by BIEE server using the Product LOB Key column value. Naturally drills into Product Type Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d73-0faa-0000-714b-e31d00000000" name="Brand" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6807-07f3-0000-714b-e31d00000000.xml#m80cb680e-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Product's brand description from the Product dimension. This column is logically filtered by BIEE server using the Brand Key column value. Naturally drills into LOB Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d70-0faa-0000-714b-e31d00000000" name="Product Number" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6807-07f3-0000-714b-e31d00000000.xml#m80cb6808-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Product Key is an integer that uniquely identifies each record in the Product dimension table.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d74-0faa-0000-714b-e31d00000000" name="Brand Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6807-07f3-0000-714b-e31d00000000.xml#m80cb680f-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Surrogate key for the Brand objects.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d75-0faa-0000-714b-e31d00000000" name="Product Sequence" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6807-07f3-0000-714b-e31d00000000.xml#m80cb6812-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the product's sequence number from the Product Dimension. It is used to logically sort the Product object values]]></Description>
+</PresentationColumn>
+<RefHierarchies>
+<RefPresentationHierarchy refId="m80cb6c15-0fa8-0000-714b-e31d00000000-m80cb6c21-0fbc-0000-714b-e31d00000000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/80cb6c21-0fbc-0000-714b-e31d00000000.xml#m80cb6c21-0fbc-0000-714b-e31d00000000"/>
+</RefHierarchies>
+</PresentationTable>

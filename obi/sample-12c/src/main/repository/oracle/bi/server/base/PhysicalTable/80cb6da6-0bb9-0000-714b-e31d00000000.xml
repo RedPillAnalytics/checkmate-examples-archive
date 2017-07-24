@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80cb6da6-0bb9-0000-714b-e31d00000000" name="F11 Revenue Facts Aggregate" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" pollFreq="0" x="272" y="199" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000" sourceTableRef="/oracle/bi/server/base/PhysicalTable/80cb6da5-0bb9-0000-714b-e31d00000000.xml#m80cb6da5-0bb9-0000-714b-e31d00000000">
+<Description><![CDATA[Alias to the Revenue Aggregated 1 Facts Physical table.]]></Description>
+<PhysicalColumn mdsid="m80cb6da7-0bbb-0000-714b-e31d00000000" name="Revenue" dataType="DOUBLE" extName="//Table/SAMP_REVENUE_A/REVENUE" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80cb6da5-0bb9-0000-714b-e31d00000000.xml#m80cb6dad-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80cb6da8-0bbb-0000-714b-e31d00000000" name="Prod_Key" dataType="INT" extName="//Table/SAMP_REVENUE_A/PROD_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80cb6da5-0bb9-0000-714b-e31d00000000.xml#m80cb6dae-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80cb6da9-0bbb-0000-714b-e31d00000000" name="Units" dataType="INT" extName="//Table/SAMP_REVENUE_A/UNITS" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80cb6da5-0bb9-0000-714b-e31d00000000.xml#m80cb6daf-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80cb6daa-0bbb-0000-714b-e31d00000000" name="Bill_Mth_Key" dataType="INT" extName="//Table/SAMP_REVENUE_A/Bill_Mth_Key" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80cb6da5-0bb9-0000-714b-e31d00000000.xml#m80cb6db0-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80cb6dab-0bbb-0000-714b-e31d00000000" name="Discnt_Value" dataType="DOUBLE" extName="//Table/SAMP_REVENUE_A/DISCNT_VALUE" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80cb6da5-0bb9-0000-714b-e31d00000000.xml#m80cb6db1-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalForeignKey mdsid="m80cb6db5-0bbe-0000-714b-e31d00000000" name="F11 Revenue Facts Aggregate_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80ca6547-0bb9-0000-714b-e31d00000000.xml#m80ca663e-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80cb6db5-0bbe-0000-714b-e31d00000000-m80cb6da8-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80cb6da6-0bb9-0000-714b-e31d00000000.xml#m80cb6da8-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80cb6db4-0bbe-0000-714b-e31d00000000" name="F11 Revenue Facts Aggregate_FKey#2" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca6640-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80cb6db4-0bbe-0000-714b-e31d00000000-m80cb6daa-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80cb6da6-0bb9-0000-714b-e31d00000000.xml#m80cb6daa-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

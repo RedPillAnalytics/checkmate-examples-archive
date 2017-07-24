@@ -1,0 +1,59 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="Oracle BI EE">
+   <description>
+      <![CDATA[Data%20Source%20Type:%20BI%20Server%20Sample%20Sales%20Lite%20subject%20area%20--%20Structure:%20Hierarchical%20XML%20data%20set%20--%20Features:%20Group%20by%20an%20element,%20group-level%20and%20global-level%20totals.]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="true"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="Q1 Product Sales" type="complex">
+         <sql>
+            <![CDATA[select	 "Products"."Brand" as "Brand",
+	 "Products"."Product" as "Product",
+	 "Products"."LOB" as "LOB",
+	 "Base Facts"."Revenue" as "Revenue",
+	 "Base Facts"."Billed Quantity" as "Billed Quantity",
+	 "Products"."Product Type" as "Product Type",
+	 "Time"."Calendar Date" as "Calendar Date" 
+ from	"Sample Sales Lite"."Time" "Time",
+	"Sample Sales Lite"."Products" "Products",
+	"Sample Sales Lite"."Base Facts" "Base Facts"]]>
+         </sql>
+      </dataSet>
+   </dataSets>
+   <output uniqueRowName="false">
+      <nodeList name="data-structure">
+         <dataStructure tagName="DATA_DS">
+            <group name="G_1" label="G_1" source="Q1 Product Sales">
+               <element name="BRAND" value="BRAND" label="BRAND" dataType="xsd:string" breakOrder="ascending" fieldOrder="1"/>
+               <element name="BRAND_REVENUE_TOTAL" value="G_2.REVENUE" label="Brand Revenue Total" dataType="xsd:double" breakOrder="None" fieldOrder="1" function="SUM"/>
+               <group name="G_2" label="G_2" source="Q1 Product Sales">
+                  <element name="PRODUCT" value="PRODUCT" label="PRODUCT" dataType="xsd:string" breakOrder="None" fieldOrder="2"/>
+                  <element name="LOB" value="LOB" label="LOB" dataType="xsd:string" breakOrder="None" fieldOrder="3"/>
+                  <element name="BILLED_QUANTITY" value="BILLED QUANTITY" label="BILLED QUANTITY" dataType="xsd:integer" breakOrder="None" fieldOrder="5"/>
+                  <element name="PRODUCT_TYPE" value="PRODUCT TYPE" label="PRODUCT TYPE" dataType="xsd:string" breakOrder="None" fieldOrder="6"/>
+                  <element name="CALENDAR_DATE" value="CALENDAR DATE" label="CALENDAR DATE" dataType="xsd:date" breakOrder="None" fieldOrder="7"/>
+                  <element name="REVENUE" value="REVENUE" label="REVENUE" dataType="xsd:double" breakOrder="None" fieldOrder="4"/>
+               </group>
+            </group>
+            <element name="GRAND_TOTAL_REVENUE" value="G_2.REVENUE" label="Grand Total Revenue" dataType="xsd:double" breakOrder="None" fieldOrder="1" function="SUM"/>
+         </dataStructure>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets/>
+   <parameters/>
+   <bursting/>
+   <display>
+      <layouts>
+         <layout name="Q1 Product Sales" left="317px" top="102px"/>
+         <layout name="DATA_DS" left="5px" top="28px"/>
+      </layouts>
+      <groupLinks/>
+   </display>
+</dataModel>

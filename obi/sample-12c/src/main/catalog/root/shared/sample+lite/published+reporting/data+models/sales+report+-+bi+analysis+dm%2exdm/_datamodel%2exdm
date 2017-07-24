@@ -1,0 +1,54 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="Oracle BI EE">
+   <description>
+      <![CDATA[Data%20Source%20Type:%20BI%20Analysis%20--Structure:%20Concatenated%20flat%20XML%20structure%20that%20combines%20data%20from%20two%20BI%20Analyses]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="true"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="Quarterly Revenue" type="complex">
+         <answer sawTimeOut="60">
+            <reportPath>/shared/Sample Lite/Published Reporting/Analyses/Quarterly Revenue</reportPath>
+         </answer>
+      </dataSet>
+      <dataSet name="Sales by Brand" type="complex">
+         <answer sawTimeOut="60">
+            <reportPath>/shared/Sample Lite/Published Reporting/Analyses/Sales by Brand</reportPath>
+         </answer>
+      </dataSet>
+   </dataSets>
+   <output rootName="DATA_DS" uniqueRowName="false">
+      <nodeList name="data-structure">
+         <dataStructure tagName="DATA_DS">
+            <group name="G_1" label="G_1" source="Quarterly Revenue">
+               <element name="Year" value="Column0" label="Year" dataType="xsd:string" breakOrder="None" fieldOrder="1"/>
+               <element name="Qtr" value="Column1" label="Quarter" dataType="xsd:string" breakOrder="None" fieldOrder="2"/>
+               <element name="Revenue" value="Column2" label="Revenue" dataType="xsd:double" breakOrder="None" fieldOrder="3"/>
+            </group>
+            <group name="G_2" label="G_2" source="Sales by Brand">
+               <element name="Year" value="Column0" label="Year" dataType="xsd:string" breakOrder="None" fieldOrder="1"/>
+               <element name="Brand" value="Column1" label="Brand" dataType="xsd:string" breakOrder="None" fieldOrder="2"/>
+               <element name="Quantity" value="Column2" label="Quantity Sold" dataType="xsd:double" breakOrder="None" fieldOrder="3"/>
+               <element name="Revenue" value="Column3" label="Revenue" dataType="xsd:double" breakOrder="None" fieldOrder="4"/>
+            </group>
+         </dataStructure>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets/>
+   <parameters/>
+   <bursting/>
+   <display>
+      <layouts>
+         <layout name="Quarterly Revenue" left="95px" top="139px"/>
+         <layout name="Sales by Brand" left="102px" top="299px"/>
+         <layout name="DATA_DS" left="5px" top="28px"/>
+      </layouts>
+      <groupLinks/>
+   </display>
+</dataModel>

@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<LogicalDisplayFolder mdsid="mc0000245-6e3d-15ec-920f-ac1058640000" name="Fact Tables" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" subjectAreaRef="/oracle/bi/server/base/BusinessModel/c000016d-6e3d-15ec-920f-ac1058640000.xml#mc000016d-6e3d-15ec-920f-ac1058640000">
-<RefTables>
-<RefLogicalTable refId="mc0000245-6e3d-15ec-920f-ac1058640000-mc0000173-6e3d-15ec-920f-ac1058640000" logicalTableRef="/oracle/bi/server/base/LogicalTable/c0000173-6e3d-15ec-920f-ac1058640000.xml#mc0000173-6e3d-15ec-920f-ac1058640000"/>
-<RefLogicalTable refId="mc0000245-6e3d-15ec-920f-ac1058640000-mc0000175-6e3d-15ec-920f-ac1058640000" logicalTableRef="/oracle/bi/server/base/LogicalTable/c0000175-6e3d-15ec-920f-ac1058640000.xml#mc0000175-6e3d-15ec-920f-ac1058640000"/>
-</RefTables>
-</LogicalDisplayFolder>

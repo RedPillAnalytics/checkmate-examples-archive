@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Dimension mdsid="m80cb6805-07e3-0000-714b-e31d00000000" name="H3 Orders" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isValueBased="false" isRagged="false" isSkipped="true" defaultRootLevelRef="/oracle/bi/server/base/Dimension/80cb6805-07e3-0000-714b-e31d00000000.xml#m80cb690c-07e9-0000-714b-e31d00000000" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80cb6802-07d0-0000-714b-e31d00000000.xml#m80cb6802-07d0-0000-714b-e31d00000000">
+<Description><![CDATA[Orders Level Based Dimension Hierarchy ]]></Description>
+<LogicalLevel mdsid="m80cb690c-07e9-0000-714b-e31d00000000" name="Total Orders" isGTA="true" isFDUC="true" memberCount="1" levelConst="&apos;Total Orders&apos;">
+<RefChildLevels>
+<RefLogicalLevel refId="m80cb690c-07e9-0000-714b-e31d00000000_m80cb690f-07e9-0000-714b-e31d00000000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6805-07e3-0000-714b-e31d00000000.xml#m80cb690f-07e9-0000-714b-e31d00000000"/>
+</RefChildLevels>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80cb690f-07e9-0000-714b-e31d00000000" name="Order Type" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Order Type&apos;">
+<LogicalKey mdsid="m80cb6dff-07d8-0000-714b-e31d00000000" name="Order Type" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb6dff-07d8-0000-714b-e31d00000000-m80cb6877-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb6877-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefChildLevels>
+<RefLogicalLevel refId="m80cb690f-07e9-0000-714b-e31d00000000_m80cb6df4-07e9-0000-714b-e31d00000000_1" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6805-07e3-0000-714b-e31d00000000.xml#m80cb6df4-07e9-0000-714b-e31d00000000"/>
+</RefChildLevels>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80cb690f-07e9-0000-714b-e31d00000000-m80cb6877-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb6877-07d6-0000-714b-e31d00000000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+<LogicalLevel mdsid="m80cb6df4-07e9-0000-714b-e31d00000000" name="Order Details" isGTA="false" isFDUC="true" memberCount="1" levelConst="&apos;Order Details&apos;">
+<LogicalKey mdsid="m80cb6df5-07d8-0000-714b-e31d00000000" name="Order Number" isPrimary="true" isForDrillDown="true">
+<RefColumns>
+<RefLogicalColumn refId="m80cb6df5-07d8-0000-714b-e31d00000000-m80cb6875-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb6875-07d6-0000-714b-e31d00000000"/>
+</RefColumns>
+</LogicalKey>
+<RefLogicalColumns>
+<RefLogicalColumn refId="m80cb6df4-07e9-0000-714b-e31d00000000-m80cb6875-07d6-0000-714b-e31d00000000" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb6875-07d6-0000-714b-e31d00000000"/>
+</RefLogicalColumns>
+<AbsoluteSequenceNumber>
+</AbsoluteSequenceNumber>
+</LogicalLevel>
+</Dimension>

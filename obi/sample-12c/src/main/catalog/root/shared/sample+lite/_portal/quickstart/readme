@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sawd:dashboardPage xmlns:sawd="com.siebel.analytics.web/dashboard/v1.1" xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlVersion="200810300" isEmpty="false" duid="r91voeqkp7v34nd2"><sawd:dashboardColumn name="Column 0" duid="qrt8t87psomf3ama" frozen="false" canFreeze="false" layoutType="bestFit"><sawd:dashboardSection name="Section 0" collapsible="false" duid="2cmnl8bvuk247kbi" showSectionTitle="false" layoutType="bestFit"><saw:displayFormat><saw:formatSpec borderPosition="all" hAlign="center" vAlign="middle" wrapText="true" borderColor="#666699" borderStyle="double"/></saw:displayFormat><sawd:htmlView name="HTML 0" duid="9jh2d97e81ht8l12"><sawd:HTML fmt="html">[br/][br/]&lt;font size=3&gt;
+You are viewing&lt;/font&gt;&lt;font size=4 color=darkred&gt; [b]OBIEE SampleApp Lite[/b]&lt;/font&gt;&lt;font size=3&gt;, a simplified version of the OBIEE SampleApp.[br/][br/]
+
+SampleApp Lite includes only very limited set of basic features examples and it sources only from XML static data files. SampleApp Lite does not show most of the OBIEE 12c powerful features and capabilities.[br/][br/]
+
+[b]Repository password (to open or edit OBIEE SampleApp Lite RPD) : Admin123[/b][br/][br/]
+
+To access the full version of SampleApp with comprehensive set of examples of OBIEE capabilities, [br/] download the latest SampleApp deployment package from : [br/][br/]
+&lt;a href=&quot;http://www.oracle.com/technetwork/middleware/bi-foundation/obiee-samples-167534.html&quot;&gt;http://www.oracle.com/technetwork/middleware/bi-foundation/obiee-samples-167534.html&lt;/a&gt;
+
+[br/][br/]
+&lt;/font&gt;</sawd:HTML></sawd:htmlView></sawd:dashboardSection><saw:displayFormat><saw:formatSpec wrapText="true"/></saw:displayFormat></sawd:dashboardColumn></sawd:dashboardPage>

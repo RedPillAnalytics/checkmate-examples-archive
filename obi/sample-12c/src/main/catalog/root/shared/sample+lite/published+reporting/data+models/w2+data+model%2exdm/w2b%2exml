@@ -1,0 +1,57 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<w2>
+  <Control_Number>000008953 JRM</Control_Number>
+  <federal_ein>00-5763965</federal_ein>
+  <employer_name>ABC Corporation</employer_name>
+  <employer_address>
+8356 Main Street
+Suite A
+Chicago, IL  85439</employer_address>
+  <SSN>888-88-8888</SSN>
+  <emp_name>Jane</emp_name>
+  <last_name>Smith</last_name>
+  <employee_address>
+8943 Elm Street
+Naperville, IL 85433</employee_address>
+
+  <wages_tips_compensation>50000</wages_tips_compensation>
+  <FIT_WITHHELD>7000</FIT_WITHHELD>
+  <ss_wages>50000</ss_wages>
+  <ss_withheld>3000</ss_withheld>
+  <med_wages>50000</med_wages>
+  <med_withheld>700</med_withheld>
+  <ss_tips></ss_tips>
+  <allocated_tips></allocated_tips>
+  <eic_payment></eic_payment>
+  <dependent_care>1000</dependent_care>
+  <non_qual_plan></non_qual_plan>
+
+  <box12a_code>C</box12a_code>
+  <box12a_meaning>8</box12a_meaning>
+  <box12b_code>D</box12b_code>
+  <box12b_meaning>90</box12b_meaning>
+  <box12c_code>V</box12c_code>
+  <box12c_meaning>4000</box12c_meaning>
+  <box12d_code></box12d_code>
+  <box12d_meaning></box12d_meaning>
+
+  <stat_employee></stat_employee>
+  <retirement_plan>True</retirement_plan>
+  <sick_pay></sick_pay>
+
+  <Box14_codea></Box14_codea>
+  <Box14_meaninga></Box14_meaninga>
+  <Box14_codeb></Box14_codeb>
+  <Box14_meaningb></Box14_meaningb>
+  <Box14_codec></Box14_codec>
+  <Box14_meaningc></Box14_meaningc>
+
+  <state_code>IL</state_code>
+  <STATE_EIN>01-656239 1</STATE_EIN>
+  <state1_wages>50000</state1_wages>
+  <state1_tax>1500</state1_tax>
+  <local1_wages>50000</local1_wages>
+  <local1_tax>700</local1_tax>
+  <locality1>Naperville</locality1>
+
+</w2>

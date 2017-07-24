@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<BusinessModel mdsid="m80cb6802-07d0-0000-714b-e31d00000000" name="SampleApp Lite" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isClassicStar="false" isAvailable="true">
+<Description><![CDATA[SampleAppLite Business Model. This Business model is a minimal contruct to allow users to check that installation went through. To access a set of Samples that fully illustrate OBIEE 11g modeling capabilities, refer to the full SampleApp set freely availabe on OTN(Oracle Technology Network), OBIEE page.]]></Description>
+</BusinessModel>

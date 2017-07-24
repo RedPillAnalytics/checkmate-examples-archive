@@ -1,0 +1,33 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="true" useBipParameters="true" producerName="fin-financialCommon" parameterVOName="" parameterTaskFlow="" customDataControl="" cachePerUser="false" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <dataModel url="/Sample Lite/Published Reporting/Data Models/Company Sales Report DM.xdm"/>
+   <description>
+      <![CDATA[Data%20Model:%20Office%20Sales%20Report%20Data%20Model%20--Layouts:%20XPT,%20RTF%20--Features:%20Drillable%20charts,%20Style%20Template,%20Parameters,%20Radio%20button%20LOV%20display]]>
+   </description>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="false"/>
+   <property name="showReportLinks" value="true"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="true"/>
+   <property name="cacheDuration" value="false"/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3" style="parameterLocation:in-vertical;promptLocation:top;">
+      <parameter id="P_YEAR" label="Year" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+      <parameter id="P_COMPANY" label="Company Name" defaultValue="" visible="true" rowPlacement="1">
+         <radioButton/>
+      </parameter>
+   </parameters>
+   <templates default="Sales by Company Org.">
+      <masterTemplate>
+         <![CDATA[/Sample Lite/Published Reporting/Style Templates/Oracle Styles Template.xss]]>
+      </masterTemplate>
+      <template label="Sales by Company Org." url="Company Sales.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,xlsx,pptx" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+      <template label="Sales by Office" url="Office Sales.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,xlsx,pptx" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+      <template label="Product Sales Details" url="Product Sales.rtf" type="rtf" outputFormat="html,pdf,rtf,xlsx,pptx" defaultFormat="pdf" locale="en_US" active="true" viewOnline="true"/>
+   </templates>
+</report>

@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="true" useBipParameters="true" producerName="" parameterVOName="" parameterTaskFlow="" customDataControl="" cachePerUser="false" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <dataModel url="/Sample Lite/Published Reporting/Data Models/Product List DM.xdm"/>
+   <description>
+      <![CDATA[Data%20Model:%20Product%20List%20DM%20--Layouts:%20XPT]]>
+   </description>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="true"/>
+   <property name="showReportLinks" value="true"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="true"/>
+   <property name="cacheDuration" value=""/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3"/>
+   <templates default="Product List">
+      <template label="Product List" url="Product List.xpt" type="xpt" outputFormat="analyze,html,pdf" defaultFormat="" active="true" viewOnline="true"/>
+   </templates>
+</report>

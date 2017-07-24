@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationHierarchy mdsid="m80cb6b92-0fbc-0000-714b-e31d00000000" name="Offices Hierarchy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationTable/80cb6a65-0fa8-0000-714b-e31d00000000.xml#m80cb6a65-0fa8-0000-714b-e31d00000000" logicalDimensionRef="/oracle/bi/server/base/Dimension/80cb6806-07e3-0000-714b-e31d00000000.xml#m80cb6806-07e3-0000-714b-e31d00000000">
+<Alias name="H3 Offices"/>
+<PresentationLevel mdsid="m80cb6b93-0fbe-0000-714b-e31d00000000" name="All Offices" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6b92-0fbc-0000-714b-e31d00000000.xml#m80cb6b92-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6806-07e3-0000-714b-e31d00000000.xml#m80cb691b-07e9-0000-714b-e31d00000000">
+<Alias name="Eden Corporation"/>
+<Alias name="Offices Total"/>
+</PresentationLevel>
+<PresentationLevel mdsid="m80cb6b94-0fbe-0000-714b-e31d00000000" name="Companies" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6b92-0fbc-0000-714b-e31d00000000.xml#m80cb6b92-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6806-07e3-0000-714b-e31d00000000.xml#m80cb691e-07e9-0000-714b-e31d00000000">
+<Alias name="Company"/>
+<Alias name="Offices Company"/>
+<RefDisplayColumns>
+<RefPresentationColumn refId="m80cb6b94-0fbe-0000-714b-e31d00000000-m80cb6d04-0faa-0000-714b-e31d00000000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/80cb6a65-0fa8-0000-714b-e31d00000000.xml#m80cb6d04-0faa-0000-714b-e31d00000000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+<PresentationLevel mdsid="m80cb6b95-0fbe-0000-714b-e31d00000000" name="Orgs" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6b92-0fbc-0000-714b-e31d00000000.xml#m80cb6b92-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6806-07e3-0000-714b-e31d00000000.xml#m80cb691d-07e9-0000-714b-e31d00000000">
+<Alias name="Offices Organization"/>
+<RefDisplayColumns>
+<RefPresentationColumn refId="m80cb6b95-0fbe-0000-714b-e31d00000000-m80cb6d02-0faa-0000-714b-e31d00000000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/80cb6a65-0fa8-0000-714b-e31d00000000.xml#m80cb6d02-0faa-0000-714b-e31d00000000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+<PresentationLevel mdsid="m80cb6b96-0fbe-0000-714b-e31d00000000" name="Depts" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6b92-0fbc-0000-714b-e31d00000000.xml#m80cb6b92-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6806-07e3-0000-714b-e31d00000000.xml#m80cb691c-07e9-0000-714b-e31d00000000">
+<Alias name="Offices Department"/>
+<RefDisplayColumns>
+<RefPresentationColumn refId="m80cb6b96-0fbe-0000-714b-e31d00000000-m80cb6d00-0faa-0000-714b-e31d00000000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/80cb6a65-0fa8-0000-714b-e31d00000000.xml#m80cb6d00-0faa-0000-714b-e31d00000000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+<PresentationLevel mdsid="m80cb6b98-0fbe-0000-714b-e31d00000000" name="Offices" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6b92-0fbc-0000-714b-e31d00000000.xml#m80cb6b92-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6806-07e3-0000-714b-e31d00000000.xml#m80cb691a-07e9-0000-714b-e31d00000000">
+<RefDisplayColumns>
+<RefPresentationColumn refId="m80cb6b98-0fbe-0000-714b-e31d00000000-m80cb6cfe-0faa-0000-714b-e31d00000000" presentationColumnRef="/oracle/bi/server/base/PresentationTable/80cb6a65-0fa8-0000-714b-e31d00000000.xml#m80cb6cfe-0faa-0000-714b-e31d00000000"/>
+</RefDisplayColumns>
+</PresentationLevel>
+</PresentationHierarchy>

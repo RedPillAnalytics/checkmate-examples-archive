@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Project mdsid="mc0000309-6e3d-15ec-920f-ac1058640000" name="Activity" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository">
-<RefCatalogs>
-<RefPresentationCatalog refId="mc0000309-6e3d-15ec-920f-ac1058640000-mc0000252-6e3d-15ec-920f-ac1058640000" catalogRef="/oracle/bi/server/base/PresentationCatalog/c0000252-6e3d-15ec-920f-ac1058640000.xml#mc0000252-6e3d-15ec-920f-ac1058640000"/>
-</RefCatalogs>
-<RefFactTables>
-<RefLogicalTable refId="mc0000309-6e3d-15ec-920f-ac1058640000-mc0000175-6e3d-15ec-920f-ac1058640000" logicalTableRef="/oracle/bi/server/base/LogicalTable/c0000175-6e3d-15ec-920f-ac1058640000.xml#mc0000175-6e3d-15ec-920f-ac1058640000"/>
-</RefFactTables>
-</Project>

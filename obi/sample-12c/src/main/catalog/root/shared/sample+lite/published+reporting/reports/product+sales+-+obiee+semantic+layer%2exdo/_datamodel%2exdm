@@ -1,0 +1,26 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" semantic="true">
+   <description>
+      <![CDATA[]]>
+   </description>
+   <dataProperties>
+      <property name="scalable_mode" value="off"/>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="true"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="as_are"/>
+   </dataProperties>
+   <parameters/>
+   <dataSets>
+      <dataSet name="Oracle BI EE::DefaultApp::Sample Sales Lite" type="complex">
+         <semantic dataSourceRef="Oracle BI EE" type="cube" appName="DefaultApp" cubeName="Sample Sales Lite" default="false"/>
+      </dataSet>
+   </dataSets>
+   <output uniqueRowName="flase">
+      <nodeList name="data-structure">
+         <dataStructure tagName=""/>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <valueSets/>
+</dataModel>

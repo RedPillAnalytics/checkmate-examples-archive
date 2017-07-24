@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sawbsc:causesAndEffectMapView xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawbsc="com.siebel.analytics.web/scorecard/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" zoomFactor="1" angle="10" levels="3"><sawbsc:rootStrategyNode><sawbsc:strategyNodeRef refid="97cdbec00ba6100085670ae4eb540000"/></sawbsc:rootStrategyNode><sawbsc:hiddenStrategyNodes/><sawkpi:relatedDocuments/></sawbsc:causesAndEffectMapView>

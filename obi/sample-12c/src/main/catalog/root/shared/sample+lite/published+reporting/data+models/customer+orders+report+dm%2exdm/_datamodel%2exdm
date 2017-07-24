@@ -1,0 +1,126 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="demo">
+   <description>
+      <![CDATA[Data%20source:%20Oracle%20database%20OE%20&%20HR%20sample%20schemas%20(%20requires%20'demo'%20connection%20to%20be%20set%20up).%20Features:%20Master-detail%20data%20structure;%20calculated%20elements%20using%20expression%20editor,%20parameters%20with%20cascading%20LOVs.]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="false"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="Customers" type="complex">
+         <sql>
+            <![CDATA[select	 "CUSTOMERS_VIEW"."CUSTOMER_ID" as "CUSTOMER_ID",
+	 ("CUSTOMERS_VIEW"."CUST_LAST_NAME"||' '|| "CUSTOMERS_VIEW"."CUST_FIRST_NAME") as "CUSTOMER_NAME",
+         "CUSTOMERS_VIEW"."STREET_ADDRESS" as "STREET_ADDRESS",
+	 "CUSTOMERS_VIEW"."POSTAL_CODE" as "POSTAL_CODE",
+	 "CUSTOMERS_VIEW"."CITY" as "CITY",
+	 "CUSTOMERS_VIEW"."STATE_PROVINCE" as "STATE_PROVINCE",
+	 "CUSTOMERS_VIEW"."COUNTRY_NAME" as "COUNTRY_NAME",
+	 "CUSTOMERS_VIEW"."CUST_EMAIL" as "CUST_EMAIL",
+	 "CUSTOMERS_VIEW"."PRIMARY_PHONE_NUMBER" as "PRIMARY_PHONE_NUMBER" 
+ from	"OE"."CUSTOMERS_VIEW" "CUSTOMERS_VIEW" 
+ where 	 "CUSTOMERS_VIEW"."CUSTOMER_ID" IN(:P_CUSTID)
+order by "CUSTOMERS_VIEW"."CUST_LAST_NAME"]]>
+         </sql>
+      </dataSet>
+      <dataSet name="Orders" type="complex">
+         <sql>
+            <![CDATA[select	 "ORDER_ITEMS"."LINE_ITEM_ID" as "LINE_ITEM_ID",
+	 "ORDER_ITEMS"."UNIT_PRICE" as "UNIT_PRICE",
+	 "ORDER_ITEMS"."QUANTITY" as "QUANTITY",
+	 "ORDERS_VIEW"."ORDER_DATE" as "ORDER_DATE",
+	 "ORDERS_VIEW"."CUSTOMER_ID" as "CUSTOMER_ID",
+	 "ORDERS_VIEW"."ORDER_STATUS" as "ORDER_STATUS",
+	 "PRODUCT_INFORMATION"."PRODUCT_NAME" as "PRODUCT_NAME",
+	 "PRODUCT_INFORMATION"."PRODUCT_DESCRIPTION" as "PRODUCT_DESCRIPTION",
+	 "ORDERS_VIEW"."ORDER_ID" as "ORDER_ID",
+	 "ORDERS_VIEW"."ORDER_MODE" as "ORDER_MODE",
+	 "ORDERS_VIEW"."ORDER_TOTAL" as "ORDER_TOTAL" 
+ from	"OE"."PRODUCT_INFORMATION" "PRODUCT_INFORMATION",
+	"OE"."ORDER_ITEMS" "ORDER_ITEMS",
+	"OE"."ORDERS_VIEW" "ORDERS_VIEW" 
+ where   "ORDER_ITEMS"."ORDER_ID"="ORDERS_VIEW"."ORDER_ID"
+ and	 "PRODUCT_INFORMATION"."PRODUCT_ID"="ORDER_ITEMS"."PRODUCT_ID"
+  and 	 "ORDERS_VIEW"."ORDER_ID" IN(:P_ORDID)]]>
+         </sql>
+      </dataSet>
+      <link name="link" parentGroup="G_1" parentColumn="CUSTOMER_ID" childQuery="Orders" childColumn="&quot;ORDERS_VIEW&quot;.&quot;CUSTOMER_ID&quot;" childColumnAlias="CUSTOMER_ID"/>
+   </dataSets>
+   <output rootName="DATA_DS" uniqueRowName="false">
+      <nodeList name="data-structure">
+         <dataStructure tagName="DATA_DS">
+            <group name="G_1" label="G_1" source="Customers">
+               <element name="CUSTOMER_NAME" value="CUSTOMER_NAME" label="CUSTOMER_NAME" dataType="xsd:string" breakOrder="None" fieldOrder="2"/>
+               <element name="CUSTOMER_ID" value="CUSTOMER_ID" label="CUSTOMER_ID" dataType="xsd:integer" breakOrder="None" fieldOrder="1"/>
+               <element name="STREET_ADDRESS" value="STREET_ADDRESS" label="STREET_ADDRESS" dataType="xsd:string" breakOrder="None" fieldOrder="3"/>
+               <element name="CITY" value="CITY" label="CITY" dataType="xsd:string" breakOrder="None" fieldOrder="5"/>
+               <element name="STATE_PROVINCE" value="STATE_PROVINCE" label="STATE_PROVINCE" dataType="xsd:string" breakOrder="None" fieldOrder="6"/>
+               <element name="POSTAL_CODE" value="POSTAL_CODE" label="POSTAL_CODE" dataType="xsd:string" breakOrder="None" fieldOrder="4"/>
+               <element name="COUNTRY_NAME" value="COUNTRY_NAME" label="COUNTRY_NAME" dataType="xsd:string" breakOrder="None" fieldOrder="7"/>
+               <element name="PRIMARY_PHONE_NUMBER" value="PRIMARY_PHONE_NUMBER" label="PRIMARY_PHONE_NUMBER" dataType="xsd:string" breakOrder="None" fieldOrder="9"/>
+               <element name="CUST_EMAIL" value="CUST_EMAIL" label="CUST_EMAIL" dataType="xsd:string" breakOrder="None" fieldOrder="8"/>
+               <element name="CITY_STATE_ZIP" value="${concat(concat(concat(G_1.CITY,','),concat(G_1.STATE_PROVINCE,',')),G_1.POSTAL_CODE)}" label="CITY_STATE_ZIP" dataType="xsd:string" breakOrder="None" fieldOrder="0"/>
+               <element name="CUST_TOTAL" value="G_2.LINE_TOTAL" label="CUST_TOTAL" dataType="xsd:double" breakOrder="None" fieldOrder="1" function="SUM"/>
+               <group name="G_2" label="G_2" source="Orders">
+                  <element name="CUSTOMER_ID" value="CUSTOMER_ID" label="CUSTOMER_ID" dataType="xsd:integer" breakOrder="None" fieldOrder="5"/>
+                  <element name="ORDER_ID" value="ORDER_ID" label="ORDER_ID" dataType="xsd:integer" breakOrder="None" fieldOrder="9"/>
+                  <element name="ORDER_MODE" value="ORDER_MODE" label="ORDER_MODE" dataType="xsd:string" breakOrder="None" fieldOrder="10"/>
+                  <element name="ORDER_DATE" value="ORDER_DATE" label="ORDER_DATE" dataType="xsd:date" breakOrder="None" fieldOrder="4"/>
+                  <element name="LINE_ITEM_ID" value="LINE_ITEM_ID" label="LINE_ITEM_ID" dataType="xsd:integer" breakOrder="None" fieldOrder="1"/>
+                  <element name="UNIT_PRICE" value="UNIT_PRICE" label="UNIT_PRICE" dataType="xsd:double" breakOrder="None" fieldOrder="2"/>
+                  <element name="QUANTITY" value="QUANTITY" label="QUANTITY" dataType="xsd:integer" breakOrder="None" fieldOrder="3"/>
+                  <element name="PRODUCT_NAME" value="PRODUCT_NAME" label="PRODUCT_NAME" dataType="xsd:string" breakOrder="None" fieldOrder="7"/>
+                  <element name="PRODUCT_DESCRIPTION" value="PRODUCT_DESCRIPTION" label="PRODUCT_DESCRIPTION" dataType="xsd:string" breakOrder="None" fieldOrder="8"/>
+                  <element name="ORDER_STATUS" value="ORDER_STATUS" label="ORDER_STATUS" dataType="xsd:integer" breakOrder="None" fieldOrder="6"/>
+                  <element name="LINE_TOTAL" value="${G_2.QUANTITY*G_2.UNIT_PRICE}" label="LINE_TOTAL" dataType="xsd:double" breakOrder="None" fieldOrder="0"/>
+                  <element name="ORDER_TOTAL" value="ORDER_TOTAL" label="ORDER_TOTAL" dataType="xsd:double" breakOrder="None" fieldOrder="11"/>
+                  <element name="FRMTD_ORDER_DATE" value="${format_date(G_2.ORDER_DATE,'DD-MMM-YY')}" label="FRMTD_ORDER_DATE" dataType="xsd:string" breakOrder="None" fieldOrder="0"/>
+               </group>
+            </group>
+         </dataStructure>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets>
+      <valueSet id="orders-list" cache="true">
+         <sql dataSourceRef="demo">
+            <![CDATA[select	 "ORDERS_VIEW"."ORDER_ID" as "ORDER_ID"
+ from	"OE"."ORDERS_VIEW" "ORDERS_VIEW" 
+ where 	 "ORDERS_VIEW"."CUSTOMER_ID" IN (:P_CUSTID)]]>
+         </sql>
+         <input id="P_CUSTID" value="${P_CUSTID}" dataType="xsd:string"/>
+      </valueSet>
+      <valueSet id="customer-list" cache="true">
+         <sql dataSourceRef="demo">
+            <![CDATA[Select distinct cnms.cstname, cnms.cstid
+From (Select  (cv.cust_last_name|| '  ' || cv.cust_first_name ) cstname, cv.customer_id cstid
+from customers_view cv, orders_view ov 
+where cv.customer_id = ov.customer_id) cnms
+order by  cnms.cstname]]>
+         </sql>
+      </valueSet>
+   </valueSets>
+   <parameters>
+      <parameter name="P_CUSTID" defaultValue="109" dataType="xsd:string">
+         <select label="Customer Name(s): " valueSet="customer-list" multiple="true" all="true" allValue="lov" refreshParameters="true"/>
+      </parameter>
+      <parameter name="P_ORDID" defaultValue="*" dataType="xsd:string">
+         <select label="Order Number(s):" valueSet="orders-list" multiple="true" all="true" allValue="lov"/>
+      </parameter>
+   </parameters>
+   <bursting/>
+   <display>
+      <layouts>
+         <layout name="Customers" left="347px" top="61px"/>
+         <layout name="Orders" left="66px" top="165px"/>
+         <layout name="DATA_DS" left="5px" top="28px"/>
+      </layouts>
+      <groupLinks>
+         <groupLink name="link_1" parentGroup="G_1" childGroup="G_2"/>
+      </groupLinks>
+   </display>
+</dataModel>

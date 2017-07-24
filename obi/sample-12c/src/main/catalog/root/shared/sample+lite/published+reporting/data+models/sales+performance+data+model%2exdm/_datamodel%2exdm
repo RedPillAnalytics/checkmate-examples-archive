@@ -1,0 +1,97 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="demo">
+   <description>
+      <![CDATA[Data%20Source%20Type:%20BI%20Server%20Sample%20Sales%20Lite%20subject%20area%20--%20Structure:%20Flat%20XML%20data%20set%20--%20Features:%20Parameters,%20Cascading%20LOVs.]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="false"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="Q1 - BI Server (Actual)" type="complex">
+         <sql dataSourceRef="Oracle BI EE">
+            <![CDATA[select	 "Base Facts"."Revenue" as "Revenue",
+	 "Base Facts"."Target Revenue" as "Target Revenue",
+	 "Offices"."Company" as "Company",
+	 "Offices"."Organization" as "Organization",
+	 "Offices"."Department" as "Department",
+	 "Offices"."Office" as "Office",
+	 "Products"."Brand" as "Brand",
+	 "Products"."LOB" as "LOB",
+	 "Time"."Per Name Year" as "Per Name Year",
+	 "Time"."Per Name Qtr" as "Per Name Qtr" 
+ from	"Sample Sales Lite"."Products" "Products",
+	"Sample Sales Lite"."Offices" "Offices",
+	"Sample Sales Lite"."Time" "Time",
+	"Sample Sales Lite"."Base Facts" "Base Facts" 
+ where 	 "Offices"."Company" =:P_COMPANY 
+   and	 "Offices"."Organization" =:P_ORG 
+   and	 "Time"."Per Name Year" =:P_YEAR]]>
+         </sql>
+      </dataSet>
+   </dataSets>
+   <output rootName="DATA_DS" uniqueRowName="false">
+      <nodeList name="data-structure">
+         <dataStructure tagName="DATA_DS">
+            <group name="G_1" label="G_1" source="Q1 - BI Server (Actual)">
+               <element name="Revenue" value="Revenue" label="Revenue - Actual" dataType="xsd:double" breakOrder="None" fieldOrder="1"/>
+               <element name="Target_Revenue" value="Target Revenue" label="Revenue - Target" dataType="xsd:double" breakOrder="None" fieldOrder="2"/>
+               <element name="Company" value="Company" label="Company" dataType="xsd:string" breakOrder="None" fieldOrder="3"/>
+               <element name="Organization" value="Organization" label="Organization" dataType="xsd:string" breakOrder="None" fieldOrder="4"/>
+               <element name="Department" value="Department" label="Department" dataType="xsd:string" breakOrder="None" fieldOrder="5"/>
+               <element name="Office" value="Office" label="Office" dataType="xsd:string" breakOrder="None" fieldOrder="6"/>
+               <element name="Brand" value="Brand" label="Product Brand" dataType="xsd:string" breakOrder="None" fieldOrder="7"/>
+               <element name="Per_Name_Year" value="Per Name Year" label="Calendar Year" dataType="xsd:string" breakOrder="None" fieldOrder="9"/>
+               <element name="Per_Name_Qtr" value="Per Name Qtr" label="Calendar Yr Qtr" dataType="xsd:string" breakOrder="None" fieldOrder="10"/>
+               <element name="LOB" value="LOB" label="Product LOB" dataType="xsd:string" breakOrder="None" fieldOrder="8"/>
+            </group>
+         </dataStructure>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets>
+      <valueSet id="ORG_LOV">
+         <sql dataSourceRef="Oracle BI EE">
+            <![CDATA[select	 "Offices"."Organization" as "Organization"
+ from	"Sample Sales Lite"."Offices" "Offices" 
+ where 	 "Offices"."Company" =:P_COMPANY]]>
+         </sql>
+         <input id="P_COMPANY" value="${P_COMPANY}" dataType="xsd:string"/>
+      </valueSet>
+      <valueSet id="YEAR_LOV">
+         <sql dataSourceRef="Oracle BI EE">
+            <![CDATA[select	 "Time"."Per Name Year" as "Per Name Year" 
+ from	"Sample Sales Lite"."Time" "Time"
+where  "Time"."Per Name Year" in ('2008', '2009', '2010')]]>
+         </sql>
+      </valueSet>
+      <valueSet id="COMPANY_LOV">
+         <sql dataSourceRef="Oracle BI EE">
+            <![CDATA[select	 "Offices"."Company" as "Company" 
+ from	"Sample Sales Lite"."Offices" "Offices"]]>
+         </sql>
+      </valueSet>
+   </valueSets>
+   <parameters>
+      <parameter name="P_YEAR" defaultValue="2009" dataType="xsd:string" rowPlacement="1">
+         <select label="Calendar Year" valueSet="YEAR_LOV" multiple="false" all="false" allValue="null"/>
+      </parameter>
+      <parameter name="P_COMPANY" defaultValue="Stockplus Inc." dataType="xsd:string" rowPlacement="1">
+         <select label="Company Name " valueSet="COMPANY_LOV" multiple="false" all="false" allValue="lov" refreshParameters="true"/>
+      </parameter>
+      <parameter name="P_ORG" defaultValue="Inbound Org." dataType="xsd:string" rowPlacement="1">
+         <select label="Organization Name" valueSet="ORG_LOV" multiple="false" all="false" allValue="null"/>
+      </parameter>
+   </parameters>
+   <bursting/>
+   <display>
+      <layouts>
+         <layout name="Q1 - BI Server (Actual)" left="52px" top="102px"/>
+         <layout name="DATA_DS" left="5px" top="28px"/>
+      </layouts>
+      <groupLinks/>
+   </display>
+</dataModel>

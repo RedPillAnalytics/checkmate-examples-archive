@@ -1,0 +1,2 @@
+<?xml version="1.0" encoding="utf-8"?>
+<sawbsc:perspective xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawbsc="com.siebel.analytics.web/scorecard/v1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sawkpi="com.siebel.analytics.web/kpi/v1" systemDefined="true" financial="true" internalFacing="false" changeApprovalRequired="true"><sawkpi:relatedDocuments/></sawbsc:perspective>

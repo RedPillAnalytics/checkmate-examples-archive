@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80ca64ec-0bb9-0000-714b-e31d00000000" name="SAMP_REVENUE_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" x="278" y="647" rowCount="0.0" uri="VALUEOF(NQ_SESSION.SERVICEINSTANCEROOT)/data/SAMP_REVENUE_F.xml" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000">
+<Description><![CDATA[REVENUE Facts Physical table. This table is not directly used by the logical model, it is accessed via the aliases setup in the physical diagram. The database is of XML type, the setup of this physical table leverages the value of an RPD variable : NQ_SESSION.SERVICEINSTANCEROOT (see the XML tab in this dialog box).]]></Description>
+<PhysicalColumn mdsid="m80ca65ad-0bbb-0000-714b-e31d00000000" name="Discnt_Value" iconIndex="32768" dataType="DOUBLE" extName="//Table/SAMP_REVENUE_F/DISCNT_VALUE" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca64ee-0bbb-0000-714b-e31d00000000" name="Revenue" iconIndex="32768" dataType="DOUBLE" extName="//Table/SAMP_REVENUE_F/REVENUE" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca64f0-0bbb-0000-714b-e31d00000000" name="Order_Number" dataType="INT" extName="//Table/SAMP_REVENUE_F/ORDER_NUMBER" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca64f1-0bbb-0000-714b-e31d00000000" name="Bill_Day_Dt" dataType="DATE" extName="//Table/SAMP_REVENUE_F/BILL_DAY_DT" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca64f2-0bbb-0000-714b-e31d00000000" name="Order_Day_Dt" dataType="DATE" extName="//Table/SAMP_REVENUE_F/ORDER_DAY_DT" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca64f3-0bbb-0000-714b-e31d00000000" name="Prod_Key" dataType="INT" extName="//Table/SAMP_REVENUE_F/Prod_Key" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca64f5-0bbb-0000-714b-e31d00000000" name="Units" iconIndex="32768" dataType="INT" extName="//Table/SAMP_REVENUE_F/UNITS" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca64f6-0bbb-0000-714b-e31d00000000" name="Bill_Mth_Key" dataType="INT" extName="//Table/SAMP_REVENUE_F/Bill_Mth_Key" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80cb2ad1-0bbb-0000-714b-e31d00000000" name="Order_Type" dataType="VARCHAR" precision="20" extName="//Table/SAMP_REVENUE_F/ORDER_TYPE" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80caa95b-0bbb-0000-714b-e31d00000000" name="Order_Status" dataType="VARCHAR" precision="20" extName="//Table/SAMP_REVENUE_F/ORDER_STATUS" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80cb3842-0bbb-0000-714b-e31d00000000" name="Shipto_Addr_Key" dataType="INT" extName="//Table/SAMP_REVENUE_F/SHIPTO_ADDR_KEY" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80caa8e1-0bbb-0000-714b-e31d00000000" name="Office_Key" dataType="INT" extName="//Table/SAMP_REVENUE_F/OFFICE_KEY" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80ca6637-0bc0-0000-714b-e31d00000000" name="Cust_Key">
+<RefColumns>
+<RefColumn refId="m80ca6637-0bc0-0000-714b-e31d00000000-m80ca64f0-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80ca64ec-0bb9-0000-714b-e31d00000000.xml#m80ca64f0-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

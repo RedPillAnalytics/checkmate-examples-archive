@@ -1,0 +1,85 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="Oracle BI EE">
+   <description>
+      <![CDATA[Data%20Source%20Type:%20Sample%20Sales%20BI%20Server%20subject%20area%20--Data%20Structure:%20Flat%20XML%20data%20set%20--Features:%20Parameters%20and%20LOVs.]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="false"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="OfficeSales" type="complex">
+         <sql>
+            <![CDATA[select	 "Offices"."Company" as "Company",
+	 "Offices"."Organization" as "Organization",
+	 "Offices"."Department" as "Department",
+	 "Offices"."Office" as "Office",
+	 "Base Facts"."Revenue" as "Revenue",
+	 "Base Facts"."Target Revenue" as "Target Revenue",
+	 "Time"."Per Name Year" as "Per Name Year",
+	 "Products"."Brand" as "Brand",
+	 "Products"."Product Type" as "Product Type",
+	 "Products"."Product" as "Product" 
+ from	"Sample Sales Lite"."Products" "Products",
+	"Sample Sales Lite"."Time" "Time",
+	"Sample Sales Lite"."Base Facts" "Base Facts",
+	"Sample Sales Lite"."Offices" "Offices" 
+ where 	 "Offices"."Company" =:P_COMPANY 
+   and	 "Time"."Per Name Year" =:P_YEAR]]>
+         </sql>
+      </dataSet>
+   </dataSets>
+   <output rootName="DATA_DS" uniqueRowName="false">
+      <nodeList name="data-structure">
+         <dataStructure tagName="DATA_DS">
+            <group name="G_3" label="G_3" source="OfficeSales">
+               <element name="Company" value="Company" label="Company" dataType="xsd:string" breakOrder="" fieldOrder="1"/>
+               <element name="Organization" value="Organization" label="Organization" dataType="xsd:string" breakOrder="" fieldOrder="2"/>
+               <element name="Department" value="Department" label="Department" dataType="xsd:string" breakOrder="" fieldOrder="3"/>
+               <element name="Office" value="Office" label="Office" dataType="xsd:string" breakOrder="" fieldOrder="4"/>
+               <element name="Revenue" value="Revenue" label="Revenue" dataType="xsd:double" breakOrder="" fieldOrder="5"/>
+               <element name="Target_Revenue" value="Target Revenue" label="Target_Revenue" dataType="xsd:double" breakOrder="" fieldOrder="6"/>
+               <element name="Per_Name_Year" value="Per Name Year" label="Per_Name_Year" dataType="xsd:string" breakOrder="" fieldOrder="7"/>
+               <element name="Brand" value="Brand" label="Brand" dataType="xsd:string" breakOrder="" fieldOrder="8"/>
+               <element name="Product_Type" value="Product Type" label="Product_Type" dataType="xsd:string" breakOrder="" fieldOrder="9"/>
+               <element name="Product" value="Product" label="Product" dataType="xsd:string" breakOrder="" fieldOrder="10"/>
+            </group>
+         </dataStructure>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets>
+      <valueSet id="YEAR_LOV">
+         <sql dataSourceRef="Oracle BI EE">
+            <![CDATA[select	 "Time"."Per Name Year" as "Per Name Year" 
+ from	"Sample Sales Lite"."Time" "Time"
+where "Time"."Per Name Year" in ('2008', '2009', '2010')]]>
+         </sql>
+      </valueSet>
+      <valueSet id="COMPANY_LOV">
+         <sql dataSourceRef="Oracle BI EE">
+            <![CDATA[select	 "Offices"."Company" as "Company" 
+ from	"Sample Sales Lite"."Offices" "Offices"]]>
+         </sql>
+      </valueSet>
+   </valueSets>
+   <parameters>
+      <parameter name="P_YEAR" defaultValue="2009" dataType="xsd:string">
+         <select label="Year" valueSet="YEAR_LOV" multiple="false" all="false" allValue="null"/>
+      </parameter>
+      <parameter name="P_COMPANY" defaultValue="Stockplus Inc." dataType="xsd:string">
+         <select label="Company Name" valueSet="COMPANY_LOV" multiple="false" all="false" allValue="null" refreshParameters="false"/>
+      </parameter>
+   </parameters>
+   <bursting/>
+   <display>
+      <layouts>
+         <layout name="OfficeSales" left="164px" top="125px"/>
+         <layout name="DATA_DS" left="5px" top="28px"/>
+      </layouts>
+      <groupLinks/>
+   </display>
+</dataModel>

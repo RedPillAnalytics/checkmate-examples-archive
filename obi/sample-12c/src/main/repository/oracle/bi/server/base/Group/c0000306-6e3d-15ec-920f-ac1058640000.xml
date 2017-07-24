@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<Group mdsid="mc0000306-6e3d-15ec-920f-ac1058640000" name="BIConsumer" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" logStatisticsStatus="disable" displayName="BI Consumer Role">
-<RefChildGroups>
-<RefGroup refId="mc0000306-6e3d-15ec-920f-ac1058640000-mc0000308-6e3d-15ec-920f-ac1058640000" groupRef="/oracle/bi/server/base/Group/c0000308-6e3d-15ec-920f-ac1058640000.xml#mc0000308-6e3d-15ec-920f-ac1058640000"/>
-</RefChildGroups>
-</Group>

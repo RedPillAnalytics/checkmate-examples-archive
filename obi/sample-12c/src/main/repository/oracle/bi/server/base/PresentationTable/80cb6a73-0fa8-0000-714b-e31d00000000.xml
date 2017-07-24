@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cb6a73-0fa8-0000-714b-e31d00000000" name="Orders" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6a2e-0fa4-0000-714b-e31d00000000.xml#m80cb6a2e-0fa4-0000-714b-e31d00000000">
+<Description><![CDATA[Orders attribute objects]]></Description>
+<PresentationColumn mdsid="m80cb6d10-0faa-0000-714b-e31d00000000" name="Order Number" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb6875-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Oder Number from the Revenue Facts table]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d12-0faa-0000-714b-e31d00000000" name="Order Status" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb6876-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Oder Status value from the Revenue Facts table.  Naturally drills into Orders Number Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d14-0faa-0000-714b-e31d00000000" name="Order Type" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb6877-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Oder Type value from the Revenue Facts table. Naturally drills into Orders Status Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d16-0faa-0000-714b-e31d00000000" name="Order Size Bin" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb687a-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This is a logical calculation object that buckets the order by their size (revenue per order). The calculation is done on the fly by OBIEE server and results in 5 buckets.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d18-0faa-0000-714b-e31d00000000" name="Order to Bill Days" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb687b-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This is a logical calculation object that computes for ech order, the number of days between order date and bill date.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d1a-0faa-0000-714b-e31d00000000" name="Order to Bill Days Bin" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6873-07f3-0000-714b-e31d00000000.xml#m80cb687c-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This is a logical calculation object that buckets each order into a group, based on the number of days between order date and bill date. The calculation is done on the fly by BIEE server.]]></Description>
+</PresentationColumn>
+<RefHierarchies>
+<RefPresentationHierarchy refId="m80cb6a73-0fa8-0000-714b-e31d00000000-m80cb6dfb-0fbc-0000-714b-e31d00000000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/80cb6dfb-0fbc-0000-714b-e31d00000000.xml#m80cb6dfb-0fbc-0000-714b-e31d00000000"/>
+</RefHierarchies>
+</PresentationTable>

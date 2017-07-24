@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<saw:DeviceMetrics xmlns:saw="com.siebel.analytics.web/report/v1.1"><saw:DeviceType Enabled="true" Category="4" DeliveryMethod="1" DeliveryFormat="0" BufferSize="65535" Flags="0" SystemCreated="true"><saw:Name>pagenetgold</saw:Name><saw:Description>PageNet Advisor Gold</saw:Description><saw:Domain>pagenet.net</saw:Domain><saw:GUID Low="3838255036" Mid="3363" Hi="4096" ClockHi="133" ClockLow="103" Node0="172" Node1="16" Node2="251" Node3="137" Node4="0" Node5="0"/></saw:DeviceType></saw:DeviceMetrics>

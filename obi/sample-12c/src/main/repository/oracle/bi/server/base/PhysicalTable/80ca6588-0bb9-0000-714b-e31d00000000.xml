@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80ca6588-0bb9-0000-714b-e31d00000000" name="D01 Time Day Grain" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" pollFreq="0" x="845" y="335" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000" sourceTableRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca6551-0bb9-0000-714b-e31d00000000">
+<PhysicalColumn mdsid="m80ca659d-0bbb-0000-714b-e31d00000000" name="Julian_Day_Num" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Julian_Day_Num" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca6566-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca659e-0bbb-0000-714b-e31d00000000" name="Julian_Month_Num" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Julian_Month_Num" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca6567-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca659f-0bbb-0000-714b-e31d00000000" name="Julian_Qtr_Num" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Julian_Qtr_Num" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca6568-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca65a0-0bbb-0000-714b-e31d00000000" name="Julian_Week_Num" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Julian_Week_Num" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca6569-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca65a2-0bbb-0000-714b-e31d00000000" name="Per_Name_Half" dataType="VARCHAR" precision="8" extName="//Table/SAMP_TIME_DAY_D/Per_Name_Half" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca656b-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca65a3-0bbb-0000-714b-e31d00000000" name="Per_Name_Month" dataType="VARCHAR" precision="9" extName="//Table/SAMP_TIME_DAY_D/Per_Name_Month" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca656c-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca65a4-0bbb-0000-714b-e31d00000000" name="Per_Name_Qtr" dataType="VARCHAR" precision="7" extName="//Table/SAMP_TIME_DAY_D/Per_Name_Qtr" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca656d-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca65a5-0bbb-0000-714b-e31d00000000" name="Per_Name_Week" dataType="VARCHAR" precision="12" extName="//Table/SAMP_TIME_DAY_D/Per_Name_Week" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca656e-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca65a6-0bbb-0000-714b-e31d00000000" name="Per_Name_Year" dataType="VARCHAR" precision="4" extName="//Table/SAMP_TIME_DAY_D/Per_Name_Year" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca656f-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca65a7-0bbb-0000-714b-e31d00000000" name="Day_Key" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Day_Key" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca6570-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6591-0bbb-0000-714b-e31d00000000" name="Calendar_Date" dataType="DATE" extName="//Table/SAMP_TIME_DAY_D/CALENDAR_DATE" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca655a-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6592-0bbb-0000-714b-e31d00000000" name="Day_Of_Month" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Day_Of_Month" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca655b-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6593-0bbb-0000-714b-e31d00000000" name="Day_Of_Week" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Day_Of_Week" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca655c-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6594-0bbb-0000-714b-e31d00000000" name="Day_Of_Year" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Day_Of_Year" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca655d-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80ca663f-0bc0-0000-714b-e31d00000000" name="07 Time Day_Key">
+<RefColumns>
+<RefColumn refId="m80ca663f-0bc0-0000-714b-e31d00000000-m80ca65a7-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca65a7-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalKey mdsid="m80caa45c-0bc0-0000-714b-e31d00000000" name="D01 Time Day Grain_Key">
+<RefColumns>
+<RefColumn refId="m80caa45c-0bc0-0000-714b-e31d00000000-m80ca6591-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca6591-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

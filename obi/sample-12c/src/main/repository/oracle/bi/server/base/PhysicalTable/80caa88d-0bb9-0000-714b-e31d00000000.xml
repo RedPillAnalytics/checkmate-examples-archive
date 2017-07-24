@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80caa88d-0bb9-0000-714b-e31d00000000" name="F20 Targets Facts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" pollFreq="0" x="1305" y="130" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000" sourceTableRef="/oracle/bi/server/base/PhysicalTable/80caa874-0bb9-0000-714b-e31d00000000.xml#m80caa874-0bb9-0000-714b-e31d00000000">
+<Description><![CDATA[Alias to the Targets Facts Physical table. Aliasing allows multiple representation of the same physical table source in the RPD physical model. It also helps maintenance and lineage.]]></Description>
+<PhysicalColumn mdsid="m80caa88e-0bbb-0000-714b-e31d00000000" name="Revenue" dataType="DOUBLE" extName="//Table/SAMP_TARGETS_F/REVENUE" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80caa874-0bb9-0000-714b-e31d00000000.xml#m80caa876-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80caa890-0bbb-0000-714b-e31d00000000" name="Prod_Key" dataType="INT" extName="//Table/SAMP_TARGETS_F/PROD_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80caa874-0bb9-0000-714b-e31d00000000.xml#m80caa87b-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80caa891-0bbb-0000-714b-e31d00000000" name="Office_Key" dataType="INT" extName="//Table/SAMP_TARGETS_F/OFFICE_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80caa874-0bb9-0000-714b-e31d00000000.xml#m80caa87c-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80caa892-0bbb-0000-714b-e31d00000000" name="Units" dataType="INT" extName="//Table/SAMP_TARGETS_F/UNITS" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80caa874-0bb9-0000-714b-e31d00000000.xml#m80caa87d-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80caa893-0bbb-0000-714b-e31d00000000" name="Bill_Mth_Key" dataType="INT" extName="//Table/SAMP_TARGETS_F/BILL_MTH_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80caa874-0bb9-0000-714b-e31d00000000.xml#m80caa87e-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80caa899-0bc0-0000-714b-e31d00000000" name="F20 Facts Targets_Key">
+<RefColumns>
+<RefColumn refId="m80caa899-0bc0-0000-714b-e31d00000000-m80caa890-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80caa88d-0bb9-0000-714b-e31d00000000.xml#m80caa890-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalKey mdsid="m80caa89f-0bc0-0000-714b-e31d00000000" name="F20 Facts Targets_Key#3">
+<RefColumns>
+<RefColumn refId="m80caa89f-0bc0-0000-714b-e31d00000000-m80caa893-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80caa88d-0bb9-0000-714b-e31d00000000.xml#m80caa893-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalKey mdsid="m80caa8a3-0bc0-0000-714b-e31d00000000" name="F20 Facts Targets_Key#4">
+<RefColumns>
+<RefColumn refId="m80caa8a3-0bc0-0000-714b-e31d00000000-m80caa891-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80caa88d-0bb9-0000-714b-e31d00000000.xml#m80caa891-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+<PhysicalForeignKey mdsid="m80caa8eb-0bbe-0000-714b-e31d00000000" name="F20 Facts Targets_FKey#2" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80ca6547-0bb9-0000-714b-e31d00000000.xml#m80ca663e-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80caa8eb-0bbe-0000-714b-e31d00000000-m80caa890-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80caa88d-0bb9-0000-714b-e31d00000000.xml#m80caa890-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80caa8ee-0bbe-0000-714b-e31d00000000" name="F20 Facts Targets_FKey#4" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80ca6538-0bb9-0000-714b-e31d00000000.xml#m80ca663c-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80caa8ee-0bbe-0000-714b-e31d00000000-m80caa891-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80caa88d-0bb9-0000-714b-e31d00000000.xml#m80caa891-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+<PhysicalForeignKey mdsid="m80caa8e9-0bbe-0000-714b-e31d00000000" name="F20 Facts Targets_FKey" counterPartKeyRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca6640-0bc0-0000-714b-e31d00000000">
+<RefColumns>
+<RefColumn refId="m80caa8e9-0bbe-0000-714b-e31d00000000-m80caa893-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80caa88d-0bb9-0000-714b-e31d00000000.xml#m80caa893-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalForeignKey>
+</PhysicalTable>

@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlVersion="201201160" xmlns:sawx="com.siebel.analytics.web/expression/v1.1">
+	<saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Sample Sales Lite&quot;" withinHierarchy="true">
+		<saw:columns>
+			<saw:column xsi:type="saw:regularColumn" columnID="c3c1295084166c2c0">
+				<saw:columnFormula>
+					<sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Office&quot;</sawx:expr></saw:columnFormula></saw:column>
+			<saw:column xsi:type="saw:regularColumn" columnID="c975185fad1fc9557">
+				<saw:columnFormula>
+					<sawx:expr xsi:type="sawx:sqlExpression">round(&quot;Base Facts&quot;.&quot;Revenue&quot;/1000,2)</sawx:expr></saw:columnFormula>
+				<saw:tableHeading>
+					<saw:caption fmt="text">
+						<saw:text>Base Facts</saw:text></saw:caption></saw:tableHeading>
+				<saw:columnHeading>
+					<saw:caption fmt="text">
+						<saw:text>&quot;Base Facts&quot;.&quot;Revenue&quot;</saw:text></saw:caption></saw:columnHeading></saw:column>
+			<saw:column xsi:type="saw:regularColumn" columnID="c889ce9435a23918d">
+				<saw:columnFormula>
+					<sawx:expr xsi:type="sawx:sqlExpression">Rank(&quot;Base Facts&quot;.&quot;Revenue&quot;)</sawx:expr></saw:columnFormula>
+				<saw:displayFormat>
+					<saw:formatSpec suppress="repeat" wrapText="true"/><saw:conditionalDisplayFormats/></saw:displayFormat>
+				<saw:tableHeading>
+					<saw:caption fmt="text">
+						<saw:text>Base Facts</saw:text></saw:caption></saw:tableHeading>
+				<saw:columnHeading>
+					<saw:caption fmt="text">
+						<saw:text>Rank</saw:text></saw:caption>
+					<saw:displayFormat>
+						<saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+			<saw:column xsi:type="saw:regularColumn" columnID="cc65712e81a30e093">
+				<saw:columnFormula>
+					<sawx:expr xsi:type="sawx:sqlExpression">&quot;Calculated Facts&quot;.&quot;# of Orders&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+		<saw:filter>
+			<sawx:expr xsi:type="sawx:logical" op="and"><sawx:expr xsi:type="sawx:comparison" op="lessOrEqual">
+					<sawx:expr xsi:type="sawx:sqlExpression">Rank(&quot;Base Facts&quot;.&quot;Revenue&quot;)</sawx:expr>
+					<sawx:expr xsi:type="xsd:decimal">10</sawx:expr></sawx:expr><sawx:expr xsi:type="sawx:list" op="in">
+					<sawx:expr xsi:type="sawx:sqlExpression">&quot;Time&quot;.&quot;Per Name Year&quot;</sawx:expr>
+					<sawx:expr xsi:type="xsd:string">2008</sawx:expr>
+					<sawx:expr xsi:type="xsd:string">2009</sawx:expr>
+					<sawx:expr xsi:type="xsd:string">2010</sawx:expr></sawx:expr>
+				<sawx:expr xsi:type="sawx:special" op="prompted">
+					<sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Company&quot;</sawx:expr></sawx:expr><sawx:expr op="prompted" xsi:type="sawx:special"><sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Department&quot;</sawx:expr></sawx:expr><sawx:expr op="prompted" xsi:type="sawx:special"><sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Organization&quot;</sawx:expr></sawx:expr><sawx:expr op="prompted" xsi:type="sawx:special"><sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Office&quot;</sawx:expr></sawx:expr></sawx:expr></saw:filter>
+		<saw:columnOrder>
+			<saw:columnOrderRef columnID="c889ce9435a23918d" direction="ascending"/></saw:columnOrder></saw:criteria>
+	<saw:views currentView="2">
+		<saw:view xsi:type="saw:compoundView" name="compoundView!1">
+			<saw:cvTable><saw:cvRow><saw:cvCell viewName="titleView!1"/></saw:cvRow><saw:cvRow><saw:cvCell viewName="tickerview!1">
+						<saw:displayFormat>
+							<saw:formatSpec/></saw:displayFormat></saw:cvCell></saw:cvRow></saw:cvTable></saw:view>
+		<saw:view xsi:type="saw:titleView" name="titleView!1" includeName="true" startedDisplay="dateTime" logoUrl="fmap:images/report_tradepromo.jpg"><saw:displayFormat>
+				<saw:formatSpec borderColor="#EDE8CA" borderPosition="8" borderStyle="thick"/></saw:displayFormat><saw:logoFormat>
+				<saw:displayFormat/></saw:logoFormat><saw:createdTime>
+				<saw:displayFormat>
+					<saw:formatSpec fontStyle="italic" wrapText="true" fontColor="#666666"/></saw:displayFormat></saw:createdTime><saw:title>
+				<saw:displayFormat>
+					<saw:formatSpec fontColor="#333366" wrapText="true"/></saw:displayFormat></saw:title></saw:view>
+		<saw:view xsi:type="saw:tickerview" name="tickerview!1" behavior="scroll" direction="up" width="420" scrollAmount="1" scrollDelay="1" marqueeAttributes="onMouseEnter=&amp;quot;this.stop();&amp;quot; onMouseLeave=&amp;quot;this.start();&amp;quot; class=&amp;quot;TickerMarquee&amp;quot;" height="70">
+			<saw:rowText>
+				<saw:caption fmt="html">
+					<saw:text>&lt;b&gt;@1&lt;/b&gt; ranks #&lt;font color=green&gt;&lt;b&gt;@3&lt;/b&gt;&lt;/font&gt; with &lt;font color=blue&gt;&lt;b&gt;@2&lt;/b&gt; k&lt;/font&gt; bookings value over &lt;font color=blue&gt;@4&lt;/font&gt; orders&lt;br/&gt;</saw:text></saw:caption></saw:rowText>
+			<saw:rowSep>
+				<saw:caption fmt="html">
+					<saw:text>&lt;br/&gt;</saw:text></saw:caption></saw:rowSep>
+			<saw:beginningText>
+				<saw:caption fmt="html">
+					<saw:text>					</saw:text></saw:caption></saw:beginningText></saw:view>
+		</saw:views></saw:report>

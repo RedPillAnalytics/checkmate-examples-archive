@@ -1,0 +1,21 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="true" cachePerUser="true" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <dataModel url=".xdm"/>
+   <description>
+      <![CDATA[Data%20Source:%20Direct%20connection%20to%20OBI%20EE%20Sample%20Sales%20Lite%20subject%20area.%20Features:%20List%20filters,%20Interactive%20charts.]]>
+   </description>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="true"/>
+   <property name="showReportLinks" value="true"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="false"/>
+   <property name="cacheDuration" value="30"/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3" style="parameterLocation:in-horizontal;promptLocation:side;displayApply:true;"/>
+   <templates default="Actual vs. Target">
+      <template label="Actual vs. Target" url="Actual vs. Target - 2.xpt" type="xpt" outputFormat="analyze,html,pdf,xlsx,pptx,csv" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+   </templates>
+</report>

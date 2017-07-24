@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80ca6538-0bb9-0000-714b-e31d00000000" name="D20 Offices" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" pollFreq="0" x="905" y="785" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000" sourceTableRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80ca64f8-0bb9-0000-714b-e31d00000000">
+<Description><![CDATA[Alias to the Office Dimension Physical table. Aliasing allows multiple representation of the same physical table source in the RPD physical model. It also helps maintenance and lineage.]]></Description>
+<PhysicalColumn mdsid="m80cb29b2-0bbb-0000-714b-e31d00000000" name="Company_Key" dataType="INT" extName="//Table/SAMP_OFFICES_D/COMPANY_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80cb29b1-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80cb2abc-0bbb-0000-714b-e31d00000000" name="Org_Key" dataType="INT" extName="//Table/SAMP_OFFICES_D/ORG_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80cb2abb-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80cb2ac2-0bbb-0000-714b-e31d00000000" name="Dept_Key" dataType="INT" extName="//Table/SAMP_OFFICES_D/DEPT_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80cb2ac1-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80caa923-0bbb-0000-714b-e31d00000000" name="Address_Key" dataType="INT" extName="//Table/SAMP_OFFICES_D/ADDRESS_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80caa922-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6539-0bbb-0000-714b-e31d00000000" name="Department" dataType="VARCHAR" precision="20" extName="//Table/SAMP_OFFICES_D/DEPARTMENT" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80ca64f9-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca653a-0bbb-0000-714b-e31d00000000" name="Organization" dataType="VARCHAR" precision="20" extName="//Table/SAMP_OFFICES_D/ORGANIZATION" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80ca64fa-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca653b-0bbb-0000-714b-e31d00000000" name="Office_Dsc" dataType="VARCHAR" precision="20" extName="//Table/SAMP_OFFICES_D/OFFICE_DSC" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80ca64fb-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca653c-0bbb-0000-714b-e31d00000000" name="Office_Key" dataType="INT" extName="//Table/SAMP_OFFICES_D/OFFICE_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80ca64fc-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca653d-0bbb-0000-714b-e31d00000000" name="Company" dataType="VARCHAR" precision="20" extName="//Table/SAMP_OFFICES_D/COMPANY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80ca64fd-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca653e-0bbb-0000-714b-e31d00000000" name="Sequence" dataType="INT" extName="//Table/SAMP_OFFICES_D/SEQUENCE" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca64f8-0bb9-0000-714b-e31d00000000.xml#m80ca64fe-0bbb-0000-714b-e31d00000000">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80ca663c-0bc0-0000-714b-e31d00000000" name="Dim 02 Market_Key">
+<RefColumns>
+<RefColumn refId="m80ca663c-0bc0-0000-714b-e31d00000000-m80ca653c-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80ca6538-0bb9-0000-714b-e31d00000000.xml#m80ca653c-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

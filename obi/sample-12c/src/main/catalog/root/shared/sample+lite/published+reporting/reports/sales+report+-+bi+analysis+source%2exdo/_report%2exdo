@@ -1,0 +1,23 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="true" useBipParameters="true" producerName="fin-financialCommon" parameterVOName="" parameterTaskFlow="" customDataControl="" cachePerUser="false" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <dataModel url="/Sample Lite/Published Reporting/Data Models/Sales Report - BI Analysis DM.xdm"/>
+   <description>
+      <![CDATA[Data%20Model:%20Sales%20Report%20-%20BI%20Analysis%20DM%20--Layouts:%20XPT;%20Features:%20OBI%20Analyses%20used%20as%20a%20data%20source;%20This%20report%20is%20placed%20on%20QuickStart%20dashboard%20and%20is%20linked%20to%20dashboard%20prompts]]>
+   </description>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="false"/>
+   <property name="showReportLinks" value="true"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="true"/>
+   <property name="cacheDuration" value="false"/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3" style="parameterLocation:in-horizontal;promptLocation:side;"/>
+   <templates default="Sales Summary">
+      <template label="Sales Summary" url="Summary View.xpt" type="xpt" outputFormat="analyze,html,pdf,xlsx,pptx" defaultFormat="analyze" active="true" viewOnline="true"/>
+      <template label="Revenue by Quarter" url="Revenue by Quarter.xpt" type="xpt" outputFormat="analyze,html,pdf,xlsx,pptx" defaultFormat="analyze" active="true" viewOnline="true"/>
+      <template label="Revenue by Brand" url="Revenue by Brand.xpt" type="xpt" outputFormat="analyze,html,pdf,xlsx,pptx" defaultFormat="analyze" active="true" viewOnline="true"/>
+   </templates>
+</report>

@@ -1,0 +1,119 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<dataModel version="2.0" xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xdm="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" defaultDataSourceRef="Oracle BI EE">
+   <description>
+      <![CDATA[Data%20Sources:%20Sample%20Sales%20BI%20Server%20subject%20area;%20XLS%20File]]>
+   </description>
+   <dataProperties>
+      <property name="include_parameters" value="true"/>
+      <property name="include_null_Element" value="false"/>
+      <property name="include_rowsettag" value="false"/>
+      <property name="xml_tag_case" value="upper"/>
+   </dataProperties>
+   <dataSets>
+      <dataSet name="OfficeSales" type="complex">
+         <sql>
+            <![CDATA[select	 "Offices"."Company" as "Company",
+	 "Offices"."Organization" as "Organization",
+	 "Offices"."Department" as "Department",
+	 "Offices"."Office" as "Office",
+	 "Base Facts"."Revenue" as "Revenue",
+	 "Time"."Per Name Year" as "Per Name Year",
+	 "Time"."Per Name Qtr" as "Per Name Qtr" 
+ from	"Sample Sales Lite"."Time" "Time",
+	"Sample Sales Lite"."Base Facts" "Base Facts",
+	"Sample Sales Lite"."Offices" "Offices" 
+ where 	 "Offices"."Company" =:P_COMPANY 
+   and	 "Offices"."Organization" =:P_ORG 
+   and	 "Time"."Per Name Year" =:P_YEAR]]>
+         </sql>
+      </dataSet>
+      <dataSet name="Convertion Rates" type="complex">
+         <excel dataSourceRef="xdo:local">
+            <file>ExchangeRates3.xls</file>
+            <sheetName>Rates-3</sheetName>
+            <tableName/>
+         </excel>
+         <input name="CURR_SYM" value="${P_CURR}"/>
+      </dataSet>
+   </dataSets>
+   <output rootName="DATA_DS" uniqueRowName="false">
+      <nodeList name="data-structure">
+         <dataStructure tagName="DATA_DS">
+            <group name="G_1" label="G_1" source="OfficeSales">
+               <element name="Company" value="Company" label="Company" dataType="xsd:string" breakOrder="" fieldOrder="1"/>
+               <element name="Organization" value="Organization" label="Organization" dataType="xsd:string" breakOrder="" fieldOrder="2"/>
+               <element name="Department" value="Department" label="Department" dataType="xsd:string" breakOrder="" fieldOrder="3"/>
+               <element name="Office" value="Office" label="Office" dataType="xsd:string" breakOrder="" fieldOrder="4"/>
+               <element name="Per_Name_Year" value="Per Name Year" label="Year" dataType="xsd:string" breakOrder="" fieldOrder="6"/>
+               <element name="Per_Name_Qtr" value="Per Name Qtr" label="Quarter" dataType="xsd:string" breakOrder="None" fieldOrder="7"/>
+               <element name="USD_Revenue" value="Revenue" label="Revenue" dataType="xsd:double" breakOrder="" fieldOrder="5"/>
+            </group>
+            <group name="G_2" label="G_2" source="Convertion Rates">
+               <element name="CURR_DESC" value="CURR_DESC" label="CURR_DESC" dataType="xsd:string" breakOrder="" fieldOrder="1"/>
+               <element name="CURR_SYM" value="CURR_SYM" label="CURR_SYM" dataType="xsd:string" breakOrder="" fieldOrder="2"/>
+               <element name="CONV_RATE" value="CONV_RATE" label="CONV_RATE" dataType="xsd:double" breakOrder="" fieldOrder="3"/>
+            </group>
+         </dataStructure>
+      </nodeList>
+   </output>
+   <eventTriggers/>
+   <lexicals/>
+   <valueSets>
+      <valueSet id="CURR_LOV">
+         <nvPairs>
+            <nvPair label="US Dollar" value="USD"/>
+            <nvPair label="Euro" value="EUR"/>
+            <nvPair label="Japanese Yen" value="JPY"/>
+            <nvPair label="British Pound" value="GBP"/>
+            <nvPair label="Canadian Dollar" value="CAD"/>
+            <nvPair label="Australian Dollar" value="AUD"/>
+            <nvPair label="Hong Kong Dollar" value="HKD"/>
+            <nvPair label="Swiss Frank" value="CHF"/>
+         </nvPairs>
+      </valueSet>
+      <valueSet id="VALID_YEARS">
+         <nvPairs>
+            <nvPair label="2008" value="2008"/>
+            <nvPair label="2009" value="2009"/>
+            <nvPair label="2010" value="2010"/>
+         </nvPairs>
+      </valueSet>
+      <valueSet id="COMPANY_LOV">
+         <sql dataSourceRef="Oracle BI EE">
+            <![CDATA[select	 "Offices"."Company" as "Company" 
+ from	"Sample Sales Lite"."Offices" "Offices"]]>
+         </sql>
+      </valueSet>
+      <valueSet id="ORG_LOV">
+         <sql dataSourceRef="Oracle BI EE">
+            <![CDATA[select	 "Offices"."Organization" as "Organization"
+ from	"Sample Sales Lite"."Offices" "Offices" 
+ where 	 "Offices"."Company" =:P_COMPANY]]>
+         </sql>
+         <input id="P_COMPANY" value="${P_COMPANY}" dataType="xsd:string"/>
+      </valueSet>
+   </valueSets>
+   <parameters>
+      <parameter name="P_CURR" defaultValue="USD" dataType="xsd:string" rowPlacement="1">
+         <select label="Currency " valueSet="CURR_LOV" multiple="false" all="false" allValue="null"/>
+      </parameter>
+      <parameter name="P_YEAR" defaultValue="2008" dataType="xsd:string" rowPlacement="1">
+         <select label="Year" valueSet="VALID_YEARS" multiple="false" all="false" allValue="lov"/>
+      </parameter>
+      <parameter name="P_COMPANY" defaultValue="Genmind Corp" dataType="xsd:string" rowPlacement="1">
+         <select label="Company Name" valueSet="COMPANY_LOV" multiple="false" all="false" allValue="lov" refreshParameters="true"/>
+      </parameter>
+      <parameter name="P_ORG" defaultValue="Production Org." dataType="xsd:string" rowPlacement="1">
+         <select label="Company Org Name" valueSet="ORG_LOV" multiple="false" all="false" allValue="null" refreshParameters="true"/>
+      </parameter>
+   </parameters>
+   <bursting/>
+   <display>
+      <layouts>
+         <layout name="OfficeSales" left="180px" top="123px"/>
+         <layout name="Convertion Rates" left="493px" top="66px"/>
+         <layout name="DATA_DS" left="5px" top="28px"/>
+      </layouts>
+      <groupLinks/>
+   </display>
+</dataModel>

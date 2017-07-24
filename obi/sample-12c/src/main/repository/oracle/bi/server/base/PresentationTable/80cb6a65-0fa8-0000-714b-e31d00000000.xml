@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cb6a65-0fa8-0000-714b-e31d00000000" name="Offices" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6a2e-0fa4-0000-714b-e31d00000000.xml#m80cb6a2e-0fa4-0000-714b-e31d00000000">
+<Description><![CDATA[Offices dimension objects and attributes]]></Description>
+<PresentationColumn mdsid="m80cb6cfe-0faa-0000-714b-e31d00000000" name="Office" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68bc-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Office description from the Office dimension. This column is logically sorted by BIEE server according to the Office Sequence column value.  Naturally drills into Orders Status Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d00-0faa-0000-714b-e31d00000000" name="Department" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68be-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Department description from the Office dimension. Naturally drills into Office Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d02-0faa-0000-714b-e31d00000000" name="Organization" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68c0-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Organization description from the Office dimension.  Naturally drills into Department Column.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d04-0faa-0000-714b-e31d00000000" name="Company" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68c2-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Company description from the Office dimension.  Naturally drills into Organization Column.]]></Description>
+</PresentationColumn>
+<RefHierarchies>
+<RefPresentationHierarchy refId="m80cb6a65-0fa8-0000-714b-e31d00000000-m80cb6b92-0fbc-0000-714b-e31d00000000" presentationHierarchyRef="/oracle/bi/server/base/PresentationHierarchy/80cb6b92-0fbc-0000-714b-e31d00000000.xml#m80cb6b92-0fbc-0000-714b-e31d00000000"/>
+</RefHierarchies>
+</PresentationTable>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cb6c19-0fa8-0000-714b-e31d00000000" name="Base Facts" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6c12-0fa4-0000-714b-e31d00000000.xml#m80cb6c12-0fa4-0000-714b-e31d00000000">
+<Description><![CDATA[This folder contains Target Fact Metrics with different types of aggregations.]]></Description>
+<PresentationColumn mdsid="m80cb6d83-0faa-0000-714b-e31d00000000" name="Target Revenue" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a4-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Target Revenue from the Target Facts table, with a Sum aggregation]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d85-0faa-0000-714b-e31d00000000" name="Target Quantity" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a5-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Returns the Target Quantity from the Target Facts table with a Sum aggregation]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d66-0faa-0000-714b-e31d00000000" name="Target Unit Price" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb68ab-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This logical object calculates the Target Unit Price by dividing Target Revenue by Target Units.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d68-0faa-0000-714b-e31d00000000" name="Target Completion  (Rev Pct)" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb68af-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Calculates the completion percentage by dividing Actual revenue by Target Revenue. The result is then multiplied by 100.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6def-0faa-0000-714b-e31d00000000" name="Actual Unit Price" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb68aa-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This logical object calculates the Actua Unit Price by dividing Revenue by Units.]]></Description>
+</PresentationColumn>
+</PresentationTable>

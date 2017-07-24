@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PhysicalTable mdsid="m80ca6571-0bb9-0000-714b-e31d00000000" name="SAMP_TIME_MTH_D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" x="245" y="655" rowCount="0.0" uri="VALUEOF(NQ_SESSION.SERVICEINSTANCEROOT)/data/SAMP_TIME_MTH_D.xml" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000">
+<Description><![CDATA[Time (Quarter Grain) Dimension Physical table. This table is not directly used by the logical model, it is accessed via the aliases setup in the physical diagram. The database is of XML type, the setup of this physical table leverages the value of an RPD variable : NQ_SESSION.SERVICEINSTANCEROOT (see the XML tab in this dialog box).]]></Description>
+<PhysicalColumn mdsid="m80ca6572-0bbb-0000-714b-e31d00000000" name="Beg_of_Qtr_Wid" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/BEG_OF_QTR_WID" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6573-0bbb-0000-714b-e31d00000000" name="Cal_Half" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Cal_Half" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6574-0bbb-0000-714b-e31d00000000" name="Cal_Month" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Cal_Month" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6575-0bbb-0000-714b-e31d00000000" name="Cal_Qtr" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Cal_Qtr" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6576-0bbb-0000-714b-e31d00000000" name="Cal_Year" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Cal_Year" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6577-0bbb-0000-714b-e31d00000000" name="Days_in_Mth" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Days_in_Mth" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6578-0bbb-0000-714b-e31d00000000" name="Days_in_Qtr" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Days_in_Qtr" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6579-0bbb-0000-714b-e31d00000000" name="Fscl_Half" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/FSCL_HALF" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca657a-0bbb-0000-714b-e31d00000000" name="Fscl_Month" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Fscl_Month" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca657b-0bbb-0000-714b-e31d00000000" name="Fscl_Qtr" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/FSCL_QTR" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca657c-0bbb-0000-714b-e31d00000000" name="Fscl_Year" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Fscl_Year" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca657d-0bbb-0000-714b-e31d00000000" name="Julian_Month_Num" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Julian_Month_Num" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca657e-0bbb-0000-714b-e31d00000000" name="Julian_Qtr_Num" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Julian_Qtr_Num" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca657f-0bbb-0000-714b-e31d00000000" name="Month_Ago_Wid" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Month_Ago_Wid" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6580-0bbb-0000-714b-e31d00000000" name="Per_Name_Half" dataType="VARCHAR" precision="8" extName="//Table/SAMP_TIME_MTH_D/Per_Name_Half" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6581-0bbb-0000-714b-e31d00000000" name="Per_Name_Month" dataType="VARCHAR" precision="9" extName="//Table/SAMP_TIME_MTH_D/Per_Name_Month" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6582-0bbb-0000-714b-e31d00000000" name="Per_Name_Qtr" dataType="VARCHAR" precision="7" extName="//Table/SAMP_TIME_MTH_D/Per_Name_Qtr" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6583-0bbb-0000-714b-e31d00000000" name="Per_Name_Year" dataType="VARCHAR" precision="4" extName="//Table/SAMP_TIME_MTH_D/Per_Name_Year" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6584-0bbb-0000-714b-e31d00000000" name="Quarter_Ago_Wid" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Quarter_Ago_Wid" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6585-0bbb-0000-714b-e31d00000000" name="Mth_Key" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Mth_Key" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6586-0bbb-0000-714b-e31d00000000" name="Year_Ago_Wid" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Year_Ago_Wid" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalColumn mdsid="m80ca6587-0bbb-0000-714b-e31d00000000" name="Loaded" dataType="INT" extName="//Table/SAMP_TIME_MTH_D/Loaded" rowCount="0.0" specialType="none">
+</PhysicalColumn>
+<PhysicalKey mdsid="m80ca65bc-0bc0-0000-714b-e31d00000000" name="Row_Wid">
+<RefColumns>
+<RefColumn refId="m80ca65bc-0bc0-0000-714b-e31d00000000-m80ca6585-0bbb-0000-714b-e31d00000000" columnRef="/oracle/bi/server/base/PhysicalTable/80ca6571-0bb9-0000-714b-e31d00000000.xml#m80ca6585-0bbb-0000-714b-e31d00000000"/>
+</RefColumns>
+</PhysicalKey>
+</PhysicalTable>

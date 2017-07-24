@@ -1,0 +1,19 @@
+<?xml version = '1.0' encoding = 'utf-8'?>
+<report xmlns="http://xmlns.oracle.com/oxp/xmlp" xmlns:xsd="http://wwww.w3.org/2001/XMLSchema" version="2.0" dataModel="true" useBipParameters="true" producerName="fin-financialCommon" parameterVOName="" parameterTaskFlow="" customDataControl="" cachePerUser="false" cacheSmartRefresh="false" cacheUserRefresh="false">
+   <dataModel url="/Sample Lite/Published Reporting/JDE Samples/Data/Backordered Items Not Received Analysis.xdm" cache="true"/>
+   <description/>
+   <property name="showControls" value="true"/>
+   <property name="online" value="true"/>
+   <property name="openLinkInNewWindow" value="true"/>
+   <property name="autoRun" value="true"/>
+   <property name="cacheDocument" value="false"/>
+   <property name="showReportLinks" value="false"/>
+   <property name="asynchronousRun" value="false"/>
+   <property name="useExcelProcessor" value="false"/>
+   <property name="cacheDuration" value=""/>
+   <property name="controledByExtApp" value="false"/>
+   <parameters paramPerLine="3" style="parameterLocation:in-horizontal;promptLocation:side;"/>
+   <templates default="Backordered Items Not Received Analysis">
+      <template label="Backordered Items Not Received Analysis" url="Backordered Items Not Received Analysis.xpt" type="xpt" outputFormat="analyze,html,pdf,rtf,xlsx,pptx,mhtml,pdfz,xslfo,xml,csv" defaultFormat="analyze" locale="en_US" active="true" viewOnline="true"/>
+   </templates>
+</report>

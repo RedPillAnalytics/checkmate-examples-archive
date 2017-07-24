@@ -1,0 +1,213 @@
+<?xml version="1.0" encoding="utf-8"?>
+<saw:report xmlns:saw="com.siebel.analytics.web/report/v1.1" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:sawx="com.siebel.analytics.web/expression/v1.1" xmlVersion="201201160">
+   <saw:criteria xsi:type="saw:simpleCriteria" subjectArea="&quot;Sample Sales Lite&quot;" withinHierarchy="true">
+      <saw:columns>
+         <saw:column xsi:type="saw:regularColumn" columnID="c443820494a3d97c7">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Orders&quot;.&quot;Order Number&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c50f1b6008166cc97">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Orders&quot;.&quot;Order Status&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c709b823e4d9256b0">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Orders&quot;.&quot;Order Type&quot;</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec suppress="suppress" wrapText="true" interaction="clientEvent">
+                  <saw:clientEventSpec channel="MD2"/></saw:formatSpec></saw:displayFormat>
+            <saw:columnHeading>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c3a8c82ee9397fc94">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Orders Dates&quot;.&quot;Order Date&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="cfff3338cc71c27d9">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Products&quot;.&quot;Product&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="cc7b13bf0897a32ef">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Products&quot;.&quot;Brand&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c1e39e874ff549072">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Company&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c063147feda1d01df">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">count(&quot;Orders&quot;.&quot;Order Number&quot;)</sawx:expr></saw:columnFormula>
+            <saw:tableHeading>
+               <saw:caption fmt="text">
+                  <saw:text>Orders</saw:text></saw:caption></saw:tableHeading>
+            <saw:columnHeading>
+               <saw:caption fmt="text">
+                  <saw:text>No of Orders</saw:text></saw:caption></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c58a0f79687037517">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Base Facts&quot;.&quot;Revenue&quot;</sawx:expr></saw:columnFormula></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="c5c325de0d687d788">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Base Facts&quot;.&quot;Billed Quantity&quot;</sawx:expr></saw:columnFormula>
+            <saw:displayFormat>
+               <saw:formatSpec suppress="repeat" wrapText="true">
+                  <saw:dataFormat xsi:type="saw:number" commas="true" negativeType="minus" minDigits="0" maxDigits="0"/></saw:formatSpec></saw:displayFormat>
+            <saw:columnHeading>
+               <saw:displayFormat>
+                  <saw:formatSpec/></saw:displayFormat></saw:columnHeading></saw:column>
+         <saw:column xsi:type="saw:regularColumn" columnID="ce7fd7822a6e2adc7">
+            <saw:columnFormula>
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Calculated Facts&quot;.&quot;Actual Unit Price&quot;</sawx:expr></saw:columnFormula></saw:column></saw:columns>
+      <saw:filter>
+         <sawx:expr xsi:type="sawx:logical" op="and">
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Time&quot;.&quot;Per Name Year&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Time&quot;.&quot;Per Name Qtr&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Time&quot;.&quot;Per Name Month&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Products&quot;.&quot;LOB&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Products&quot;.&quot;Brand&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Products&quot;.&quot;Product Type&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:columnExpression" formulaUse="display" displayUse="display">
+                  <saw:columnFormula formulaUse="display">
+                     <sawx:expr xsi:type="sawx:sqlExpression">&quot;Products&quot;.&quot;Product&quot;</sawx:expr></saw:columnFormula></sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Company&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Organization&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Department&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Offices&quot;.&quot;Office&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Orders&quot;.&quot;Order Type&quot;</sawx:expr></sawx:expr>
+            <sawx:expr op="prompted" xsi:type="sawx:special">
+               <sawx:expr xsi:type="sawx:sqlExpression">&quot;Orders&quot;.&quot;Order Status&quot;</sawx:expr></sawx:expr></sawx:expr></saw:filter>
+      <saw:columnOrder/></saw:criteria>
+   <saw:views currentView="0">
+      <saw:view xsi:type="saw:compoundView" name="compoundView!1">
+         <saw:cvTable>
+            <saw:cvRow>
+               <saw:cvCell viewName="titleView!1">
+                  <saw:displayFormat>
+                     <saw:formatSpec/></saw:displayFormat></saw:cvCell>
+               <saw:cvCell viewName="filtersView!1"/></saw:cvRow>
+            <saw:cvRow>
+               <saw:cvCell viewName="tableView!1">
+                  <saw:displayFormat>
+                     <saw:formatSpec vAlign="middle"/></saw:displayFormat></saw:cvCell>
+               <saw:cvCell viewName="dvtfunnel!1"/></saw:cvRow>
+            <saw:cvRow>
+               <saw:cvCell viewName="tableView!3" colSpan="2"/></saw:cvRow></saw:cvTable></saw:view>
+      <saw:view xsi:type="saw:titleView" name="titleView!1" startedDisplay="none" includeName="false"><saw:createdTime>
+            <saw:displayFormat>
+               <saw:formatSpec fontColor="#000080" wrapText="true"/></saw:displayFormat></saw:createdTime><saw:displayFormat>
+            <saw:formatSpec wrapText="true"/></saw:displayFormat><saw:title>
+            <saw:caption fmt="text">
+               <saw:text>Order Details</saw:text></saw:caption>
+            <saw:displayFormat>
+               <saw:formatSpec wrapText="true" fontFamily="Arial" fontSize="18" fontStyle="regular"/></saw:displayFormat></saw:title></saw:view>
+      <saw:view xsi:type="saw:tableView" name="tableView!1" autoPreview="true">
+         <saw:edges>
+            <saw:edge axis="page" showColumnHeader="true"/>
+            <saw:edge axis="section"/>
+            <saw:edge axis="row" showColumnHeader="true">
+               <saw:displayGrandTotals>
+                  <saw:displayGrandTotal id="t1" grandTotalPosition="after"/></saw:displayGrandTotals>
+               <saw:edgeLayers>
+                  <saw:edgeLayer type="column" columnID="c709b823e4d9256b0"/>
+                  <saw:edgeLayer type="column" columnID="c063147feda1d01df"/>
+                  <saw:edgeLayer type="column" columnID="c58a0f79687037517"/>
+                  <saw:edgeLayer type="column" columnID="c5c325de0d687d788"/>
+                  <saw:edgeLayer type="column" columnID="ce7fd7822a6e2adc7"/></saw:edgeLayers></saw:edge>
+            <saw:edge axis="column"/></saw:edges></saw:view>
+      <saw:view xsi:type="saw:tableView" name="tableView!3" clientEventChannels="MD2" clientEventEnabled="true" scrollingEnabled="false" repeat="false">
+         <saw:edges>
+            <saw:edge axis="page" showColumnHeader="true">
+               <saw:displayGrandTotals>
+                  <saw:displayGrandTotal id="t2" grandTotalPosition="before"/></saw:displayGrandTotals>
+               <saw:edgeLayers>
+                  <saw:edgeLayer type="column" columnID="c709b823e4d9256b0"/></saw:edgeLayers></saw:edge>
+            <saw:edge axis="section"/>
+            <saw:edge axis="row" showColumnHeader="true">
+               <saw:edgeLayers>
+                  <saw:edgeLayer type="column" columnID="c443820494a3d97c7"/>
+                  <saw:edgeLayer type="column" columnID="c3a8c82ee9397fc94"/>
+                  <saw:edgeLayer type="column" columnID="c50f1b6008166cc97"/>
+                  <saw:edgeLayer type="column" columnID="cc7b13bf0897a32ef"/>
+                  <saw:edgeLayer type="column" columnID="cfff3338cc71c27d9"/>
+                  <saw:edgeLayer type="column" columnID="c1e39e874ff549072"/>
+                  <saw:edgeLayer type="column" columnID="c58a0f79687037517"/>
+                  <saw:edgeLayer type="column" columnID="c5c325de0d687d788"/>
+                  <saw:edgeLayer type="column" columnID="ce7fd7822a6e2adc7"/></saw:edgeLayers></saw:edge>
+            <saw:edge axis="column"/></saw:edges>
+         <saw:pageEdgeState>
+            <saw:QDR>
+               <saw:staticMemberGroup specialDimension="grandTotal">
+                  <saw:members xsi:type="saw:stringMembers">
+                     <saw:value>t2</saw:value></saw:members></saw:staticMemberGroup></saw:QDR></saw:pageEdgeState>
+         <saw:greenBarFormat greenBar="allLayers" enabled="true"/></saw:view>
+      <saw:view xsi:type="saw:dvtfunnel" name="dvtfunnel!1" autoPreview="true">
+         <saw:display type="funnel" subtype="lastStageOnly" renderFormat="default" mode="online" clientEventEnabled="true" animateOnDisplay="false" clientEventChannels="MD2">
+            <saw:style effect="2d" fillStyle="default" funnelTargetFactor="5"/></saw:display>
+         <saw:canvasFormat height="220" width="350" showGradient="true">
+            <saw:dataLabels display="never" label="default" position="below" transparentBackground="true" valueAs="default">
+               <saw:dataFormat xsi:type="saw:number" commas="false" negativeType="minus" minDigits="0" maxDigits="0"/></saw:dataLabels>
+            <saw:gridlines default="true">
+               <saw:horizontal>
+                  <saw:major visible="false"/>
+                  <saw:minor visible="false"/></saw:horizontal>
+               <saw:vertical>
+                  <saw:major visible="false"/>
+                  <saw:minor visible="false"/></saw:vertical></saw:gridlines>
+            <saw:title mode="custom">
+               <saw:caption/></saw:title></saw:canvasFormat>
+         <saw:selections>
+            <saw:categories>
+               <saw:category>
+                  <saw:columnRef columnID="c50f1b6008166cc97"/></saw:category></saw:categories>
+            <saw:measures showMeasureLabelsOnCategory="false">
+               <saw:column measureType="actual">
+                  <saw:columnRef columnID="c063147feda1d01df"/></saw:column></saw:measures>
+            <saw:seriesGenerators>
+               <saw:measureLabels/></saw:seriesGenerators>
+            <saw:page/>
+            <saw:sections displayAsSlider="true">
+               <saw:section>
+                  <saw:columnRef columnID="c709b823e4d9256b0"/></saw:section></saw:sections></saw:selections>
+         <saw:funnelProperties>
+            <saw:funnelThresholds>
+               <saw:colorRange color="#CCFFFF" rangeType="dynamic" labelType="dynamic">
+                  <saw:markerLabel>
+                     <saw:caption captionID="cp0">
+                        <saw:text>0</saw:text></saw:caption></saw:markerLabel>
+                  <saw:rangeLow>
+                     <sawx:expr xsi:type="xsd:decimal">0</sawx:expr></saw:rangeLow>
+                  <saw:rangeHigh>
+                     <sawx:expr xsi:type="xsd:decimal">25</sawx:expr></saw:rangeHigh></saw:colorRange>
+               <saw:colorRange color="#99CCCC" rangeType="custom">
+                  <saw:markerLabel>
+                     <saw:caption captionID="cp1">
+                        <saw:text>Critical</saw:text></saw:caption></saw:markerLabel>
+                  <saw:rangeLow>
+                     <sawx:expr xsi:type="xsd:decimal">25</sawx:expr></saw:rangeLow>
+                  <saw:rangeHigh>
+                     <sawx:expr xsi:type="xsd:decimal">50</sawx:expr></saw:rangeHigh></saw:colorRange>
+               <saw:colorRange color="#6699CC" rangeType="custom">
+                  <saw:markerLabel>
+                     <saw:caption captionID="cp2" oldID="a">
+                        <saw:text>Warning</saw:text></saw:caption></saw:markerLabel>
+                  <saw:rangeLow>
+                     <sawx:expr xsi:type="xsd:decimal">50</sawx:expr></saw:rangeLow>
+                  <saw:rangeHigh>
+                     <sawx:expr xsi:type="xsd:decimal">90</sawx:expr></saw:rangeHigh></saw:colorRange>
+               <saw:colorRange color="#336699" rangeType="custom">
+                  <saw:markerLabel>
+                     <saw:caption captionID="cp3" oldID="a">
+                        <saw:text>Good</saw:text></saw:caption></saw:markerLabel>
+                  <saw:rangeLow>
+                     <sawx:expr xsi:type="xsd:decimal">90</sawx:expr></saw:rangeLow>
+                  <saw:rangeHigh/></saw:colorRange></saw:funnelThresholds></saw:funnelProperties>
+         <saw:legendFormat position="none" transparentFill="true">
+            <saw:textFormat fontSize="9"/></saw:legendFormat></saw:view>
+      <saw:view xsi:type="saw:filtersView" name="filtersView!1"/></saw:views></saw:report>
