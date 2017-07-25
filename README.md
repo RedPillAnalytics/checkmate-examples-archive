@@ -1,7 +1,8 @@
-# checkmate-samples
+## Introduction
+
 This repository serves as a tutorial for implementing [Checkmate for OBI](http://redpillanalytics.com/checkmate-getstarted/) from Red Pill Analytics. It includes sample OBIEE 12c content, plus all the configuration files necessary to kick the tires on the Checkmate Build Framework, and for interacting with Checkmate Studio.
 
-
+## Checkmate Studio
 
 
 
