@@ -1,6 +1,6 @@
 plugins {
   // apply the Checkmate plugin, which is pulled down automatically from the Plugin Portal
-  id 'com.redpillanalytics.checkmate.obi' version '8.0.1'
+  id 'com.redpillanalytics.checkmate.obi' version '8.0.2'
   // apply the maven publishing plugin
   id 'maven-publish'
   // additional plugins used by checkmate
