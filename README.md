@@ -1,9 +1,10 @@
-# Checkmate Samples
+# Checkmate Examples
+This repository includes examples for working with Checkmate from Red Pill Analytics. Checkmate enables Continuous Delivery for products or platforms that don't naturally support it.
 
-This repository serves as a tutorial for implementing [Checkmate for OBI](http://redpillanalytics.com/checkmate-getstarted/) from Red Pill Analytics. It includes sample OBIEE 12c content, plus all the configuration files necessary to kick the tires on the Checkmate Build Framework, and for interacting with Checkmate Studio.
+# Layout
+The repository is designed to have a directory for each Checkmate plugin located in the project root (called the *plugin directory*), each containing one or more example projects located in separate directories (called the *project directory*.) A **README.md** with documentation specific to the plugin will be located in the *plugin directory*, with anything project-specific documented in the **README.md** in the *project directory*.
 
-# Checkmate Studio
+Currently, only the [Checkmate for OBI](http://redpillanalytics.com/checkmate/) plugin directory exists, with the following layout of project directories:
 
-
-
-[SampleAppLite](http://docs.oracle.com/middleware/12212/biee/BIESG/GUID-E439E473-DD4D-48FE-9BF1-7AED4ADD73B6.htm#BIESG9340) content already checked in to the `obi/sample-12c/src/main` directory
+- `sample-12c`: An project directory example for OBIEE 12.2.1.2.
+- `sample-11g`: (Coming Soon)
