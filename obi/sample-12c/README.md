@@ -1,4 +1,3 @@
-sample-12c
-==================
+# Checkmate for OBI 12.2.1.2 Example Project
 
-A sample Brokerage OBIEE catalog and repository for understanding Checkmate for OBI.
+
