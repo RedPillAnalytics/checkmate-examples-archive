@@ -7,5 +7,5 @@ The repository is designed to have a directory for each Checkmate plugin located
 The current plugin and project directories exist so far:
 
 - [obi](obi): The plugin directory for Checkmate for OBI.
- - [sample-12c](obi/sample-12c): A project directory using OBIEE 12.2.1.2.
- - sample-11g: (Coming Soon) A project directory using OBIEE 11.1.1.9.
+    - [sample-12c](obi/sample-12c): A project directory using OBIEE 12.2.1.2.
+    - sample-11g: (Coming Soon) A project directory using OBIEE 11.1.1.9.
