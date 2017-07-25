@@ -15,4 +15,32 @@ plugins {
 }
 ```
 
-The `plugins` block applies any desired plugins from the [Gradle Plugin Portal](https://plugins.gradle.org) using the unique ID associated with that plugin. In this case we are applying the Gradle-provided `maven-publish` plugin, as well as the `com.redpillanalytics.checkmate.obi` plugin, which is Checkmate for OBI.
+The `plugins` block applies any desired plugins from the [Gradle Plugin Portal](https://plugins.gradle.org) using the unique ID associated with that plugin.
+
+* `com.redpillanalytics.checkmate.obi`: This is the Checkmate for OBI plugin.
+* `maven-publish`: a Core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses `maven-publish` to publish distributions of OBI content.
+
+This is the only configuration required to get a basic Checkmate for OBI skeleton working: a Gradle [project with several callable tasks](https://docs.gradle.org/3.5/userguide/tutorial_using_tasks.html#sec:projects_and_tasks). We can use the [Gradle Wrapper](https://docs.gradle.org/3.5/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command:
+
+```gradle
+./gradlew -p obi/sample-12c tasks
+```
+
+The first time this command is executed, Gradle will pull down any library dependencies used by Checkmate for OBI from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself.
+
+The Checkmate for OBI enables the following Task groups:
+* Analytics: Tasks associated with loading data generated from Checkmate builds to downstream data platforms. Will be configured later.
+* Distribution: Managing the creation and deletion of different types of OBIEE distribution types.
+* Export: Tasks that facilitate exporting content from an OBIEE instance into the build location or into source control.
+* Import: Tasks that facilitate importing content into an OBIEE instance, usually using artifacts built in the build location, or downloaded from Maven.
+* SCM: Tasks for integrating with Source Control Management, specifically [Git](https://git-scm.com).
+* Services: Just the one `metadataReload` task, which executes *Reload Files and Metadata* in OBIEE.
+* Testing: Tasks for Regression Testing OBIEE. We haven't configured any Test Groups yet, so the existing tasks are shell tasks for when we configure this later on.
+
+The Maven Publish plugin enables the following Task groups:
+* Publishing: Publishing content to Maven repositories. The only publishing location currently configured is Maven Local, which depending on environment variables is usually $HOME/.m2. Additional Maven locations can be configured using targets such as Apache Archiva, JFrog Artifactory, or AWS S3.
+
+Gradle enables certain default Task groups as well:
+* Build Setup: For generating new projects, the Gradle Wrapper, etc.
+* Help: Basic help tasks.
+* Verification: Runs any configured checks enabled in the project.
