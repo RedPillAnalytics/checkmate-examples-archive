@@ -89,7 +89,7 @@ publishing {
 }
 ```
 
-This will only publish our OBI distribution files to the Maven Local repository, which defaults to `$HOME/.m2`. Obviously, this is for testing purposes only. In a real continuous delivery pipeline, content should be published to a real Maven-compatible repository. At the very least, publish to an S3 bucket, which Gradle supports, using the following syntax:
+This will only publish our OBI distribution files to the [Maven Local](https://docs.gradle.org/3.5/userguide/publishing_maven.html#publishing_maven:install) repository, which defaults to `$HOME/.m2`. Obviously, this is for testing purposes only. In a real continuous delivery pipeline, content should be published to a real Maven-compatible repository. At the very least, publish to an S3 bucket, which Gradle supports, using the following syntax:
 
 ```gradle
 publishing {
@@ -131,7 +131,7 @@ In the output, you'll notice the *up-to-date* checks that Checkmate for OBI is d
 
 Checkmate for OBI is written to take advantage of the [Gradle Incremental Build](https://docs.gradle.org/3.5/userguide/more_about_tasks.html#sec:up_to_date_checks) feature. The catalog and metadata build tasks are not executed again, because none of the task input and output files have changed. This keeps Checkmate from re-running tasks that it doesn't have to.
 
-Let's take a look at what our Build, Bundle and Publish process generated. If we look at the `build` directory in the project directory, we can see all the things that Checkmate for OBI built, including some of the following:
+Let's take a look at what our Build, Bundle and Publish process generated. If we look at the [`build`](build) directory in the project directory, we can see all the things that Checkmate for OBI built, including some of the following:
 
 ```
 ls -l catalog
@@ -162,3 +162,5 @@ drwxrwxr-x. 4 oracle oracle 4096 Jul 19 10:18 sample-12c-deploy
 ```
 
 Later on, we'll expore the differences between the **build** and the **deploy** distributions. For now... just know that **build** is a subset of **deploy**.
+
+# Build Groups
