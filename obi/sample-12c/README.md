@@ -133,7 +133,7 @@ Checkmate for OBI is written to take advantage of the [Gradle Incremental Build]
 
 Let's take a look at what our Build, Bundle and Publish process generated. If we look at the [`build`](build) directory in the project directory, we can see all the things that Checkmate for OBI built, including some of the following:
 
-```
+```shell
 ls -l obi/sample-12c/build/*
 
 catalog:
@@ -198,10 +198,8 @@ dependencies {
   // Used for building incremental patches, regression testing, and deployments
   feature group: 'obiee', name: 'brokerage-build', version: '+'
   release group: 'obiee', name: 'brokerage-build', version: '0.0.9'
-  //promote group: 'obiee', name: 'brokerage-deploy', version: project.version
-  //promote group: 'obiee', name: 'brokerage-bar', version: project.version
-
-  // Dependencies for Analytics
+  //promote group: 'obiee', name: 'brokerage-deploy', version: '0.0.9'
+  //promote group: 'obiee', name: 'brokerage-bar', version: '0.0.9'
 }
 ```
 
@@ -212,41 +210,76 @@ feature group: 'obiee', name: 'brokerage-build', version: '+'
 release group: 'obiee', name: 'brokerage-build', version: '0.0.9'
 ```
 
-The DSL is a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI distribution files. Basically, we are using a Gradle configuration called **obiee** to declare dependencies on distribution files that we want Checkmate for OBI to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **deploy** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus: this signifies to Checkmate for OBI that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
+The DSL is a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI distribution files. Basically, we are using a Gradle configuration called **obiee** to declare dependencies on distribution files that we want Checkmate for OBI to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **release** build group, we simply have a plus: this signifies to Checkmate for OBI that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
 
 ```gradle
 ./gradlew -p obi/sample-12c tasks
 ```
 
-You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate for OBI requires, but will use the content inside the distribution file to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example of such as task is **featureCompare**, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Expect to see some *up-to-date* checks as Checkmate for OBI skips tasks that don't need to be rerun:
+You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate for OBI requires, but will use the content inside the distribution file to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example of such as task is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Expect to see some *up-to-date* checks as Checkmate for OBI skips tasks that don't need to be rerun:
 
 ```gradle
-./gradlew -p obi/sample-12c featureCompare
+./gradlew -p obi/sample-12c releaseCompare
 ```
 
 Now, we can take a look at the enhanced content in our build directory:
 
-```gradle
+```shell
 ls -l obi/sample-12c/build/*
 
 obi/sample-12c/build/catalog:
 total 3648
-drwxr-xr-x. 1 501 games     136 Jul 25 23:58 current
--rw-r-----. 1 501 games 1863215 Jul 25 23:58 current.catalog
-drwxr-xr-x. 1 501 games     136 Jul 26 02:01 feature
--rw-r-----. 1 501 games 1863215 Jul 26 02:01 feature.catalog
--rw-r-----. 1 501 games    1739 Jul 26 02:01 feature-diff.txt
--rw-r-----. 1 501 games    1739 Jul 26 02:02 feature-undiff.txt
-drwx------. 1 501 games     102 Jul 26 02:01 init
+drwxr-xr-x. 1 501 games     136 Jul 26 11:42 current
+-rw-r-----. 1 501 games 1863173 Jul 26 11:42 current.catalog
+drwx------. 1 501 games     102 Jul 26 11:42 init
+drwxr-xr-x. 1 501 games     136 Jul 26 11:42 release
+-rw-r-----. 1 501 games 1863215 Jul 26 11:42 release.catalog
+-rw-r-----. 1 501 games    1739 Jul 26 11:42 release-diff.txt
+-rw-r-----. 1 501 games    1739 Jul 26 11:42 release-undiff.txt
 
 obi/sample-12c/build/repository:
 total 64
--rwxr-----. 1 501 games 28456 Jul 25 23:58 current.rpd
--rw-------. 1 501 games     0 Jul 26 02:02 feature-compare.csv
--rwxr-----. 1 501 games   126 Jul 26 02:02 feature-patch.xml
--rwxr-----. 1 501 games 28456 Jul 26 02:01 feature.rpd
--rwxr-----. 1 501 games   126 Jul 26 02:02 feature-unpatch.xml
-drwxr-xr-x. 1 501 games    68 Jul 25 23:58 xml-variables
+-rwxr-----. 1 501 games 28456 Jul 26 11:42 current.rpd
+-rw-------. 1 501 games     0 Jul 26 11:42 release-compare.csv
+-rwxr-----. 1 501 games   126 Jul 26 11:42 release-patch.xml
+-rwxr-----. 1 501 games 28456 Jul 26 11:42 release.rpd
+-rwxr-----. 1 501 games   126 Jul 26 11:42 release-unpatch.xml
+drwxr-xr-x. 1 501 games    68 Jul 26 11:42 xml-variables
+
 ```
 
-We generated all the incremental patch files, but the content of those patch files is empty, because there is currently no difference in what was published to version 0.0.9 and what is currently in source control. But you get the idea.
+We generated all the incremental patch files, including the rollback patches, but the content of those patch files is empty, because there is currently no difference in what was published to version 0.0.9 and what is currently in source control. But you get the idea. Let's publish again, so we can create a *deploy* distribution, which contains all the patch files, as well as the original repository and catalog artifacts.
+
+```gradle
+./gradlew -p obi/sample-12c publish
+```
+
+Now, let's enable the **promote** build group, which is what we use for deploying distribution files to downstream environments.
+
+```gradle
+dependencies {
+  // Using the Checkmate Testing library which is recommended.
+  obiee group: 'com.redpillanalytics', name: 'checkmate', version: '+'
+  // You can also use Baseline Validation Tool
+  // The installation needs to be available in one of your Maven repositories
+  // If it exists, Checkmate will unzip and install it for you
+  //obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
+
+  // Dependencies on previous OBIEE builds
+  // Used for building incremental patches, regression testing, and deployments
+  feature group: 'obiee', name: 'brokerage-build', version: '+'
+  release group: 'obiee', name: 'brokerage-build', version: '0.0.9'
+  promote group: 'obiee', name: 'brokerage-deploy', version: '0.0.9'
+  //promote group: 'obiee', name: 'brokerage-bar', version: '0.0.9'
+}
+```
+
+Notice that we've uncommented `promote group: 'obiee', name: 'brokerage-deploy', version: '0.0.9'`, which gives us a series of new Checkmate for OBI tasks to work with the **promote** build group. We'll use the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
+
+```gradle
+./gradlew -p obi/sample-12c promotePatch
+```
+
+You'll notice that `promotePatch` is a container task for executing `promoteMetadataPatch` and `promoteCatalogPatch`, either of which can be run on their own.
+
+# Regression Testing
