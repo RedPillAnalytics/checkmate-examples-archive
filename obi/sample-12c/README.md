@@ -1,5 +1,5 @@
-# Checkmate for OBI 12.2.1.2 Quickstart
-This quickstart provides basic understanding of the core features of Checkmate for OBI 12.2.1.2. The project folder includes sample OBIEE content from [SampleAppLite](http://docs.oracle.com/middleware/12212/biee/BIESG/GUID-E439E473-DD4D-48FE-9BF1-7AED4ADD73B6.htm#BIESG9340) already checked into the [`src/main`](src/main) directory.
+# Checkmate for OBI Quickstart
+This quickstart provides basic understanding of the core features of Checkmate for OBI 8.0.2, using version 12.2.1.2 of OBIEE. The project folder includes sample OBIEE content from [SampleAppLite](http://docs.oracle.com/middleware/12212/biee/BIESG/GUID-E439E473-DD4D-48FE-9BF1-7AED4ADD73B6.htm#BIESG9340) already checked into the [`src/main`](src/main) directory.
 
 Checkmate is built using the [Gradle](www.gradle.org): a declarative, DSL-based build tool most commonly associated with building JVM-based software. Specifically, Checkmate is a series of [Gradle Plugins](https://guides.gradle.org/designing-gradle-plugins/) with the core OBI functionality existing in the [com.redpillanalytics.checkmate.obi](https://plugins.gradle.org/plugin/com.redpillanalytics.checkmate.obi) plugin that introduces the following features for Oracle Business Intelligence: source control integration, content versioning and publishing, automated regression and integration testing, and automated deployments.
 
@@ -18,7 +18,7 @@ plugins {
 The `plugins` block applies any desired plugins from the [Gradle Plugin Portal](https://plugins.gradle.org) using the unique ID associated with that plugin.
 
 * `com.redpillanalytics.checkmate.obi`: This is the Checkmate for OBI plugin.
-* `maven-publish`: a Core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses `maven-publish` to publish distributions of OBI content.
+* `maven-publish`: a Core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses Maven Publish to publish distributions of OBI content.
 
 This is the only configuration required to get a basic Checkmate for OBI skeleton working: a Gradle [project with several callable tasks](https://docs.gradle.org/3.5/userguide/tutorial_using_tasks.html#sec:projects_and_tasks). We can use the [Gradle Wrapper](https://docs.gradle.org/3.5/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command:
 
@@ -44,3 +44,5 @@ Gradle enables certain default Task groups as well:
 * **Build Setup**: For generating new projects, the Gradle Wrapper, etc.
 * **Help**: Basic help tasks.
 * **Verification**: Runs any configured checks enabled in the project.
+
+# Checkmate Building and Publishing
