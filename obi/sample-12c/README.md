@@ -171,7 +171,7 @@ A build group allows us to declare a dependency on a prior release of a distribu
 * **release:** used to regression test new releases prior to being deployed to downstream environments, or prior to being merged into release branches such as **master** or **release.x.x.x**.
 * **promote:** used for promoting content to downstream environments.
 
-Because these build groups are already built-in, we don't have to do much to enable them; all we have to do is declare a dependency on a prior distribution version, and the tasks in this build group will magically appear. Since we now have the 0.0.9 distribution published to our Maven Local repository, we can use that distribution as our dependency for these build groups.
+Because these build groups are already built-in, we don't have to do much to enable them; all we have to do is declare a dependency on a prior distribution version, and the tasks in this build group will magically appear. Since we now have the 0.0.9 distribution published to our Maven Local repository, we can use that distribution as our dependency for these build groups. We can also define custom build groups using the `obi.buildGroups {}` DSL structure.
 
 The first thing we have to tell Checkmate for OBI is where to go looking for our prior distribution files. We're still using Maven Local for this:
 
@@ -283,3 +283,36 @@ Notice that we've uncommented `promote group: 'obiee', name: 'sample-12c-deploy'
 You'll notice that `promotePatch` is a container task for executing `promoteMetadataPatch` and `promoteCatalogPatch`, either of which can be run individually.
 
 # Regression Testing
+The high-level process Checkmate for OBI uses to regression test pull requests, source commits, or branch merges, is described below:
+* Pull down a distribution file of OBI content published previously.
+* Build deployment artifacts from the current content in the Git repository.
+* Upload the previous content into an OBIEE environment.
+* Run a series of analyses, saving the logical SQL and query results. This is called the *baseline* phase.
+* Deploy the current version of content into the OBIEE environment, either using incremental patches, or by deploying whole catalogs and repositories, automatically managing the connection pool information.
+* Run the same series of analyses that were run during the *baseline*, saving the output. This is called the *revision* phase.
+* Compare the output generated from the baseline phase with the output generated from the revision phase. Naturally, we call this the *compare* phase.
+
+
+For regression testing, Checkmate for OBI has the concept of a **test group**, which is configured using the `obi.testGroups {}` DSL structure. The default test group called **regression** is already built in, but we can use the same DSL structure to customize that build group:
+
+```gradle
+obi.testGroups {
+  regression {
+    // the catalog folder to test. Recursively tests all analyses in that folder
+    // accepts a colon (:) separeted list of directories
+    libraryFolder = '/shared/regression'
+    // By default, hash values are used for comparision of results
+    // You can force the full comparision of logical SQL and results (takes longer)
+    compareText = true
+    // Provide more output
+    showOutput = true
+  }
+}
+```
+
+Let's take a look at some of the parameters configured here:
+* **libraryFolder:** The folder in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate for OBI recursively searches these folders and uses every analysis found to serve as regression tests.
+* **compareText:** By default, Checkmate for OBI uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results.
+* **showOutput:** Output more information about the execution of each regression test.
+
+Regression Testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together.
