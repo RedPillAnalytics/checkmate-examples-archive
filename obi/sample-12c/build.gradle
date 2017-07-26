@@ -29,8 +29,7 @@ publishing {
 }
 
 dependencies {
-  // Checkmate library dependencies for regression testing
-  // We are using the Checkmate library, which is recommended
+  // Using the Checkmate Testing library which is recommended.
   obiee group: 'com.redpillanalytics', name: 'checkmate', version: '+'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
@@ -39,27 +38,16 @@ dependencies {
 
   // Dependencies on previous OBIEE builds
   // Used for building incremental patches, regression testing, and deployments
-  //feature group: 'obiee', name: 'brokerage-build', version: '+'
-  //release group: 'obiee', name: 'brokerage-build', version: '1.0.0'
-  //promote group: 'obiee', name: 'brokerage-deploy', version: project.version
-  //promote group: 'obiee', name: 'brokerage-bar', version: project.version
-
-  // Dependencies for Analytics
+  //feature group: 'obiee', name: 'sample-12c-build', version: '+'
+  //release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
+  //promote group: 'obiee', name: 'sample-12c-deploy', version: project.version
+  //promote group: 'obiee', name: 'sample-12c-bar', version: project.version
 }
 
 repositories {
   // resolve local maven repository for published distributions, which is usually ~/.m2
   // this is really only for testing purposes
   mavenLocal()
-  // You really want to resolve content using a real Maven repository
-  // At least use an S3 bucket
-  // maven {
-  //   url 's3://bucket-name/path/to/directory'
-  //   credentials(AwsCredentials) {
-  //     accessKey 'access key'
-  //     secretKey 'secret key'
-  //   }
-  // }
 }
 
 // Define the regression "Test Groups" for regression testing
