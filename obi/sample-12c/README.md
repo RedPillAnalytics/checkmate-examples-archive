@@ -208,8 +208,8 @@ dependencies {
 There's a lot more in the dependencies closure that we'll discuss later. For now, we'll just focus on the two build group dependencies that we want to uncomment out:
 
 ```gradle
-  feature group: 'obiee', name: 'brokerage-build', version: '+'
-  release group: 'obiee', name: 'brokerage-build', version: '0.0.9'
+feature group: 'obiee', name: 'brokerage-build', version: '+'
+release group: 'obiee', name: 'brokerage-build', version: '0.0.9'
 ```
 
 The DSL is a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI distribution files. Basically, we are using a Gradle configuration called **obiee** to declare dependencies on distribution files that we want Checkmate for OBI to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **deploy** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus: this signifies to Checkmate for OBI that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
@@ -249,4 +249,4 @@ total 64
 drwxr-xr-x. 1 501 games    68 Jul 25 23:58 xml-variables
 ```
 
-We generated all the incremental patch files, but the content of those patch files is empty, because there is currently no differential content in what was published to verion 0.0.9 and what is currently in source control. But you get the idea.
+We generated all the incremental patch files, but the content of those patch files is empty, because there is currently no difference in what was published to version 0.0.9 and what is currently in source control. But you get the idea.
