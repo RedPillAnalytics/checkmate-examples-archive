@@ -45,4 +45,28 @@ Gradle enables certain default Task groups as well:
 * **Help**: Basic help tasks.
 * **Verification**: Runs any configured checks enabled in the project.
 
-# Checkmate Building and Publishing
+# Checkmate Environment Setup
+We need to setup the basics about our OBIEE 12.2.1.2 environment so Checkmate knows how and where to execute some of these tasks. We use Checkmate for OBI **build parameters** to enable this. Build parameters can be enabled one of four ways, in reverse-prioritized order... meaning the last item in the list overrides the second-to-the-last item, and so forth:
+* Specified in the `build.gradle` file
+* Specified in a `gradle.properties` file, which is a standard Java properties file existing in the project directory
+* Specified with environment variables
+* Specified using Gradle project properties, which are passed to with the Gradle Wrapper command-line using `-P<property>=<value>`
+
+Checkmate provides this degree of flexibility because many build properties are environment specific, and would need to change from one environment to the next. Additionally, some parameters--such as passwords--are sensitive, and need to be treated as such. For instance, [Jenkins Credentials](https://jenkins.io/doc/book/pipeline/syntax/#environment), which are typically used to store passwords in Continuous Delivery environments, are exposed as environment variables, so this is a very handy way to pass sensitive build parameters to Checkmate for OBI.
+
+For the sake of simplictiy and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember... you would want to use another approach in a real delivery pipeline.
+
+```gradle
+obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.2/obi1'
+obi.domainHome = '/home/oracle/fmw/config/domains/bi'
+obi.compatibility = '12.2.1.2'
+obi.adminUser = 'weblogic'
+obi.adminPassword = 'Admin123'
+obi.repositoryPassword = 'Admin123'
+obi.publishBar = false
+```
+
+Notes on a few of the parameters below:
+* **obi.domainHome:** Defaults to `<obi.middlewareHome>/user_projects/domains/bi`
+* **obi.compatibility:** Options are 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7
+* **obi.publishBar:** When we publish content (we'll see this in practice shortly), if `obi.publishBar = true`, then Checkmate for OBI will generate the 12c BAR file using the environment specified with the details above. We'll enable this in a bit, but not yet.

@@ -6,15 +6,36 @@ plugins {
 }
 
 // OBIEE Environment
-// these can be overriden by environment variables or '-P' properties
-obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.2/obi1'
+// these can be overriden by environment variables or Gradle project properties
+obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.2/obi_1'
 obi.domainHome = '/home/oracle/fmw/config/domains/bi'
 obi.compatibility = '12.2.1.2'
+obi.adminUser = 'weblogic'
+obi.adminPassword = 'Admin123'
+obi.repositoryPassword = 'Admin123'
+obi.publishBar = false
 
-// Use built in version generation based on Git repository pointers (tags, branches, etc.)
-// Override with a simple 'version = <version number>' or an environment variable or '-Pversion=<version number>'
-//checkmate.useScmRelease = true
+// Hardcoding the version number
 version = '0.0.9'
+// Can also use Git-based versioning
+// useScmRelease = true
+
+publishing {
+  repositories {
+    // publish to Maven local repository, which is usually ~/.m2
+    // This is only for testing purposes
+    mavenLocal()
+    // You really want to publish content using a real Maven repository
+    // At least use an S3 bucket
+    // maven {
+    //   url 's3://bucket-name/path/to/directory'
+    //   credentials(AwsCredentials) {
+    //     accessKey 'access key'
+    //     secretKey 'secret key'
+    //   }
+    // }
+  }
+}
 
 dependencies {
   // Checkmate library dependencies for regression testing
@@ -50,23 +71,6 @@ repositories {
   // }
 }
 
-publishing {
-  repositories {
-    // publish to Maven local repository, which is usually ~/.m2
-    // This is only for testing purposes
-    mavenLocal()
-    // You really want to publish content using a real Maven repository
-    // At least use an S3 bucket
-    // maven {
-    //   url 's3://bucket-name/path/to/directory'
-    //   credentials(AwsCredentials) {
-    //     accessKey 'access key'
-    //     secretKey 'secret key'
-    //   }
-    // }
-  }
-}
-
 // Define the regression "Test Groups" for regression testing
 // This recreate several tasks beginning with "regression" for testing that catalog
 // You can create as many Test groups as desired
@@ -82,7 +86,4 @@ obi.testGroups {
     showOutput = true
   }
 }
-
-// We can generate and publish the 12c BAR file as part of publication
-obi.publishBar = true
 
