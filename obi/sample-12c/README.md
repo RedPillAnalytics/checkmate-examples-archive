@@ -70,3 +70,91 @@ Notes on a few of the parameters below:
 * **obi.domainHome:** Defaults to `<obi.middlewareHome>/user_projects/domains/bi`
 * **obi.compatibility:** Options are 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7
 * **obi.publishBar:** When we publish content (we'll see this in practice shortly), if `obi.publishBar = true`, then Checkmate for OBI will generate the 12c BAR file using the environment specified with the details above. We'll enable this in a bit, but not yet.
+
+# Building and Publishing
+The workflow for building OBIEE content usually occurs in the following steps:
+* **Build:** The building of OBIEE deployment artifacts from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involves building a binary RPD, as well as a catalog archive file of the Shared Folders of the catalog.
+* **Bundle:** Building **distribution files** of all OBIEE content generated in the **Build** phase. In effect, these are zip files containing repository and catalog content.
+* **Publish:** Publishing distribution files to one or more [Maven-compatible repositories](https://maven.apache.org/pom.html#Repositories).
+
+Currently, we have the following publications conigured in our `build.gradle`:
+
+```gradle
+publishing {
+  repositories {
+    mavenLocal()
+  }
+}
+```
+
+This will only publish our OBI distribution files to the Maven Local repository, which defaults to `$HOME/.m2`. Obviously, this is for testing purposes only. In a real continuous delivery pipeline, content should be published to a real Maven-compatible repository. At the very least, publish to an S3 bucket, which Gradle supports, using the following syntax:
+
+```gradle
+publishing {
+  repositories {
+    maven {
+      url 's3://bucket-name/path/to/directory'
+      credentials(AwsCredentials) {
+        accessKey 'access key'
+        secretKey 'secret key'
+      }
+    }
+  }
+}
+```
+
+To build our OBI project, we can simply execute the following:
+
+```gradle
+./gradlew -p obi/sample-12c build
+```
+
+You'll notice that the `build` task doesn't really do anything on it's own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/3.5/userguide/build_lifecycle.html) implementation.
+
+Furthermore... we can run the entire Build, Bundle and Publish workflow by simply running the `publish` task, which has dependencies on building and bundling all the content.
+
+```gradle
+./gradlew -p obi/sample-12c publish
+```
+
+In the output, you'll notice the *up-to-date* checks that Checkmate for OBI is doing when running the dependent tasks. This can be seen in the following output:
+
+```
+:catalogBuild UP-TO-DATE
+:metadataBuild UP-TO-DATE
+:build UP-TO-DATE
+```
+
+Checkmate for OBI is written to take advantage of the [Gradle Incremental Build](https://docs.gradle.org/3.5/userguide/more_about_tasks.html#sec:up_to_date_checks) feature. The catalog and metadata build tasks are not executed again, because none of the task input and output files have changed. This keeps Checkmate from re-running tasks that it doesn't have to.
+
+Let's take a look at what our Build, Bundle and Publish process generated. If we look at the `build` directory in the project directory, we can see all the things that Checkmate for OBI built, including some of the following:
+
+```
+ls -l catalog
+
+catalog:
+total 1820
+drwxr-xr-x. 1 501 games     136 Jul 25 23:58 current
+-rw-r-----. 1 501 games 1863215 Jul 25 23:58 current.catalog
+
+repository:
+total 28
+-rwxr-----. 1 501 games 28456 Jul 25 23:58 current.rpd
+drwxr-xr-x. 1 501 games    68 Jul 25 23:58 xml-variables
+
+distributions:
+total 8480
+-rw-r--r--. 1 501 games 4339941 Jul 26 00:07 sample-12c-build-0.0.9.zip
+-rw-r--r--. 1 501 games 4339941 Jul 26 00:07 sample-12c-deploy-0.0.9.zip
+```
+
+Additionally, we can look at our Maven Local repository, and see the versioned distribution files published there. You can explore the directory structure further to get a flavor for the Maven filesystem:
+
+```
+ls -l ~/.m2/repository/obiee
+total 8
+drwxrwxr-x. 4 oracle oracle 4096 Jul 19 10:18 sample-12c-build
+drwxrwxr-x. 4 oracle oracle 4096 Jul 19 10:18 sample-12c-deploy
+```
+
+Later on, we'll expore the differences between the **build** and the **deploy** distributions. For now... just know that **build** is a subset of **deploy**.

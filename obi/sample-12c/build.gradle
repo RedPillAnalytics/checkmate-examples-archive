@@ -25,15 +25,6 @@ publishing {
     // publish to Maven local repository, which is usually ~/.m2
     // This is only for testing purposes
     mavenLocal()
-    // You really want to publish content using a real Maven repository
-    // At least use an S3 bucket
-    // maven {
-    //   url 's3://bucket-name/path/to/directory'
-    //   credentials(AwsCredentials) {
-    //     accessKey 'access key'
-    //     secretKey 'secret key'
-    //   }
-    // }
   }
 }
 
