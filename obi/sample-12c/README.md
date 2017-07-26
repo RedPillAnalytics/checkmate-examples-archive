@@ -166,10 +166,10 @@ Later on, we'll expore the differences between the **build** and the **deploy** 
 # Build Groups
 Checkmate for OBI uses the concept of a **build group**: a collection of tasks associated with a particular dependency, which in our case, is a dependency on a published distribution file of OBI content. Up until now, all the tasks demonstrated exist without being tied to a dependency: they are the core Checkmate for OBI tasks that revolve around working with content checked into a Git repository.
 
-A build group allows us to declare a dependency on a prior release of a distribution file, and then get a bunch of new, dynamically generated tasks that belong to that build group. Checkmate contains two build groups by default:
-* **feature:** used primarily to regression test new feature branches prior to their being merged into a mainline of code, usually the **develop** or **master** branches.
-* **release:** used to regression test new releases prior to being deployed to downstream environments, or prior to be merged into release branches such as **master** or **release.x.x.x**.
-* **promote:** used for promoting content to downstream environments. We'll look at this later on.
+A build group allows us to declare a dependency on a prior release of a distribution file, and then get a bunch of new, dynamically generated tasks that belong to that build group. Checkmate contains three build groups by default:
+* **feature:** used primarily to regression test new feature branches prior to their being merged into a mainline of code, usually the **develop** or **master** branch.
+* **release:** used to regression test new releases prior to being deployed to downstream environments, or prior to being merged into release branches such as **master** or **release.x.x.x**.
+* **promote:** used for promoting content to downstream environments.
 
 Because these build groups are already built-in, we don't have to do much to enable them; all we have to do is declare a dependency on a prior distribution version, and the tasks in this build group will magically appear. Since we now have the 0.0.9 distribution published to our Maven Local repository, we can use that distribution as our dependency for these build groups.
 
@@ -196,27 +196,27 @@ dependencies {
 
   // Dependencies on previous OBIEE builds
   // Used for building incremental patches, regression testing, and deployments
-  feature group: 'obiee', name: 'brokerage-build', version: '+'
-  release group: 'obiee', name: 'brokerage-build', version: '0.0.9'
-  //promote group: 'obiee', name: 'brokerage-deploy', version: '0.0.9'
-  //promote group: 'obiee', name: 'brokerage-bar', version: '0.0.9'
+  feature group: 'obiee', name: 'sample-12c-build', version: '+'
+  release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
+  //promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'
+  //promote group: 'obiee', name: 'sample-12c-bar', version: '0.0.9'
 }
 ```
 
 There's a lot more in the dependencies closure that we'll discuss later. For now, we'll just focus on the two build group dependencies that we want to uncomment out:
 
 ```gradle
-feature group: 'obiee', name: 'brokerage-build', version: '+'
-release group: 'obiee', name: 'brokerage-build', version: '0.0.9'
+feature group: 'obiee', name: 'sample-12c-build', version: '+'
+release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
 ```
 
-The DSL is a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI distribution files. Basically, we are using a Gradle configuration called **obiee** to declare dependencies on distribution files that we want Checkmate for OBI to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **release** build group, we simply have a plus: this signifies to Checkmate for OBI that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
+The DSL is a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI distribution files. Basically, we are using a Gradle configuration called **obiee** to declare dependencies on distribution files that we want Checkmate for OBI to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus: this signifies to Checkmate for OBI that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
 
 ```gradle
 ./gradlew -p obi/sample-12c tasks
 ```
 
-You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate for OBI requires, but will use the content inside the distribution file to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example of such as task is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Expect to see some *up-to-date* checks as Checkmate for OBI skips tasks that don't need to be rerun:
+You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate for OBI requires, but will use the content inside the distribution file to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Expect to see some *up-to-date* checks as Checkmate for OBI skips tasks that don't need to be rerun:
 
 ```gradle
 ./gradlew -p obi/sample-12c releaseCompare
@@ -267,19 +267,19 @@ dependencies {
 
   // Dependencies on previous OBIEE builds
   // Used for building incremental patches, regression testing, and deployments
-  feature group: 'obiee', name: 'brokerage-build', version: '+'
-  release group: 'obiee', name: 'brokerage-build', version: '0.0.9'
-  promote group: 'obiee', name: 'brokerage-deploy', version: '0.0.9'
-  //promote group: 'obiee', name: 'brokerage-bar', version: '0.0.9'
+  feature group: 'obiee', name: 'sample-12c-build', version: '+'
+  release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
+  promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'
+  //promote group: 'obiee', name: 'sample-12c-bar', version: '0.0.9'
 }
 ```
 
-Notice that we've uncommented `promote group: 'obiee', name: 'brokerage-deploy', version: '0.0.9'`, which gives us a series of new Checkmate for OBI tasks to work with the **promote** build group. We'll use the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
+Notice that we've uncommented `promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'`, which gives us a series of new Checkmate for OBI tasks to work with the **promote** build group. We'll use the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
 
 ```gradle
 ./gradlew -p obi/sample-12c promotePatch
 ```
 
-You'll notice that `promotePatch` is a container task for executing `promoteMetadataPatch` and `promoteCatalogPatch`, either of which can be run on their own.
+You'll notice that `promotePatch` is a container task for executing `promoteMetadataPatch` and `promoteCatalogPatch`, either of which can be run individually.
 
 # Regression Testing
