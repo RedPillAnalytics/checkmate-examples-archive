@@ -71,6 +71,13 @@ Notes on a few of the parameters below:
 * **obi.compatibility:** Options are 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7
 * **obi.publishBar:** When we publish content (we'll see this in practice shortly), if `obi.publishBar = true`, then Checkmate for OBI will generate the 12c BAR file using the environment specified with the details above. We'll enable this in a bit, but not yet.
 
+
+Additionally... we need to make all of the command-line tools that OBIEE 12c uses available to Checkmate for OBI. There are numerous ways to configure this, but the easiest is just to add the `$DOMAIN/bitools/bin` directory available to the `$PATH` environment variable:
+
+```bash
+export PATH=$PATH:/home/oracle/bin:/home/oracle/fmw/config/domains/bi/bitools/bin
+```
+
 # Building and Publishing
 The workflow for building OBIEE content usually occurs in the following steps:
 * **Build:** The building of OBIEE deployment artifacts from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involves building a binary RPD, as well as a catalog archive file of the Shared Folders of the catalog.
@@ -300,19 +307,83 @@ obi.testGroups {
   regression {
     // the catalog folder to test. Recursively tests all analyses in that folder
     // accepts a colon (:) separeted list of directories
-    libraryFolder = '/shared/regression'
+    libraryFolder = '/shared'
     // By default, hash values are used for comparision of results
     // You can force the full comparision of logical SQL and results (takes longer)
-    compareText = true
+    compareText = false
     // Provide more output
-    showOutput = true
+    showOutput = false
   }
 }
 ```
 
 Let's take a look at some of the parameters configured here:
-* **libraryFolder:** The folder in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate for OBI recursively searches these folders and uses every analysis found to serve as regression tests.
+* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate recursively includes every analysis in those folders.
 * **compareText:** By default, Checkmate for OBI uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results.
-* **showOutput:** Output more information about the execution of each regression test.
+* **showOutput:** Output more information about the execution of each regression test. Feel free to set this to `true` to see the logical SQL being executed, any error stack generated, etc.
 
-Regression Testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together.
+Regression Testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together. From our `tasks` command, we've highlighted the output of the relevant tasks, listing the granular tasks first, followed by the complex workflow tasks:
+
+```shell
+Testing tasks
+-------------
+baselineTest - Execute all Baseline regression tests for the entire project.
+compareTest - Execute all Compare regression tests for the entire project.
+extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
+regressionBaselineLibrary - Create the Baseline regression test library CSV file for Test Group 'regression'.
+regressionBaselineTest - Execute the Baseline regression test library file for Test Group 'regression'.
+regressionCompareTest - Compare the differences between the Baseline and Revision regression test results for Test Group 'regression'.
+regressionRevisionLibrary - Create the Revision regression test library CSV file for Test Group 'regression'.
+regressionRevisionTest - Execute the Revision regression test library file for Test Group 'regression'.
+revisionTest - Execute all Revision regression tests for the entire project.
+
+Workflow tasks
+--------------
+releaseBaselineWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
+releaseRevisionPatchWorkflow - Apply 'release' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
+releaseRevisionWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
+```
+
+Executing a regression testing workflow, managing all three phases of the process (**baseline**, **revision**, **compare**), is as easy as executing the following two workflow tasks:
+
+```gradle
+./gradlew -p obi/sample-12c releaseBaselineWorkflow
+:connPoolsExport
+:releaseExtractBuild
+:releaseMetadataImport
+:releaseCatalogImport
+:releaseImport
+:connPoolsImport
+:regressionBaselineLibrary
+:extractTestSuites
+:regressionBaselineTest
+Results: SUCCESS (42 tests, 42 successes, 0 failures, 0 skipped)
+:baselineTest
+:releaseBaselineWorkflow
+
+BUILD SUCCESSFUL
+
+Total time: 3 mins 19.836 secs
+
+./gradlew -p obi/sample-12c releaseRevisionWorkflow
+:releaseExtractBuild
+:releaseMetadataImport
+:releaseCatalogImport
+:releaseImport
+:connPoolsImport
+:regressionRevisionLibrary
+:extractTestSuites UP-TO-DATE
+:regressionRevisionTest
+Results: SUCCESS (42 tests, 42 successes, 0 failures, 0 skipped)
+:revisionTest
+:regressionCompareTest
+Results: SUCCESS (85 tests, 84 successes, 0 failures, 1 skipped)
+:compareTest
+:releaseRevisionWorkflow
+
+BUILD SUCCESSFUL
+
+Total time: 3 mins 21.775 secs
+```
+
+

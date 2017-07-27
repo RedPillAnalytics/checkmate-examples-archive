@@ -30,7 +30,7 @@ publishing {
 
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'com.redpillanalytics', name: 'checkmate', version: '+'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.2'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   // If it exists, Checkmate will unzip and install it for you
@@ -39,8 +39,8 @@ dependencies {
   // Dependencies on previous OBIEE builds
   // Used for building incremental patches, regression testing, and deployments
   //feature group: 'obiee', name: 'sample-12c-build', version: '+'
-  release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
-  promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'
+  //release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
+  //promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'
   //promote group: 'obiee', name: 'sample-12c-bar', version: '0.0.9'
 }
 
@@ -48,6 +48,10 @@ repositories {
   // resolve local maven repository for published distributions, which is usually ~/.m2
   // this is really only for testing purposes
   mavenLocal()
+  // Gradle Plugin repository
+  maven {
+      url "https://plugins.gradle.org/m2/"
+    }
 }
 
 // Define the regression "Test Groups" for regression testing
@@ -57,11 +61,11 @@ obi.testGroups {
   regression {
     // the catalog folder to test. Recursively tests all analyses in that folder
     // accepts a colon (:) separeted list of directories
-    libraryFolder = '/shared/regression'
+    libraryFolder = '/shared'
     // By default, hash values are used for comparision of results
     // You can force the full comparision of logical SQL and results (takes longer)
-    compareText = true
+    compareText = false
     // Provide more output
-    showOutput = true
+    showOutput = false
   }
 }
