@@ -317,10 +317,11 @@ obi.testGroups {
 }
 ```
 
-Let's take a look at some of the parameters configured here:
+Let's take a look at some of the parameters configured here, as well as a few others not shown worth mentioning:
 * **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate recursively includes every analysis in those folders.
 * **compareText:** By default, Checkmate for OBI uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results.
 * **showOutput:** Output more information about the execution of each regression test. Feel free to set this to `true` to see the logical SQL being executed, any error stack generated, etc.
+* **impersonateUser:** Specify a user that you want to impersonate for this purposes of this test group. With this functionality, we are able to configure multiple test groups that run the same regression tests but with different security profiles. This requires that the `adminUser` specified above be granted the `impersonate` application role, which is not done by default.
 
 Regression Testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together. From our `tasks` command, we've highlighted the output of the relevant tasks, listing the granular tasks first, followed by the complex workflow tasks:
 
@@ -386,4 +387,76 @@ BUILD SUCCESSFUL
 Total time: 3 mins 21.775 secs
 ```
 
+Notice that the `releaseRevisionWorkflow` task goes ahead and executes the **Compare** phase of the regression testing, though this is the default, and is of course configurable. It's also worth noting that Checkmate for OBI generates JUnit XML files during this process, which is the industry-standard way of expressing a testing result: all Continuous Delivery and DevOps platforms recognize this standard, and can be configured to ask on the results of those files.
 
+# OBIEE 12c BAR Files
+The first releases of Checkmate for OBI pre-dated OBIEE 12c, and therefore, pre-dated the new BAR file functionality in 12c. In a way, the Checkmate for OBI distribution file was our way of building a BAR file... we were just slightly ahead of the game. There's an interesting decision to be made when configuring a Checkmate workflow... to use the BAR file or the distribution file.
+
+At this point in the OBIEE Roadmap, we don't see a lot of value that the BAR file provides over the distribution file... especially since the distribution file also contains incremental patch files, which the BAR file simply doesn't have. Additionally, distribution files can be generated without requiring a running instance of OBIEE; Checkmate for OBI generates the distribution files simply from building content that exist in a Git repository.
+
+However, we recognize that the BAR file is the future for OBI, so we certainly support it. We can generate a BAR file using the `exportBAR` task, and can import a BAR file into OBIEE using the `importBAR` file. Additionally, but simply setting `publishBAR = true`, Checkmate for OBI will automatically generate and publish a BAR file to our Maven repository along with the distribution file.
+
+```gradle
+obi.publishBar = true
+```
+
+```gradle
+./gradlew -p obi/sample-12c publish
+:barExport
+:generatePomFileForBarPublication
+:publishBarPublicationToMavenLocalRepository
+:assemble UP-TO-DATE
+:catalogBuild UP-TO-DATE
+:check UP-TO-DATE
+:metadataBuild UP-TO-DATE
+:build UP-TO-DATE
+:buildZip UP-TO-DATE
+:generatePomFileForBuildPublication
+:publishBuildPublicationToMavenLocalRepository
+:deployZip
+:generatePomFileForDeployPublication
+:publishDeployPublicationToMavenLocalRepository
+:publish
+
+BUILD SUCCESSFUL
+
+Total time: 4 mins 31.606 secs
+```
+
+Additionally, it's just as easy to import the BAR file we just created. We have to configure it as a dependency, just as we did with the distribution file. This is because Checkmate for OBI pulls down the desired BAR file from Maven in the same fashion it pulls down the distribution file, and we use the **promote** build group to deploy it:
+
+```gradle
+promote group: 'obiee', name: 'sample-12c-bar', version: '0.0.9'
+```
+
+Now we are able to run the `releaseBarImport` task:
+
+```gradle
+./gradlew -p obi/sample-12c promoteBarImport
+:promoteBarImport
+
+BUILD SUCCESSFUL
+
+Total time: 46.59 secs
+```
+
+We can also easily import the predefined SampleAppLite BAR file if you ever need to:
+
+```gradle
+./gradlew -p obi/sample-12c barImportSAL
+:barImportSAL
+
+BUILD SUCCESSFUL
+
+Total time: 1 mins 47.64 secs
+```
+Or, use the "empty BAR file" that also ships with OBIEE 12c:
+
+```gradle
+./gradlew -p obi/sample-12c barReset
+:barReset
+
+BUILD SUCCESSFUL
+
+Total time: 39.818 secs
+```
