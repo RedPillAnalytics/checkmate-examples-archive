@@ -54,7 +54,7 @@ We need to setup the basics about our OBIEE 12.2.1.2 environment so Checkmate kn
 
 Checkmate provides this degree of flexibility because many build properties are environment specific, and would need to change from one environment to the next. Additionally, some parameters--such as passwords--are sensitive, and need to be treated as such. For instance, [Jenkins Credentials](https://jenkins.io/doc/book/pipeline/syntax/#environment), which are typically used to store passwords in Continuous Delivery environments, are exposed as environment variables, so this is a very handy way to pass sensitive build parameters to Checkmate for OBI.
 
-For the sake of simplictiy and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember... you would want to use another approach in a real delivery pipeline.
+For the sake of simplicity and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember... you would want to use another approach in a real delivery pipeline.
 
 ```gradle
 obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.2/obi1'
@@ -120,7 +120,7 @@ To build our OBI project, we can simply execute the following:
 ./gradlew -p obi/sample-12c build
 ```
 
-You'll notice that the `build` task doesn't really do anything on it's own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/3.5/userguide/build_lifecycle.html) implementation.
+You'll notice that the `build` task doesn't really do anything on its own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/3.5/userguide/build_lifecycle.html) implementation.
 
 Furthermore... we can run the entire Build, Bundle and Publish workflow by simply running the `publish` task, which has dependencies on building and bundling all the content.
 
