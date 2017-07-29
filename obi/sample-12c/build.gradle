@@ -33,7 +33,6 @@ dependencies {
   obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.3'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
-  // If it exists, Checkmate will unzip and install it for you
   //obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
 
   // Dependencies on previous OBIEE builds
@@ -55,7 +54,6 @@ repositories {
 }
 
 // Define the regression "Test Groups" for regression testing
-// This recreate several tasks beginning with "regression" for testing that catalog
 // You can create as many Test groups as desired
 obi.testGroups {
   regression {

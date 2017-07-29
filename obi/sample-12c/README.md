@@ -1,5 +1,5 @@
 # Checkmate for OBI Quickstart
-This Quickstart demonstrates the basic functionality of Checkmate for OBI, using version 12.2.1.2 of Oracle Business Intelligence. The project folder includes sample OBIEE content from [SampleAppLite](http://docs.oracle.com/middleware/12212/biee/BIESG/GUID-E439E473-DD4D-48FE-9BF1-7AED4ADD73B6.htm#BIESG9340) already checked into the [`src/main`](src/main) directory. All you should need to use this Quickstart is an OBIEE 12.2.1.2 environment. We are assuming you are using Linux, so adjust commands slightly if using Windows.
+This Quickstart demonstrates the basic functionality of Checkmate for OBI, using version 12.2.1.2 of Oracle Business Intelligence. The project folder includes sample OBIEE content from [SampleAppLite](http://docs.oracle.com/middleware/12212/biee/BIESG/GUID-E439E473-DD4D-48FE-9BF1-7AED4ADD73B6.htm#BIESG9340) already checked into the [`src/main`](src/main) directory. All you need to use this Quickstart is an OBIEE 12.2.1.2 environment. We are assuming you are using Linux, so adjust commands slightly if using Windows.
 
 Checkmate is built using [Gradle](www.gradle.org): a declarative, DSL-based build tool most commonly associated with building JVM-based software. Specifically, Checkmate is a series of [Gradle Plugins](https://guides.gradle.org/designing-gradle-plugins/) with the OBI functionality existing in the [com.redpillanalytics.checkmate.obi](https://plugins.gradle.org/plugin/com.redpillanalytics.checkmate.obi) plugin that introduces the following features: source control integration, content versioning and publishing, automated regression and integration testing, and automated deployments.
 
@@ -20,22 +20,22 @@ The `plugins` block applies any desired plugins from the [Gradle Plugin Portal](
 * `com.redpillanalytics.checkmate.obi`: This is the Checkmate for OBI plugin.
 * `maven-publish`: a Core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses Maven Publish to publish distributions of OBI content.
 
-This is the only configuration required to get a basic Checkmate for OBI skeleton working: a Gradle [project with several callable tasks](https://docs.gradle.org/3.5/userguide/tutorial_using_tasks.html#sec:projects_and_tasks). We can use the [Gradle Wrapper](https://docs.gradle.org/3.5/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command:
+When the Checkmate for OBI plugin applied, we get the core functionality applied: a Gradle [project with several callable tasks](https://docs.gradle.org/3.5/userguide/tutorial_using_tasks.html#sec:projects_and_tasks). We can use the [Gradle Wrapper](https://docs.gradle.org/3.5/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command:
 
 ```gradle
 ./gradlew -p obi/sample-12c tasks
 ```
 
-The first time any command is executed, Gradle will pull down any library dependencies used by Checkmate for OBI from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself.
+The first time a command is executed, Gradle will pull down any library dependencies used by Checkmate for OBI from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself.
 
 The Checkmate for OBI enables the following Task groups:
-* **Analytics**: Tasks associated with loading data generated from Checkmate builds to downstream data platforms. Will be configured later.
+* **Analytics**: Tasks associated with loading data generated from Checkmate builds to downstream data platforms. We won't be looking at the Analytics functionality in this Quickstart.
 * **Distribution**: Managing the creation and deletion of different types of OBIEE distribution types.
 * **Export**: Tasks that facilitate exporting content from an OBIEE instance into the build location or into source control.
 * **Import**: Tasks that facilitate importing content into an OBIEE instance, usually using artifacts built in the build location, or downloaded from Maven.
 * **SCM**: Tasks for integrating with Source Control Management, specifically [Git](https://git-scm.com).
 * **Services**: Just the one `metadataReload` task, which executes *Reload Files and Metadata* in OBIEE.
-* **Testing**: Tasks for Regression Testing OBIEE. We haven't configured any Test Groups yet, so the existing tasks are shell tasks for when we configure this later on.
+* **Testing**: Tasks for Regression Testing OBIEE. We describe this in detail later on.
 
 The Maven Publish plugin enables the following Task groups:
 * **Publishing**: Publishing content to Maven repositories.
@@ -46,13 +46,15 @@ Gradle enables certain default Task groups as well:
 * **Verification**: Runs any configured checks enabled in the project.
 
 # Checkmate Environment Setup
-We need to setup the basics about our OBIEE 12.2.1.2 environment so Checkmate knows how and where to execute some of these tasks. We use Checkmate for OBI **build parameters** to enable this. Build parameters can be enabled one of four ways, in reverse-prioritized order... meaning the last item in the list overrides the second-to-the-last item, and so forth:
+Checkmate for OBI needs to know the basics about the OBIEE environment it will execute against. Keep in mind: with the Gradle Wrapper in the source control repository, we can use Checkmate for OBI on any environment where we can check out a Git repository without doing an install. We use Checkmate **build parameters** to configure  properties for the OBIEE environment, as well as other things we'll see later.
+
+Build parameters can be enabled one of four ways, in reverse-prioritized order... meaning the last item in the list overrides the second-to-the-last item, and so forth:
 * Specified in the `build.gradle` file
 * Specified in a `gradle.properties` file, which is a standard Java properties file existing in the project directory
 * Specified with environment variables
 * Specified using Gradle project properties, which are passed to with the Gradle Wrapper command-line using `-P<property>=<value>`
 
-Checkmate provides this degree of flexibility because many build properties are environment specific, and would need to change from one environment to the next. Additionally, some parameters--such as passwords--are sensitive, and need to be treated as such. For instance, [Jenkins Credentials](https://jenkins.io/doc/book/pipeline/syntax/#environment), which are typically used to store passwords in Continuous Delivery environments, are exposed as environment variables, so this is a very handy way to pass sensitive build parameters to Checkmate for OBI.
+Checkmate provides this degree of flexibility because many build properties are environment specific, and may need to change from one environment to the next. Additionally, some parameters--such as passwords--are sensitive, and need to be treated as such. For instance, [Jenkins Credentials](https://jenkins.io/doc/book/pipeline/syntax/#environment), which are typically used to store passwords in Continuous Delivery environments, are exposed as environment variables, so this is a very handy way to pass sensitive build parameters to Checkmate for OBI.
 
 For the sake of simplicity and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember... you would want to use another approach in a real delivery pipeline.
 
