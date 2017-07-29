@@ -1,5 +1,5 @@
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '8.0.2'
+  id 'com.redpillanalytics.checkmate.obi' version '8.0.3'
   id 'maven-publish'
   //id 'pl.allegro.tech.build.axion-release' version '1.7.0'
   //id 'co.riiid.gradle' version '0.4.2'
@@ -30,7 +30,7 @@ publishing {
 
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.2'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.3'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   // If it exists, Checkmate will unzip and install it for you
