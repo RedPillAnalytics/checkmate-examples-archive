@@ -18,7 +18,7 @@ plugins {
 * `com.redpillanalytics.checkmate.obi`: This is the Checkmate for OBI plugin.
 * `maven-publish`: a Core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses Maven Publish to publish distributions of OBI content.
 
-With the plugin applied, our Gradle [project]((https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core Checkmate for OBI tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command. If we comment everything else out of the `build.gradle` file except the `plugins` block, the `tasks` command gives us the following:
+With the plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core Checkmate for OBI tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command. If we comment everything else out of the `build.gradle` file except the `plugins` block, the `tasks` command gives us the following:
 
 ```gradle
 ./gradlew -p obi/sample-12c tasks
