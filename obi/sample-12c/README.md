@@ -20,7 +20,7 @@ plugins {
 
 With the plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core Checkmate for OBI tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command. If we comment everything else out of the `build.gradle` file except the `plugins` block, the `tasks` command gives us the following:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c tasks
 :tasks
 
@@ -164,7 +164,7 @@ Checkmate provides this degree of flexibility because many build properties are 
 
 For the sake of simplicity and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember... you would want to use another approach in a real delivery pipeline.
 
-```gradle
+```bash
 obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.2/obi1'
 obi.domainHome = '/home/oracle/fmw/config/domains/bi'
 obi.compatibility = '12.2.1.2'
@@ -224,7 +224,7 @@ Why do we bother publishing our OBIEE distributions to Maven repositories? So we
 
 To build our OBI project, we can simply execute the following:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c build
 ```
 
@@ -232,13 +232,13 @@ You'll notice that the `build` task doesn't really do anything on its own: it's 
 
 Furthermore... we can run the entire Build, Bundle and Publish workflow by simply running the `publish` task, which has dependencies on building and bundling all the content.
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c publish
 ```
 
 In the output, you'll notice the *up-to-date* checks that Checkmate for OBI is doing when running the dependent tasks. This can be seen in the following output:
 
-```
+```gradle
 :catalogBuild UP-TO-DATE
 :metadataBuild UP-TO-DATE
 :build UP-TO-DATE
@@ -248,7 +248,7 @@ Checkmate for OBI is written to take advantage of the [Gradle Incremental Build]
 
 Let's take a look at what our Build, Bundle and Publish process generated. If we look at the [`build`](build) directory in the project directory, we can see all the things that Checkmate for OBI built, including some of the following:
 
-```shell
+```bash
 ls -l obi/sample-12c/build/*
 
 catalog:
@@ -327,19 +327,19 @@ release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
 
 The DSL is a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI distribution files. Basically, we are using a Gradle configuration called **obiee** to declare dependencies on distribution files that we want Checkmate for OBI to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus: this signifies to Checkmate for OBI that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c tasks
 ```
 
 You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate for OBI requires, but will use the content inside the distribution file to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Expect to see some *up-to-date* checks as Checkmate for OBI skips tasks that don't need to be rerun:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c releaseCompare
 ```
 
 Now, we can take a look at the enhanced content in our build directory:
 
-```shell
+```bash
 ls -l obi/sample-12c/build/*
 
 obi/sample-12c/build/catalog:
@@ -365,7 +365,7 @@ drwxr-xr-x. 1 501 games    68 Jul 26 11:42 xml-variables
 
 We generated all the incremental patch files, including the rollback patches, but the content of those patch files is empty, because there is currently no difference in what was published to version 0.0.9 and what is currently in source control. But you get the idea. Let's publish again, so we can create a *deploy* distribution, which contains all the patch files, as well as the original repository and catalog artifacts.
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c publish
 ```
 
@@ -391,7 +391,7 @@ dependencies {
 
 Notice that we've uncommented `promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'`, which gives us a series of new Checkmate for OBI tasks to work with the **promote** build group. We'll use the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c promotePatch
 ```
 
@@ -433,7 +433,7 @@ Let's take a look at some of the parameters configured here, as well as a few ot
 
 Regression Testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together. From our `tasks` command, we've highlighted the output of the relevant tasks, listing the granular tasks first, followed by the complex workflow tasks:
 
-```shell
+```bash
 Testing tasks
 -------------
 baselineTest - Execute all Baseline regression tests for the entire project.
@@ -455,7 +455,7 @@ releaseRevisionWorkflow - Import 'release' metadata and catalog artifacts, manag
 
 Executing a regression testing workflow, managing all three phases of the process (**baseline**, **revision**, **compare**), is as easy as executing the following two workflow tasks:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c releaseBaselineWorkflow
 :connPoolsExport
 :releaseExtractBuild
@@ -508,7 +508,7 @@ However, we recognize that the BAR file is the future for OBI, so we certainly s
 obi.publishBar = true
 ```
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c publish
 :barExport
 :generatePomFileForBarPublication
@@ -539,7 +539,7 @@ promote group: 'obiee', name: 'sample-12c-bar', version: '0.0.9'
 
 Now we are able to run the `releaseBarImport` task:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c promoteBarImport
 :promoteBarImport
 
@@ -550,7 +550,7 @@ Total time: 46.59 secs
 
 We can also easily import the predefined SampleAppLite BAR file if you ever need to:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c barImportSAL
 :barImportSAL
 
@@ -560,7 +560,7 @@ Total time: 1 mins 47.64 secs
 ```
 Or, use the "empty BAR file" that also ships with OBIEE 12c:
 
-```gradle
+```bash
 ./gradlew -p obi/sample-12c barReset
 :barReset
 
