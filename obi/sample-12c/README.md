@@ -18,10 +18,118 @@ plugins {
 * `com.redpillanalytics.checkmate.obi`: This is the Checkmate for OBI plugin.
 * `maven-publish`: a Core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses Maven Publish to publish distributions of OBI content.
 
-With the plugin applied, our Gradle [project]((https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core Checkmate for OBI tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command:
+With the plugin applied, our Gradle [project]((https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core Checkmate for OBI tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command. If we comment everything else out of the `build.gradle` file except the `plugins` block, the `tasks` command gives us the following:
 
 ```gradle
 ./gradlew -p obi/sample-12c tasks
+:tasks
+
+------------------------------------------------------------
+All tasks runnable from root project
+------------------------------------------------------------
+
+Analytics tasks
+---------------
+analytics - Analytics workflow task for processing all configured analytics jobs.
+
+Build tasks
+-----------
+assemble - Assembles the outputs of this project.
+build - Execute 'metadataBuild' and 'catalogBuild'
+catalogBuild - Copy catalog from SCM to 'catalog/current' and generate unarchive file 'catalog/current.catalog'
+clean - Deletes the build directory.
+metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM using the 'current' configuration.
+
+Build Setup tasks
+-----------------
+init - Initializes a new Gradle build.
+wrapper - Generates Gradle wrapper files.
+
+Distribution tasks
+------------------
+buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
+cleanDist - Delete the Distributions directory.
+deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
+
+Export tasks
+------------
+barExport - Build BI Archive (BAR) File using the 'ssi' Service Instance.
+catalogExport - Export the online presentation catalog and synchronize with the offline presentation catalog in SCM.
+connPoolsExport - Export target OBIEE server connection pool information in JSON format to 'repository/conn-pools.json'.
+export - Execute 'catalogExport' and 'metadataExport'.
+metadataDownload - Download the online metadata repository to 'repository/current.rpd'.
+metadataExport - Synchronize 'repository/current.rpd' with the MDS-XML repository in SCM.
+variablesExport - Export target OBIEE server variable information in JSON format to 'repository/variables.json'.
+
+Help tasks
+----------
+buildEnvironment - Displays all buildscript dependencies declared in root project 'sample-12c'.
+components - Displays the components produced by root project 'sample-12c'. [incubating]
+dependencies - Displays all dependencies declared in root project 'sample-12c'.
+dependencyInsight - Displays the insight into a specific dependency in root project 'sample-12c'.
+dependentComponents - Displays the dependent components of components in root project 'sample-12c'. [incubating]
+displayConfigurations - Display information about existing configurations
+help - Displays a help message.
+model - Displays the configuration model of root project 'sample-12c'. [incubating]
+projects - Displays the sub-projects of root project 'sample-12c'.
+properties - Displays the properties of root project 'sample-12c'.
+tasks - Displays the tasks runnable from root project 'sample-12c'.
+
+Import tasks
+------------
+barImportSAL - Import SampleAppLite.bar into the 'ssi' Service Instance.
+barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
+catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current', and Reload Files and Metadata.
+connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
+import - Execute 'catalogImport' and 'metadataImport'.
+metadataImport - Import 'repository/current.rpd' into the online metadata repository, and Reload Files and Metadata.
+variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
+
+Publishing tasks
+----------------
+generatePomFileForBuildPublication - Generates the Maven POM file for publication 'build'.
+generatePomFileForDeployPublication - Generates the Maven POM file for publication 'deploy'.
+publish - Publishes all publications produced by this project.
+publishBuildPublicationToMavenLocal - Publishes Maven publication 'build' to the local Maven repository.
+publishDeployPublicationToMavenLocal - Publishes Maven publication 'deploy' to the local Maven repository.
+publishToMavenLocal - Publishes all Maven publications produced by this project to the local Maven cache.
+
+SCM tasks
+---------
+catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
+metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
+scmCheckout - Checkout a branch in the local SCM repository.
+scmCommit - Issue a commit to the local SCM repository. Customize with 'scmComment', 'scmAuthor', 'scmEmail', and 'scmCommitPath' build parameters.
+scmPush - Push to the origin for the local SCM repository. Requires 'sourceBase' build parameter pointing to Git repo root directory, if running task outside of a Git repository.
+
+Services tasks
+--------------
+metadataReload - Execute the 'Reload Files and Metadata' option.
+
+Testing tasks
+-------------
+baselineTest - Execute all Baseline regression tests for the entire project.
+compareTest - Execute all Compare regression tests for the entire project.
+extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
+revisionTest - Execute all Revision regression tests for the entire project.
+
+Verification tasks
+------------------
+check - Runs all checks.
+
+Rules
+-----
+Pattern: clean<TaskName>: Cleans the output files of a task.
+Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
+Pattern: upload<ConfigurationName>: Assembles and uploads the artifacts belonging to a configuration.
+
+To see all tasks and more detail, run gradlew tasks --all
+
+To see more detail about a task, run gradlew help --task <task>
+
+BUILD SUCCESSFUL
+
+Total time: 0.871 secs
 ```
 
 The first time a command is executed, Gradle will pull down any library dependencies used by Checkmate for OBI from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself.
