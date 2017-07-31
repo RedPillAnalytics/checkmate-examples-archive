@@ -18,7 +18,7 @@ plugins {
 * `com.redpillanalytics.checkmate.obi`: This is the Checkmate for OBI plugin.
 * `maven-publish`: a Core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses Maven Publish to publish distributions of OBI content.
 
-With the Checkmate for OBI plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core Checkmate for OBI tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command. If we comment everything else out of the `build.gradle` file except the `plugins` block, the `tasks` command gives us the following:
+With the Checkmate for OBI plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command. If we comment everything else out of the `build.gradle` file except the `plugins` block, the `tasks` command gives us the following:
 
 ```bash
 ./gradlew -p obi/sample-12c tasks
@@ -505,10 +505,20 @@ BUILD SUCCESSFUL
 Total time: 2.614 secs
 ```
 
-You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate for OBI requires, but will use the content inside the distribution file to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Expect to see some *up-to-date* checks as Checkmate for OBI skips tasks that don't need to be rerun:
+You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate for OBI requires, but will use the content inside the distribution file to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Expect to see some *UP-TO-DATE* checks as Checkmate for OBI skips tasks that don't need to be rerun:
 
 ```bash
 ./gradlew -p obi/sample-12c releaseCompare
+:releaseExtractBuild
+:catalogBuild UP-TO-DATE
+:releaseCatalogCompare
+:metadataBuild UP-TO-DATE
+:releaseMetadataCompare
+:releaseCompare
+
+BUILD SUCCESSFUL
+
+Total time: 37.264 secs
 ```
 
 Now, we can take a look at the enhanced content in our build directory:
@@ -541,17 +551,32 @@ We generated all the incremental patch files, including the rollback patches, bu
 
 ```bash
 ./gradlew -p obi/sample-12c publish
+:assemble UP-TO-DATE
+:catalogBuild UP-TO-DATE
+:check UP-TO-DATE
+:metadataBuild UP-TO-DATE
+:build UP-TO-DATE
+:buildZip UP-TO-DATE
+:generatePomFileForBuildPublication
+:publishBuildPublicationToMavenLocalRepository
+:deployZip
+:generatePomFileForDeployPublication
+:publishDeployPublicationToMavenLocalRepository
+:publish
+
+BUILD SUCCESSFUL
+
+Total time: 9.195 secs
 ```
 
-Now, let's enable the **promote** build group, which is what we use for deploying distribution files to downstream environments.
+Now, let's enable the **promote** build group (distriubtion file only... we'll get to the BAR file later), which is what we use for deploying content to downstream environments.
 
 ```gradle
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'com.redpillanalytics', name: 'checkmate', version: '+'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.3'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
-  // If it exists, Checkmate will unzip and install it for you
   //obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
 
   // Dependencies on previous OBIEE builds
@@ -563,10 +588,18 @@ dependencies {
 }
 ```
 
-Notice that we've uncommented `promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'`, which gives us a series of new Checkmate for OBI tasks to work with the **promote** build group. We'll use the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
+Notice that we've uncommented `promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'`, which gives us a series of new tasks to work with the **promote** build group. We'll use the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
 
 ```bash
 ./gradlew -p obi/sample-12c promotePatch
+:promoteExtractDeploy
+:promoteMetadataPatch
+:promoteCatalogPatch
+:promotePatch
+
+BUILD SUCCESSFUL
+
+Total time: 2 mins 29.386 secs
 ```
 
 You'll notice that `promotePatch` is a container task for executing `promoteMetadataPatch` and `promoteCatalogPatch`, either of which can be run individually.
