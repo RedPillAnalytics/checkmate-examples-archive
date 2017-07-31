@@ -37,8 +37,8 @@ dependencies {
 
   // Dependencies on previous OBIEE builds
   // Used for building incremental patches, regression testing, and deployments
-  //feature group: 'obiee', name: 'sample-12c-build', version: '+'
-  //release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
+  feature group: 'obiee', name: 'sample-12c-build', version: '+'
+  release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
   //promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'
   //promote group: 'obiee', name: 'sample-12c-bar', version: '0.0.9'
 }
