@@ -10,7 +10,7 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```gradle
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '8.0.2'
+  id 'com.redpillanalytics.checkmate.obi' version '8.0.3'
   id 'maven-publish'
 }
 ```
@@ -188,7 +188,7 @@ export PATH=$PATH:/home/oracle/bin:/home/oracle/fmw/config/domains/bi/bitools/bi
 
 # Building and Publishing
 The workflow for building OBIEE content usually occurs in the following steps:
-* **Build:** The building of OBIEE deployment artifacts from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involves building a binary RPD, as well as a catalog archive file of the Shared Folders of the catalog.
+* **Build:** The building of OBIEE deployment artifacts from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involve building a binary RPD, as well as a catalog archive file of the Shared Folders of the catalog.
 * **Bundle:** Building **distribution files** of all OBIEE content generated in the **Build** phase. In effect, these are zip files containing repository and catalog content.
 * **Publish:** Publishing distribution files to one or more [Maven repositories](https://maven.apache.org/pom.html#Repositories).
 
@@ -226,6 +226,15 @@ To build our OBI project, we can simply execute the following:
 
 ```bash
 ./gradlew -p obi/sample-12c build
+:assemble UP-TO-DATE
+:catalogBuild
+:check UP-TO-DATE
+:metadataBuild
+:build
+
+BUILD SUCCESSFUL
+
+Total time: 14.697 secs
 ```
 
 You'll notice that the `build` task doesn't really do anything on its own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/3.5/userguide/build_lifecycle.html) implementation.
@@ -234,17 +243,25 @@ Furthermore... we can run the entire Build, Bundle and Publish workflow by simpl
 
 ```bash
 ./gradlew -p obi/sample-12c publish
-```
-
-In the output, you'll notice the *up-to-date* checks that Checkmate for OBI is doing when running the dependent tasks. This can be seen in the following output:
-
-```gradle
+:assemble UP-TO-DATE
 :catalogBuild UP-TO-DATE
+:check UP-TO-DATE
 :metadataBuild UP-TO-DATE
 :build UP-TO-DATE
+:buildZip
+:generatePomFileForBuildPublication
+:publishBuildPublicationToMavenLocalRepository
+:deployZip
+:generatePomFileForDeployPublication
+:publishDeployPublicationToMavenLocalRepository
+:publish
+
+BUILD SUCCESSFUL
+
+Total time: 7.259 secs
 ```
 
-Checkmate for OBI is written to take advantage of the [Gradle Incremental Build](https://docs.gradle.org/3.5/userguide/more_about_tasks.html#sec:up_to_date_checks) feature. The catalog and metadata build tasks are not executed again, because none of the task input and output files have changed. This keeps Checkmate from re-running tasks that it doesn't have to.
+In the output, you'll notice the *UP-TO-DATE* checks that Checkmate for OBI is doing when running the dependent tasks. Checkmate is written to take advantage of the [Gradle Incremental Build](https://docs.gradle.org/3.5/userguide/more_about_tasks.html#sec:up_to_date_checks) feature. The catalog and metadata build tasks are not executed again, because none of the task input and output files have changed. This keeps Checkmate from re-running tasks that it doesn't have to. Rerunning tasks can always be forced by providing the `--rerun-tasks` command-line option.
 
 Let's take a look at what our Build, Bundle and Publish process generated. If we look at the [`build`](build) directory in the project directory, we can see all the things that Checkmate for OBI built, including some of the following:
 
