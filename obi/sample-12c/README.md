@@ -706,14 +706,14 @@ BUILD SUCCESSFUL
 Total time: 3 mins 13.534 secs
 ```
 
-Notice that the `releaseRevisionWorkflow` task goes ahead and executes the *compare* phase of the regression testing, though this is the default, and is of course configurable. It's also worth noting that Checkmate for OBI generates JUnit XML files during this process, which is the industry-standard way of expressing a testing result: all Continuous Delivery and DevOps platforms recognize this standard, and can be configured to act on the results of those files.
+Notice that the `releaseRevisionWorkflow` task goes ahead and executes the *compare* phase of the regression testing, which is why we see more tests executed during that phase. This is the default, and is of course configurable. It's also worth noting that Checkmate for OBI generates JUnit XML files during this process, which is the industry-standard way of expressing a testing result: all Continuous Delivery and DevOps platforms recognize this standard, and can be configured to act on the results of those files.
 
 # OBIEE 12c BAR Files
-The first releases of Checkmate for OBI pre-dated OBIEE 12c, and therefore, pre-dated the new BAR file functionality in 12c. In a way, the Checkmate for OBI distribution file was our way of building a BAR file... we were just slightly ahead of the game. There's an interesting decision to be made when configuring a Checkmate workflow... to use the BAR file or the distribution file.
+The first releases of Checkmate for OBI pre-dated OBIEE 12c, and therefore, pre-dated the new BAR file functionality in 12c. In a way, the Checkmate for OBI distribution file was our way of building a BAR file... we were just slightly ahead of the game. There's an interesting decision to be made when configuring deployment workflows... to use the BAR file or the distribution file.
 
-At this point in the OBIEE Roadmap, we don't see a lot of value that the BAR file provides over the distribution file... especially since the distribution file also contains incremental patch files, which the BAR file simply doesn't have. Additionally, distribution files can be generated without requiring a running instance of OBIEE; Checkmate for OBI generates the distribution files simply from building content that exist in a Git repository.
+At this point in the OBIEE Roadmap, we don't see a lot of value that the BAR file provides over the distribution file... especially since the distribution file also contains incremental patch files, which the BAR file simply doesn't have. Additionally, distribution files can be generated without requiring a running instance of OBIEE; Checkmate for OBI generates the distribution files by building content that exist in a Git repository using offline tools.
 
-However, we recognize that the BAR file is the future for OBI, so we certainly support it. We can generate a BAR file using the `exportBAR` task, and can import a BAR file into OBIEE using the `importBAR` file. Additionally, but simply setting `publishBAR = true`, Checkmate for OBI will automatically generate and publish a BAR file to our Maven repository along with the distribution file.
+However, we recognize that the BAR file is the future for OBI, so we certainly support it. We can generate a BAR file using the `barExport` task, and can import a BAR file into OBIEE using the `<buildGroup>BarImport` task. Additionally, by simply setting `publishBAR = true` in our build script, Checkmate for OBI will automatically generate and publish a BAR file to our Maven repository along with the distribution file.
 
 ```gradle
 obi.publishBar = true
