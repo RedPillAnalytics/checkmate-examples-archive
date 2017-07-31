@@ -606,12 +606,12 @@ You'll notice that `promotePatch` is a container task for executing `promoteMeta
 
 # Regression Testing
 The high-level process Checkmate for OBI uses to regression test pull requests, source commits, or branch merges, is described below:
-* Pull down a distribution file of OBI content published previously.
 * Build deployment artifacts from the current content in the Git repository.
+* Pull down a distribution file of OBI content published previously.
 * Upload the previous content into an OBIEE environment.
 * Run a series of analyses, saving the logical SQL and query results. This is called the *baseline* phase.
 * Deploy the current version of content into the OBIEE environment, either using incremental patches, or by deploying whole catalogs and repositories, automatically managing the connection pool information.
-* Run the same series of analyses that were run during the *baseline*, saving the output. This is called the *revision* phase.
+* Run the same series of analyses that were run during the baseline phase, saving the output. This is called the *revision* phase.
 * Compare the output generated from the baseline phase with the output generated from the revision phase. Naturally, we call this the *compare* phase.
 
 
@@ -632,15 +632,15 @@ obi.testGroups {
 }
 ```
 
-Let's take a look at some of the parameters configured here, as well as a few others not shown worth mentioning:
-* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate recursively includes every analysis in those folders.
+Let's take a look at some of the parameters configured here, as well as one other that is not shown, but still worth mentioning:
+* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate for OBI recursively includes every analysis in those folders.
 * **compareText:** By default, Checkmate for OBI uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results.
 * **showOutput:** Output more information about the execution of each regression test. Feel free to set this to `true` to see the logical SQL being executed, any error stack generated, etc.
-* **impersonateUser:** Specify a user that you want to impersonate for this purposes of this test group. With this functionality, we are able to configure multiple test groups that run the same regression tests but with different security profiles. This requires that the `adminUser` specified above be granted the `impersonate` application role, which is not done by default.
+* **impersonateUser:** Specify a user that you want to impersonate for this test group. This functionality enables us to configure multiple test groups that run the same regression tests but with different security profiles. This requires that the `adminUser` specified above be granted the `impersonate` application role, which is not granted by default.
 
 Regression Testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together. From our `tasks` command, we've highlighted the output of the relevant tasks, listing the granular tasks first, followed by the complex workflow tasks:
 
-```bash
+```
 Testing tasks
 -------------
 baselineTest - Execute all Baseline regression tests for the entire project.
@@ -655,6 +655,9 @@ revisionTest - Execute all Revision regression tests for the entire project.
 
 Workflow tasks
 --------------
+featureBaselineWorkflow - Import 'feature' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
+featureRevisionPatchWorkflow - Apply 'feature' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
+featureRevisionWorkflow - Import 'feature' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
 releaseBaselineWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
 releaseRevisionPatchWorkflow - Apply 'release' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
 releaseRevisionWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
@@ -679,13 +682,14 @@ Results: SUCCESS (42 tests, 42 successes, 0 failures, 0 skipped)
 
 BUILD SUCCESSFUL
 
-Total time: 3 mins 19.836 secs
+Total time: 4 mins 31.163 secs
 
 ./gradlew -p obi/sample-12c releaseRevisionWorkflow
-:releaseExtractBuild
-:releaseMetadataImport
-:releaseCatalogImport
-:releaseImport
+:metadataBuild UP-TO-DATE
+:metadataImport
+:catalogBuild UP-TO-DATE
+:catalogImport
+:import
 :connPoolsImport
 :regressionRevisionLibrary
 :extractTestSuites UP-TO-DATE
@@ -699,10 +703,10 @@ Results: SUCCESS (85 tests, 84 successes, 0 failures, 1 skipped)
 
 BUILD SUCCESSFUL
 
-Total time: 3 mins 21.775 secs
+Total time: 3 mins 13.534 secs
 ```
 
-Notice that the `releaseRevisionWorkflow` task goes ahead and executes the **Compare** phase of the regression testing, though this is the default, and is of course configurable. It's also worth noting that Checkmate for OBI generates JUnit XML files during this process, which is the industry-standard way of expressing a testing result: all Continuous Delivery and DevOps platforms recognize this standard, and can be configured to ask on the results of those files.
+Notice that the `releaseRevisionWorkflow` task goes ahead and executes the *compare* phase of the regression testing, though this is the default, and is of course configurable. It's also worth noting that Checkmate for OBI generates JUnit XML files during this process, which is the industry-standard way of expressing a testing result: all Continuous Delivery and DevOps platforms recognize this standard, and can be configured to act on the results of those files.
 
 # OBIEE 12c BAR Files
 The first releases of Checkmate for OBI pre-dated OBIEE 12c, and therefore, pre-dated the new BAR file functionality in 12c. In a way, the Checkmate for OBI distribution file was our way of building a BAR file... we were just slightly ahead of the game. There's an interesting decision to be made when configuring a Checkmate workflow... to use the BAR file or the distribution file.
