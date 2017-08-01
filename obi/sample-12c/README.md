@@ -351,9 +351,8 @@ release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
 The DSL might be a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI distribution files. Basically, we use a Gradle [configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html) to declare dependencies on distribution files that we want Checkmate for OBI to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus sign (+): this signifies to Checkmate for OBI that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
 
 ```bash
-./gradlew -p obi/sample-12c tasks
-
-> Task :tasks
+../gradlew -p obi/sample-12c tasks --console=plain
+:tasks
 
 ------------------------------------------------------------
 All tasks runnable from root project
@@ -425,7 +424,7 @@ featureImport - Execute 'featureCatalogImport' and 'featureMetadataImport'.
 featureMetadataImport - Import 'repository/feature.rpd' into the online metadata repository, and Reload Files and Metadata.
 import - Execute 'catalogImport' and 'metadataImport'.
 metadataImport - Import 'repository/current.rpd' into the online metadata repository, and Reload Files and Metadata.
-releaseCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/release', and Reload Files and Metadata.
+releaseCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/release/', and Reload Files and Metadata.
 releaseImport - Execute 'releaseCatalogImport' and 'releaseMetadataImport'.
 releaseMetadataImport - Import 'repository/release.rpd' into the online metadata repository, and Reload Files and Metadata.
 variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
@@ -506,7 +505,6 @@ Pattern: upload<ConfigurationName>: Assembles and uploads the artifacts belongin
 To see all tasks and more detail, run gradlew tasks --all
 
 To see more detail about a task, run gradlew help --task <task>
-
 
 BUILD SUCCESSFUL in 0s
 1 actionable task: 1 executed
