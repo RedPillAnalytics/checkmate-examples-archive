@@ -10,7 +10,7 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```gradle
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '8.0.3'
+  id 'com.redpillanalytics.checkmate.obi' version '8.0.5'
   id 'maven-publish'
 }
 ```
@@ -22,7 +22,8 @@ With the Checkmate for OBI plugin applied, our Gradle [project](https://docs.gra
 
 ```bash
 ./gradlew -p obi/sample-12c tasks
-:tasks
+
+> Task :tasks
 
 ------------------------------------------------------------
 All tasks runnable from root project
@@ -91,7 +92,9 @@ generatePomFileForBuildPublication - Generates the Maven POM file for publicatio
 generatePomFileForDeployPublication - Generates the Maven POM file for publication 'deploy'.
 publish - Publishes all publications produced by this project.
 publishBuildPublicationToMavenLocal - Publishes Maven publication 'build' to the local Maven repository.
+publishBuildPublicationToMavenLocalRepository - Publishes Maven publication 'build' to Maven repository 'MavenLocal'.
 publishDeployPublicationToMavenLocal - Publishes Maven publication 'deploy' to the local Maven repository.
+publishDeployPublicationToMavenLocalRepository - Publishes Maven publication 'deploy' to Maven repository 'MavenLocal'.
 publishToMavenLocal - Publishes all Maven publications produced by this project to the local Maven cache.
 
 SCM tasks
@@ -111,6 +114,11 @@ Testing tasks
 baselineTest - Execute all Baseline regression tests for the entire project.
 compareTest - Execute all Compare regression tests for the entire project.
 extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
+regressionBaselineLibrary - Create the Baseline regression test library CSV file for Test Group 'regression'.
+regressionBaselineTest - Execute the Baseline regression test library file for Test Group 'regression'.
+regressionCompareTest - Compare the differences between the Baseline and Revision regression test results for Test Group 'regression'.
+regressionRevisionLibrary - Create the Revision regression test library CSV file for Test Group 'regression'.
+regressionRevisionTest - Execute the Revision regression test library file for Test Group 'regression'.
 revisionTest - Execute all Revision regression tests for the entire project.
 
 Verification tasks
@@ -127,9 +135,9 @@ To see all tasks and more detail, run gradlew tasks --all
 
 To see more detail about a task, run gradlew help --task <task>
 
-BUILD SUCCESSFUL
 
-Total time: 0.871 secs
+BUILD SUCCESSFUL in 0s
+1 actionable task: 1 executed
 ```
 
 The first time a command is executed, Gradle will pull down any library dependencies used by Checkmate for OBI from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself.
@@ -164,7 +172,7 @@ Checkmate provides this degree of flexibility because many build properties are 
 
 For the sake of simplicity and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember... you would want to use another approach in a real delivery pipeline.
 
-```bash
+```java
 obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.2/obi1'
 obi.domainHome = '/home/oracle/fmw/config/domains/bi'
 obi.compatibility = '12.2.1.2'
@@ -194,7 +202,7 @@ The workflow for building OBIEE content usually occurs in the following steps:
 
 Currently, we have the following publications configured in our `build.gradle`:
 
-```gradle
+```groovy
 publishing {
   repositories {
     // publish to Maven local repository, which is usually ~/.m2
@@ -206,7 +214,7 @@ publishing {
 
 This will only publish our OBI distribution files to the [Maven Local](https://docs.gradle.org/3.5/userguide/publishing_maven.html#publishing_maven:install) repository, which defaults to `$HOME/.m2`. Obviously, this is for testing purposes only. In a real continuous delivery pipeline, content should be published to a real Maven-compatible repository. At the very least, publish to an S3 bucket, which Gradle supports, using the following syntax:
 
-```gradle
+```groovy
 publishing {
   repositories {
     maven {
@@ -225,24 +233,25 @@ Why do we bother publishing our OBIEE distributions to Maven repositories? So we
 To build our OBI project, we can simply execute the following:
 
 ```bash
-./gradlew -p obi/sample-12c build
+./gradlew -p obi/sample-12c build --console=plain
 :assemble UP-TO-DATE
-:catalogBuild
+:catalogBuild UP-TO-DATE
 :check UP-TO-DATE
-:metadataBuild
-:build
+:metadataBuild UP-TO-DATE
+:build UP-TO-DATE
 
-BUILD SUCCESSFUL
-
-Total time: 14.697 secs
+BUILD SUCCESSFUL in 1s
+2 actionable tasks: 2 up-to-date
 ```
+
+A quick note on the `--console=plain` option. Gradle detects whether the CLI is being executed interactively, or by daemon processes, such as Continuous Delivery servers. You will generally want to run with `--consolde=AUTO` (the default) so it detects this, as the interactive capabilities are quite powerful. However... the non-interactive option is not great for a Quickstart, as the task executions are not displayed in full at the end. We suggest that you not add the `--console=plain` option in everyday use... but feel free to do it here to work through the Quickstart.
 
 You'll notice that the `build` task doesn't really do anything on its own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/3.5/userguide/build_lifecycle.html) implementation.
 
 Furthermore... we can run the entire Build, Bundle and Publish workflow by simply running the `publish` task, which has dependencies on building and bundling all the content.
 
 ```bash
-./gradlew -p obi/sample-12c publish
+./gradlew -p obi/sample-12c publish --console=plain
 :assemble UP-TO-DATE
 :catalogBuild UP-TO-DATE
 :check UP-TO-DATE
@@ -256,9 +265,8 @@ Furthermore... we can run the entire Build, Bundle and Publish workflow by simpl
 :publishDeployPublicationToMavenLocalRepository
 :publish
 
-BUILD SUCCESSFUL
-
-Total time: 7.259 secs
+BUILD SUCCESSFUL in 6s
+8 actionable tasks: 6 executed, 2 up-to-date
 ```
 
 In the output, you'll notice the *UP-TO-DATE* checks that Checkmate for OBI is doing when running the dependent tasks. Checkmate is written to take advantage of the [Gradle Incremental Build](https://docs.gradle.org/3.5/userguide/more_about_tasks.html#sec:up_to_date_checks) feature. The catalog and metadata build tasks are not executed again, because none of the task input and output files have changed. This keeps Checkmate from re-running tasks that it doesn't have to. Rerunning tasks can always be forced by providing the `--rerun-tasks` command-line option.
@@ -320,7 +328,7 @@ We'll make the following changes to our [`build.gradle`](build.gradle) file, whi
 ```gradle
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.3'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.5'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   // If it exists, Checkmate will unzip and install it for you
@@ -346,7 +354,8 @@ The DSL might be a bit confusing, because we are using Gradle's built-in depende
 
 ```bash
 ./gradlew -p obi/sample-12c tasks
-:tasks
+
+> Task :tasks
 
 ------------------------------------------------------------
 All tasks runnable from root project
@@ -500,15 +509,15 @@ To see all tasks and more detail, run gradlew tasks --all
 
 To see more detail about a task, run gradlew help --task <task>
 
-BUILD SUCCESSFUL
 
-Total time: 2.614 secs
+BUILD SUCCESSFUL in 0s
+1 actionable task: 1 executed
 ```
 
 You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate for OBI requires, but will use the content inside the distribution file to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Expect to see some *UP-TO-DATE* checks as Checkmate for OBI skips tasks that don't need to be rerun:
 
 ```bash
-./gradlew -p obi/sample-12c releaseCompare
+./gradlew -p obi/sample-12c releaseCompare --console=plain
 :releaseExtractBuild
 :catalogBuild UP-TO-DATE
 :releaseCatalogCompare
@@ -516,9 +525,8 @@ You should see a bunch of new tasks enabled that begin with *feature* and *relea
 :releaseMetadataCompare
 :releaseCompare
 
-BUILD SUCCESSFUL
-
-Total time: 37.264 secs
+BUILD SUCCESSFUL in 30s
+5 actionable tasks: 3 executed, 2 up-to-date
 ```
 
 Now, we can take a look at the enhanced content in our build directory:
@@ -550,7 +558,7 @@ drwxr-xr-x. 1 501 games    68 Jul 26 11:42 xml-variables
 We generated all the incremental patch files, including the rollback patches, but the content of those patch files is empty, because there is currently no difference in what was published to version 0.0.9 and what is currently in source control. But you get the idea. Let's publish again, so we can create a *deploy* distribution, which contains all the patch files, as well as the original repository and catalog artifacts.
 
 ```bash
-./gradlew -p obi/sample-12c publish
+./gradlew -p obi/sample-12c publish --console=plain
 :assemble UP-TO-DATE
 :catalogBuild UP-TO-DATE
 :check UP-TO-DATE
@@ -564,17 +572,16 @@ We generated all the incremental patch files, including the rollback patches, bu
 :publishDeployPublicationToMavenLocalRepository
 :publish
 
-BUILD SUCCESSFUL
-
-Total time: 9.195 secs
+BUILD SUCCESSFUL in 6s
+8 actionable tasks: 5 executed, 3 up-to-date
 ```
 
 Now, let's enable the **promote** build group (distriubtion file only... we'll get to the BAR file later), which is what we use for deploying content to downstream environments.
 
-```gradle
+```groovy
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.3'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.5'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   //obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
@@ -591,15 +598,14 @@ dependencies {
 Notice that we've uncommented `promote group: 'obiee', name: 'sample-12c-deploy', version: '0.0.9'`, which gives us a series of new tasks to work with the **promote** build group. We'll use the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
 
 ```bash
-./gradlew -p obi/sample-12c promotePatch
+./gradlew -p obi/sample-12c promotePatch --console=plain
 :promoteExtractDeploy
 :promoteMetadataPatch
 :promoteCatalogPatch
 :promotePatch
 
-BUILD SUCCESSFUL
-
-Total time: 2 mins 29.386 secs
+BUILD SUCCESSFUL in 37s
+3 actionable tasks: 3 executed
 ```
 
 You'll notice that `promotePatch` is a container task for executing `promoteMetadataPatch` and `promoteCatalogPatch`, either of which can be run individually.
@@ -617,7 +623,7 @@ The high-level process Checkmate for OBI uses to regression test pull requests, 
 
 For regression testing, Checkmate for OBI has the concept of a **test group**, which is configured using the `obi.testGroups {}` DSL structure. The default test group called **regression** is already built in, but we can use the same DSL structure to customize that build group:
 
-```gradle
+```groovy
 obi.testGroups {
   regression {
     // the catalog folder to test. Recursively tests all analyses in that folder
@@ -663,10 +669,10 @@ releaseRevisionPatchWorkflow - Apply 'release' metadata and catalog patches, man
 releaseRevisionWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
 ```
 
-Executing a regression testing workflow, managing all three phases of the process (**baseline**, **revision**, **compare**), is as easy as executing the following two workflow tasks:
+Executing a regression testing workflow, managing all three phases of the process (**baseline**, **revision**, **compare**), is as easy as executing the following two workflow tasks.
 
 ```bash
-./gradlew -p obi/sample-12c releaseBaselineWorkflow
+./gradlew -p obi/sample-12c releaseBaselineWorkflow --console=plain
 :connPoolsExport
 :releaseExtractBuild
 :releaseMetadataImport
@@ -680,11 +686,10 @@ Results: SUCCESS (42 tests, 42 successes, 0 failures, 0 skipped)
 :baselineTest
 :releaseBaselineWorkflow
 
-BUILD SUCCESSFUL
+BUILD SUCCESSFUL in 2m 24s
+8 actionable tasks: 8 executed
 
-Total time: 4 mins 31.163 secs
-
-./gradlew -p obi/sample-12c releaseRevisionWorkflow
+./gradlew -p obi/sample-12c releaseRevisionWorkflow --console=plain
 :metadataBuild UP-TO-DATE
 :metadataImport
 :catalogBuild UP-TO-DATE
@@ -701,9 +706,8 @@ Results: SUCCESS (85 tests, 84 successes, 0 failures, 1 skipped)
 :compareTest
 :releaseRevisionWorkflow
 
-BUILD SUCCESSFUL
-
-Total time: 3 mins 13.534 secs
+BUILD SUCCESSFUL in 2m 21s
+9 actionable tasks: 6 executed, 3 up-to-date
 ```
 
 Notice that the `releaseRevisionWorkflow` task goes ahead and executes the *compare* phase of the regression testing, which is why we see more tests executed during that phase. This is the default, and is of course configurable. It's also worth noting that Checkmate for OBI generates JUnit XML files during this process, which is the industry-standard way of expressing a testing result: all Continuous Delivery and DevOps platforms recognize this standard, and can be configured to act on the results of those files.
@@ -715,12 +719,12 @@ At this point in the OBIEE Roadmap, we don't see a lot of value that the BAR fil
 
 However, we recognize that the BAR file is the future for OBI, so we certainly support it. We can generate a BAR file using the `barExport` task, and can import a BAR file into OBIEE using the `<buildGroup>BarImport` task. Additionally, by simply setting `publishBAR = true` in our build script, Checkmate for OBI will automatically generate and publish a BAR file to our Maven repository along with the distribution file.
 
-```gradle
+```groovy
 obi.publishBar = true
 ```
 
 ```bash
-./gradlew -p obi/sample-12c publish
+./gradlew -p obi/sample-12c publish --console=plain
 :barExport
 :generatePomFileForBarPublication
 :publishBarPublicationToMavenLocalRepository
@@ -737,45 +741,41 @@ obi.publishBar = true
 :publishDeployPublicationToMavenLocalRepository
 :publish
 
-BUILD SUCCESSFUL
-
-Total time: 4 mins 31.606 secs
+BUILD SUCCESSFUL in 4m 9s
+11 actionable tasks: 8 executed, 3 up-to-date
 ```
 
 Additionally, it's just as easy to import the BAR file we just created. We have to configure it as a dependency, just as we did with the distribution file. This is because Checkmate for OBI pulls down the desired BAR file from Maven in the same fashion it pulls down the distribution file, and we use the **promote** build group to deploy it:
 
-```gradle
+```groovy
 promote group: 'obiee', name: 'sample-12c-bar', version: '0.0.9'
 ```
 
 Now we are able to run the `releaseBarImport` task:
 
 ```bash
-./gradlew -p obi/sample-12c promoteBarImport
+./gradlew -p obi/sample-12c promoteBarImport --console=plain
 :promoteBarImport
 
-BUILD SUCCESSFUL
-
-Total time: 46.59 secs
+BUILD SUCCESSFUL in 51s
+1 actionable task: 1 executed
 ```
 
 We can also easily import the predefined SampleAppLite BAR file if you ever need to:
 
 ```bash
-./gradlew -p obi/sample-12c barImportSAL
+./gradlew -p obi/sample-12c barImportSAL --console=plain
 :barImportSAL
 
-BUILD SUCCESSFUL
-
-Total time: 1 mins 47.64 secs
+BUILD SUCCESSFUL in 1m 7s
+1 actionable task: 1 executed
 ```
 Or, use the "empty BAR file" that also ships with OBIEE 12c:
 
 ```bash
-./gradlew -p obi/sample-12c barReset
+./gradlew -p obi/sample-12c barReset --console=plain
 :barReset
 
-BUILD SUCCESSFUL
-
-Total time: 39.818 secs
+BUILD SUCCESSFUL in 43s
+1 actionable task: 1 executed
 ```
