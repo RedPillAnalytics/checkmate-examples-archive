@@ -8,7 +8,7 @@ This Quickstart uses the standard apporach of configuring Checkmate using a [`bu
 
 The `plugins` block is the first and most important aspect to the build script: it applies any desired plugins from the [Gradle Plugin Portal](https://plugins.gradle.org) using the unique ID associated with that plugin:
 
-```gradle
+```groovy
 plugins {
   id 'com.redpillanalytics.checkmate.obi' version '8.0.5'
   id 'maven-publish'
@@ -21,9 +21,8 @@ plugins {
 With the Checkmate for OBI plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in to this repository to see all the tasks associated with the project directory, specified with the `-p` option, and the `tasks` command. If we comment everything else out of the `build.gradle` file except the `plugins` block, the `tasks` command gives us the following:
 
 ```bash
-./gradlew -p obi/sample-12c tasks
-
-> Task :tasks
+./gradlew -p obi/sample-12c tasks --console=plain
+:tasks
 
 ------------------------------------------------------------
 All tasks runnable from root project
@@ -37,7 +36,7 @@ Build tasks
 -----------
 assemble - Assembles the outputs of this project.
 build - Execute 'metadataBuild' and 'catalogBuild'
-catalogBuild - Copy catalog from SCM to 'catalog/current' and generate unarchive file 'catalog/current.catalog'
+catalogBuild - Copy catalog from SCM to 'catalog/current/' and generate unarchive file 'catalog/current.catalog'
 clean - Deletes the build directory.
 metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM using the 'current' configuration.
 
@@ -80,7 +79,7 @@ Import tasks
 ------------
 barImportSAL - Import SampleAppLite.bar into the 'ssi' Service Instance.
 barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
-catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current', and Reload Files and Metadata.
+catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current/', and Reload Files and Metadata.
 connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
 import - Execute 'catalogImport' and 'metadataImport'.
 metadataImport - Import 'repository/current.rpd' into the online metadata repository, and Reload Files and Metadata.
@@ -99,7 +98,7 @@ publishToMavenLocal - Publishes all Maven publications produced by this project 
 
 SCM tasks
 ---------
-catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
+catalogSCM - Synchronize 'catalog/current/' with SCM and then commit.
 metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
 scmCheckout - Checkout a branch in the local SCM repository.
 scmCommit - Issue a commit to the local SCM repository. Customize with 'scmComment', 'scmAuthor', 'scmEmail', and 'scmCommitPath' build parameters.
@@ -135,12 +134,13 @@ To see all tasks and more detail, run gradlew tasks --all
 
 To see more detail about a task, run gradlew help --task <task>
 
-
-BUILD SUCCESSFUL in 0s
+BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
 ```
 
 The first time a command is executed, Gradle will pull down any library dependencies used by Checkmate for OBI from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself.
+
+A quick note on the `--console=plain` option. Gradle detects whether the CLI is being executed interactively, or by daemon processes, such as Continuous Delivery servers. You will generally want to run with `--console=auto` (the default) so it detects this, as the interactive capabilities are quite powerful. However... the non-interactive option is not great for a Quickstart, as the task executions are not displayed in full at the end. We suggest that you not add the `--console=plain` option in everyday use... but feel free to do it here to work through the Quickstart.
 
 The Checkmate for OBI enables the following Task groups:
 * **Analytics**: Tasks associated with loading data generated from Checkmate builds to downstream data platforms. We won't be looking at the Analytics functionality in this Quickstart.
@@ -243,8 +243,6 @@ To build our OBI project, we can simply execute the following:
 BUILD SUCCESSFUL in 1s
 2 actionable tasks: 2 up-to-date
 ```
-
-A quick note on the `--console=plain` option. Gradle detects whether the CLI is being executed interactively, or by daemon processes, such as Continuous Delivery servers. You will generally want to run with `--consolde=AUTO` (the default) so it detects this, as the interactive capabilities are quite powerful. However... the non-interactive option is not great for a Quickstart, as the task executions are not displayed in full at the end. We suggest that you not add the `--console=plain` option in everyday use... but feel free to do it here to work through the Quickstart.
 
 You'll notice that the `build` task doesn't really do anything on its own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/3.5/userguide/build_lifecycle.html) implementation.
 
