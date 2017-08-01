@@ -144,7 +144,7 @@ A quick note on the `--console=plain` option. Gradle detects whether the CLI is 
 
 The Checkmate for OBI enables the following Task groups:
 * **Analytics**: Tasks associated with loading data generated from Checkmate builds to downstream data platforms. We won't be looking at the Analytics functionality in this Quickstart.
-* **Distribution**: Managing the creation and deletion of different types of OBIEE distribution types.
+* **Distribution**: Managing the creation and deletion of different types of OBIEE distribution files.
 * **Export**: Tasks that facilitate exporting content from an OBIEE instance into the build location or into source control.
 * **Import**: Tasks that facilitate importing content into an OBIEE instance, usually using artifacts built in the build location, or downloaded from Maven.
 * **SCM**: Tasks for integrating with Source Control Management, specifically [Git](https://git-scm.com).
