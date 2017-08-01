@@ -711,7 +711,7 @@ Notice that the `releaseRevisionWorkflow` task goes ahead and executes the *comp
 # OBIEE 12c BAR Files
 The first releases of Checkmate for OBI pre-dated OBIEE 12c, and therefore, pre-dated the new BAR file functionality in 12c. In a way, the Checkmate for OBI distribution file was our way of building a BAR file... we were just slightly ahead of the game. There's an interesting decision to be made when configuring deployment workflows... to use the BAR file or the distribution file.
 
-At this point in the OBIEE Roadmap, we don't see a lot of value that the BAR file provides over the distribution file... especially since the distribution file also contains incremental patch files, which the BAR file simply doesn't have. Additionally, distribution files can be generated without requiring a running instance of OBIEE; Checkmate for OBI generates the distribution files by building content that exist in a Git repository using offline tools.
+At this point in the OBIEE Roadmap, we don't see a lot of value that the BAR file provides over the distribution file... especially since the distribution file also contains incremental patch files, which the BAR file simply doesn't have. Additionally, distribution files can be generated without requiring a running instance of OBIEE; Checkmate for OBI generates the distribution files by building content that exists in a Git repository using offline tools.
 
 However, we recognize that the BAR file is the future for OBI, so we certainly support it. We can generate a BAR file using the `barExport` task, and can import a BAR file into OBIEE using the `<buildGroup>BarImport` task. Additionally, by simply setting `publishBAR = true` in our build script, Checkmate for OBI will automatically generate and publish a BAR file to our Maven repository along with the distribution file.
 
@@ -747,7 +747,7 @@ Additionally, it's just as easy to import the BAR file we just created. We have 
 promote group: 'obiee', name: 'sample-12c-bar', version: '0.0.9'
 ```
 
-Now we are able to run the `releaseBarImport` task:
+Now we are able to run the `promoteBarImport` task:
 
 ```bash
 ./gradlew -p obi/sample-12c promoteBarImport --console=plain
