@@ -351,7 +351,7 @@ release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
 The DSL might be a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI distribution files. Basically, we use a Gradle [configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html) to declare dependencies on distribution files that we want Checkmate for OBI to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus sign (+): this signifies to Checkmate for OBI that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
 
 ```bash
-../gradlew -p obi/sample-12c tasks --console=plain
+./gradlew -p obi/sample-12c tasks --console=plain
 :tasks
 
 ------------------------------------------------------------
