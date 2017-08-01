@@ -140,7 +140,7 @@ BUILD SUCCESSFUL in 1s
 
 The first time a command is executed, Gradle will pull down any library dependencies used by Checkmate for OBI from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself.
 
-A quick note on the `--console=plain` option. Gradle detects whether the CLI is being executed interactively, or by daemon processes, such as Continuous Delivery servers. You will generally want to run with `--console=auto` (the default) so it detects this, as the interactive capabilities are quite powerful. However... the non-interactive option is not great for a Quickstart, as the task executions are not displayed in full at the end. We suggest that you not add the `--console=plain` option in everyday use... but feel free to do it here to work through the Quickstart.
+A quick note on the `--console=plain` option. Gradle detects whether the CLI is being executed interactively, or by daemon processes, such as Continuous Delivery servers. You will generally want to run with `--console=auto` (the default) so it detects this, as the interactive capabilities are quite powerful. However... the interactive option is not great for a Quickstart, as the task executions are not displayed in full at the end. We suggest that you not add the `--console=plain` option in everyday use... but feel free to do it here to work through the Quickstart.
 
 The Checkmate for OBI enables the following Task groups:
 * **Analytics**: Tasks associated with loading data generated from Checkmate builds to downstream data platforms. We won't be looking at the Analytics functionality in this Quickstart.
