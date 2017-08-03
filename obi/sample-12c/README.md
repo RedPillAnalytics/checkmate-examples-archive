@@ -10,7 +10,7 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```groovy
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '8.0.5'
+  id 'com.redpillanalytics.checkmate.obi' version '8.0.6'
   id 'maven-publish'
 }
 ```
@@ -36,9 +36,9 @@ Build tasks
 -----------
 assemble - Assembles the outputs of this project.
 build - Execute 'metadataBuild' and 'catalogBuild'
-catalogBuild - Copy catalog from SCM to 'catalog/current/' and generate unarchive file 'catalog/current.catalog'
+catalogBuild - Copy catalog from SCM to 'catalog/current' and generate catalog archive file 'catalog/current.catalog'.
 clean - Deletes the build directory.
-metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM using the 'current' configuration.
+metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM.
 
 Build Setup tasks
 -----------------
@@ -47,9 +47,9 @@ wrapper - Generates Gradle wrapper files.
 
 Distribution tasks
 ------------------
-buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
+buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
 cleanDist - Delete the Distributions directory.
-deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
+deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
 
 Export tasks
 ------------
@@ -77,9 +77,9 @@ tasks - Displays the tasks runnable from root project 'sample-12c'.
 
 Import tasks
 ------------
-barImportSAL - Import SampleAppLite.bar into the 'ssi' Service Instance.
+barImportSAL - Import SampleAppLite.bar BI Archive (BAR) File into the 'ssi' Service Instance.
 barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
-catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current/', and Reload Files and Metadata.
+catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current', and Reload Files and Metadata.
 connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
 import - Execute 'catalogImport' and 'metadataImport'.
 metadataImport - Import 'repository/current.rpd' into the online metadata repository, and Reload Files and Metadata.
@@ -98,7 +98,7 @@ publishToMavenLocal - Publishes all Maven publications produced by this project 
 
 SCM tasks
 ---------
-catalogSCM - Synchronize 'catalog/current/' with SCM and then commit.
+catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
 metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
 scmCheckout - Checkout a branch in the local SCM repository.
 scmCommit - Issue a commit to the local SCM repository. Customize with 'scmComment', 'scmAuthor', 'scmEmail', and 'scmCommitPath' build parameters.
@@ -235,13 +235,13 @@ To build our OBI project, we can simply execute the following:
 ```bash
 ./gradlew -p obi/sample-12c build --console=plain
 :assemble UP-TO-DATE
-:catalogBuild UP-TO-DATE
+:catalogBuild
 :check UP-TO-DATE
-:metadataBuild UP-TO-DATE
-:build UP-TO-DATE
+:metadataBuild
+:build
 
-BUILD SUCCESSFUL in 1s
-2 actionable tasks: 2 up-to-date
+BUILD SUCCESSFUL in 21s
+2 actionable tasks: 2 executed
 ```
 
 You'll notice that the `build` task doesn't really do anything on its own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/3.5/userguide/build_lifecycle.html) implementation.
@@ -263,7 +263,7 @@ Furthermore... we can run the entire Build, Bundle and Publish workflow by simpl
 :publishDeployPublicationToMavenLocalRepository
 :publish
 
-BUILD SUCCESSFUL in 6s
+BUILD SUCCESSFUL in 8s
 8 actionable tasks: 6 executed, 2 up-to-date
 ```
 
@@ -323,10 +323,10 @@ repositories {
 
 We'll make the following changes to our [`build.gradle`](build.gradle) file, which should be possible by simply commenting out a few lines:
 
-```gradle
+```groovy
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.5'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.6'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   // If it exists, Checkmate will unzip and install it for you
@@ -343,7 +343,7 @@ dependencies {
 
 There's a lot more in the dependencies closure that we'll discuss later. For now, we'll just focus on the two build group dependencies that we want to uncomment out:
 
-```gradle
+```groovy
 feature group: 'obiee', name: 'sample-12c-build', version: '+'
 release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
 ```
@@ -366,12 +366,12 @@ Build tasks
 -----------
 assemble - Assembles the outputs of this project.
 build - Execute 'metadataBuild' and 'catalogBuild'
-catalogBuild - Copy catalog from SCM to 'catalog/current/' and generate unarchive file 'catalog/current.catalog'
+catalogBuild - Copy catalog from SCM to 'catalog/current/' and generate catalog archive file 'catalog/current.catalog'.
 clean - Deletes the build directory.
 featureCatalogCompare - Build incremental file 'catalog/feature-diff.txt' and 'catalog/feature-undiff.txt' using the 'feature' configuration.
 featureCompare - Execute 'featureCatalogCompare' and 'featureMetadataCompare'.
 featureMetadataCompare - Build incremental files 'repository/feature-patch.xml', 'repository/feature-unpatch.xml' and 'repository/feature-compare.csv' using the 'feature' configuration.
-metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM using the 'current' configuration.
+metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM.
 releaseCatalogCompare - Build incremental file 'catalog/release-diff.txt' and 'catalog/release-undiff.txt' using the 'release' configuration.
 releaseCompare - Execute 'releaseCatalogCompare' and 'releaseMetadataCompare'.
 releaseMetadataCompare - Build incremental files 'repository/release-patch.xml', 'repository/release-unpatch.xml' and 'repository/release-compare.csv' using the 'release' configuration.
@@ -383,9 +383,9 @@ wrapper - Generates Gradle wrapper files.
 
 Distribution tasks
 ------------------
-buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
+buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
 cleanDist - Delete the Distributions directory.
-deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
+deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
 featureExtractBuild - Extract OBIEE dependencies for 'feature'.
 releaseExtractBuild - Extract OBIEE dependencies for 'release'.
 
@@ -415,7 +415,7 @@ tasks - Displays the tasks runnable from root project 'sample-12c'.
 
 Import tasks
 ------------
-barImportSAL - Import SampleAppLite.bar into the 'ssi' Service Instance.
+barImportSAL - Import SampleAppLite.bar BI Archive (BAR) File into the 'ssi' Service Instance.
 barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
 catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current/', and Reload Files and Metadata.
 connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
@@ -424,7 +424,7 @@ featureImport - Execute 'featureCatalogImport' and 'featureMetadataImport'.
 featureMetadataImport - Import 'repository/feature.rpd' into the online metadata repository, and Reload Files and Metadata.
 import - Execute 'catalogImport' and 'metadataImport'.
 metadataImport - Import 'repository/current.rpd' into the online metadata repository, and Reload Files and Metadata.
-releaseCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/release/', and Reload Files and Metadata.
+releaseCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/release', and Reload Files and Metadata.
 releaseImport - Execute 'releaseCatalogImport' and 'releaseMetadataImport'.
 releaseMetadataImport - Import 'repository/release.rpd' into the online metadata repository, and Reload Files and Metadata.
 variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
@@ -506,7 +506,7 @@ To see all tasks and more detail, run gradlew tasks --all
 
 To see more detail about a task, run gradlew help --task <task>
 
-BUILD SUCCESSFUL in 0s
+BUILD SUCCESSFUL in 1s
 1 actionable task: 1 executed
 ```
 
@@ -521,7 +521,7 @@ You should see a bunch of new tasks enabled that begin with *feature* and *relea
 :releaseMetadataCompare
 :releaseCompare
 
-BUILD SUCCESSFUL in 30s
+BUILD SUCCESSFUL in 36s
 5 actionable tasks: 3 executed, 2 up-to-date
 ```
 
@@ -568,7 +568,7 @@ We generated all the incremental patch files, including the rollback patches, bu
 :publishDeployPublicationToMavenLocalRepository
 :publish
 
-BUILD SUCCESSFUL in 6s
+BUILD SUCCESSFUL in 7s
 8 actionable tasks: 5 executed, 3 up-to-date
 ```
 
@@ -577,7 +577,7 @@ Now, let's enable the **promote** build group (distriubtion file only... we'll g
 ```groovy
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.5'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.6'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   //obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
@@ -600,7 +600,7 @@ Notice that we've uncommented `promote group: 'obiee', name: 'sample-12c-deploy'
 :promoteCatalogPatch
 :promotePatch
 
-BUILD SUCCESSFUL in 37s
+BUILD SUCCESSFUL in 50s
 3 actionable tasks: 3 executed
 ```
 
@@ -682,8 +682,8 @@ Results: SUCCESS (42 tests, 42 successes, 0 failures, 0 skipped)
 :baselineTest
 :releaseBaselineWorkflow
 
-BUILD SUCCESSFUL in 2m 24s
-8 actionable tasks: 8 executed
+BUILD SUCCESSFUL in 3m 11s
+8 actionable tasks: 7 executed, 1 up-to-date
 
 ./gradlew -p obi/sample-12c releaseRevisionWorkflow --console=plain
 :metadataBuild UP-TO-DATE
@@ -702,7 +702,7 @@ Results: SUCCESS (85 tests, 84 successes, 0 failures, 1 skipped)
 :compareTest
 :releaseRevisionWorkflow
 
-BUILD SUCCESSFUL in 2m 21s
+BUILD SUCCESSFUL in 3m 8s
 9 actionable tasks: 6 executed, 3 up-to-date
 ```
 
@@ -737,7 +737,7 @@ obi.publishBar = true
 :publishDeployPublicationToMavenLocalRepository
 :publish
 
-BUILD SUCCESSFUL in 4m 9s
+BUILD SUCCESSFUL in 4m 11s
 11 actionable tasks: 8 executed, 3 up-to-date
 ```
 
