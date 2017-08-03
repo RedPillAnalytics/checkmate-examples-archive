@@ -271,7 +271,7 @@ BUILD SUCCESSFUL in 8s
 
 In the output, you'll notice the *UP-TO-DATE* checks that Checkmate for OBI is doing when running the dependent tasks. Checkmate is written to take advantage of the [Gradle Incremental Build](https://docs.gradle.org/3.5/userguide/more_about_tasks.html#sec:up_to_date_checks) feature. The catalog and metadata build tasks are not executed again, because none of the task input and output files have changed. This keeps Checkmate from re-running tasks that it doesn't have to. Rerunning tasks can always be forced by providing the `--rerun-tasks` command-line option.
 
-Let's take a look at what our Build, Bundle and Publish process generated. If we look at the [`build`](build) directory in the project directory, we can see all the things that Checkmate for OBI built, including some of the following:
+Let's take a look at what our Build, Bundle and Publish process generated. If we look at the `build` directory in the project directory, we can see all the things that Checkmate for OBI built, including some of the following:
 
 ```bash
 ls -l obi/sample-12c/build/*
