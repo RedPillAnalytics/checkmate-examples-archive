@@ -166,7 +166,7 @@ Build parameters can be enabled one of four ways, in reverse-prioritized order..
 * Specified in the `build.gradle` file
 * Specified in a `gradle.properties` file, which is a standard Java properties file existing in the project directory
 * Specified with environment variables
-* Specified using Gradle project properties, which are passed to with the Gradle Wrapper command-line using `-P<property>=<value>`
+* Specified using Gradle project properties, which are passed to the Gradle Wrapper command-line using `-P<property>=<value>`
 
 Checkmate provides this degree of flexibility because many build properties are environment specific, and may need to change from one environment to the next. Additionally, some parameters--such as passwords--are sensitive, and need to be treated as such. For instance, [Jenkins Credentials](https://jenkins.io/doc/book/pipeline/syntax/#environment), which are typically used to store passwords in Continuous Delivery environments, are exposed as environment variables, so this is a very handy way to pass sensitive build parameters to Checkmate for OBI.
 
