@@ -189,12 +189,13 @@ Notes on a few of the parameters below:
 * **obi.compatibility:** Options are 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7
 * **obi.publishBar:** When we publish content (we'll see this in practice shortly), if `obi.publishBar = true`, then Checkmate for OBI will generate the 12c BAR file using the environment specified with the details above. We'll enable this in a bit, but not yet.
 
-
 Additionally... we need to make all of the command-line tools that OBIEE 12c uses available to Checkmate for OBI. There are numerous ways to configure this, but the easiest is just to add the `$DOMAIN/bitools/bin` directory to the `$PATH` environment variable:
 
 ```bash
 export PATH=$PATH:/home/oracle/fmw/config/domains/bi/bitools/bin
 ```
+
+Note that you should add the above path to your PATH prior to executing the first Gradle command otherwise the daemon will need to be restarted for the command line tools to be available.
 
 # Building and Publishing
 The workflow for building OBIEE content usually occurs in the following steps:
