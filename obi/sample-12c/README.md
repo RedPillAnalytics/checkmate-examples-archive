@@ -188,10 +188,10 @@ Notes on a few of the parameters below:
 * **obi.publishBar:** When we publish content (we'll see this in practice shortly), if `obi.publishBar = true`, then Checkmate for OBI will generate the 12c BAR file using the environment specified with the details above. We'll enable this in a bit, but not yet.
 
 
-Additionally... we need to make all of the command-line tools that OBIEE 12c uses available to Checkmate for OBI. There are numerous ways to configure this, but the easiest is just to add the `$DOMAIN/bitools/bin` directory available to the `$PATH` environment variable:
+Additionally... we need to make all of the command-line tools that OBIEE 12c uses available to Checkmate for OBI. There are numerous ways to configure this, but the easiest is just to add the `$DOMAIN/bitools/bin` directory to the `$PATH` environment variable:
 
 ```bash
-export PATH=$PATH:/home/oracle/bin:/home/oracle/fmw/config/domains/bi/bitools/bin
+export PATH=$PATH:/home/oracle/fmw/config/domains/bi/bitools/bin
 ```
 
 # Building and Publishing
