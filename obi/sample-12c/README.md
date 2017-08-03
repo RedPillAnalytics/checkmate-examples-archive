@@ -3,6 +3,8 @@ This Quickstart demonstrates the basic functionality of the Checkmate for OBI Bu
 
 Checkmate is built using [Gradle](https://www.gradle.org): a declarative, [DSL](https://en.wikipedia.org/wiki/Domain-specific_language)-based build tool most commonly associated with building JVM-based software and [Android apps](https://developer.android.com/studio/index.html). Specifically, Checkmate is a series of [Gradle Plugins](https://guides.gradle.org/designing-gradle-plugins/). The following OBI functionality exists in the [com.redpillanalytics.checkmate.obi](https://plugins.gradle.org/plugin/com.redpillanalytics.checkmate.obi) plugin: source control integration, content versioning and publishing, automated regression and integration testing, and automated deployments.
 
+A real delivery pipeline will likely have a Continuous Delivery server involved in this process, such as Jenkins, TravisCI, etc. All of these CD servers have Gradle integration which makes Checkmate easy to use. But honestly, all CD servers also provide simple CLI integration for any tool, and this is the usual way we integrate Checkmate, especially when using [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/) configurations.
+
 # Basic Configuration
 This Quickstart uses the standard apporach of configuring Checkmate using a [`build.gradle`](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world) file in the project directory, but there are options for placing hierachical `build.gradle` files throughout the build filesystem. This repository already contains a functioning [`build.gradle`](build.gradle) file, with all the necessary configurations already made, with several of the advanced features that we will apply later commented out.
 
