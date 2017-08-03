@@ -189,6 +189,8 @@ Notes on a few of the parameters below:
 * **obi.compatibility:** Options are 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7
 * **obi.publishBar:** When we publish content (we'll see this in practice shortly), if `obi.publishBar = true`, then Checkmate for OBI will generate the 12c BAR file using the environment specified with the details above. We'll enable this in a bit, but not yet.
 
+Note that for the Oracle Linux OBIEE Sample App Appliance v607 the middlewareHome and domainHome are `/app/oracle/biee` and `/app/oracle/biee/user_projects/domains/bi` respectively.
+
 Additionally... we need to make all of the command-line tools that OBIEE 12c uses available to Checkmate for OBI. There are numerous ways to configure this, but the easiest is just to add the `$DOMAIN/bitools/bin` directory to the `$PATH` environment variable:
 
 ```bash
