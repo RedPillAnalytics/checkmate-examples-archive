@@ -19,7 +19,7 @@ The `source base` directory is our project directory... an individual directory 
 
 For `source base type`, we support multiple forms of storing metdata repository source: using either an MDS-XML directory (preferred), a single XML file (very specific use cases), or a binary repository (mostly for supporting MUD environments).
 
-Checkmate Studio is powered by the same JAR library that powers the Build Framework, and there is a package manager built in for upgrading/downgrading between different versions of that JAR library.
+Checkmate Studio is powered by the same JAR library that powers the Build Framework, and there is a package manager built in for upgrading/downgrading between different versions of that JAR library. The package manager is accessed using the **Manage** button next to the `checkmate version` dialogue.
 
 ### Executing Tasks
 Checkmate Studio uses a *card* paradigm: to execute a task, we create a new *card* that represents the task we want to execute. To execute a task such as **metadata import** or **catalog export**, we simply click anywhere or click on the plus icon in the shortcut area located along the right side of the project window. Then we choose our desired task, fill in relevant data and click 'execute task'. Output will be displayed below the card. A green corner represents a success and a red corner means an error occurred.
