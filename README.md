@@ -13,7 +13,7 @@ Currently, we only have a single Quickstart configured: [Checkmate Build Framewo
 To get started with Checkmate Studio, we simply download and install the latest version from the Red Pill Analytics [Downloads Page](http://redpillanalytics.com/checkmate-getstarted/) for our chosen operating system.
 
 ### Getting Started
-After launching Checkmate Studio, we see a welcome screen where we select 'New project' to create a new Checmate for OBI project. We fill out the appropriate settings before we can begin using the application: `source base`, `domain home` or `middleware home` (depending on the version... Studio handles navigating this for you), `obiee version`, `source base type`, and `checkmate version`.
+After launching Checkmate Studio, we see a welcome screen where we select 'New project' to create a new Checkmate for OBI project. We fill out the appropriate settings before we can begin using the application: `source base`, `domain home` or `middleware home` (depending on the version... Studio handles navigating this for you), `obiee version`, `source base type`, and `checkmate version`.
 
 The `source base` directory is our project directory... an individual directory in our Git repository for storing our catalog and repository content, usually stored using `<root>/obi/<project directory>`. Studio will manage the filesystem underneath this project directory, regardless of the other options we choose below.
 
