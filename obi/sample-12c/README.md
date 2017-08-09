@@ -144,7 +144,7 @@ The first time a command is executed, Gradle will pull down any library dependen
 
 A quick note on the `--console=plain` option. Gradle detects whether the CLI is being executed interactively, or by daemon processes, such as Continuous Delivery servers. You will generally want to run with `--console=auto` (the default) so it detects this, as the interactive capabilities are quite powerful. However... the interactive option is not great for a Quickstart, as the task executions are not displayed in full at the end. We suggest that you not add the `--console=plain` option in everyday use... but feel free to do it here to work through the Quickstart.
 
-The Checkmate for OBI enables the following Task groups:
+Checkmate for OBI enables the following Task groups:
 * **Analytics**: Tasks associated with loading data generated from Checkmate builds to downstream data platforms. We won't be looking at the Analytics functionality in this Quickstart.
 * **Distribution**: Managing the creation and deletion of different types of OBIEE distribution files.
 * **Export**: Tasks that facilitate exporting content from an OBIEE instance into the build location or into source control.
@@ -197,7 +197,7 @@ Additionally... we need to make all of the command-line tools that OBIEE 12c use
 export PATH=$PATH:/home/oracle/fmw/config/domains/bi/bitools/bin
 ```
 
-Note that you should add the above path to your PATH prior to executing the first Gradle command otherwise the daemon will need to be restarted for the command line tools to be available.
+Note that you should add the above path to your PATH prior to executing the first Gradle command otherwise the daemon will need to be restarted for the command line tools to be available. This is done with `gradlew --stop`.
 
 # Building and Publishing
 The workflow for building OBIEE content usually occurs in the following steps:
