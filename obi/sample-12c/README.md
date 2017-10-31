@@ -1,5 +1,5 @@
 # Checkmate for OBI Quickstart
-This Quickstart demonstrates the basic functionality of the Checkmate for OBI Build Framework, using version 12.2.1.2 of Oracle Business Intelligence. The project folder includes sample OBIEE content from [SampleAppLite](http://docs.oracle.com/middleware/12212/biee/BIESG/GUID-E439E473-DD4D-48FE-9BF1-7AED4ADD73B6.htm#BIESG9340) already checked into the [`src/main`](src/main) directory. All you need to use this Quickstart is an OBIEE 12.2.1.2 environment. We are assuming you are using Linux, so adjust commands if using Windows.
+This Quickstart demonstrates the basic functionality of the Checkmate for OBI Build Framework, using version 12.2.1.3 of Oracle Business Intelligence. The project folder includes sample OBIEE content from [SampleAppLite](http://docs.oracle.com/middleware/12212/biee/BIESG/GUID-E439E473-DD4D-48FE-9BF1-7AED4ADD73B6.htm#BIESG9340) already checked into the [`src/main`](src/main) directory. All you need to use this Quickstart is an OBIEE 12.2.1.3 environment. We are assuming you are using Linux, so adjust commands if using Windows.
 
 Checkmate is built using [Gradle](https://www.gradle.org): a declarative, [DSL](https://en.wikipedia.org/wiki/Domain-specific_language)-based build tool most commonly associated with building JVM-based software and [Android apps](https://developer.android.com/studio/index.html). Specifically, Checkmate is a series of [Gradle Plugins](https://guides.gradle.org/designing-gradle-plugins/). The following OBI functionality exists in the [com.redpillanalytics.checkmate.obi](https://plugins.gradle.org/plugin/com.redpillanalytics.checkmate.obi) plugin: source control integration, content versioning and publishing, automated regression and integration testing, and automated deployments.
 
@@ -12,7 +12,7 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```groovy
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '8.0.6'
+  id 'com.redpillanalytics.checkmate.obi' version '8.1.2'
   id 'maven-publish'
 }
 ```
@@ -175,9 +175,9 @@ Checkmate provides this degree of flexibility because many build properties are 
 For the sake of simplicity and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember... you would want to use another approach in a real delivery pipeline.
 
 ```java
-obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.2/obi1'
+obi.middlewareHome = '/home/oracle/fmw/product/12.2.1.3/obi1'
 obi.domainHome = '/home/oracle/fmw/config/domains/bi'
-obi.compatibility = '12.2.1.2'
+obi.compatibility = '12.2.1.3'
 obi.adminUser = 'weblogic'
 obi.adminPassword = 'Admin123'
 obi.repositoryPassword = 'Admin123'
@@ -186,7 +186,7 @@ obi.publishBar = false
 
 Notes on a few of the parameters below:
 * **obi.domainHome:** Defaults to `<obi.middlewareHome>/user_projects/domains/bi`
-* **obi.compatibility:** Options are 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7
+* **obi.compatibility:** Options are 12.2.1.3, 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7
 * **obi.publishBar:** When we publish content (we'll see this in practice shortly), if `obi.publishBar = true`, then Checkmate for OBI will generate the 12c BAR file using the environment specified with the details above. We'll enable this in a bit, but not yet.
 
 Note that for the Oracle Linux OBIEE Sample App Appliance v607 the middlewareHome and domainHome are `/app/oracle/biee` and `/app/oracle/biee/user_projects/domains/bi` respectively.
@@ -331,7 +331,7 @@ We'll make the following changes to our [`build.gradle`](build.gradle) file, whi
 ```groovy
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.6'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.1.2'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   // If it exists, Checkmate will unzip and install it for you
@@ -582,7 +582,7 @@ Now, let's enable the **promote** build group (distriubtion file only... we'll g
 ```groovy
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.0.6'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '8.1.2'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   //obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'

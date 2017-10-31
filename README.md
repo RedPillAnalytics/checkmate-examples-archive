@@ -4,7 +4,7 @@ This repository includes examples for working with Checkmate from Red Pill Analy
 ### Layout
 The repository is designed to have a directory for each Checkmate plugin located in the project root (called the *plugin directory*), each containing one or more example projects located in separate directories (called the *project directory*.) The project directory contains a **README.md** file that contains the Quickstart description and exercises for working with Checkmate.
 
-Currently, we only have a single Quickstart configured: [Checkmate Build Framework for OBI using OBIEE 12.2.1.2](obi/sample-12c/README.md). This Quickstart uses content from [SampleAppLite](http://docs.oracle.com/middleware/12212/biee/BIESG/GUID-E439E473-DD4D-48FE-9BF1-7AED4ADD73B6.htm#BIESG9340) already checked-in to the Git repository. If you'd like to run this Quickstart using your own content, then simply use Checkmate Studio to commit your own content into a new project directory, and replace the project directory references (specified using `-p`) with your own, new project directory.
+Currently, we only have a single Quickstart configured: [Checkmate Build Framework for OBI using OBIEE 12.2.1.3](obi/sample-12c/README.md). This Quickstart uses content from [SampleAppLite](https://docs.oracle.com/middleware/12213/biee/BIESG/GUID-7FCD90A3-E005-49BF-902F-30FBF9B41B07.htm#BIESG9340) already checked-in to the Git repository. If you'd like to run this Quickstart using your own content, then simply use Checkmate Studio to commit your own content into a new project directory, and replace the project directory references (specified using `-p`) with your own, new project directory.
 
 # Checkmate Studio
 ![studio17](studio17.png)
