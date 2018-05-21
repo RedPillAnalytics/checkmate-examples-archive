@@ -43,12 +43,12 @@ After launching Checkmate Studio (if we don't use quick import), we must fill ou
 
 The `source base` directory is our project directory: an individual directory in our Git repository for storing our catalog and repository content, usually stored using `<root>/obi/<project directory>`. Studio will manage the filesystem underneath this project directory, regardless of the other options we choose below.
 
-For `source base type`, we support multiple forms of storing metdata repository source: using either an MDS-XML directory (preferred), a single XML file (very specific use cases), or a binary repository (mostly for supporting MUD environments).
+For `source base type`, we support multiple forms of storing metadata repository source: using either an MDS-XML directory (preferred), a single XML file (very specific use cases), or a binary repository (mostly for supporting MUD environments).
 
 Checkmate Studio is powered by the same JAR library that powers the Build Framework, and there is a package manager built in for upgrading/downgrading between different versions of that JAR library. You can select the version you want to use in the sidebar.
 
 ### Executing Tasks
-Checkmate Studio uses a *timeline* paradigm: to execute a task, we simply select the type of task we want to execute on the persistant *new task* card at the top of the timeline, fill in/choose the relevant executino parameters, and hit execute. This will create a new card with task output.
+Checkmate Studio uses a *timeline* paradigm: to execute a task, we simply select the type of task we want to execute on the persistent *new task* card at the top of the timeline, fill in/choose the relevant execution parameters, and hit execute. This will create a new card with task output.
 
 ### Further Help/Support
 We can use any of the support or help links in the application to seek further assistance or help in using the Checkmate Studio application.
