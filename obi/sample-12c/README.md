@@ -12,7 +12,7 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```groovy
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '8.1.2'
+  id 'com.redpillanalytics.checkmate.obi' version '8.5.3'
   id 'maven-publish'
 }
 ```

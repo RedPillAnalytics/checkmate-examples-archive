@@ -1,6 +1,9 @@
 # No log files
 *.log
 
+# No Apple .DS files
+.DS_Store
+
 # No bootstrap app roles
 bootstrapapproles.xml
 
