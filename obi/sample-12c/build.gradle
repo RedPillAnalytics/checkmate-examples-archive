@@ -15,7 +15,7 @@ obi.publishBar = false
 
 // Hardcoding the version number
 // We can use other Gradle plugins to make this easier
-version = '0.0.9'
+version = '0.0.10'
 
 publishing {
   repositories {
@@ -34,7 +34,7 @@ dependencies {
 
   // Dependencies on previous OBIEE builds
   // Used for building incremental patches, regression testing, and deployments
-  // feature group: 'obiee', name: 'sample-12c-build', version: '+'
+  feature group: 'obiee', name: 'sample-12c-build', version: '+'
   // release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
   // promote group: 'obiee', name: 'sample-12c-deploy', version: '+'
   // promote group: 'obiee', name: 'sample-12c-bar', version: '+'
