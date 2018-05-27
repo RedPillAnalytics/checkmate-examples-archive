@@ -232,6 +232,8 @@
 <Feature name="PERF_PREFER_COMPRESSION" value="false"/>
 <Feature name="WIDTH_BUCKET_SUPPORTED" value="false"/>
 <Feature name="IS_NLSSORT_SUPPORTED" value="false"/>
+<Feature name="BIN_SUPPORTED" value="false"/>
+<Feature name="UDF_SUPPORTED" value="false"/>
 <Feature name="MAX_BINARY_LITERAL_LEN" value="0"/>
 <Feature name="MAX_CHAR_LITERAL_LEN" value="0"/>
 <Feature name="MAX_COLUMN_NAME_LEN" value="0"/>

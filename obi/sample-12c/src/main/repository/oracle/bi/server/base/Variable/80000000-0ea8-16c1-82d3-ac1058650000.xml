@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Variable mdsid="m80000000-0ea8-16c1-82d3-ac1058650000" name="project_version" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository">
+<Expr mdsid="m00000001-01f4-0000-cb27-102700000000" name="Expr">
+<ExprText><![CDATA['0.0.9']]></ExprText>
+<ExprTextDesc><![CDATA['0.0.9']]></ExprTextDesc>
+</Expr>
+</Variable>

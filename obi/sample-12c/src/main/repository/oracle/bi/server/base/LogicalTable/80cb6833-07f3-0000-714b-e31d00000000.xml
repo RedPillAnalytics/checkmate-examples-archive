@@ -17,9 +17,9 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </MeasureDefn>
 <AttributeDefn mdsid="m00000002-01f4-0000-dddf-a73800000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Revenue"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F11 Revenue Facts Aggregate"."Revenue"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000002-01f4-0000-dddf-a73800000000-m80ca651d-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca651d-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000002-01f4-0000-dddf-a73800000000-m80cb6da7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6da6-0bb9-0000-714b-e31d00000000.xml#m80cb6da7-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -38,9 +38,9 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </MeasureDefn>
 <AttributeDefn mdsid="m00000004-01f4-0000-f780-476100000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Units"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F11 Revenue Facts Aggregate"."Units"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000004-01f4-0000-f780-476100000000-m80ca6524-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca6524-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-f780-476100000000-m80cb6da9-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6da6-0bb9-0000-714b-e31d00000000.xml#m80cb6da9-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -59,9 +59,9 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </MeasureDefn>
 <AttributeDefn mdsid="m00000006-01f4-0000-8e2a-ab0600000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Discnt_Value"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F11 Revenue Facts Aggregate"."Discnt_Value"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000006-01f4-0000-8e2a-ab0600000000-m80ca65af-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca65af-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-8e2a-ab0600000000-m80cb6dab-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6da6-0bb9-0000-714b-e31d00000000.xml#m80cb6dab-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -122,9 +122,9 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </MeasureDefn>
 <AttributeDefn mdsid="m0000000c-01f4-0000-23e9-903e00000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F10 Revenue Facts (Order grain)"."Prod_Key"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."F11 Revenue Facts Aggregate"."Prod_Key"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m0000000c-01f4-0000-23e9-903e00000000-m80ca6522-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca651b-0bb9-0000-714b-e31d00000000.xml#m80ca6522-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000c-01f4-0000-23e9-903e00000000-m80cb6da8-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80cb6da6-0bb9-0000-714b-e31d00000000.xml#m80cb6da8-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>

@@ -28,9 +28,9 @@ Stores the date information in the format MM/DD/YYYY.  Eg :- 11/12/2006]]></Desc
 <Description><![CDATA[Per Name Month. Stores the month information in the format YYYY / MM. Eg :- 2006 / 11]]></Description>
 <AttributeDefn mdsid="m00000003-01f4-0000-b4d7-33e700000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D02 Time Month Grain"."Per_Name_Month"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D01 Time Day Grain"."Per_Name_Month"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000003-01f4-0000-b4d7-33e700000000-m80ca65c0-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca65c0-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-b4d7-33e700000000-m80ca65a3-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca65a3-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -38,9 +38,9 @@ Stores the date information in the format MM/DD/YYYY.  Eg :- 11/12/2006]]></Desc
 <Description><![CDATA[Per Name Qtr. Stores the Quarter information in the format YYYY QQuarterNumber. Eg :- 2005 Q3]]></Description>
 <AttributeDefn mdsid="m00000004-01f4-0000-7099-de2200000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D02 Time Month Grain"."Per_Name_Qtr"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D01 Time Day Grain"."Per_Name_Qtr"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000004-01f4-0000-7099-de2200000000-m80ca65c1-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca65c1-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000004-01f4-0000-7099-de2200000000-m80ca65a4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca65a4-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -48,9 +48,9 @@ Stores the date information in the format MM/DD/YYYY.  Eg :- 11/12/2006]]></Desc
 <Description><![CDATA[Per Name Half. Stores the Half year information in the format YYYY HYHalfYearNumber. Eg :- 2006 HY2]]></Description>
 <AttributeDefn mdsid="m00000005-01f4-0000-33e3-64ea00000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D02 Time Month Grain"."Per_Name_Half"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D01 Time Day Grain"."Per_Name_Half"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000005-01f4-0000-33e3-64ea00000000-m80ca65bf-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca65bf-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-33e3-64ea00000000-m80ca65a2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca65a2-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -59,9 +59,9 @@ Stores the date information in the format MM/DD/YYYY.  Eg :- 11/12/2006]]></Desc
 ]]></Description>
 <AttributeDefn mdsid="m00000006-01f4-0000-535a-bd2100000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D02 Time Month Grain"."Per_Name_Year"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D01 Time Day Grain"."Per_Name_Year"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000006-01f4-0000-535a-bd2100000000-m80ca65c2-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca65c2-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000006-01f4-0000-535a-bd2100000000-m80ca65a6-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca65a6-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -70,9 +70,9 @@ Stores the date information in the format MM/DD/YYYY.  Eg :- 11/12/2006]]></Desc
 Eg :- 20051101.]]></Description>
 <AttributeDefn mdsid="m00000007-01f4-0000-720f-b24400000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D02 Time Month Grain"."Mth_Key"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D01 Time Day Grain"."Day_Key"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000007-01f4-0000-720f-b24400000000-m80ca65c4-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca65c4-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-720f-b24400000000-m80ca65a7-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca65a7-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -130,9 +130,9 @@ Eg :- 20051101.]]></Description>
 <Description><![CDATA[Stores the Julian Month Number as an integer.]]></Description>
 <AttributeDefn mdsid="m0000000d-01f4-0000-8b80-2c2600000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D02 Time Month Grain"."Julian_Month_Num"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D01 Time Day Grain"."Julian_Month_Num"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m0000000d-01f4-0000-8b80-2c2600000000-m80ca65bb-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca65bb-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000d-01f4-0000-8b80-2c2600000000-m80ca659e-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca659e-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
@@ -140,9 +140,9 @@ Eg :- 20051101.]]></Description>
 <Description><![CDATA[Stores the Julian Quarter Number as an integer.]]></Description>
 <AttributeDefn mdsid="m0000000e-01f4-0000-e754-5b1200000000" name="AttributeDefn">
 <ExprText><![CDATA["%1"]]></ExprText>
-<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D02 Time Month Grain"."Julian_Qtr_Num"]]></ExprTextDesc>
+<ExprTextDesc><![CDATA["Sample App Lite Data"."".""."D01 Time Day Grain"."Julian_Qtr_Num"]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m0000000e-01f4-0000-e754-5b1200000000-m80ca65bd-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca65a8-0bb9-0000-714b-e31d00000000.xml#m80ca65bd-0bbb-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000e-01f4-0000-e754-5b1200000000-m80ca659f-0bbb-0000-714b-e31d00000000" objectTypeId="3003" objectRef="/oracle/bi/server/base/PhysicalTable/80ca6588-0bb9-0000-714b-e31d00000000.xml#m80ca659f-0bbb-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </AttributeDefn>
 </LogicalColumn>
