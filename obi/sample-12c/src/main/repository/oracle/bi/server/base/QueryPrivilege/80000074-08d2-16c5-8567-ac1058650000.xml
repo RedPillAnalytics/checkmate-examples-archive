@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-<QueryPrivilege mdsid="m80000074-08d2-16c5-8567-ac1058650000" name="QueryPriv_4204:437811418078247" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" maxExecTime="600" maxRows="100000" populatePrivilege="enable" execPhysicalPrivilege="enable">
-</QueryPrivilege>
