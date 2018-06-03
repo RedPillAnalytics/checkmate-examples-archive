@@ -4,13 +4,13 @@
 This logical table is at the order level grain but is sourced from 3 alternate Logical Table Sources : one detail source at the order grain level, one aggregate source at the product-month grain, and one at the product-office-month grain. BIEE server will automatically go to the most appropriate source based on the level included in each user query.]]></Description>
 <LogicalColumn mdsid="m80cb6835-07d6-0000-714b-e31d00000000" name="Revenue" isWriteable="false">
 <Description><![CDATA[Returns the Revenue from the Revenue Facts table with a Sum aggregation]]></Description>
-<MeasureDefn mdsid="m00000222-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
-<AggrRule mdsid="m0000022a-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434561273647807" isDefault="true">
-<Expr mdsid="m00000001-01f4-0000-f7d9-31b900000000" name="Expr">
+<MeasureDefn mdsid="m00000001-084f-16c5-8567-ac1058650000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m0000000c-084f-16c5-8567-ac1058650000" name="AggRule_2050:434561273647807" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-10db-0b3700000000" name="Expr">
 <ExprText><![CDATA[ SUM("%1")]]></ExprText>
 <ExprTextDesc><![CDATA[ SUM("SampleApp Lite"."F0 Revenue Base Measures"."Revenue")]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000001-01f4-0000-f7d9-31b900000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-10db-0b3700000000-m80cb6835-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6835-07d6-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </Expr>
 </AggrRule>
@@ -25,13 +25,13 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </LogicalColumn>
 <LogicalColumn mdsid="m80cb683b-07d6-0000-714b-e31d00000000" name="Billed Quantity" isWriteable="false">
 <Description><![CDATA[Returns the Billed Quantity from the Revenue Facts table with a Sum aggregation]]></Description>
-<MeasureDefn mdsid="m00000223-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
-<AggrRule mdsid="m0000022b-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434571273647807" isDefault="true">
-<Expr mdsid="m00000003-01f4-0000-ac2a-b26a00000000" name="Expr">
+<MeasureDefn mdsid="m00000002-084f-16c5-8567-ac1058650000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m0000000d-084f-16c5-8567-ac1058650000" name="AggRule_2050:434571273647807" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-2c4a-aba500000000" name="Expr">
 <ExprText><![CDATA[ SUM("%1")]]></ExprText>
 <ExprTextDesc><![CDATA[ SUM("SampleApp Lite"."F0 Revenue Base Measures"."Billed Quantity")]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000003-01f4-0000-ac2a-b26a00000000-m80cb683b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb683b-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-2c4a-aba500000000-m80cb683b-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb683b-07d6-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </Expr>
 </AggrRule>
@@ -46,13 +46,13 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </LogicalColumn>
 <LogicalColumn mdsid="m80cb683d-07d6-0000-714b-e31d00000000" name="Discount Amount" isWriteable="false">
 <Description><![CDATA[Returns the Discount Amount from the Revenue Facts table with a Sum aggregation]]></Description>
-<MeasureDefn mdsid="m0000021c-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
-<AggrRule mdsid="m00000224-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434581273647807" isDefault="true">
-<Expr mdsid="m00000005-01f4-0000-ed93-dc8400000000" name="Expr">
+<MeasureDefn mdsid="m00000003-084f-16c5-8567-ac1058650000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m0000000e-084f-16c5-8567-ac1058650000" name="AggRule_2050:434581273647807" isDefault="true">
+<Expr mdsid="m00000005-01f4-0000-4881-3c2300000000" name="Expr">
 <ExprText><![CDATA[ SUM("%1")]]></ExprText>
 <ExprTextDesc><![CDATA[ SUM("SampleApp Lite"."F0 Revenue Base Measures"."Discount Amount")]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000005-01f4-0000-ed93-dc8400000000-m80cb683d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb683d-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000005-01f4-0000-4881-3c2300000000-m80cb683d-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb683d-07d6-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </Expr>
 </AggrRule>
@@ -67,13 +67,13 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </LogicalColumn>
 <LogicalColumn mdsid="m80cb6840-07d6-0000-714b-e31d00000000" name="# of Offices with Orders" isWriteable="false">
 <Description><![CDATA[This metric counts the distinct number of orders in the query population. The aggregation is a Count Distinct aggregation]]></Description>
-<MeasureDefn mdsid="m0000021d-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
-<AggrRule mdsid="m00000227-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:437391273849636" isDefault="true">
-<Expr mdsid="m00000007-01f4-0000-dcbb-201700000000" name="Expr">
+<MeasureDefn mdsid="m00000004-084f-16c5-8567-ac1058650000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000009-084f-16c5-8567-ac1058650000" name="AggRule_2050:437391273849636" isDefault="true">
+<Expr mdsid="m00000007-01f4-0000-f8c0-59b400000000" name="Expr">
 <ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
 <ExprTextDesc><![CDATA[ COUNT(DISTINCT "SampleApp Lite"."F0 Revenue Base Measures"."# of Offices with Orders")]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000007-01f4-0000-dcbb-201700000000-m80cb6840-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6840-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000007-01f4-0000-f8c0-59b400000000-m80cb6840-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6840-07d6-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </Expr>
 </AggrRule>
@@ -88,13 +88,13 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </LogicalColumn>
 <LogicalColumn mdsid="m80cb6841-07d6-0000-714b-e31d00000000" name="# of Orders" isWriteable="false">
 <Description><![CDATA[This metric counts the distinct number of orders in the query population. The aggregation is a Count Distinct aggregation]]></Description>
-<MeasureDefn mdsid="m0000021e-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
-<AggrRule mdsid="m00000226-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434621273647807" isDefault="true">
-<Expr mdsid="m00000009-01f4-0000-e834-84c300000000" name="Expr">
+<MeasureDefn mdsid="m00000005-084f-16c5-8567-ac1058650000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m00000010-084f-16c5-8567-ac1058650000" name="AggRule_2050:434621273647807" isDefault="true">
+<Expr mdsid="m00000009-01f4-0000-dda6-83f000000000" name="Expr">
 <ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
 <ExprTextDesc><![CDATA[ COUNT(DISTINCT "SampleApp Lite"."F0 Revenue Base Measures"."# of Orders")]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000009-01f4-0000-e834-84c300000000-m80cb6841-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6841-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000009-01f4-0000-dda6-83f000000000-m80cb6841-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6841-07d6-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </Expr>
 </AggrRule>
@@ -109,13 +109,13 @@ This logical table is at the order level grain but is sourced from 3 alternate L
 </LogicalColumn>
 <LogicalColumn mdsid="m80cb6842-07d6-0000-714b-e31d00000000" name="# of Products with Orders" isWriteable="false">
 <Description><![CDATA[This metric counts the distinct number of Products in the query population. The aggregation is a Count Distinct aggregation]]></Description>
-<MeasureDefn mdsid="m0000021f-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
-<AggrRule mdsid="m00000225-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434611273647807" isDefault="true">
-<Expr mdsid="m0000000b-01f4-0000-9115-c61100000000" name="Expr">
+<MeasureDefn mdsid="m00000006-084f-16c5-8567-ac1058650000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m0000000f-084f-16c5-8567-ac1058650000" name="AggRule_2050:434611273647807" isDefault="true">
+<Expr mdsid="m0000000b-01f4-0000-44e5-4ac400000000" name="Expr">
 <ExprText><![CDATA[ COUNT(DISTINCT "%1")]]></ExprText>
 <ExprTextDesc><![CDATA[ COUNT(DISTINCT "SampleApp Lite"."F0 Revenue Base Measures"."# of Products with Orders")]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m0000000b-01f4-0000-9115-c61100000000-m80cb6842-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6842-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m0000000b-01f4-0000-44e5-4ac400000000-m80cb6842-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6842-07d6-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </Expr>
 </AggrRule>

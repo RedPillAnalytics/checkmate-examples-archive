@@ -3,13 +3,13 @@
 <Description><![CDATA[Targets Logical fact table. This is a different table from the Revenue fact table, with a different grain than revenue (no order level grain).]]></Description>
 <LogicalColumn mdsid="m80cb68a4-07d6-0000-714b-e31d00000000" name="Target Revenue" isWriteable="false">
 <Description><![CDATA[Returns the Target Revenue from the Target Facts table, with a Sum aggregation]]></Description>
-<MeasureDefn mdsid="m00000220-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
-<AggrRule mdsid="m00000228-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434541273647807" isDefault="true">
-<Expr mdsid="m00000001-01f4-0000-94a9-54b600000000" name="Expr">
+<MeasureDefn mdsid="m00000007-084f-16c5-8567-ac1058650000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m0000000a-084f-16c5-8567-ac1058650000" name="AggRule_2050:434541273647807" isDefault="true">
+<Expr mdsid="m00000001-01f4-0000-de0b-3a6300000000" name="Expr">
 <ExprText><![CDATA[ SUM("%1")]]></ExprText>
 <ExprTextDesc><![CDATA[ SUM("SampleApp Lite"."F1 Targets Base Measures"."Target Revenue")]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000001-01f4-0000-94a9-54b600000000-m80cb68a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a4-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000001-01f4-0000-de0b-3a6300000000-m80cb68a4-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a4-07d6-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </Expr>
 </AggrRule>
@@ -24,13 +24,13 @@
 </LogicalColumn>
 <LogicalColumn mdsid="m80cb68a5-07d6-0000-714b-e31d00000000" name="Target Quantity" isWriteable="false">
 <Description><![CDATA[Returns the Target Quantity from the Target Facts table with a Sum aggregation]]></Description>
-<MeasureDefn mdsid="m00000221-7fbc-165d-92f3-7f0000010000" name="Measure" isCommutative="false">
-<AggrRule mdsid="m00000229-7fbc-165d-92f3-7f0000010000" name="AggRule_2050:434551273647807" isDefault="true">
-<Expr mdsid="m00000003-01f4-0000-a821-28ed00000000" name="Expr">
+<MeasureDefn mdsid="m00000008-084f-16c5-8567-ac1058650000" name="Measure" isCommutative="false">
+<AggrRule mdsid="m0000000b-084f-16c5-8567-ac1058650000" name="AggRule_2050:434551273647807" isDefault="true">
+<Expr mdsid="m00000003-01f4-0000-1eb5-b27e00000000" name="Expr">
 <ExprText><![CDATA[ SUM("%1")]]></ExprText>
 <ExprTextDesc><![CDATA[ SUM("SampleApp Lite"."F1 Targets Base Measures"."Target Quantity")]]></ExprTextDesc>
 <ObjectRefList>
-<RefObject refId="m00000003-01f4-0000-a821-28ed00000000-m80cb68a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a5-07d6-0000-714b-e31d00000000"/>
+<RefObject refId="m00000003-01f4-0000-1eb5-b27e00000000-m80cb68a5-07d6-0000-714b-e31d00000000" objectTypeId="2006" objectRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a5-07d6-0000-714b-e31d00000000"/>
 </ObjectRefList>
 </Expr>
 </AggrRule>
