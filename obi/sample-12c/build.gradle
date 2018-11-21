@@ -1,5 +1,5 @@
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '9.0.9'
+  id 'com.redpillanalytics.checkmate.obi' version '9.1.11'
   id 'maven-publish'
 }
 
@@ -11,7 +11,6 @@ obi.compatibility = '12.2.1.4'
 obi.adminUser = 'weblogic'
 obi.adminPassword = 'Admin123'
 obi.repositoryPassword = 'Admin123'
-obi.publishPolicy = 'mixed'
 
 // Hardcoding the version number
 // We can use other Gradle plugins to make this easier
@@ -34,9 +33,9 @@ dependencies {
 
   // Dependencies on previous OBIEE builds
   // Used for building incremental patches, regression testing, and deployments
-  //feature group: 'obiee', name: 'sample-12c-build', version: '+'
-  //feature group: 'obiee', name: 'sample-12c-bar', version: '+'
-  // release group: 'obiee', name: 'sample-12c-build', version: '0.0.9'
+  // feature group: 'obiee', name: 'sample-12c-build', version: '+'
+  // feature group: 'obiee', name: 'sample-12c-bar', version: '+'
+  // release group: 'obiee', name: 'sample-12c-build', version: '+'
   // promote group: 'obiee', name: 'sample-12c-deploy', version: '+'
   // promote group: 'obiee', name: 'sample-12c-bar', version: '+'
 }

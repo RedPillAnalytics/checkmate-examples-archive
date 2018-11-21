@@ -1,0 +1,13 @@
+Manifest-Version: 1.0
+Bundle-CreationPlatformVersion: 2.2.0.0.0
+Bundle-Description: Standard Archive
+Bundle-SymbolicName: ssi
+Bundle-Version: 1.0.0.0
+Bundle-Framework-Version: 2.0.0
+Bundle-Category: module
+Bundle-ManifestVersion: 2
+Bundle-CreationEnvironmentType: BI_PLATFORM
+Bundle-Copyright: %applicationmodule.copyright
+Bundle-Vendor: oracle
+Metadata-DescriptorVersion: 12.2.1
+

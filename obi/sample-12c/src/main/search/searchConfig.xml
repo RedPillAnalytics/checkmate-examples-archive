@@ -1,0 +1,22 @@
+<searchCrawlConfiguration version="1" semanticCrawlEnabled="true" catalogCrawlEnabled="true" xmlns="com.siebel.analytics.web/bisearch/v1">
+    <semanticFullCrawlConfig configID="1234">
+        <userInfo runAs="weblogic" runAsGUID="weblogic"/>
+        <scheduleInfo isRecurring="true">
+            <startTime date="2018-09-19" time="13:08:13" timeZoneId="(GMT-08:00) Pacific Time (US &amp; Canada); Tijuana">2018-09-19T13:08:13.000-07:00</startTime>
+            <recurringSchedule recurringCount="1" recurringUnit="DAY"/>
+        </scheduleInfo>
+        <locale>en_US</locale>
+        <subjectAreasToInclude>
+            <includedElementName>*</includedElementName>
+            <includeCondition>METADATA_ONLY</includeCondition>
+        </subjectAreasToInclude>
+    </semanticFullCrawlConfig>
+    <catalogFullCrawlConfig includeCatalogDataForIndexing="false" configID="1235" startLocation="/">
+        <userInfo runAs="weblogic" runAsGUID="weblogic"/>
+        <scheduleInfo isRecurring="true">
+            <startTime date="2018-09-19" time="13:08:13" timeZoneId="(GMT-08:00) Pacific Time (US &amp; Canada); Tijuana">2018-09-19T13:08:13.000-07:00</startTime>
+            <recurringSchedule recurringCount="1" recurringUnit="DAY"/>
+        </scheduleInfo>
+        <locale>en_US</locale>
+    </catalogFullCrawlConfig>
+</searchCrawlConfiguration>

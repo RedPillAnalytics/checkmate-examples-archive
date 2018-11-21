@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<obi-action-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="afconfig.xsd">
+    <aliases/>
+    <registries/>
+
+    <content-types>    
+      <content-type>
+        <typename>webservices</typename>
+        <displayname>Web Services and BPEL Processes</displayname>
+        <actionType>WebServiceActionType</actionType>
+      </content-type>
+      <content-type>
+        <typename>misc</typename>
+        <displayname>Mixed Services</displayname>
+        <actionType>URLActionType</actionType>
+      </content-type>
+    </content-types>
+	<accounts/>
+</obi-action-config>

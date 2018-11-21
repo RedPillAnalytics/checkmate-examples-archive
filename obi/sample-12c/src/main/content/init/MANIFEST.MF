@@ -1,0 +1,8 @@
+Manifest-Version: 1
+Implementation-Version: 12.2.1.4.0.20180409020153
+BINARY_MODE: RELEASE
+BIFNDN_LABEL: BIFNDN_12.2.1.4.0_LINUX.X64_180408.2241
+BINARY_VERSION: 12.2.1.4.0
+Specification-Version: 12.2.1.4.0
+Implementation-Vendor: Oracle
+

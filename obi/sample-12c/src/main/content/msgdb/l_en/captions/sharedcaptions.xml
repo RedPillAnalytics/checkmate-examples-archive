@@ -1,0 +1,1701 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebMessageTables xmlns:sawm="com.siebel.analytics.web/message/v1" lang="en_us">
+  <WebMessageTable system="catalog" type="folder" path="/shared">
+    <WebMessage name="kcap1423853072811_1" use="Caption" status="new">
+      <TEXT>shared</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Components">
+    <WebMessage name="kcap1423853072822_2" use="Caption" status="new">
+      <TEXT>Components</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Components/Boilerplates.xdo">
+    <WebMessage name="kcap1423853072833_3" use="Caption" status="new">
+      <TEXT>Boilerplates.xdo</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite">
+    <WebMessage name="kcap1423853072902_4" use="Caption" status="new">
+      <TEXT>Sample Lite</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/_filters">
+    <WebMessage name="kcap1423853073055_5" use="Caption" status="new">
+      <TEXT>_filters</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/_filters/Sample Sales Lite">
+    <WebMessage name="kcap1423853073057_6" use="Caption" status="new">
+      <TEXT>Sample Sales Lite</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_filters/Sample Sales Lite/Prompted Filters">
+    <WebMessage name="kcap1423853073058_7" use="Caption" status="new">
+      <TEXT>Prompted Filters</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/_portal">
+    <WebMessage name="kcap1423853073360_8" use="Caption" status="new">
+      <TEXT>_portal</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/_portal/QuickStart">
+    <WebMessage name="kcap1423853073369_9" use="Caption" status="new">
+      <TEXT>QuickStart</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_portal/QuickStart/dashboard layout">
+    <WebMessage name="kcap1423853073389_10" use="Caption" status="new">
+      <TEXT>dashboard layout</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_portal/QuickStart/Office Details">
+    <WebMessage name="kcap1423853073399_11" use="Caption" status="new">
+      <TEXT>Office Details</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073409_12" use="globalFilterView" status="new">
+      <TEXT>Prompt 3</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073409_13" use="globalFilterView" status="new">
+      <TEXT>Dimension Prompt</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073409_14" use="reportView" status="new">
+      <TEXT>Trellis2</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073409_15" use="reportView" status="new">
+      <TEXT>Contribution Waterfall</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073409_16" use="reportView" status="new">
+      <TEXT>Gauges</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073409_17" use="reportView" status="new">
+      <TEXT>Trellis4</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_portal/QuickStart/Order Details">
+    <WebMessage name="kcap1423853073417_18" use="Caption" status="new">
+      <TEXT>Order Details</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073442_19" use="globalFilterView" status="new">
+      <TEXT>Prompt 2</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073442_20" use="reportView" status="new">
+      <TEXT>Filters</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073442_21" use="reportView" status="new">
+      <TEXT>Order Details</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_portal/QuickStart/Overview">
+    <WebMessage name="kcap1423853073444_22" use="Caption" status="new">
+      <TEXT>Overview</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073451_23" use="globalFilterView" status="new">
+      <TEXT>Prompt 1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073451_24" use="reportView" status="new">
+      <TEXT>Help on this Page</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_25" use="reportView" status="new">
+      <TEXT>Filters</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_26" use="reportView" status="new">
+      <TEXT>Performance Indicators</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_27" use="reportView" status="new">
+      <TEXT>Trellis1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_28" use="reportView" status="new">
+      <TEXT>History Overview</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_29" use="reportView" status="new">
+      <TEXT>Monthly Revenue Trend</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_30" use="menuText" status="new">
+      <TEXT>Custom Actionable Menu</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_31" use="actionLink" status="new">
+      <TEXT>Offices Targets</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_32" use="actionLink" status="new">
+      <TEXT>Orders List</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073452_33" use="htmlView" status="new">
+      <TEXT>&lt;font size=1&gt;
+[br/][i]Filters currently applied :[/i]
+&lt;/font&gt;</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_portal/QuickStart/Product Details">
+    <WebMessage name="kcap1423853073455_34" use="Caption" status="new">
+      <TEXT>Product Details</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073460_35" use="globalFilterView" status="new">
+      <TEXT>Prompt 2</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073460_36" use="reportView" status="new">
+      <TEXT>Filters</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073460_37" use="reportView" status="new">
+      <TEXT>Help on this Page</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073460_38" use="reportView" status="new">
+      <TEXT>Order Details</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073461_39" use="reportView" status="new">
+      <TEXT>Target Completion</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073461_40" use="reportView" status="new">
+      <TEXT>Custom Group</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073461_41" use="reportView" status="new">
+      <TEXT>Product Revenue</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073461_42" use="reportView" status="new">
+      <TEXT>Trellis3</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073461_43" use="reportView" status="new">
+      <TEXT>Timeline</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073461_44" use="htmlView" status="new">
+      <TEXT>[br/]</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_portal/QuickStart/Published Reporting">
+    <WebMessage name="kcap1423853073464_45" use="Caption" status="new">
+      <TEXT>Published Reporting</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073468_46" use="globalFilterView" status="new">
+      <TEXT>Year Prompt</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073468_47" use="reportView" status="new">
+      <TEXT>Quarterly Revenue</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073468_48" use="reportView" status="new">
+      <TEXT>Sales by Brand</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073468_49" use="advancedReportingObjectView" status="new">
+      <TEXT>Product Sales - OBIEE Semantic Layer</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073468_50" use="advancedReportingObjectView" status="new">
+      <TEXT>Sales Performance Report</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073468_51" use="advancedReportingObjectView" status="new">
+      <TEXT>Sales Report - BI Analysis Source</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073468_52" use="htmlView" status="new">
+      <TEXT>Reports Shortcuts : &lt;font size=1&gt;
+&lt;a href= "saw.dll?bipublisherEntry&amp;Action=open&amp;itemType=.xdo&amp;bipPath=%2FSample%20Lite%2FPublished%20Reporting%2FReports%2FBalance%20Letter.xdo"&gt; Balance Letter&lt;/a&gt;,
+&lt;a href= "saw.dll?bipublisherEntry&amp;Action=open&amp;itemType=.xdo&amp;bipPath=%2FSample%20Lite%2FPublished%20Reporting%2FReports%2FBrand%20Revenue%20Details.xdo"&gt; Brand Revenue Details&lt;/a&gt;,
+&lt;a href= "saw.dll?bipublisherEntry&amp;Action=open&amp;itemType=.xdo&amp;bipPath=%2FSample%20Lite%2FPublished%20Reporting%2FReports%2FProduct%20Listing.xdo"&gt; Product Listing&lt;/a&gt;,
+&lt;a href= "saw.dll?bipublisherEntry&amp;Action=open&amp;itemType=.xdo&amp;bipPath=%2FSample%20Lite%2FPublished%20Reporting%2FReports%2FRevenue%20Budget%20Actual%20and%20Detail.xdo"&gt; Revenue Budget Actual and Detail&lt;/a&gt;,
+&lt;a href= "saw.dll?bipublisherEntry&amp;Action=open&amp;itemType=.xdo&amp;bipPath=%2FSample%20Lite%2FPublished%20Reporting%2FReports%2FSalary%20Report%20-%20No%20Parameters.xdo"&gt; Salary Report&lt;/a&gt;,
+&lt;a href= "saw.dll?bipublisherEntry&amp;Action=open&amp;itemType=.xdo&amp;bipPath=%2FSample%20Lite%2FPublished%20Reporting%2FReports%2FSFO%20Passenger%20Count%20Report.xdo"&gt; SFO Passenger count Report&lt;/a&gt;,
+&lt;a href= "saw.dll?bipublisherEntry&amp;Action=open&amp;itemType=.xdo&amp;bipPath=%2FSample%20Lite%2FPublished%20Reporting%2FReports%2FW2%202010.xdo"&gt; W2 2010&lt;/a&gt;&lt;/font&gt;</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_portal/QuickStart/Readme">
+    <WebMessage name="kcap1423853073471_53" use="Caption" status="new">
+      <TEXT>Readme</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073474_54" use="htmlView" status="new">
+      <TEXT>[br/][br/]&lt;font size=3&gt;
+You are viewing&lt;/font&gt;&lt;font size=4 color=darkred&gt; [b]OBIEE SampleApp Lite[/b]&lt;/font&gt;&lt;font size=3&gt;, a simplified version of the OBIEE 11g SampleApp.[br/][br/]
+
+SampleApp Lite includes only very limited set of basic features examples and it sources only from XML static data files. SampleApp Lite does not show most of the OBIEE 11g powerful features and capabilities.[br/][br/]
+
+[b]Repository password (to open or edit OBIEE SampleApp Lite RPD) : Admin123[/b][br/][br/]
+
+To access the full version of SampleApp with comprehensive set of examples of OBIEE capabilities, [br/] download the latest SampleApp deployment package from : [br/][br/]
+&lt;a href="http://www.oracle.com/technetwork/middleware/bi-foundation/obiee-samples-167534.html"&gt;http://www.oracle.com/technetwork/middleware/bi-foundation/obiee-samples-167534.html&lt;/a&gt;
+
+[br/][br/]
+&lt;/font&gt;</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/_portal/QuickStart/Scorecard">
+    <WebMessage name="kcap1423853073475_55" use="Caption" status="new">
+      <TEXT>Scorecard</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073492_56" use="strategyTreeView" status="new">
+      <TEXT>Contribution Wheel: Sample Scorecard - Lite</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073492_57" use="scorecardFilteredWatchlistView" status="new">
+      <TEXT>Financials-Smart Watchlist</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073492_58" use="strategyTreeView" status="new">
+      <TEXT>Strategy Tree: Sample Scorecard - Lite</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Column Prompt">
+    <WebMessage name="kcap1423853074262_248" use="Caption" status="new">
+      <TEXT>Column Prompt</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074271_249" use="label" status="new">
+      <TEXT>Select Metric</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Condition" description="'/shared/Sample Lite/KPIs/Revenue KPI'=OK">
+    <WebMessage name="kcap1423853074273_250" use="Caption" status="new">
+      <TEXT>Condition</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074273_251" use="Description" status="new">
+      <TEXT>'/shared/Sample Lite/KPIs/Revenue KPI'=OK</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Contribution Waterfall">
+    <WebMessage name="kcap1423853074276_252" use="Caption" status="new">
+      <TEXT>Contribution Waterfall</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074287_253" use="title" status="new">
+      <TEXT>Contribution Waterfall</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074287_254" use="staticText" status="new">
+      <TEXT>Select X axis members using prompt on the left.</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074287_255" use="tableHeading" status="new">
+      <TEXT>Offices</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074290_256" use="columnHeading" status="new">
+      <TEXT>@{Dim01}{"Offices"."Office"}</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074290_257" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074290_258" use="columnHeading" status="new">
+      <TEXT>Contribution</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074290_259" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074291_260" use="columnHeading" status="new">
+      <TEXT>Sort</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074291_261" use="memberFormat" status="new">
+      <TEXT>%</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074291_262" use="memberFormat" status="new">
+      <TEXT>Rolling</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074291_263" use="memberFormat" status="new">
+      <TEXT>Rolling %</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074291_264" use="title" status="new">
+      <TEXT>0</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Custom Group">
+    <WebMessage name="kcap1423853074297_265" use="Caption" status="new">
+      <TEXT>Custom Group</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074305_266" use="title" status="new">
+      <TEXT>Preferred Products - Custom Group</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074305_267" use="customGroup" status="new">
+      <TEXT>My Preferred Products</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Custom Group - Scorecard">
+    <WebMessage name="kcap1423853074311_268" use="Caption" status="new">
+      <TEXT>Custom Group - Scorecard</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074319_269" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074319_270" use="columnHeading" status="new">
+      <TEXT>Selected Metric</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074319_271" use="customGroup" status="new">
+      <TEXT>My Preferred Products</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Dimension Prompt">
+    <WebMessage name="kcap1423853074324_272" use="Caption" status="new">
+      <TEXT>Dimension Prompt</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074329_273" use="label" status="new">
+      <TEXT>Waterfall Chart - Members</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074329_274" use="promptChoice" status="new">
+      <TEXT>Offices.Office</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074329_275" use="promptChoice" status="new">
+      <TEXT>Offices.Department</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074329_276" use="promptChoice" status="new">
+      <TEXT>Products.Product</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Filters">
+    <WebMessage name="kcap1423853074331_277" use="Caption" status="new">
+      <TEXT>Filters</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074339_278" use="gaugeTitle" status="new">
+      <TEXT>Target Completion  (Rev Pct)</TEXT>
+    </WebMessage>
+    <WebMessage name="cp0" use="markerLabel" status="existing">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="cp1" use="markerLabel" status="existing">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="cp2" use="markerLabel" status="existing">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Gauges">
+    <WebMessage name="kcap1423853074343_279" use="Caption" status="new">
+      <TEXT>Gauges</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_280" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_281" use="columnHeading" status="new">
+      <TEXT>Discount Ratio</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_282" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_283" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_284" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_285" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_286" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_287" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_288" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_289" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_290" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_291" use="gaugeTitle" status="new">
+      <TEXT>@1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_292" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_293" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074377_294" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="cp3" use="markerLabel" status="existing">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="cp4" use="markerLabel" status="existing">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="cp5" use="markerLabel" status="existing">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="cp6" use="markerLabel" status="existing">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="cp7" use="markerLabel" status="existing">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_295" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_296" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_297" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_298" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_299" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_300" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_301" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_302" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_303" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_304" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_305" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_306" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_307" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_308" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_309" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_310" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_311" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_312" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_313" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_314" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_315" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_316" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_317" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_318" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_319" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_320" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_321" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_322" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_323" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_324" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_325" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_326" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_327" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074378_328" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_329" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_330" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_331" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_332" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_333" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_334" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_335" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_336" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_337" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_338" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_339" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_340" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_341" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_342" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_343" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_344" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_345" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_346" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_347" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_348" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_349" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_350" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_351" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_352" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_353" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_354" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_355" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_356" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_357" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_358" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_359" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_360" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_361" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_362" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_363" use="markerLabel" oldName="cp4" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_364" use="markerLabel" oldName="cp5" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_365" use="markerLabel" oldName="cp6" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074379_366" use="markerLabel" oldName="cp7" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Help1">
+    <WebMessage name="kcap1423853074408_367" use="Caption" status="new">
+      <TEXT>Help1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074412_368" use="staticText" status="new">
+      <TEXT>[u][b]Hints for this page interactivity:[/b][/u][br/][br/]
+
+&lt;font color=darkblue&gt;
+1 - Click on a year value on top left table to change right side reports and show analysis for this value,[br/][br/]
+2 - Or right click on the same year value to see alternative options,[br/][br/]
+3 - Expand Hierarchy levels in top left table to show details of specific LOBs,[br/][br/]
+4 - Custom Sort row items in the to top left table to show data differently,[br/][br/]
+5 - Click on Custom Actionable Menu on left of the page for navigation options,[br/][br/]
+6 - Click on a chart series on any of the charts to drill into next level of hierarchy details, [br/][br/]
+7 - Use the hierarchical column prompt on left of page to select several levels of product hierarchy data to display in the page.&lt;/font&gt;[u][/u]</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Help2">
+    <WebMessage name="kcap1423853074413_369" use="Caption" status="new">
+      <TEXT>Help2</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074416_370" use="staticText" status="new">
+      <TEXT>[u][b]Hints for this page interactivity:[/b][/u][br/][br/]&lt;font color=darkblue&gt;1 - Hover mouse at crossing of axis on top right chart to activate zoom button, then zoom on the chart, and use axis sliders that appear to move along the chart values.[br/][br/]
+2 - From the left table or chart, expand Custom Group "My Preferred Products" to see details of which members or levels that make it up. You can also expand into the details of the total products hierarchy.[br/][br/]
+3 - Slide filtering range on Unit Price prompt to restric analysis scope[br/][br/]
+&lt;/font&gt;</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/History Overview">
+    <WebMessage name="kcap1423853074417_371" use="Caption" status="new">
+      <TEXT>History Overview</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074428_372" use="title" status="new">
+      <TEXT>Revenue by Year</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074428_373" use="actionLink" status="new">
+      <TEXT>See Offices Completion Details</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/KPI Watchlist">
+    <WebMessage name="kcap1423853074436_374" use="Caption" status="new">
+      <TEXT>KPI Watchlist</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/KPIs">
+    <WebMessage name="kcap1423853073503_59" use="Caption" status="new">
+      <TEXT>KPIs</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/KPIs/Avg Order Size">
+    <WebMessage name="kcap1423853073517_60" use="Caption" status="new">
+      <TEXT>Avg Order Size</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073546_61" use="statusText" status="new">
+      <TEXT>OK</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073546_62" use="statusText" status="new">
+      <TEXT>WARNING</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073546_63" use="statusText" status="new">
+      <TEXT>CRITICAL</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/KPIs/Revenue KPI">
+    <WebMessage name="kcap1423853073554_64" use="Caption" status="new">
+      <TEXT>Revenue KPI</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073563_65" use="statusText" status="new">
+      <TEXT>OK</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073563_66" use="statusText" status="new">
+      <TEXT>WARNING</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073563_67" use="statusText" status="new">
+      <TEXT>CRITICAL</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/KPIs/Sample KPI">
+    <WebMessage name="kcap1423853073567_68" use="Caption" status="new">
+      <TEXT>Sample KPI</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073577_69" use="statusText" status="new">
+      <TEXT>OK</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073577_70" use="statusText" status="new">
+      <TEXT>WARNING</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073577_71" use="statusText" status="new">
+      <TEXT>CRITICAL</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/KPIs/Sample KPI - Red">
+    <WebMessage name="kcap1423853073581_72" use="Caption" status="new">
+      <TEXT>Sample KPI - Red</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073586_73" use="statusText" status="new">
+      <TEXT>OK</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073586_74" use="statusText" status="new">
+      <TEXT>WARNING</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073586_75" use="statusText" status="new">
+      <TEXT>CRITICAL</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/KPIs/Sample KPI - Yellow">
+    <WebMessage name="kcap1423853073590_76" use="Caption" status="new">
+      <TEXT>Sample KPI - Yellow</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073599_77" use="statusText" status="new">
+      <TEXT>OK</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073599_78" use="statusText" status="new">
+      <TEXT>WARNING</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073599_79" use="statusText" status="new">
+      <TEXT>CRITICAL</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/KPIs/Unit Price">
+    <WebMessage name="kcap1423853073603_80" use="Caption" status="new">
+      <TEXT>Unit Price</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073610_81" use="statusText" status="new">
+      <TEXT>OK</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073610_82" use="statusText" status="new">
+      <TEXT>WARNING</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073610_83" use="statusText" status="new">
+      <TEXT>CRITICAL</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Monthly Revenue Trend">
+    <WebMessage name="kcap1423853074441_375" use="Caption" status="new">
+      <TEXT>Monthly Revenue Trend</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074456_376" use="title" status="new">
+      <TEXT>Monthly Revenue Trend</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074456_377" use="tableHeading" status="new">
+      <TEXT>Time</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074456_378" use="columnHeading" status="new">
+      <TEXT>Year:</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074456_379" use="tableHeading" status="new">
+      <TEXT>Time</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074456_380" use="columnHeading" status="new">
+      <TEXT>Month</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Monthly Trending">
+    <WebMessage name="kcap1423853074463_381" use="Caption" status="new">
+      <TEXT>Monthly Trending</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074471_382" use="title" status="new">
+      <TEXT>Monthly Revenue Trend</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074472_383" use="tableHeading" status="new">
+      <TEXT>Time</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074472_384" use="columnHeading" status="new">
+      <TEXT>Year:</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074472_385" use="tableHeading" status="new">
+      <TEXT>Time</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074472_386" use="columnHeading" status="new">
+      <TEXT>Month</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/My Preferred Products">
+    <WebMessage name="kcap1423853074480_387" use="Caption" status="new">
+      <TEXT>My Preferred Products</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074483_388" use="customGroup" status="new">
+      <TEXT>My Preferred Products</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Order Details">
+    <WebMessage name="kcap1423853074484_389" use="Caption" status="new">
+      <TEXT>Order Details</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074494_390" use="title" status="new">
+      <TEXT>Order Details</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074494_391" use="tableHeading" status="new">
+      <TEXT>Orders</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074494_392" use="columnHeading" status="new">
+      <TEXT>No of Orders</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074494_393" use="markerLabel" oldName="cp0" status="changed">
+      <TEXT>0</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074494_394" use="markerLabel" oldName="cp1" status="changed">
+      <TEXT>Critical</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074494_395" use="markerLabel" oldName="cp2" status="changed">
+      <TEXT>Warning</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074494_396" use="markerLabel" oldName="cp3" status="changed">
+      <TEXT>Good</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Orders Details" description="Navigate to Orders Details Report">
+    <WebMessage name="kcap1423853074502_397" use="Caption" status="new">
+      <TEXT>Orders Details</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074502_398" use="Description" status="new">
+      <TEXT>Navigate to Orders Details Report</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Performance Indicators">
+    <WebMessage name="kcap1423853074506_399" use="Caption" status="new">
+      <TEXT>Performance Indicators</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074513_400" use="headlineLabelTwo" status="new">
+      <TEXT>Lower discount ratios desired</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074513_401" use="headlineLabelTwo" status="new">
+      <TEXT>Higher order sizes are desirable</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074513_402" use="headlineLabelOne" status="new">
+      <TEXT>Unit Price</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074513_403" use="headlineLabelTwo" status="new">
+      <TEXT>Higher unit price desired</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074513_404" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074513_405" use="columnHeading" status="new">
+      <TEXT>Discount Ratio</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Product Revenue">
+    <WebMessage name="kcap1423853074519_406" use="Caption" status="new">
+      <TEXT>Product Revenue</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Prompt 1">
+    <WebMessage name="kcap1423853074525_407" use="Caption" status="new">
+      <TEXT>Prompt 1</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074528_408" use="label" status="new">
+      <TEXT>Year</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074528_409" use="label" status="new">
+      <TEXT>Products Hier.</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074528_410" use="label" status="new">
+      <TEXT>Organization</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074528_411" use="label" status="new">
+      <TEXT>Office</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Prompt 2">
+    <WebMessage name="kcap1423853074531_412" use="Caption" status="new">
+      <TEXT>Prompt 2</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074535_413" use="label" status="new">
+      <TEXT>Order Type</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074535_414" use="label" status="new">
+      <TEXT>Day of Year</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Prompt 3">
+    <WebMessage name="kcap1423853074537_415" use="Caption" status="new">
+      <TEXT>Prompt 3</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074541_416" use="label" status="new">
+      <TEXT>Year</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074541_417" use="label" status="new">
+      <TEXT>Brand</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074541_418" use="label" status="new">
+      <TEXT>Product Type</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074541_419" use="label" status="new">
+      <TEXT>Product</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074541_420" use="codeColumnLabel" status="new">
+      <TEXT>Brand Key</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074541_421" use="codeColumnLabel" status="new">
+      <TEXT>Product Type Key</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074541_422" use="codeColumnLabel" status="new">
+      <TEXT>Product Number</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting">
+    <WebMessage name="kcap1423853073617_84" use="Caption" status="new">
+      <TEXT>Published Reporting</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Analyses">
+    <WebMessage name="kcap1423853073649_85" use="Caption" status="new">
+      <TEXT>Analyses</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Published Reporting/Analyses/Quarterly Revenue">
+    <WebMessage name="kcap1423853073652_86" use="Caption" status="new">
+      <TEXT>Quarterly Revenue</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073680_87" use="tableHeading" status="new">
+      <TEXT>Time</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073680_88" use="columnHeading" status="new">
+      <TEXT>Qtr</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Published Reporting/Analyses/Sales by Brand">
+    <WebMessage name="kcap1423853073684_89" use="Caption" status="new">
+      <TEXT>Sales by Brand</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Published Reporting/Analyses/Year Prompt">
+    <WebMessage name="kcap1423853073690_90" use="Caption" status="new">
+      <TEXT>Year Prompt</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073696_91" use="label" status="new">
+      <TEXT>Year</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models">
+    <WebMessage name="kcap1423853073698_92" use="Caption" status="new">
+      <TEXT>Data Models</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Annual Appraisal DM.xdm" description="Data Source: XML Data File">
+    <WebMessage name="kcap1423853073727_93" use="Caption" status="new">
+      <TEXT>Annual Appraisal DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073728_94" use="Description" status="new">
+      <TEXT>Data Source: XML Data File</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Balance Letter Datamodel.xdm" description="Data Source Type: XML file -- Features: Pre-structured data">
+    <WebMessage name="kcap1423853073734_95" use="Caption" status="new">
+      <TEXT>Balance Letter Datamodel.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073734_96" use="Description" status="new">
+      <TEXT>Data Source Type: XML file -- Features: Pre-structured data</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Brand Revenue Details DM.xdm" description="Data Source Type: BI Server Sample Sales Lite subject area -- Structure: Hierarchical XML data set -- Features: Group by an element, group-level and global-level totals.">
+    <WebMessage name="kcap1423853073746_97" use="Caption" status="new">
+      <TEXT>Brand Revenue Details DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073746_98" use="Description" status="new">
+      <TEXT>Data Source Type: BI Server Sample Sales Lite subject area -- Structure: Hierarchical XML data set -- Features: Group by an element, group-level and global-level totals.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Company Sales - Currency Based.xdm" description="Data Sources: Sample Sales BI Server subject area; XLS File">
+    <WebMessage name="kcap1423853073748_99" use="Caption" status="new">
+      <TEXT>Company Sales - Currency Based.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073749_100" use="Description" status="new">
+      <TEXT>Data Sources: Sample Sales BI Server subject area; XLS File</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Company Sales Report DM.xdm" description="Data Source Type: Sample Sales BI Server subject area --Data Structure: Flat XML data set --Features: Parameters and LOVs.">
+    <WebMessage name="kcap1423853073751_101" use="Caption" status="new">
+      <TEXT>Company Sales Report DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073751_102" use="Description" status="new">
+      <TEXT>Data Source Type: Sample Sales BI Server subject area --Data Structure: Flat XML data set --Features: Parameters and LOVs.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Customer Orders Report DM.xdm" description="Data source: Oracle database OE &amp; HR sample schemas ( requires 'demo' connection to be set up). Features: Master-detail data structure; calculated elements using expression editor, parameters with cascading LOVs.">
+    <WebMessage name="kcap1423853073753_103" use="Caption" status="new">
+      <TEXT>Customer Orders Report DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073754_104" use="Description" status="new">
+      <TEXT>Data source: Oracle database OE &amp; HR sample schemas ( requires 'demo' connection to be set up). Features: Master-detail data structure; calculated elements using expression editor, parameters with cascading LOVs.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Employees by Department DM.xdm" description="Data Source: Structured XML data file">
+    <WebMessage name="kcap1423853073756_105" use="Caption" status="new">
+      <TEXT>Employees by Department DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073757_106" use="Description" status="new">
+      <TEXT>Data Source: Structured XML data file</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Office Sales Report Data Model.xdm" description="Data Source Type: Sample Sales BI Server subject area --Data Structure: Flat XML data set --Features: Parameters and LOVs.">
+    <WebMessage name="kcap1423853073764_107" use="Caption" status="new">
+      <TEXT>Office Sales Report Data Model.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073765_108" use="Description" status="new">
+      <TEXT>Data Source Type: Sample Sales BI Server subject area --Data Structure: Flat XML data set --Features: Parameters and LOVs.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Product List DM.xdm" description="List of all Products from XML data file">
+    <WebMessage name="kcap1423853073767_109" use="Caption" status="new">
+      <TEXT>Product List DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073767_110" use="Description" status="new">
+      <TEXT>List of all Products from XML data file</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Product Sales DM.xdm" description="Data Source Type: Sample Sales BI Server subject area --Data Structure: Flat XML data set --Features: Cascading parameters and LOVs.">
+    <WebMessage name="kcap1423853073770_111" use="Caption" status="new">
+      <TEXT>Product Sales DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073771_112" use="Description" status="new">
+      <TEXT>Data Source Type: Sample Sales BI Server subject area --Data Structure: Flat XML data set --Features: Cascading parameters and LOVs.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Rev Budg Actual and Details DM.xdm" description="Data Source Types --XML data file">
+    <WebMessage name="kcap1423853073772_113" use="Caption" status="new">
+      <TEXT>Rev Budg Actual and Details DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073773_114" use="Description" status="new">
+      <TEXT>Data Source Types --XML data file</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Salary Parameter Datamodel.xdm" description="Requires that the demo JDBC connection for BI Publisher is set up.">
+    <WebMessage name="kcap1423853073783_115" use="Caption" status="new">
+      <TEXT>Salary Parameter Datamodel.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073784_116" use="Description" status="new">
+      <TEXT>Requires that the demo JDBC connection for BI Publisher is set up.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Salary Report Data Model.xdm" description="Data source type --XML file">
+    <WebMessage name="kcap1423853073788_117" use="Caption" status="new">
+      <TEXT>Salary Report Data Model.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073789_118" use="Description" status="new">
+      <TEXT>Data source type --XML file</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Sales Performance Data Model.xdm" description="Data Source Type: BI Server Sample Sales Lite subject area -- Structure: Flat XML data set -- Features: Parameters, Cascading LOVs.">
+    <WebMessage name="kcap1423853073806_119" use="Caption" status="new">
+      <TEXT>Sales Performance Data Model.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073807_120" use="Description" status="new">
+      <TEXT>Data Source Type: BI Server Sample Sales Lite subject area -- Structure: Flat XML data set -- Features: Parameters, Cascading LOVs.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/Sales Report - BI Analysis DM.xdm" description="Data Source Type: BI Analysis --Structure: Concatenated flat XML structure that combines data from two BI Analyses">
+    <WebMessage name="kcap1423853073808_121" use="Caption" status="new">
+      <TEXT>Sales Report - BI Analysis DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073809_122" use="Description" status="new">
+      <TEXT>Data Source Type: BI Analysis --Structure: Concatenated flat XML structure that combines data from two BI Analyses</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/SFO Passenger Count Data Model.xdm" description="Data Source: Local Excel file.&#xA;This data model sources data saved to an Excel file. &#xA;Do NOT delete the Sample Data and Excel Data file from the data model.">
+    <WebMessage name="kcap1423853073810_123" use="Caption" status="new">
+      <TEXT>SFO Passenger Count Data Model.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073811_124" use="Description" status="new">
+      <TEXT>Data Source: Local Excel file.
+This data model sources data saved to an Excel file. 
+Do NOT delete the Sample Data and Excel Data file from the data model.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/W2 Data Model.xdm" description="Data Source Type: XML data file --Structure: Flat XML">
+    <WebMessage name="kcap1423853073814_125" use="Caption" status="new">
+      <TEXT>W2 Data Model.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073814_126" use="Description" status="new">
+      <TEXT>Data Source Type: XML data file --Structure: Flat XML</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Data Models/WS getFolderContent DM.xdm" description="Data Source: BIP WS getFolderContent &#xA;[http://localhost:&lt;port&gt;/xmlpserver/services/v2/CatalogService?wsdl]&#xA;-- Web Service: CatalogService&#xA;-- Method: GetFolderContents&#xA;-- Parameters: User ID, Password, Folder Path &#xA;-- Note: Edit the data set and change host name &amp; port to match the BIP server's host and port in your environment.">
+    <WebMessage name="kcap1423853073818_127" use="Caption" status="new">
+      <TEXT>WS getFolderContent DM.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073818_128" use="Description" status="new">
+      <TEXT>Data Source: BIP WS getFolderContent 
+[http://localhost:&lt;port&gt;/xmlpserver/services/v2/CatalogService?wsdl]
+-- Web Service: CatalogService
+-- Method: GetFolderContents
+-- Parameters: User ID, Password, Folder Path 
+-- Note: Edit the data set and change host name &amp; port to match the BIP server's host and port in your environment.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/JDE Samples">
+    <WebMessage name="kcap1423853073821_129" use="Caption" status="new">
+      <TEXT>JDE Samples</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/JDE Samples/Backordered Items Not Received Analysis.xdo">
+    <WebMessage name="kcap1423853073830_130" use="Caption" status="new">
+      <TEXT>Backordered Items Not Received Analysis.xdo</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/JDE Samples/Customer Account Balance Analysis.xdo">
+    <WebMessage name="kcap1423853073833_131" use="Caption" status="new">
+      <TEXT>Customer Account Balance Analysis.xdo</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/JDE Samples/Data">
+    <WebMessage name="kcap1423853073842_132" use="Caption" status="new">
+      <TEXT>Data</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/JDE Samples/Data/Backordered Items Not Received Analysis.xdm" description="JDE Enterprise One data extract for Backordered Items Not Received Analysis Report">
+    <WebMessage name="kcap1423853073846_133" use="Caption" status="new">
+      <TEXT>Backordered Items Not Received Analysis.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073847_134" use="Description" status="new">
+      <TEXT>JDE Enterprise One data extract for Backordered Items Not Received Analysis Report</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/JDE Samples/Data/Customer Account Balance Analysis.xdm" description="JDE Enterprise One data extract for Customer Account Balance Analysis Report">
+    <WebMessage name="kcap1423853073849_135" use="Caption" status="new">
+      <TEXT>Customer Account Balance Analysis.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073850_136" use="Description" status="new">
+      <TEXT>JDE Enterprise One data extract for Customer Account Balance Analysis Report</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/JDE Samples/Data/Historical Sales Analysis.xdm" description="JDE Enterprise One data extract for Historical Sales Analysis Report">
+    <WebMessage name="kcap1423853073858_137" use="Caption" status="new">
+      <TEXT>Historical Sales Analysis.xdm</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073858_138" use="Description" status="new">
+      <TEXT>JDE Enterprise One data extract for Historical Sales Analysis Report</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/JDE Samples/Historical Sales Analysis.xdo">
+    <WebMessage name="kcap1423853073865_139" use="Caption" status="new">
+      <TEXT>Historical Sales Analysis.xdo</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports">
+    <WebMessage name="kcap1423853073875_140" use="Caption" status="new">
+      <TEXT>Reports</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Annual Appraisal Report.xdo" description="Data Model: Annual Appraisal DM --Layout: Excel Template --Features: Multi-sheet Excel Workbook Output">
+    <WebMessage name="kcap1423853073941_141" use="Caption" status="new">
+      <TEXT>Annual Appraisal Report.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073942_142" use="Description" status="new">
+      <TEXT>Data Model: Annual Appraisal DM --Layout: Excel Template --Features: Multi-sheet Excel Workbook Output</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Balance Letter.xdo" description="Data Model: Balance Letter Data Model --Layouts: RTF, XPT -- Features: Style Template">
+    <WebMessage name="kcap1423853073949_143" use="Caption" status="new">
+      <TEXT>Balance Letter.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073950_144" use="Description" status="new">
+      <TEXT>Data Model: Balance Letter Data Model --Layouts: RTF, XPT -- Features: Style Template</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Brand Revenue Details.xdo" description="Data Model: Product Sales Details DM --Layouts: XPT --Features: Drillable charts">
+    <WebMessage name="kcap1423853073956_145" use="Caption" status="new">
+      <TEXT>Brand Revenue Details.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073957_146" use="Description" status="new">
+      <TEXT>Data Model: Product Sales Details DM --Layouts: XPT --Features: Drillable charts</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Company Sales - Currency Based.xdo" description="Uses currency exchange rates stored in a XLS file to convert revenue coming from Bi Server from USD to other types of currencies.">
+    <WebMessage name="kcap1423853073961_147" use="Caption" status="new">
+      <TEXT>Company Sales - Currency Based.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073962_148" use="Description" status="new">
+      <TEXT>Uses currency exchange rates stored in a XLS file to convert revenue coming from Bi Server from USD to other types of currencies.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Company Sales Report.xdo" description="Data Model: Office Sales Report Data Model --Layouts: XPT, RTF --Features: Drillable charts, Style Template, Parameters, Radio button LOV display">
+    <WebMessage name="kcap1423853073965_149" use="Caption" status="new">
+      <TEXT>Company Sales Report.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073966_150" use="Description" status="new">
+      <TEXT>Data Model: Office Sales Report Data Model --Layouts: XPT, RTF --Features: Drillable charts, Style Template, Parameters, Radio button LOV display</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Customer Orders Report.xdo" description="Data Model: Customer Orders Report DM (Requires 'demo' connection against Oracle DB OE &amp; HR sample schemas to be set up) ; Layouts: XPT; Features: Parameters, Cascading LOVs">
+    <WebMessage name="kcap1423853073971_151" use="Caption" status="new">
+      <TEXT>Customer Orders Report.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073971_152" use="Description" status="new">
+      <TEXT>Data Model: Customer Orders Report DM (Requires 'demo' connection against Oracle DB OE &amp; HR sample schemas to be set up) ; Layouts: XPT; Features: Parameters, Cascading LOVs</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Employees by Department Report.xdo" description="Data Model: Employees by Department DM --Layout: Excel Template --Features: Multi-sheet Excel Workbook">
+    <WebMessage name="kcap1423853073981_153" use="Caption" status="new">
+      <TEXT>Employees by Department Report.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073981_154" use="Description" status="new">
+      <TEXT>Data Model: Employees by Department DM --Layout: Excel Template --Features: Multi-sheet Excel Workbook</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Product Listing.xdo" description="Data Model: Product List DM --Layouts: XPT">
+    <WebMessage name="kcap1423853073986_155" use="Caption" status="new">
+      <TEXT>Product Listing.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853073986_156" use="Description" status="new">
+      <TEXT>Data Model: Product List DM --Layouts: XPT</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Product Sales - OBIEE Semantic Layer.xdo" description="Data Source: Direct connection to OBI EE Sample Sales Lite subject area. Features: List filters, Interactive charts.">
+    <WebMessage name="kcap1423853074000_157" use="Caption" status="new">
+      <TEXT>Product Sales - OBIEE Semantic Layer.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074000_158" use="Description" status="new">
+      <TEXT>Data Source: Direct connection to OBI EE Sample Sales Lite subject area. Features: List filters, Interactive charts.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Revenue Budget Actual and Detail.xdo" description="Data Model: Rev Budg Actual and Details DM --Layouts: XPT">
+    <WebMessage name="kcap1423853074016_159" use="Caption" status="new">
+      <TEXT>Revenue Budget Actual and Detail.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074017_160" use="Description" status="new">
+      <TEXT>Data Model: Rev Budg Actual and Details DM --Layouts: XPT</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Salary Report - Checkboxes.xdo" description="Data Model: Salary Parameter Datamodel (Requires that the &quot;demo&quot; JDBC connection in BI Publisher is set up.) Features: Multiple layout types; Cascading Parameters using checkboxes to display LOVs; Bursting">
+    <WebMessage name="kcap1423853074021_161" use="Caption" status="new">
+      <TEXT>Salary Report - Checkboxes.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074022_162" use="Description" status="new">
+      <TEXT>Data Model: Salary Parameter Datamodel (Requires that the "demo" JDBC connection in BI Publisher is set up.) Features: Multiple layout types; Cascading Parameters using checkboxes to display LOVs; Bursting</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Salary Report - No Parameters.xdo" description="Salary report with no parameters. Sources data from XML file.">
+    <WebMessage name="kcap1423853074033_163" use="Caption" status="new">
+      <TEXT>Salary Report - No Parameters.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074033_164" use="Description" status="new">
+      <TEXT>Salary report with no parameters. Sources data from XML file.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Salary Report.xdo" description="Data Model: Salary Parameter Datamodel (Requires that the &quot;demo&quot; JDBC connection in BI Publisher is set up.) Features: Multiple layout types; Cascading parameters displayed as menu with search. Bursting.">
+    <WebMessage name="kcap1423853074063_165" use="Caption" status="new">
+      <TEXT>Salary Report.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074063_166" use="Description" status="new">
+      <TEXT>Data Model: Salary Parameter Datamodel (Requires that the "demo" JDBC connection in BI Publisher is set up.) Features: Multiple layout types; Cascading parameters displayed as menu with search. Bursting.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Sales Performance Report.xdo" description="Data Source - Sales Performance Data Model; Features - Cascading parameters displayed on vertical region using radio button controls; Drill-down charts">
+    <WebMessage name="kcap1423853074072_167" use="Caption" status="new">
+      <TEXT>Sales Performance Report.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074072_168" use="Description" status="new">
+      <TEXT>Data Source - Sales Performance Data Model; Features - Cascading parameters displayed on vertical region using radio button controls; Drill-down charts</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/Sales Report - BI Analysis Source.xdo" description="Data Model: Sales Report - BI Analysis DM --Layouts: XPT; Features: OBI Analyses used as a data source; This report is placed on QuickStart dashboard and is linked to dashboard prompts">
+    <WebMessage name="kcap1423853074076_169" use="Caption" status="new">
+      <TEXT>Sales Report - BI Analysis Source.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074076_170" use="Description" status="new">
+      <TEXT>Data Model: Sales Report - BI Analysis DM --Layouts: XPT; Features: OBI Analyses used as a data source; This report is placed on QuickStart dashboard and is linked to dashboard prompts</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/SFO Passenger Count Report 2.0.xdo">
+    <WebMessage name="kcap1423853074081_171" use="Caption" status="new">
+      <TEXT>SFO Passenger Count Report 2.0.xdo</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/SFO Passenger Count Report.xdo" description="Data Model: SFO Passenger Count Data Model&#xA;Layouts: BI Publisher (XPT) layouts&#xA;Features: List Selectors (Filter lists)">
+    <WebMessage name="kcap1423853074094_172" use="Caption" status="new">
+      <TEXT>SFO Passenger Count Report.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074095_173" use="Description" status="new">
+      <TEXT>Data Model: SFO Passenger Count Data Model
+Layouts: BI Publisher (XPT) layouts
+Features: List Selectors (Filter lists)</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/W2 2010.xdo" description="Data Model: W2 Data Model --Layouts: PDF">
+    <WebMessage name="kcap1423853074105_174" use="Caption" status="new">
+      <TEXT>W2 2010.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074105_175" use="Description" status="new">
+      <TEXT>Data Model: W2 Data Model --Layouts: PDF</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Reports/WS getFolderContent Report.xdo" description="Data Model: WS getFolderContent DM; Features. Illustrates the use of using WS as a data source. This report displays information about the items in a catalog folder using the BI Publisher WS getFolderContent method.">
+    <WebMessage name="kcap1423853074108_176" use="Caption" status="new">
+      <TEXT>WS getFolderContent Report.xdo</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074108_177" use="Description" status="new">
+      <TEXT>Data Model: WS getFolderContent DM; Features. Illustrates the use of using WS as a data source. This report displays information about the items in a catalog folder using the BI Publisher WS getFolderContent method.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Style Templates">
+    <WebMessage name="kcap1423853074111_178" use="Caption" status="new">
+      <TEXT>Style Templates</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Style Templates/Corp Styles Template.xss" description="Example BI Publisher Style Template without a header and footer.">
+    <WebMessage name="kcap1423853074114_179" use="Caption" status="new">
+      <TEXT>Corp Styles Template.xss</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074114_180" use="Description" status="new">
+      <TEXT>Example BI Publisher Style Template without a header and footer.</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Published Reporting/Style Templates/Oracle Styles Template.xss" description="Example of a BI Publisher Style Template with a header &amp; footer">
+    <WebMessage name="kcap1423853074115_181" use="Caption" status="new">
+      <TEXT>Oracle Styles Template.xss</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074116_182" use="Description" status="new">
+      <TEXT>Example of a BI Publisher Style Template with a header &amp; footer</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="folder" path="/shared/Sample Lite/Sample Scorecard - Lite">
+    <WebMessage name="kcap1423853074121_183" use="Caption" status="new">
+      <TEXT>Sample Scorecard - Lite</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/9817c0100ba6100085670ae4eb540000">
+    <WebMessage name="kcap1423853074148_184" use="Caption" status="new">
+      <TEXT>9817c0100ba6100085670ae4eb540000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/9819bbe00ba6100085670ae4eb540000">
+    <WebMessage name="kcap1423853074148_185" use="Caption" status="new">
+      <TEXT>9819bbe00ba6100085670ae4eb540000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/981af4600ba6100085670ae4eb540000">
+    <WebMessage name="kcap1423853074149_186" use="Caption" status="new">
+      <TEXT>981af4600ba6100085670ae4eb540000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/983be9e00ba6100085670ae4eb540000">
+    <WebMessage name="kcap1423853074149_187" use="Caption" status="new">
+      <TEXT>983be9e00ba6100085670ae4eb540000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/983dbea00ba6100085670ae4eb540000">
+    <WebMessage name="kcap1423853074150_188" use="Caption" status="new">
+      <TEXT>983dbea00ba6100085670ae4eb540000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/9846e6600ba6100085670ae4eb540000">
+    <WebMessage name="kcap1423853074150_189" use="Caption" status="new">
+      <TEXT>9846e6600ba6100085670ae4eb540000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/_CauseAndEffectLinkages">
+    <WebMessage name="kcap1423853074151_190" use="Caption" status="new">
+      <TEXT>_CauseAndEffectLinkages</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/_initiativeTree">
+    <WebMessage name="kcap1423853074154_191" use="Caption" status="new">
+      <TEXT>_initiativeTree</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074156_192" use="pinnedKPI" status="new">
+      <TEXT>Brand Recognition</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074156_193" use="pinnedKPI" status="new">
+      <TEXT># Projects completed</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074156_194" use="pinnedKPI" status="new">
+      <TEXT>% Completed on Time</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/_Perspectives">
+    <WebMessage name="kcap1423853074157_195" use="Caption" status="new">
+      <TEXT>_Perspectives</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/_scorecardSettings">
+    <WebMessage name="kcap1423853074160_196" use="Caption" status="new">
+      <TEXT>_scorecardSettings</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_197" use="statusText" status="new">
+      <TEXT>CRITICAL</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_198" use="statusText" status="new">
+      <TEXT>OK</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_199" use="statusText" status="new">
+      <TEXT>WARNING</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_200" use="displayLabel" status="new">
+      <TEXT>Organization</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_201" use="displayLabel" status="new">
+      <TEXT>Line Of Business</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_202" use="displayLabel" status="new">
+      <TEXT>Time - Month</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_203" use="displayLabel" status="new">
+      <TEXT>"Sample Targets Lite"."Offices"."Organization"</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_204" use="displayLabel" status="new">
+      <TEXT>"Sample Targets Lite"."Products"."LOB"</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074163_205" use="displayLabel" status="new">
+      <TEXT>"Sample Targets Lite"."Time"."Per Name Month"</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/_strategyTree">
+    <WebMessage name="kcap1423853074164_206" use="Caption" status="new">
+      <TEXT>_strategyTree</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074168_207" use="pinnedKPI" status="new">
+      <TEXT>Avg Order Size</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074168_208" use="pinnedKPI" status="new">
+      <TEXT>Revenue KPI</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074168_209" use="pinnedKPI" status="new">
+      <TEXT>Unit Price</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074168_210" use="pinnedKPI" status="new">
+      <TEXT>Sample KPI</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074168_211" use="pinnedKPI" status="new">
+      <TEXT>Sample KPI - Yellow</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074168_212" use="pinnedKPI" status="new">
+      <TEXT>Sample KPI</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074168_213" use="pinnedKPI" status="new">
+      <TEXT>Sample KPI - With a different Label</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074168_214" use="pinnedKPI" status="new">
+      <TEXT>Sample KPI - Red</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Cause &amp; Effect Map: Improve Financial Results">
+    <WebMessage name="kcap1423853074170_215" use="Caption" status="new">
+      <TEXT>Cause &amp; Effect Map: Improve Financial Results</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Contribution Wheel: Sample Scorecard - Lite">
+    <WebMessage name="kcap1423853074172_216" use="Caption" status="new">
+      <TEXT>Contribution Wheel: Sample Scorecard - Lite</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Customer">
+    <WebMessage name="kcap1423853074176_217" use="Caption" status="new">
+      <TEXT>Customer</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/ee7a64b00bfd100085670ae4a5190000">
+    <WebMessage name="kcap1423853074177_218" use="Caption" status="new">
+      <TEXT>ee7a64b00bfd100085670ae4a5190000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/eecf62800bfd100085670ae4a5190000">
+    <WebMessage name="kcap1423853074178_219" use="Caption" status="new">
+      <TEXT>eecf62800bfd100085670ae4a5190000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Enhance Customer Satisfaction" description="This Objective Monitors our progress towards Enhancing Customer Satisfaction">
+    <WebMessage name="kcap1423853074178_220" use="Caption" status="new">
+      <TEXT>Enhance Customer Satisfaction</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074179_221" use="Description" status="new">
+      <TEXT>This Objective Monitors our progress towards Enhancing Customer Satisfaction</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/f1606da00bfd100085670ae4a5190000">
+    <WebMessage name="kcap1423853074217_222" use="Caption" status="new">
+      <TEXT>f1606da00bfd100085670ae4a5190000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/f162b7900bfd100085670ae4a5190000">
+    <WebMessage name="kcap1423853074217_223" use="Caption" status="new">
+      <TEXT>f162b7900bfd100085670ae4a5190000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="link" path="/shared/Sample Lite/Sample Scorecard - Lite/f1654fa00bfd100085670ae4a5190000">
+    <WebMessage name="kcap1423853074218_224" use="Caption" status="new">
+      <TEXT>f1654fa00bfd100085670ae4a5190000</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Financial">
+    <WebMessage name="kcap1423853074218_225" use="Caption" status="new">
+      <TEXT>Financial</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Financials-Smart Watchlist">
+    <WebMessage name="kcap1423853074222_226" use="Caption" status="new">
+      <TEXT>Financials-Smart Watchlist</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Improve Financial Results" description="This Objective Monitors our progress towards Improving Financial Results">
+    <WebMessage name="kcap1423853074225_227" use="Caption" status="new">
+      <TEXT>Improve Financial Results</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074225_228" use="Description" status="new">
+      <TEXT>This Objective Monitors our progress towards Improving Financial Results</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Increase Empl. Effectiveness" description="This Objective Monitors our progress towards Increasing Empl. Effectiveness">
+    <WebMessage name="kcap1423853074228_229" use="Caption" status="new">
+      <TEXT>Increase Empl. Effectiveness</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074228_230" use="Description" status="new">
+      <TEXT>This Objective Monitors our progress towards Increasing Empl. Effectiveness</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Initiatives">
+    <WebMessage name="kcap1423853074230_231" use="Caption" status="new">
+      <TEXT>Initiatives</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Internal Process">
+    <WebMessage name="kcap1423853074232_232" use="Caption" status="new">
+      <TEXT>Internal Process</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Learning and Growth">
+    <WebMessage name="kcap1423853074234_233" use="Caption" status="new">
+      <TEXT>Learning and Growth</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Rebrand Product lines">
+    <WebMessage name="kcap1423853074236_234" use="Caption" status="new">
+      <TEXT>Rebrand Product lines</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Sample KPI Watchlist">
+    <WebMessage name="Sample KPI Watchlist" use="Caption" status="existing">
+      <TEXT>Sample KPI Watchlist</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074243_235" use="pinnedKPI" status="new">
+      <TEXT>Sample KPI</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074243_236" use="pinnedKPI" status="new">
+      <TEXT>Unit Price</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074243_237" use="pinnedKPI" status="new">
+      <TEXT>Avg Order Size</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Sample Lite - Strategy Map">
+    <WebMessage name="kcap1423853074244_238" use="Caption" status="new">
+      <TEXT>Sample Lite - Strategy Map</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Sample LOB Prompt">
+    <WebMessage name="kcap1423853074246_239" use="Caption" status="new">
+      <TEXT>Sample LOB Prompt</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074249_240" use="label" status="new">
+      <TEXT>LOB</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074249_241" use="codeColumnLabel" status="new">
+      <TEXT>LOB Key</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Sample Scorecard - Lite">
+    <WebMessage name="kcap1423853074251_242" use="Caption" status="new">
+      <TEXT>Sample Scorecard - Lite</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Sample Smart Watchlist">
+    <WebMessage name="kcap1423853074253_243" use="Caption" status="new">
+      <TEXT>Sample Smart Watchlist</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Strategy Tree: Sample Scorecard - Lite">
+    <WebMessage name="kcap1423853074255_244" use="Caption" status="new">
+      <TEXT>Strategy Tree: Sample Scorecard - Lite</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Streamline Operations" description="This Objective Monitors our progress towards Streamlining Operations">
+    <WebMessage name="kcap1423853074257_245" use="Caption" status="new">
+      <TEXT>Streamline Operations</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074258_246" use="Description" status="new">
+      <TEXT>This Objective Monitors our progress towards Streamlining Operations</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Sample Scorecard - Lite/Upgrade IT Infrastructure">
+    <WebMessage name="kcap1423853074260_247" use="Caption" status="new">
+      <TEXT>Upgrade IT Infrastructure</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Target Completion">
+    <WebMessage name="kcap1423853074545_423" use="Caption" status="new">
+      <TEXT>Target Completion</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Target Completion Details" description="Navigate to Orders Details Report">
+    <WebMessage name="kcap1423853074552_424" use="Caption" status="new">
+      <TEXT>Target Completion Details</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074552_425" use="Description" status="new">
+      <TEXT>Navigate to Orders Details Report</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Timeline">
+    <WebMessage name="kcap1423853074558_426" use="Caption" status="new">
+      <TEXT>Timeline</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074562_427" use="title" status="new">
+      <TEXT>Weekly Timeline</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074562_428" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074562_429" use="columnHeading" status="new">
+      <TEXT>Revenue</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Top Offices">
+    <WebMessage name="kcap1423853074566_430" use="Caption" status="new">
+      <TEXT>Top Offices</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074571_431" use="rowText" status="new">
+      <TEXT>&lt;b&gt;@1&lt;/b&gt; ranks #&lt;font color=green&gt;&lt;b&gt;@3&lt;/b&gt;&lt;/font&gt; with &lt;font color=blue&gt;&lt;b&gt;@2&lt;/b&gt; k&lt;/font&gt; bookings value over &lt;font color=blue&gt;@4&lt;/font&gt; orders&lt;br/&gt;</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074571_432" use="rowSep" status="new">
+      <TEXT>&lt;br/&gt;</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074571_433" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074571_434" use="columnHeading" status="new">
+      <TEXT>"Base Facts"."Revenue"</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074571_435" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074571_436" use="columnHeading" status="new">
+      <TEXT>Rank</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Trellis1">
+    <WebMessage name="kcap1423853074574_437" use="Caption" status="new">
+      <TEXT>Trellis1</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Trellis2">
+    <WebMessage name="kcap1423853074581_438" use="Caption" status="new">
+      <TEXT>Trellis2</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074587_439" use="title" status="new">
+      <TEXT>Unit Price Trellis</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Trellis3">
+    <WebMessage name="kcap1423853074595_440" use="Caption" status="new">
+      <TEXT>Trellis3</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074606_441" use="title" status="new">
+      <TEXT>Brand Revenue Mix</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+  <WebMessageTable system="catalog" type="object" path="/shared/Sample Lite/Trellis4">
+    <WebMessage name="kcap1423853074613_442" use="Caption" status="new">
+      <TEXT>Trellis4</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074618_443" use="title" status="new">
+      <TEXT>Discount Ratio Analysis</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074618_444" use="tableHeading" status="new">
+      <TEXT>Base Facts</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074618_445" use="columnHeading" status="new">
+      <TEXT>Discount Ratio</TEXT>
+    </WebMessage>
+    <WebMessage name="kcap1423853074619_446" use="customGroup" status="new">
+      <TEXT>Total</TEXT>
+    </WebMessage>
+  </WebMessageTable>
+</WebMessageTables>

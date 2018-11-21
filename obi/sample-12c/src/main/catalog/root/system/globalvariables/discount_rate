@@ -1,2 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<savedvar:variableDefinition xmlns:savedvar="com.siebel.analytics.web/savedvariable/v1.1"><savedvar:value><savedvar:string>cast(&quot;Base Facts&quot;.&quot;Discount Amount&quot; as double) / &quot;Base Facts&quot;.&quot;Revenue&quot; * 100</savedvar:string></savedvar:value></savedvar:variableDefinition>

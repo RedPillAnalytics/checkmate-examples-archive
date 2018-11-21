@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cb6c14-0fa8-0000-714b-e31d00000000" name="More Time Objects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6c12-0fa4-0000-714b-e31d00000000.xml#m80cb6c12-0fa4-0000-714b-e31d00000000">
+<Description><![CDATA[->
+This folder contains additional time attributes like Calendar time attributes and Julian period numbers.]]></Description>
+<PresentationColumn mdsid="m80cb6d67-0faa-0000-714b-e31d00000000" name="Day Of Week" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb681c-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Day of Week is an integer and is a value between 1 and 7]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d69-0faa-0000-714b-e31d00000000" name="Day Of Month" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb681d-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Day of Month is an integer and a value between 1 and 31.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d6a-0faa-0000-714b-e31d00000000" name="Day Of Year" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb681e-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Day of Year is an integer and a value between 1 and 366.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d6b-0faa-0000-714b-e31d00000000" name="Julian Day Num" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb682f-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Stores the Julian Day Number as an integer.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d6c-0faa-0000-714b-e31d00000000" name="Julian Week Num" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6830-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Stores the Julian Week Number as an integer.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d6d-0faa-0000-714b-e31d00000000" name="Julian Month Num" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6831-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Stores the Julian Month Number as an integer.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d6e-0faa-0000-714b-e31d00000000" name="Julian Qtr Num" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6814-07f3-0000-714b-e31d00000000.xml#m80cb6832-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Stores the Julian Quarter Number as an integer.]]></Description>
+</PresentationColumn>
+</PresentationTable>

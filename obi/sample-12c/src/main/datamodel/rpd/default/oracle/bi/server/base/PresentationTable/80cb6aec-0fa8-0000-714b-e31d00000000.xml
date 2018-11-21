@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<PresentationTable mdsid="m80cb6aec-0fa8-0000-714b-e31d00000000" name="More Office Objects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6a2e-0fa4-0000-714b-e31d00000000.xml#m80cb6a2e-0fa4-0000-714b-e31d00000000">
+<Description><![CDATA[->
+This folder contains additional Office attributes.]]></Description>
+<PresentationColumn mdsid="m80cb6d06-0faa-0000-714b-e31d00000000" name="Office Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68bd-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Office Key is an integer that uniquely identifies each record in the Offices dimension table.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d08-0faa-0000-714b-e31d00000000" name="Dept Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68bf-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Surrogate key for the Department objects.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d0a-0faa-0000-714b-e31d00000000" name="Org Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68c1-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Surrogate key for the Organization objects.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d0c-0faa-0000-714b-e31d00000000" name="Company Key" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68c3-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[Surrogate key for the Company objects.]]></Description>
+</PresentationColumn>
+<PresentationColumn mdsid="m80cb6d0e-0faa-0000-714b-e31d00000000" name="Office Sequence" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68c4-07d6-0000-714b-e31d00000000">
+<Description><![CDATA[This column returns the Office sequence from the Offices Dimension, the office sequence is used to logically sort the Office object values.]]></Description>
+</PresentationColumn>
+</PresentationTable>

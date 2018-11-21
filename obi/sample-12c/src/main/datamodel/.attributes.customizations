@@ -1,0 +1,9 @@
+
+{
+    "extendedAttributes":{
+        "bi-modeler-compatible":{
+            "type":"boolean",
+            "value":false
+        }
+    }
+}

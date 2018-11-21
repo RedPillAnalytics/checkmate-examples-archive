@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<jazn-data>
+    <jazn-realm>
+    </jazn-realm>
+    <policy-store>
+        <applications>
+            <application locale="en_US" metadata-provisioned="false">
+                <name>obi</name>
+                <app-roles>
+                    <app-role>
+                        <name>BIServiceAdministrator</name>
+                        <display-name>BI Service Administrator</display-name>
+                        <description>This role confers privileges required to administer the sample application.</description>
+                        
+                        <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                        <extended-attributes>
+                            <attribute>
+                                <name>ROLE_CATEGORY</name>
+                                <values>
+                                    <value>Administration</value>
+                                </values>
+                            </attribute>
+                        </extended-attributes>
+                        <members>
+                            <member>
+                                <class>weblogic.security.principal.WLSUserImpl</class>
+                                <name>weblogic</name>
+                            </member>
+                        </members>
+                    </app-role>
+                    <app-role>
+                        <name>BIContentAuthor</name>
+                        <display-name>BI Content Author</display-name>
+                        <description>Users with this role can create most types of content.</description>
+                        
+                        <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                        <members>
+                            <member>
+                                <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                <name>BIServiceAdministrator</name>
+                                
+                            </member>
+                        </members>
+                    </app-role>
+                    <app-role>
+                        <name>BIConsumer</name>
+                        <display-name>BI Consumer</display-name>
+                        <description>Users granted this role can consume content but are restricted in what they can create.</description>
+                        
+                        <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                        <members>
+                            <member>
+                                <class>oracle.security.jps.internal.core.principals.JpsAuthenticatedRoleImpl</class>
+                                <name>authenticated-role</name>
+                            </member>
+                            <member>
+                                <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                <name>BIContentAuthor</name>
+                                
+                            </member>
+                        </members>
+                    </app-role>
+                </app-roles>
+                
+                
+                
+                
+                
+                <jazn-policy>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>BIContentAuthor</name>
+                                    
+                                    <appscopename>obi</appscopename>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permission-set-refs>
+                            <permission-set-ref>
+                                <name>obisch.author</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>bip.author</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>va.author</name>
+                            </permission-set-ref>
+                        </permission-set-refs>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>BIServiceAdministrator</name>
+                                    
+                                    <appscopename>obi</appscopename>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permission-set-refs>
+                            <permission-set-ref>
+                                <name>obis.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>obisch.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>bip.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>essbase.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>cds.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>obips.administrator</name>
+                            </permission-set-ref>
+                        </permission-set-refs>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>BIConsumer</name>
+                                    
+                                    <appscopename>obi</appscopename>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permission-set-refs>
+                            <permission-set-ref>
+                                <name>bip.consumer</name>
+                            </permission-set-ref>
+                        </permission-set-refs>
+                    </grant>
+                </jazn-policy>
+            </application>
+        </applications>
+    </policy-store>
+    
+</jazn-data>
