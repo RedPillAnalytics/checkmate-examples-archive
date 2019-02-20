@@ -1,5 +1,6 @@
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '9.1.11'
+  id 'com.avast.gradle.docker-compose' version "0.8.14"
+  id 'com.redpillanalytics.checkmate.obi' version '9.1.15'
   id 'maven-publish'
 }
 
@@ -63,4 +64,8 @@ obi.testGroups {
     // Provide more output
     showOutput = false
   }
+}
+
+dockerCompose {
+  startedServices = ['obiee','database']
 }

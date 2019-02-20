@@ -1,0 +1,53 @@
+version: '2'
+
+services:
+  obiee:
+    image: redpillanalytics/obiee:12.2.1.4.0
+    depends_on:
+      - database
+    container_name: rpa-checkmate-bi
+    hostname: rpa-checkmate-bi
+    environment:
+      - BI_CONFIG_RCU_DBSTRING=rcu-database:1521:xepdb1
+      - ORACLE_BASE=/opt/oracle
+      - ORACLE_HOME=/opt/oracle/product/12.2.1.4.0
+      - DOMAIN_HOME=/opt/oracle/config/domains
+      # The domain to be created
+      - BI_CONFIG_DOMAINE_NAME=bi
+      # Specify the administrator username.
+      - BI_CONFIG_ADMIN_USER=weblogic
+      # Specify the administrator password.
+      - BI_CONFIG_ADMIN_PWD=Admin123
+      # RCU DB connection string, format: hostname:port:servicename
+      #BI_CONFIG_RCU_DBSTRING=rcu-database:1521:xepdb1
+      # RCU username for account with privileges to create new schemas
+      - BI_CONFIG_RCU_USER=sys
+      # RCU password for account with privileges to create new schemas
+      - BI_CONFIG_RCU_PWD=Admin123
+      # RCU prefix for newly created schemas
+      - BI_CONFIG_RCU_DB_PREFIX=BI122140
+      # RCU password to be used for all new schemas
+      - BI_CONFIG_RCU_NEW_DB_PWD=Admin123
+    entrypoint:
+      - /opt/oracle/wait-for-database.sh
+      - rcu-database:1521/xepdb1
+      - /opt/oracle/runOBIEE.sh
+    ports:
+      - "9500-9514:9500-9514"
+      - "9799:9799"
+    stdin_open: true
+    tty: true
+
+  database:
+    image: redpillanalytics/checkmate-db:18.4.0-xe
+    container_name: rpa-checkmate-db
+    environment:
+      - ORACLE_PWD=Admin123
+      - ORACLE_BASE=/opt/oracle
+      - ORACLE_HOME=/opt/oracle/product/18c/dbhomeXE
+      - ORACLE_SID=XE
+      - CHECK_DB_FILE="checkDBStatus.sh"
+    entrypoint:
+      - /opt/oracle/runOracle.sh
+    ports:
+      - "1521:1521"

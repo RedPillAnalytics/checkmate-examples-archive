@@ -1,9 +1,14 @@
-include 'obi:sample-12c'
+// pluginManagement {
+//     repositories {
+//         maven {
+//             url redpillUrl
+//             credentials(AwsCredentials) {
+//                 accessKey redpillKey
+//                 secretKey redpillSecret
+//             }
+//         }
+//         gradlePluginPortal()
+//     }
+// }
 
-if (file('../checkmate').exists()) {
-  includeBuild('../checkmate') {
-    dependencySubstitution {
-      substitute module('gradle.plugin.com.redpillanalytics:checkmate') with project(':')
-    }
-  }
-}
+include 'obi'
