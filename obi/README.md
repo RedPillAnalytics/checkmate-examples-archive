@@ -34,6 +34,48 @@ docker exec -u oracle -ti rpa-checkmate-bi bash
 cd workspace
 ```
 
+To ensure our OBIEE environment is functionality correctly, do the following:
+
+```bash
+==> /opt/oracle/config/domains/bi/bitools/bin/start.sh
+Starting domain; Using domainHome: /opt/oracle/config/domains/bi ...
+
+Initializing WebLogic Scripting Tool (WLST) ...
+
+Welcome to WebLogic Server Administration Scripting Shell
+
+Type help() for help on available commands
+
+<Feb 21, 2019 6:44:30 PM UTC> <Info> <Security> <BEA-090905> <Disabling the CryptoJ JCE Provider self-integrity check for better startup performance. To enable this check, specify -Dweblogic.security.allowCryptoJDefaultJCEVerification=true.>
+<Feb 21, 2019 6:44:30 PM UTC> <Info> <Security> <BEA-090906> <Changing the default Random Number Generator in RSA CryptoJ from ECDRBG128 to HMACDRBG. To disable this change, specify -Dweblogic.security.allowCryptoJDefaultPRNG=true.>
+<Feb 21, 2019 6:44:30 PM UTC> <Info> <Security> <BEA-090909> <Using the configured custom SSL Hostname Verifier implementation: weblogic.security.utils.SSLWLSHostnameVerifier$NullHostnameVerifier.>
+NodeManager already running
+Reading domain...
+/Servers/AdminServer/ListenPort=9500
+Accessing admin server using URL t3://rpa-checkmate-bi:9500
+
+AdminServer already running
+
+Starting all servers ...
+Server bi_server1 not started as already in state (RUNNING)
+Server obiccs1 not started as already in state (RUNNING)
+Server obis1 not started as already in state (RUNNING)
+Server obips1 not started as already in state (RUNNING)
+Server obijh1 not started as already in state (RUNNING)
+Server obisch1 not started as already in state (RUNNING)
+
+Finished starting servers
+```
+
+And to ensure that our Gradle CLI is functioning inside the Docker container, run the following:
+
+``bash
+==> ./gradlew obi:build
+
+BUILD SUCCESSFUL in 30s
+2 actionable tasks: 2 executed
+```
+
 # Basic Configuration
 The heart of a Gradle build is the [build script](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), which by default is defined using a `build.gradle` file. This repository subdirectory already contains a functioning [build script](https://github.com/RedPillAnalytics/checkmate-examples/blob/master/obi/build.gradle), with all the necessary configurations already made, with several of the advanced features that we will apply later commented out.
 
@@ -41,7 +83,7 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```groovy
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '8.5.3'
+  id 'com.redpillanalytics.checkmate.obi' version '9.1.15'
   id 'maven-publish'
 }
 ```
