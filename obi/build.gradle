@@ -6,8 +6,8 @@ plugins {
 
 // OBIEE Environment
 // these can be overriden by environment variables or Gradle project properties
-obi.middlewareHome = '/home/oracle/fmw/12.2.1.4/product'
-obi.domainHome = '/home/oracle/fmw/12.2.1.4/domains/bi'
+obi.middlewareHome = '/opt/oracle/product/12.2.1.4.0'
+obi.domainHome = '/opt/oracle/config/domains/bi'
 obi.compatibility = '12.2.1.4'
 obi.adminUser = 'weblogic'
 obi.adminPassword = 'Admin123'
@@ -15,7 +15,7 @@ obi.repositoryPassword = 'Admin123'
 
 // Hardcoding the version number
 // We can use other Gradle plugins to make this easier
-version = '0.0.10'
+version = '1.0.0'
 
 publishing {
   repositories {
@@ -27,7 +27,7 @@ publishing {
 
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '9.0.9'
+  obiee group: 'gradle.plugin.com.redpillanalytics', name: 'checkmate', version: '9.1.15'
   // You can also use Baseline Validation Tool
   // The installation needs to be available in one of your Maven repositories
   // obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
@@ -67,5 +67,6 @@ obi.testGroups {
 }
 
 dockerCompose {
-  startedServices = ['obiee','database']
+  startedServices = ['obiee','rcu-database']
+  tcpPortsToIgnoreWhenWaiting = [9501,9503,9504,9505,9506,9508,9509,9510,9511,9512,9513,9514,9799]
 }

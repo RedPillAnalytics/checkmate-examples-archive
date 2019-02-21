@@ -1,13 +1,13 @@
 version: '2'
-
 services:
   obiee:
     image: redpillanalytics/obiee:12.2.1.4.0
     depends_on:
-      - database
+      - rcu-database
     container_name: rpa-checkmate-bi
     hostname: rpa-checkmate-bi
     environment:
+      # RCU DB connection string, format: hostname:port:servicename
       - BI_CONFIG_RCU_DBSTRING=rcu-database:1521:xepdb1
       - ORACLE_BASE=/opt/oracle
       - ORACLE_HOME=/opt/oracle/product/12.2.1.4.0
@@ -18,8 +18,6 @@ services:
       - BI_CONFIG_ADMIN_USER=weblogic
       # Specify the administrator password.
       - BI_CONFIG_ADMIN_PWD=Admin123
-      # RCU DB connection string, format: hostname:port:servicename
-      #BI_CONFIG_RCU_DBSTRING=rcu-database:1521:xepdb1
       # RCU username for account with privileges to create new schemas
       - BI_CONFIG_RCU_USER=sys
       # RCU password for account with privileges to create new schemas
@@ -28,6 +26,8 @@ services:
       - BI_CONFIG_RCU_DB_PREFIX=BI122140
       # RCU password to be used for all new schemas
       - BI_CONFIG_RCU_NEW_DB_PWD=Admin123
+      # JAVA_HOME for Gradle
+      - JAVA_HOME=/usr/java/default
     entrypoint:
       - /opt/oracle/wait-for-database.sh
       - rcu-database:1521/xepdb1
@@ -37,8 +37,9 @@ services:
       - "9799:9799"
     stdin_open: true
     tty: true
-
-  database:
+    volumes:
+     - $PWD:/workspace
+  rcu-database:
     image: redpillanalytics/checkmate-db:18.4.0-xe
     container_name: rpa-checkmate-db
     environment:
