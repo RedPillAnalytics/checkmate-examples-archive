@@ -69,7 +69,7 @@ Finished starting servers
 
 And to ensure that our Gradle CLI is functioning inside the Docker container, run the following:
 
-``bash
+```bash
 ==> ./gradlew obi:build
 
 BUILD SUCCESSFUL in 30s
