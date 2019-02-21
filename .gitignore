@@ -1,14 +1,14 @@
 # No log files
 *.log
 
-# No Apple .DS files
-.DS_Store
-
 # No bootstrap app roles
 bootstrapapproles.xml
 
-# Gradle Cache directory
-.gradle
+# Ignore all hidden files, except this one
+.*
+!.gitignore
+!.travis.yml
+!.circleci/
 
 # Build Directories
 build/
@@ -19,8 +19,3 @@ gradle-app.setting
 # Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
 !gradle-wrapper.jar
 
-# Cache of project
-.gradletasknamecache
-
-# Visual Studio Code
-.vscode/settings.json

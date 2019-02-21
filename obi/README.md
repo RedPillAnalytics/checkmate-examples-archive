@@ -5,8 +5,37 @@ Checkmate is built using [Gradle](https://www.gradle.org): a declarative, [DSL](
 
 A real delivery pipeline will likely have a Continuous Delivery server involved in this process, such as Jenkins, Travis CI, Google CloudBuild, etc. All of these CD servers have Gradle integration which makes Checkmate easy to use. But honestly, all CD servers also provide simple CLI integration for any tool, and this is the usual way we integrate Checkmate, especially when using [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/) configurations.
 
+# Docker Compose for OBIEE
+It's very easy to spin-up an OBIEE 12.2.1.4 environment for use with this Quickstart. Beware: OBIEE is resource-intensive, and requires a considerable amount of memory and CPU. In my Docker configuration on my Mac, I set `CPUs:4` and `Memory:8GB`.
+
+First, clone the repository from GitHub using your favoriate Git client, or use the command-line:
+
+```bash
+git clone https://github.com/RedPillAnalytics/checkmate-examples.git
+cd checkmate-examples
+```
+
+Once inside the repository directory structure, we can spin up the Docker environment using Gradle. Since we are working with the `obi` subproject folder, all of our tasks are prefixed with `obi:`. Additionally, I'm adding the `-q` option to remove some of the noise output to the screen by the Docker Compose functionality. This step starts up a Linux-based OBIEE instance, so it can be time-consuming. Also, the first time this statement is run, the rather-large OBIEE and database Docker images have to be downloaded, which also takes a while:
+
+```bash
+==> ./gradlew obi:composeUp -q
+rcu-database uses an image, skipping
+obiee uses an image, skipping
+Creating rpa-checkmate-db ...
+Creating rpa-checkmate-db ... done
+Creating rpa-checkmate-bi ...
+Creating rpa-checkmate-bi ... done
+```
+
+Once the envionment is available, we can make a bash connection to the main OBIEE container for the remainder of the Quickstart:
+
+```bash
+docker exec -u oracle -ti rpa-checkmate-bi bash
+cd workspace
+```
+
 # Basic Configuration
-This Quickstart uses the standard apporach of configuring Checkmate using a [`build.gradle`](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world) file in the project directory, but there are options for placing hierachical `build.gradle` files throughout the build filesystem. This repository already contains a functioning [`build.gradle`](build.gradle) file, with all the necessary configurations already made, with several of the advanced features that we will apply later commented out.
+The heart of a Gradle build is the [build script](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), which by default is defined using a `build.gradle` file. This repository subdirectory already contains a functioning [build script](https://github.com/RedPillAnalytics/checkmate-examples/blob/master/obi/build.gradle), with all the necessary configurations already made, with several of the advanced features that we will apply later commented out.
 
 The `plugins` block is the first and most important aspect to the build script: it applies any desired plugins from the [Gradle Plugin Portal](https://plugins.gradle.org) using the unique ID associated with that plugin:
 
