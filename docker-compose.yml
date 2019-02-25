@@ -33,12 +33,17 @@ services:
       - rcu-database:1521/xepdb1
       - /opt/oracle/runOBIEE.sh
     ports:
-      - "9500-9514:9500-9514"
-      - "9799:9799"
+      - "9500:9500"
+      - "9502:9502"
+      - "9507:9507"
+      - "9514:9514"
     stdin_open: true
     tty: true
     volumes:
      - $PWD:/workspace
+     - $HOME/.gradle:/home/oracle/.gradle
+     - $HOME/.aws:/home/oracle/.aws
+    user: oracle
   rcu-database:
     image: redpillanalytics/checkmate-db:18.4.0-xe
     container_name: rpa-checkmate-db

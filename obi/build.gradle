@@ -1,20 +1,28 @@
 plugins {
-  id 'com.avast.gradle.docker-compose' version "0.8.14"
   id 'com.redpillanalytics.checkmate.obi' version '9.1.15'
   id 'maven-publish'
+  id 'com.avast.gradle.docker-compose' version "0.8.14"
 }
 
-// OBIEE Environment
-// these can be overriden by environment variables or Gradle project properties
-obi.middlewareHome = '/opt/oracle/product/12.2.1.4.0'
-obi.domainHome = '/opt/oracle/config/domains/bi'
-obi.compatibility = '12.2.1.4'
-obi.adminUser = 'weblogic'
-obi.adminPassword = 'Admin123'
-obi.repositoryPassword = 'Admin123'
+dockerCompose {
+  startedServices = ['obiee','rcu-database']
+}
 
-// Hardcoding the version number
-// We can use other Gradle plugins to make this easier
+// OBI configuration closure
+// these can be overriden by environment variables or Gradle project properties
+obi {
+  middlewareHome = '/opt/oracle/product/12.2.1.4.0'
+  domainHome = '/opt/oracle/config/domains/bi'
+  compatibility = '12.2.1.4'
+  adminUser = 'weblogic'
+  adminPassword = 'Admin123'
+  repositoryPassword = 'Admin123'
+  contentPolicy = 'legacy'
+  importWorkflowConns = true
+}
+
+// DO NOT COMMENT OUT ANYTHING ABOVE THIS LINE
+
 version = '1.0.0'
 
 publishing {
@@ -25,48 +33,39 @@ publishing {
   }
 }
 
+repositories {
+  // local maven repository for artifacts, which is usually ~/.m2
+  // this is really only for testing purposes
+  mavenLocal()
+}
+
 dependencies {
   // Using the Checkmate Testing library which is recommended.
-  obiee "com.redpillanalytics:checkmate-obi:9.1.15"
+  // obiee 'gradle.plugin.com.redpillanalytics:checkmate:+'
   // You can also use Baseline Validation Tool
-  // The installation needs to be available in one of your Maven repositories
+  // The installation ZIP needs to be available in a Maven repository
   // obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
 
   // Dependencies on previous OBIEE builds
-  // Used for building incremental patches, regression testing, and deployments
-  // feature group: 'obiee', name: 'sample-12c-build', version: '+'
-  // feature group: 'obiee', name: 'sample-12c-bar', version: '+'
-  // release group: 'obiee', name: 'sample-12c-build', version: '+'
-  // promote group: 'obiee', name: 'sample-12c-deploy', version: '+'
-  // promote group: 'obiee', name: 'sample-12c-bar', version: '+'
-}
-
-repositories {
-  // resolve local maven repository for published distributions, which is usually ~/.m2
-  // this is really only for testing purposes
-  mavenLocal()
-  // Gradle Plugin repository
-  maven {
-      url "https://plugins.gradle.org/m2/"
-    }
+  feature 'obiee:obi-build:+'
+  // feature 'obiee:obi-bar:+'
+  release 'obiee:obi-build:1.0.0'
+  // release 'obiee:obi-bar:1.0.0'
+  promote 'obiee:obi-deploy:+'
+  // promote 'obiee:obi-bar:+'
 }
 
 // Define the regression "Test Groups" for regression testing
 // You can create as many Test groups as desired
-obi.testGroups {
-  regression {
-    // the catalog folder to test. Recursively tests all analyses in that folder
-    // accepts a colon (:) separeted list of directories
-    libraryFolder = '/shared'
-    // By default, hash values are used for comparision of results
-    // You can force the full comparision of logical SQL and results (takes longer)
-    compareText = false
-    // Provide more output
-    showOutput = false
-  }
-}
-
-dockerCompose {
-  startedServices = ['obiee','rcu-database']
-  tcpPortsToIgnoreWhenWaiting = [9501,9503,9504,9505,9506,9508,9509,9510,9511,9512,9513,9514,9799]
-}
+// obi.testGroups {
+//   regression {
+//     // the catalog folder to test. Recursively tests all analyses in that folder
+//     // accepts a colon (:) separeted list of directories
+//     libraryFolder = '/shared'
+//     // By default, hash values are used for comparision of results
+//     // You can force the full comparision of logical SQL and results (takes longer)
+//     compareText = false
+//     // Provide more output
+//     showOutput = false
+//   }
+// }
