@@ -1,7 +1,8 @@
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '9.1.15'
+  id 'com.redpillanalytics.checkmate.obi' version '9.2.1'
   id 'maven-publish'
   id 'com.avast.gradle.docker-compose' version "0.8.14"
+  id 'com.adarshr.test-logger' version '1.6.0'
 }
 
 dockerCompose {
@@ -18,7 +19,6 @@ obi {
   adminPassword = 'Admin123'
   repositoryPassword = 'Admin123'
   contentPolicy = 'legacy'
-  importWorkflowConns = true
 }
 
 // DO NOT COMMENT OUT ANYTHING ABOVE THIS LINE
@@ -37,6 +37,9 @@ obi {
 //   // local maven repository for artifacts, which is usually ~/.m2
 //   // this is really only for testing purposes
 //   mavenLocal()
+//   maven {
+//     url "https://plugins.gradle.org/m2/"
+//   }
 // }
 
 dependencies {

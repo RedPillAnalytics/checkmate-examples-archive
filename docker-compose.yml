@@ -40,8 +40,13 @@ services:
     stdin_open: true
     tty: true
     volumes:
-     - $PWD:/workspace
+     # our repo
+     - $PWD:/checkmate-examples
+     # checkmate code... for testing (ignored if not there)
+     - $PWD/../checkmate-obi:/checkmate-obi
+     # gradle dependency cache
      - $HOME/.gradle:/home/oracle/.gradle
+     # aws credentials
      - $HOME/.aws:/home/oracle/.aws
     user: oracle
   rcu-database:

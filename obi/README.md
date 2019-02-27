@@ -30,7 +30,7 @@ Creating rpa-checkmate-bi ... done
 Once the envionment is available, we can make a bash connection to the main OBIEE container for the remainder of the Quickstart:
 
 ```bash
-docker exec -u oracle -w /workspace -ti rpa-checkmate-bi bash
+docker exec -u oracle -w /checkmate-examples -ti rpa-checkmate-bi bash
 ```
 
 To ensure our OBIEE environment is functionality correctly, do the following:
@@ -66,7 +66,7 @@ obis1           OBIS            rpa-checkmate-bi          3600        2         
 
 ```
 
-And to ensure that our Gradle CLI is functioning inside the Docker container, let's run a basic Checkmate for OBI build. The first time a command is executed, Gradle will pull down any library dependencies used by Checkmate for OBI from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself, so we should see of this happening:
+And to ensure that our Gradle CLI is functioning inside the Docker container, let's run a basic Checkmate build. The first time a command is executed, Gradle will pull down any library dependencies used by Checkmate from the central Maven repository called [Bintray jCenter](https://bintray.com/bintray/jcenter), including the Gradle distribution itself, so we should see of this happening:
 
 ```bash
 ./gradlew obi:build
@@ -82,7 +82,7 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```groovy
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '9.1.15'
+  id 'com.redpillanalytics.checkmate.obi' version '9.2.1'
   id 'maven-publish'
   id 'com.avast.gradle.docker-compose' version "0.8.14"
 }
@@ -91,6 +91,7 @@ plugins {
 * `com.redpillanalytics.checkmate.obi`: this is the Checkmate for OBI plugin. It enables all the features in this Quickstart.
 * `maven-publish`: a core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses `maven-publish` with it's distribution files and for BAR files.
 * `com.avast.gradle.docker-compose`: enables running the OBIEE 12.2.1.4 on Docker environment for this Quickstart.
+* `com.adarshr.test-logger`: improves readability of output from *regression tests*. We'll discuss testing later on.
 
 With the Checkmate for OBI plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in the root of this repository to see all the tasks associated with the `obi` project subdirectory, specified with the `obi:tasks` command. If we comment everything else out of the `build.gradle` file below the warning comment, the `obi:tasks` command gives us the basic default tasks for the plugin:
 
@@ -764,9 +765,9 @@ cat obi/build/repository/*.json
 The connection pool metadata included in SampleApp isn't the most compelling as it uses XML files, but you can see that the encrypted password is included, and although there are no variables included in this connection pool, if there were, our JSON file would capture those as well.
 
 # Regression Testing
-The high-level process Checkmate for OBI uses to regression test pull requests, source commits, or branch merges, is described below:
+The process Checkmate for OBI uses to regression test pull requests, source commits, or branch merges, is described below:
 * Build deployment artifacts from the current content in the Git repository.
-* Pull down a distribution file of OBI content published previously.
+* Pull down an OBI artifact (distribution or build) published previously.
 * Upload the previous content into an OBIEE environment.
 * Run a series of analyses, saving the logical SQL and query results. This is called the *baseline* phase.
 * Deploy the current version of content into the OBIEE environment, either using incremental patches, or by deploying whole catalogs and repositories, automatically managing the connection pool information.
