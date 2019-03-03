@@ -72,6 +72,38 @@
                             <principals>
                                 <principal>
                                     <class>oracle.security.jps.service.policystore.ApplicationRole</class>
+                                    <name>BIServiceAdministrator</name>
+                                    
+                                    <appscopename>obi</appscopename>
+                                </principal>
+                            </principals>
+                        </grantee>
+                        <permission-set-refs>
+                            <permission-set-ref>
+                                <name>cds.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>bip.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>obips.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>obis.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>essbase.administrator</name>
+                            </permission-set-ref>
+                            <permission-set-ref>
+                                <name>obisch.administrator</name>
+                            </permission-set-ref>
+                        </permission-set-refs>
+                    </grant>
+                    <grant>
+                        <grantee>
+                            <principals>
+                                <principal>
+                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
                                     <name>BIContentAuthor</name>
                                     
                                     <appscopename>obi</appscopename>
@@ -83,42 +115,10 @@
                                 <name>obisch.author</name>
                             </permission-set-ref>
                             <permission-set-ref>
-                                <name>bip.author</name>
-                            </permission-set-ref>
-                            <permission-set-ref>
                                 <name>va.author</name>
                             </permission-set-ref>
-                        </permission-set-refs>
-                    </grant>
-                    <grant>
-                        <grantee>
-                            <principals>
-                                <principal>
-                                    <class>oracle.security.jps.service.policystore.ApplicationRole</class>
-                                    <name>BIServiceAdministrator</name>
-                                    
-                                    <appscopename>obi</appscopename>
-                                </principal>
-                            </principals>
-                        </grantee>
-                        <permission-set-refs>
                             <permission-set-ref>
-                                <name>obis.administrator</name>
-                            </permission-set-ref>
-                            <permission-set-ref>
-                                <name>obisch.administrator</name>
-                            </permission-set-ref>
-                            <permission-set-ref>
-                                <name>bip.administrator</name>
-                            </permission-set-ref>
-                            <permission-set-ref>
-                                <name>essbase.administrator</name>
-                            </permission-set-ref>
-                            <permission-set-ref>
-                                <name>cds.administrator</name>
-                            </permission-set-ref>
-                            <permission-set-ref>
-                                <name>obips.administrator</name>
+                                <name>bip.author</name>
                             </permission-set-ref>
                         </permission-set-refs>
                     </grant>

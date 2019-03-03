@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <PresentationTable mdsid="m80cb6a47-0fa8-0000-714b-e31d00000000" name="More Time Objects" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6a2e-0fa4-0000-714b-e31d00000000.xml#m80cb6a2e-0fa4-0000-714b-e31d00000000">
 <Description><![CDATA[->
 This folder contains additional time attributes like Calendar time attributes and Julian period numbers.]]></Description>

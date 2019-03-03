@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <PhysicalTable mdsid="m80ca6547-0bb9-0000-714b-e31d00000000" name="D10 Product" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" pollFreq="0" x="838" y="158" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000" sourceTableRef="/oracle/bi/server/base/PhysicalTable/80ca6507-0bb9-0000-714b-e31d00000000.xml#m80ca6507-0bb9-0000-714b-e31d00000000">
 <Description><![CDATA[Alias to the Products Dimension Physical table. Aliasing allows multiple representation of the same physical table source in the RPD physical model. It also helps maintenance and lineage.]]></Description>
 <PhysicalColumn mdsid="m80cb2aa0-0bbb-0000-714b-e31d00000000" name="Type_Key" dataType="INT" extName="//Table/SAMP_PRODUCTS_D/TYPE_KEY" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6507-0bb9-0000-714b-e31d00000000.xml#m80cb2a9f-0bbb-0000-714b-e31d00000000">

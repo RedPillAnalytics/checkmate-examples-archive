@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <PresentationHierarchy mdsid="m80cb6b87-0fbc-0000-714b-e31d00000000" name="Products Hierarchy" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationTable/80cb6a59-0fa8-0000-714b-e31d00000000.xml#m80cb6a59-0fa8-0000-714b-e31d00000000" logicalDimensionRef="/oracle/bi/server/base/Dimension/80cb6804-07e3-0000-714b-e31d00000000.xml#m80cb6804-07e3-0000-714b-e31d00000000">
 <Alias name="H1 Products"/>
 <PresentationLevel mdsid="m80cb6b8c-0fbe-0000-714b-e31d00000000" name="All Products" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationHierarchy/80cb6b87-0fbc-0000-714b-e31d00000000.xml#m80cb6b87-0fbc-0000-714b-e31d00000000" logicalLevelRef="/oracle/bi/server/base/Dimension/80cb6804-07e3-0000-714b-e31d00000000.xml#m80cb6907-07e9-0000-714b-e31d00000000">

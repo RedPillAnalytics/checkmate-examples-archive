@@ -2,7 +2,7 @@
     <semanticFullCrawlConfig configID="1234">
         <userInfo runAs="weblogic" runAsGUID="weblogic"/>
         <scheduleInfo isRecurring="true">
-            <startTime date="2018-09-19" time="13:08:13" timeZoneId="(GMT-08:00) Pacific Time (US &amp; Canada); Tijuana">2018-09-19T13:08:13.000-07:00</startTime>
+            <startTime date="2018-11-26" time="12:59:42" timeZoneId="(GMT-08:00) Pacific Time (US &amp; Canada); Tijuana">2018-11-26T12:59:42.000-08:00</startTime>
             <recurringSchedule recurringCount="1" recurringUnit="DAY"/>
         </scheduleInfo>
         <locale>en_US</locale>
@@ -14,7 +14,7 @@
     <catalogFullCrawlConfig includeCatalogDataForIndexing="false" configID="1235" startLocation="/">
         <userInfo runAs="weblogic" runAsGUID="weblogic"/>
         <scheduleInfo isRecurring="true">
-            <startTime date="2018-09-19" time="13:08:13" timeZoneId="(GMT-08:00) Pacific Time (US &amp; Canada); Tijuana">2018-09-19T13:08:13.000-07:00</startTime>
+            <startTime date="2018-11-26" time="12:59:42" timeZoneId="(GMT-08:00) Pacific Time (US &amp; Canada); Tijuana">2018-11-26T12:59:42.000-08:00</startTime>
             <recurringSchedule recurringCount="1" recurringUnit="DAY"/>
         </scheduleInfo>
         <locale>en_US</locale>

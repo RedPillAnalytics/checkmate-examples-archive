@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <PresentationTable mdsid="m80cb6a59-0fa8-0000-714b-e31d00000000" name="Products" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" hasDispName="false" hasDispDescription="false" containerRef="/oracle/bi/server/base/PresentationCatalog/80cb6a2e-0fa4-0000-714b-e31d00000000.xml#m80cb6a2e-0fa4-0000-714b-e31d00000000">
 <Description><![CDATA[Product dimension objects and attributes]]></Description>
 <PresentationColumn mdsid="m80cb6ca2-0faa-0000-714b-e31d00000000" name="Product Number" hasDispName="false" hasDispDescription="false" overrideLogicalName="false" logicalColumnRef="/oracle/bi/server/base/LogicalTable/80cb6807-07f3-0000-714b-e31d00000000.xml#m80cb6808-07d6-0000-714b-e31d00000000">

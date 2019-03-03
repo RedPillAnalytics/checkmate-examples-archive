@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <Dimension mdsid="m80cb6803-07e3-0000-714b-e31d00000000" name="H0 Time" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isTimeDim="true" isValueBased="false" isRagged="false" isSkipped="false" defaultRootLevelRef="/oracle/bi/server/base/Dimension/80cb6803-07e3-0000-714b-e31d00000000.xml#m80cb68fb-07e9-0000-714b-e31d00000000" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80cb6802-07d0-0000-714b-e31d00000000.xml#m80cb6802-07d0-0000-714b-e31d00000000">
 <Description><![CDATA[Time Level Based Dimension Hierarchy ]]></Description>
 <LogicalLevel mdsid="m80cb68fb-07e9-0000-714b-e31d00000000" name="Total Time" isGTA="true" isFDUC="true" memberCount="1" levelConst="&apos;Total Time&apos;">

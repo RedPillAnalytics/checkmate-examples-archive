@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <LogicalTable mdsid="m80cb68bb-07f3-0000-714b-e31d00000000" name="D2 Offices" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="938" y="669" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80cb6802-07d0-0000-714b-e31d00000000.xml#m80cb6802-07d0-0000-714b-e31d00000000">
 <Description><![CDATA[This logical table maps to the physical Office Dimension table with various attributes.]]></Description>
 <LogicalColumn mdsid="m80cb68bc-07d6-0000-714b-e31d00000000" name="Office" isWriteable="false" customSortOrderRef="/oracle/bi/server/base/LogicalTable/80cb68bb-07f3-0000-714b-e31d00000000.xml#m80cb68c4-07d6-0000-714b-e31d00000000">

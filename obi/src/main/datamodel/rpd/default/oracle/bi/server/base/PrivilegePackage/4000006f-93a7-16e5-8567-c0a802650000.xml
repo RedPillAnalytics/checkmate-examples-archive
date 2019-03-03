@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <PrivilegePackage mdsid="m4000006f-93a7-16e5-8567-c0a802650000" name="PrivPack_4209:437771418078247" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" roleRef="/oracle/bi/server/base/Group/00000000-89f0-1521-ac27-0a9f5cb00000.xml#m00000000-89f0-1521-ac27-0a9f5cb00000" LogicalQueryMaxExecTime="0">
 <QueryPrivilegeMapping databaseRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000" queryPrivilegeRef="/oracle/bi/server/base/QueryPrivilege/40000074-93a7-16e5-8567-c0a802650000.xml#m40000074-93a7-16e5-8567-c0a802650000"/>
 </PrivilegePackage>

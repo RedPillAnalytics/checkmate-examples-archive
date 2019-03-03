@@ -1,2 +1,2 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<sawsemaphore:semaphore xmlns:sawsemaphore="com.siebel.analytics.web/semaphore/v1" host="LIN-ORA" pid="14697" time="1537385893" lifespan="short" />
+<?xml version="1.0" encoding="utf-8"?>
+<sawsemaphore:semaphore xmlns:sawsemaphore="com.siebel.analytics.web/semaphore/v1" host="lin-ora" pid="20272" time="1551615039" lifespan="short"/>

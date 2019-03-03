@@ -82,14 +82,13 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```groovy
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '9.2.1'
-  id 'maven-publish'
+  id 'com.redpillanalytics.checkmate.obi' version '9.2.2'
   id 'com.avast.gradle.docker-compose' version "0.8.14"
+  id 'com.adarshr.test-logger' version '1.6.0'
 }
 ```
 
 * `com.redpillanalytics.checkmate.obi`: this is the Checkmate for OBI plugin. It enables all the features in this Quickstart.
-* `maven-publish`: a core Gradle plugin that enables publishing to Maven repositories. Checkmate for OBI uses `maven-publish` with it's distribution files and for BAR files.
 * `com.avast.gradle.docker-compose`: enables running the OBIEE 12.2.1.4 on Docker environment for this Quickstart.
 * `com.adarshr.test-logger`: improves readability of output from *regression tests*. We'll discuss testing later on.
 
@@ -228,12 +227,12 @@ BUILD SUCCESSFUL in 2s
 ```
 
 Checkmate for OBI enables the following Task Groups:
-* **Checkmate Distribution**: Managing the creation and deletion of different types of OBIEE distribution files.
+* **Checkmate Distribution**: Managing of different types of OBIEE *artifacts* of OBIEE content: *distribution files* and *BAR* files. Distribution files are the ZIP artifacts of OBIEE content that Checkmate generates. Depending on the workflow, a distribution contains a binary metadata repository, the full catalog, an archive represenetation of the `/Shared` folders of the catalog, incremental patches for both the repository and the catalog, and the results files from any regression tests run while building the artifact. We'll dive more into distirubtion files later on. BAR files are zip files that were introduced in OBIEE 12c.
 * **Checkmate Export**: Tasks that facilitate exporting content from an OBIEE instance into the build directory and eventually into source control.
 * **Checkmate Import**: Tasks that facilitate importing content into an OBIEE instance from source control, or from artifacts downloaded from Maven.
 * **Checkmate SCM**: Tasks for integrating 'checkout' and 'commit' workflows with [Git](https://git-scm.com). These tasks are for very complex workflows, and are generally unnecessary when using standard CI/CD processes.
 * **Checkmate Services**: The `metadataReload` task, which executes *Reload Files and Metadata* in OBIEE.
-* **Checkmate Testing**: Tasks for Regression Testing OBIEE.
+* **Checkmate Testing**: Tasks for regression testing OBIEE.
 
 The Maven Publish plugin enables the following Task Groups:
 * **Publishing**: Publishing content to Maven repositories.
@@ -265,7 +264,6 @@ obi {
   adminPassword = 'Admin123'
   repositoryPassword = 'Admin123'
   contentPolicy = 'legacy'
-  importWorkflowConns = true
 }
 ```
 
@@ -273,11 +271,10 @@ Notes on a few of the parameters below:
 * **domainHome:** Defaults to `<obi.middlewareHome>/user_projects/domains/bi`, but can be configured separately as we've done here.
 * **compatibility:** Options are `12.2.1.4, 12.2.1.3, 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7`. There are subtle and not-so-subtle differences in the way Checkmate interacts with OBIEE in the different releases, so this parameter controls that behavior. The 11.x functionality and parameters will likely disappear in the near future.
 * **contentPolicy:** This parameter controls the relationship between legacy import/export features, and the **BAR** functionality that exists in newer versions of 12c. Possible values include: `bar, mixed, legacy, legacy-metadata, legacy-catalog`. The main values for this parmater are `legacy` or `bar`, with all others being for mostly depracated use cases. Currently, we have the value set to `legacy`, which means we are building distribution files, instead of BAR files.
-* **importWorkflowConns:** When we execute our promotion workflow later on, we do want Checkmate to automatically manage connection pools.
 
 # Building and Publishing
 The workflow for building OBIEE content usually occurs in the following steps:
-* **Build:** The building of OBIEE deployment artifacts from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involve building a binary RPD, as well as a catalog archive file of the Shared Folders of the catalog. Depending on the value of `contentPolicy`, we either build a legacy ZIP file, called a Checkmate *distribution* file, or a 12c *BAR* file. Either a distribrution file, or a BAR file, is supported in working with OBIEE 12c environments.
+* **Build:** The building of OBIEE deployment artifacts from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involve building a binary RPD, as well as a catalog archive file of the `/Shared` folders of the catalog. Depending on the value of `contentPolicy`, we either build a distribution file or a 12c BAR file. Either a distribrution file, or a BAR file, is supported in working with OBIEE 12c environments.
 * **Publish:** Publishing distribution files or BAR files to one or more [Maven repositories](https://maven.apache.org/pom.html#Repositories).
 
 Currently, we have the publication repositories and a version number configured but commented out in our `build.gradle`. Let's uncomment these lines to turn on our publication functionality:
@@ -312,7 +309,7 @@ publishing {
 
 We're hard-coding our version number to `1.0.0` in the build.gradle file, although we would normally use a plugin such as the [axion-release-plugin](https://github.com/allegro/axion-release-plugin) to handle release management with semantic versioning and automatic version bumping
 
-Why do we bother publishing our OBIEE distribution or BAR files as artifacts to Maven repositories? So we can pull that artifact later by simply referring to the version number. This allows us to automate deployments to downstream environments, as Checkmate for OBI can simply pull artifacts from Maven prior to deployment. It also allows us to automate regression testing. As you will see later in the Quickstart, we can declare published artifact versions as baselines for testing new builds generated by Checkmate for OBI. This gives us a convenient way to pull down any prior distribution for regression testing or integration testing purposes. We can also generate incremental patch files this way and include them in our distributin files: we simply pull down from Maven whatever distribution was last published to our **Production** server, and use that in the patch-creation process.
+Why do we bother publishing our OBIEE distribution or BAR files as artifacts to Maven repositories? So we can pull that artifact later by simply referring to the version number. This allows us to automate deployments to downstream environments, as Checkmate can simply pull artifacts from Maven prior to deployment. It also allows us to automate regression testing. As you will see later in the Quickstart, we can declare published artifact versions as baselines for testing new builds generated by Checkmate for OBI. This gives us a convenient way to pull down any prior distribution for regression testing or integration testing purposes. We can also generate incremental patch files this way and include them in our distributin files: we simply pull down from Maven whatever distribution was last published to our **Production** server, and use that in the patch-creation process.
 
 We'll run the `obi:build` task again, but this time we'll use the `--console=plain` option to get better screen output. We'll also add the `obi:clean` task to first clean out our build directory to ensure we re-generate all our artifacts:
 
@@ -331,7 +328,7 @@ BUILD SUCCESSFUL in 32s
 
 You'll notice that the `build` task doesn't really do anything on its own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/current/userguide/build_lifecycle.html) implementation.
 
-Furthermore... we can run the entire Build, Bundle and Publish workflow by simply running the `publish` task, which has dependencies on building and bundling all the content.
+Furthermore... we can run the entire Build and Publish workflow by simply running the `publish` task, which has dependencies on building and bundling all the content.
 
 ```bash
 ./gradlew obi:publish --console=plain
@@ -401,15 +398,18 @@ A build group allows us to declare a dependency on a prior artifact, and then ge
 * **release:** used to regression test new releases prior to being deployed to downstream environments, or prior to being merged into release branches such as **master** or **release.x.x.x**.
 * **promote:** used for promoting content to downstream environments.
 
-Because these build groups are already built-in, we don't have to do much to enable them; all we have to do is declare a dependency on a prior artifact version, and the tasks in this build group will magically appear. Since we now have the 1.0.0 distribution published to our Maven Local repository, we can use that distribution as our dependency for these build groups. We could also define custom build groups using the `obi.buildGroups {}` DSL structure if for some reason the combination of **feature**, **release** and **promote** was not sufficient for our workflow.
+Because these build groups are already built-in, we don't have to do much to enable them; all we have to do is declare a dependency on a prior artifact version, and the tasks in this build group will magically appear. Since we now have the `1.0.0` distribution published to our Maven Local repository, we can use that distribution as our dependency for these build groups. We could also define custom build groups using the `obi.buildGroups {}` DSL structure if for some reason the combination of **feature**, **release** and **promote** was not sufficient for our workflow.
 
-The first thing we have to tell Checkmate for OBI is where to go looking for our prior distribution files. We're still using Maven Local for this. So let's comment out the following lines:
+The first thing we have to tell Checkmate for OBI is where to go looking for our artifacts. We're still using Maven Local for this. So let's comment out the following lines:
 
 ```gradle
 repositories {
   // local maven repository for artifacts, which is usually ~/.m2
-  // this is really only for testing purposes
+  //  this is really only for testing purposes
   mavenLocal()
+  // maven {
+  //   url "https://plugins.gradle.org/m2/"
+  // }
 }
 ```
 
@@ -440,7 +440,7 @@ feature 'obiee:obi-build:+'
 release 'obiee:obi-build:1.0.0'
 ```
 
-The DSL might be a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI artifacts. Basically, we use a Gradle [configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html) to declare dependencies on artifacts that we want Checkmate to pull down and unzip whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus sign (+): this signifies to Checkmate that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
+The DSL might be a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI artifacts. Basically, we use a Gradle [configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html) to declare dependencies on artifacts that we want Checkmate to pull down whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus sign (+): this signifies to Checkmate that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
 
 ```bash
 ./gradlew obi:tasks
@@ -723,7 +723,7 @@ BUILD SUCCESSFUL in 44s
 
 You'll notice that `promotePatch` is a container task for executing `promoteMetadataPatch` and `promoteCatalogPatch`, either of which can be run individually.
 
-Promoting to downstream environments using incremental patches is a great solution for truly continuous environments that deploy often. But as the time between releases increases, so does the size and complexity of the incremental patches, and the possibility that automated application of these patches might fail. In these cases, we can simply use the `promoteImportWorkflow` task:
+Promoting to downstream environments using incremental patches is a great solution for truly continuous environments that deploy often. But as the time between releases increases, so does the size and complexity of the incremental patches, and the possibility that the automated application of these patches might fail. In these cases, we can simply use the `promoteImportWorkflow` task:
 
 ```bash
 ./gradlew obi:promoteImportWorkflow --console=plain
@@ -739,7 +739,7 @@ Promoting to downstream environments using incremental patches is a great soluti
 BUILD SUCCESSFUL in 30s
 6 actionable tasks: 6 executed
 ```
-Notice that our `promoteImportWorkflow` task manages connection pools for us. Before our new metadata content is imported into the instance, we save the connection pool information as a JSON file, and then re-import it once the import process is complete. You can see the connection pool files in the build directory:
+Notice that our `promoteImportWorkflow` task manages connection pools for us. Before our new metadata content is imported into the instance, we save the connection pool information as a JSON file, and then reapply it once the import process is complete. You can see the connection pool files in the build directory:
 
 ```bash
 cat obi/build/repository/*.json
@@ -765,17 +765,53 @@ cat obi/build/repository/*.json
 The connection pool metadata included in SampleApp isn't the most compelling as it uses XML files, but you can see that the encrypted password is included, and although there are no variables included in this connection pool, if there were, our JSON file would capture those as well.
 
 # Regression Testing
-The process Checkmate for OBI uses to regression test pull requests, source commits, or branch merges, is described below:
-* Build deployment artifacts from the current content in the Git repository.
-* Pull down an OBI artifact (distribution or build) published previously.
-* Upload the previous content into an OBIEE environment.
-* Run a series of analyses, saving the logical SQL and query results. This is called the *baseline* phase.
-* Deploy the current version of content into the OBIEE environment, either using incremental patches, or by deploying whole catalogs and repositories, automatically managing the connection pool information.
-* Run the same series of analyses that were run during the baseline phase, saving the output. This is called the *revision* phase.
+Regression testing in OBIEE means ensuring that nothing in our new development breaks anything developed previously. In Checkmate, a regression test is simply a web catalog analysis that we've written to test some aspect of our analytics system. To fully execute the test, we need to capture the results of that analysis *before and after* our most recent changes, and then compare those results. If results match, the test is successful; otherwise, it's not. We typically run these results in response to Git commits, and more specifically, either *pull requests* or *branch merges*.
+
+Checkmate has a pluggable regression testing framework, which currently supports using either the standard Checkmate framework built in to the Gradle plugin, or the Baseline Validation Tool (BVT) which is offered from Oracle. We prefer our built-in regression testing framework, so we'll configure that, first by telling Checkmate that the library is available in the Gradle Plugin Maven repo:
+
+```gradle
+repositories {
+  // local maven repository for artifacts, which is usually ~/.m2
+  //  this is really only for testing purposes
+  mavenLocal()
+  // Plugin portal Maven repo
+  maven {
+    url "https://plugins.gradle.org/m2/"
+  }
+}
+```
+
+Then we use built-in Gradle dependency management to tell Checkmate that the `obiee` configuration requires the Checkmate regression testing library:
+
+```gradle
+dependencies {
+  // Using the Checkmate Testing library which is recommended.
+  obiee 'gradle.plugin.com.redpillanalytics:checkmate:+'
+  // You can also use Baseline Validation Tool
+  // The installation ZIP needs to be available in a Maven repository
+  // obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
+
+  // Dependencies on previous OBIEE builds
+  feature 'obiee:obi-build:+'
+  // feature 'obiee:obi-bar:+'
+  release 'obiee:obi-build:1.0.0'
+  // release 'obiee:obi-bar:1.0.0'
+  promote 'obiee:obi-deploy:+'
+  // promote 'obiee:obi-bar:+'
+}
+```
+
+Later on we'll look at a streamlined and optimzied regression testing workflow, but unforunately for that to make sense, we'll first have to walk through the less optimized version. At a high-level, our less-optimized regresstion testing workflow looks like this:
+* Pull down an OBI artifact (distribution or BAR) published previously to a Maven repository.
+* Upload the previous content into an OBIEE environment, which we refer to as the OBIEE *build server*.
+* Run a series of analyses, saving the logical SQL and query results. We call this the *baseline* testing phase, because it's run against our *baseline* of content... or the previous artifact.
+* Build and deploy the current version of content from our Git repository into the OBIEE environment, either using incremental patches, or by deploying whole catalogs and repositories.
+* Run the same series of analyses that we ran during the baseline phase, saving the output. This is called the *revision* phase, because it's run using our most recent content, which contains all of our *revisions*.
 * Compare the output generated from the baseline phase with the output generated from the revision phase. Naturally, we call this the *compare* phase.
 
+For regression testing, Checkmate for OBI has the concept of a **test group**, which is configured using the `obi.testGroups {}` DSL structure. The default test group called **regression** is already built in, and by default tests any analyses in the `/Shared/Regression` folder. So out of the box, if we have any analyses that we want to run before and after our committed changes, we just add those analyses to `/Shared/Regression` and the testing tasks we call below will test them. It doesn't matter what visualizations we create for these analyses... it's only the logical SQL that we care about, so table views are fine.
 
-For regression testing, Checkmate for OBI has the concept of a **test group**, which is configured using the `obi.testGroups {}` DSL structure. The default test group called **regression** is already built in, but we can use the same DSL structure to customize that build group:
+Since our out-of-the-box **SampleAppLite** content doesn't have anything in the `/Shared/Regression` folder, we'll just test the entire `/Shared` folder. We'll make some slight changes to our default **regression** test group:
 
 ```groovy
 obi.testGroups {
@@ -793,16 +829,24 @@ obi.testGroups {
 ```
 
 Let's take a look at some of the parameters configured here, as well as one other that is not shown, but still worth mentioning:
-* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate for OBI recursively includes every analysis in those folders.
-* **compareText:** By default, Checkmate for OBI uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results.
+* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate recursively includes every analysis in those folders.
+* **compareText:** By default, Checkmate uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results.
 * **showOutput:** Output more information about the execution of each regression test. Feel free to set this to `true` to see the logical SQL being executed, any error stack generated, etc.
-* **impersonateUser:** Specify a user that you want to impersonate for this test group. This functionality enables us to configure multiple test groups that run the same regression tests but with different security profiles. This requires that the `adminUser` specified above be granted the `impersonate` application role, which is not granted by default.
+* **impersonateUser:** Specify a user that you want to impersonate for this test group. This allows us to configure multiple test groups that run the same regression tests but with different security profiles. This requires that the `adminUser` specified above be granted the `impersonate` privilege, which is not granted by default.
 
-Regression Testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together. From our `tasks` command, we've highlighted the output of the relevant tasks, listing the granular tasks first, followed by the complex workflow tasks:
+Regression testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together. First, let's take a look at the granular testing tasks:
 
-```
-Testing tasks
--------------
+```bash
+./gradlew obi:tasks --group "Checkmate Testing"
+
+> Task :obi:tasks
+
+------------------------------------------------------------
+Tasks runnable from project :obi
+------------------------------------------------------------
+
+Checkmate Testing tasks
+-----------------------
 baselineTest - Execute all Baseline regression tests for the entire project.
 compareTest - Execute all Compare regression tests for the entire project.
 extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
@@ -813,14 +857,46 @@ regressionRevisionLibrary - Create the Revision regression test library CSV file
 regressionRevisionTest - Execute the Revision regression test library file for Test Group 'regression'.
 revisionTest - Execute all Revision regression tests for the entire project.
 
-Workflow tasks
---------------
+To see all tasks and more detail, run gradlew tasks --all
+
+To see more detail about a task, run gradlew help --task <task>
+
+BUILD SUCCESSFUL in 4s
+1 actionable task: 1 executed
+```
+
+And, the workflow tasks, with many of them for regression testing:
+
+```bash
+./gradlew obi:tasks --group "Checkmate Workflow"
+
+> Task :obi:tasks
+
+------------------------------------------------------------
+Tasks runnable from project :obi
+------------------------------------------------------------
+
+Checkmate Workflow tasks
+------------------------
+baselineWorkflow - Import 'current' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
 featureBaselineWorkflow - Import 'feature' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
+featureImportWorkflow - Import 'feature' metadata and catalog artifacts while managing connection pools.
 featureRevisionPatchWorkflow - Apply 'feature' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
 featureRevisionWorkflow - Import 'feature' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
+importWorkflow - Import 'current' metadata and catalog artifacts while managing connection pools.
+promoteImportWorkflow - Import 'promote' metadata and catalog artifacts while managing connection pools.
 releaseBaselineWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
+releaseImportWorkflow - Import 'release' metadata and catalog artifacts while managing connection pools.
 releaseRevisionPatchWorkflow - Apply 'release' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
 releaseRevisionWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
+revisionWorkflow - Import 'current' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
+
+To see all tasks and more detail, run gradlew tasks --all
+
+To see more detail about a task, run gradlew help --task <task>
+
+BUILD SUCCESSFUL in 4s
+1 actionable task: 1 executed
 ```
 
 Executing a regression testing workflow, managing all three phases of the process (**baseline**, **revision**, **compare**), is as easy as executing the following two workflow tasks.

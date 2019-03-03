@@ -44,8 +44,10 @@ services:
      - $PWD:/checkmate-examples
      # checkmate code... for testing (ignored if not there)
      - $PWD/../checkmate-obi:/checkmate-obi
-     # gradle dependency cache
+     # gradle cache
      - $HOME/.gradle:/home/oracle/.gradle
+    # mavenLocal
+     - $HOME/.m2:/home/oracle/.m2
      # aws credentials
      - $HOME/.aws:/home/oracle/.aws
     user: oracle

@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <PhysicalTable mdsid="m80ca6588-0bb9-0000-714b-e31d00000000" name="D01 Time Day Grain" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" pollFreq="0" x="845" y="335" rowCount="0.0" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000" sourceTableRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca6551-0bb9-0000-714b-e31d00000000">
 <PhysicalColumn mdsid="m80ca659d-0bbb-0000-714b-e31d00000000" name="Julian_Day_Num" dataType="INT" extName="//Table/SAMP_TIME_DAY_D/Julian_Day_Num" rowCount="0.0" specialType="none" sourceColumnRef="/oracle/bi/server/base/PhysicalTable/80ca6551-0bb9-0000-714b-e31d00000000.xml#m80ca6566-0bbb-0000-714b-e31d00000000">
 </PhysicalColumn>

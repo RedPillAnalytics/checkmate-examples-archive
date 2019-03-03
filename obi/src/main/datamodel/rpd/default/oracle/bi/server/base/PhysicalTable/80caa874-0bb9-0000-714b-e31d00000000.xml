@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="UTF-8" ?>
+<?xml version="1.0" encoding="ISO-8859-1" ?>
 <PhysicalTable mdsid="m80caa874-0bb9-0000-714b-e31d00000000" name="SAMP_TARGETS_F" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" x="277" y="647" rowCount="0.0" uri="VALUEOF(NQ_SESSION.SERVICEINSTANCEROOT)/data/SAMP_TARGETS_F.xml" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000">
 <Description><![CDATA[TARGETS FACTS Physical table. This table is not directly used by the logical model, it is accessed via the aliases setup in the physical diagram. The database is of XML type, the setup of this physical table leverages the value of an RPD variable : NQ_SESSION.SERVICEINSTANCEROOT (see the XML tab in this dialog box).]]></Description>
 <PhysicalColumn mdsid="m80caa876-0bbb-0000-714b-e31d00000000" name="Revenue" iconIndex="32768" dataType="DOUBLE" extName="//Table/SAMP_TARGETS_F/REVENUE" rowCount="0.0" specialType="none">
