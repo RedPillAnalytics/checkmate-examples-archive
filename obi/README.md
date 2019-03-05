@@ -585,7 +585,7 @@ cat obi/build/repository/*.json
 The connection pool metadata included in SampleApp isn't very compelling as it uses XML data files, but you can see that the encrypted password is included, and although no variables are included in this connection pool, if they did, our JSON file would capture those as well.
 
 # Testing
-Checkmate has a pluggable testing framework that supports either the standard Checkmate testing library built in to the Gradle plugin, or the Baseline Validation Tool (BVT) which is offered from Oracle. We prefer our built-in testing framework, so we'll configure that, first by telling Checkmate that the library is available in the Gradle Plugin Maven repo, which is specified with the `maven { url "https://plugins.gradle.org/m2/" }` line:
+Checkmate has a pluggable testing framework that supports either the standard Checkmate testing library built in to our Gradle plugin, or the Baseline Validation Tool (BVT) which is offered from Oracle. We prefer our built-in testing framework, so we'll configure that, first by telling Checkmate that the library is available in the Gradle Plugin Maven repo, which is specified with the `maven { url "https://plugins.gradle.org/m2/" }` line:
 
 ```gradle
 repositories {
@@ -593,7 +593,7 @@ repositories {
   maven { url "https://plugins.gradle.org/m2/" }
 }
 ```
-Then we tell Checkmate that the `obiee` configuration requires the Checkmate regression testing library, which is specified with the `com.redpillanalytics:checkmate-obi:+` dependency:
+Then we tell Checkmate that the `obiee` configuration requires the Checkmate testing library, which is specified with the `com.redpillanalytics:checkmate-obi:+` dependency:
 
 ```gradle
 dependencies {
@@ -605,11 +605,13 @@ dependencies {
 ```
 In Checkmate, a test is simply a web catalog analysis that we've written to test some aspect of our analytics system. In the analysis, we can join together a series of tables and ensure that they join correctly, or make calculations across multiple hierarchies and ensure that the query results make sense. This analysis will be processed using two different types of tests in Checkmate:
 * **Results Tests:** extract the *logical SQL* from the analysis and execute it against the BI Server. We store the logical SQL, the full results from the analysis, and the hash value from the results in the build directory, and also collect it in our distribution file. This gives us access to the test results whenever we pull the artifact. You can think of results tests as similar to *unit tests* in other development paradigms.
-* **Compare Tests:** compare the results tests from our current branch with the results tests extracted from our distribution file to see if either the logical SQL changes, or the execution results change. This comparision can be done using the hash value initially calculated (faster), or a full textual comparison of the results. You can think of compare tests as similar to *regression tests* in other development paradigms.
+* **Compare Tests:** compare the results tests from our current branch with the results tests extracted from our distribution file to see if either the logical SQL or the execution results change. This comparision can be done using the hash value calculated during the results test(faster), or a full textual comparison of the analysis results test output. You can think of compare tests as similar to *regression tests* in other development paradigms.
 
-To fully execute the test, we need to capture the results of that analysis *before and after* our most recent changes, and then compare those results. If results match, the test is successful; otherwise, it's not. We typically run these results in response to Git commits, and more specifically, either *pull requests* or *branch merges*. Additionally, Checkmate generates JUnit XML files for every unit and regression test it executes with the result of the test (*success, failed, skipped*) as well as the execution time, and the standard output and error of the process. Most continuous integration servers and development IDEs are able to parse JUnit files and report back on the success and failure of each test.
+To fully execute each test, we need to capture the results of that analysis *before and after* our most recent changes, and then compare those results. If results match, the test is successful; otherwise, it's not. We typically run these results in response to Git commits, and more specifically, either *pull requests* or *branch merges*. Additionally, Checkmate generates JUnit XML files for every unit and regression test it executes. Each JUnit result file expresses the overall test result (*success, failed, skipped*) as well as the execution time, and the standard output and error of the process. Most continuous integration servers and development IDEs are able to parse JUnit files and report back on the success and failure of tests either individually or aggregated across complex testing workflows.
 
-Checkmate for OBI has the concept of a **test group**, which is configured using the `obi.testGroups {}` DSL structure. The default test group called **regression** is already built in, and by default recursively tests any analyses in the `/Shared/Regression` folder. So out of the box, if we have any analyses that we want to run before and after our committed changes, we just add those analyses to `/Shared/Regression` and the testing tasks we call below will test them. An example test group configuration would look like this:
+Checkmate for OBI has the concept of a **test group**, which is configured using the `obi.testGroups {}` DSL structure. The default test group called **regression** is already built in, and by default recursively tests any analyses in the `/Shared/Regression` folder. So out of the box, if we have any analyses that we want to run before and after our committed changes, we just add those analyses to `/Shared/Regression` and the before and after logical SQL and results will be compared during each build.
+
+If we wanted to modify settings in our `regression` test group, we can see an example of that below. We could use the same DSL to create whole new test groups as well:
 
 ```gradle
 obi.testGroups {
@@ -617,18 +619,18 @@ obi.testGroups {
     libraryFolder = '/shared/sales-analytics:/shared/sales-reports'
     compareText = false
     showOutput = false
-    impersonateUser = 'sales-admin'
+    impersonateUser = 'sales-consumer'
   }
 }
 ```
 
 Here are a few of the configurations we can define in `obi.testGroups{}`:
-* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate recursively includes every analysis in those folders. `/shared/regression` is also the default, but we are specifiying it here for clarity.
+* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate recursively includes every analysis in those folders.
 * **compareText:** By default, Checkmate uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results. We are using the default value of `false`.
 * **showOutput:** Output more information about the execution of each regression test. Feel free to set this to `true` to see the logical SQL being executed, any error stack generated, etc. We are using the default value of `false`.
 * **impersonateUser:** Specify a user that you want to impersonate for this test group. This allows us to configure multiple test groups that run the same regression tests but with different security profiles. This requires that the `adminUser` specified above be granted the `impersonate` privilege, which is not granted by default.
 
-To start with, we'll import our content from Git into OBIEE and then run results tests and include the results in our distribution file:
+Lets import our content from Git into OBIEE and then run results tests and include the results in our distribution file:
 
 ```bash
 ./gradlew obi:resultsWorkflow publish --console=plain
