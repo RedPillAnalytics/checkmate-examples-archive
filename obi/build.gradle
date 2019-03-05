@@ -1,5 +1,5 @@
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '10.0.0'
+  id 'com.redpillanalytics.checkmate.obi' version '10.0.4'
   id 'com.avast.gradle.docker-compose' version "0.8.14"
   id 'com.adarshr.test-logger' version '1.6.0'
 }
@@ -17,6 +17,7 @@ obi {
   adminUser = 'weblogic'
   adminPassword = 'Admin123'
   repositoryPassword = 'Admin123'
+  contentPolicy = 'distribution'
 }
 
 // DO NOT COMMENT OUT ANYTHING ABOVE THIS LINE
@@ -36,18 +37,12 @@ repositories {
   //  this is really only for testing purposes
   mavenLocal()
   // Plugin portal Maven repo
-  maven {
-    url "https://plugins.gradle.org/m2/"
-  }
+  maven { url "https://plugins.gradle.org/m2/" }
 }
 
 dependencies {
-  // Using the Checkmate Testing library which is recommended.
+  // Checkmate testing library
   obiee 'com.redpillanalytics:checkmate-obi:+'
-  // You can also use Baseline Validation Tool
-  // The installation ZIP needs to be available in a Maven repository
-  // obiee 'com.oracle:oracle-bvt:+'
-
   // Dependencies on previous OBIEE builds
   //feature 'obiee:obi-build:+'
   // feature 'obiee:obi-bar:+'
@@ -55,19 +50,4 @@ dependencies {
   // release 'obiee:obi-bar:1.0.0'
   //promote 'obiee:obi-deploy:+'
   // promote 'obiee:obi-bar:+'
-}
-
-// Define the regression "Test Groups" for regression testing
-// You can create as many Test groups as desired
-obi.testGroups {
-  regression {
-    // the catalog folder to test. Recursively tests all analyses in that folder
-    // accepts a colon (:) separeted list of directories
-    libraryFolder = '/shared'
-    // By default, hash values are used for comparision of results
-    // You can force the full comparision of logical SQL and results (takes longer)
-    compareText = false
-    // Provide more output
-    showOutput = false
-  }
 }

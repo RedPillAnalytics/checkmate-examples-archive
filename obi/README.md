@@ -1,12 +1,12 @@
 # Checkmate for OBI Quickstart
-This Quickstart demonstrates the basic functionality of the Checkmate for OBI Build Framework, using version 12.2.1.4 of Oracle Business Intelligence. The project folder includes sample OBIEE content from [SampleAppLite](https://docs.oracle.com/middleware/bi12214/biee/BIESG/GUID-7FCD90A3-E005-49BF-902F-30FBF9B41B07.htm#BIESG9340) already checked into the [`src/main`](src/main) directory. The repository also contains a [Docker compose](https://docs.docker.com/compose/overview/) configuration that provides an OBIEE 12.2.1.4 environment for walking through the Quickstart.
+This Quickstart demonstrates basic functionality of the Checkmate for OBI Build Framework, using version 12.2.1.4 of Oracle Business Intelligence. The project folder includes sample OBIEE content from [SampleAppLite](https://docs.oracle.com/middleware/bi12214/biee/BIESG/GUID-7FCD90A3-E005-49BF-902F-30FBF9B41B07.htm#BIESG9340) already checked into the [`src/main`](src/main) directory. The repository also contains a [Docker compose](https://docs.docker.com/compose/overview/) configuration that provides an OBIEE 12.2.1.4 environment for walking through the Quickstart.
 
-Checkmate is built using [Gradle](https://www.gradle.org): a declarative, [DSL](https://en.wikipedia.org/wiki/Domain-specific_language)-based build tool most commonly associated with building JVM-based software and [Android apps](https://developer.android.com/studio/index.html). Specifically, Checkmate is a series of [Gradle Plugins](https://guides.gradle.org/designing-gradle-plugins/). The following OBI functionality exists in the [com.redpillanalytics.checkmate.obi](https://plugins.gradle.org/plugin/com.redpillanalytics.checkmate.obi) plugin: source control integration, content versioning and publishing, automated regression and integration testing, and automated deployments.
+Checkmate is built using [Gradle](https://www.gradle.org): a declarative, [DSL](https://en.wikipedia.org/wiki/Domain-specific_language)-based build tool commonly associated with building JVM-based software and [Android apps](https://developer.android.com/studio/index.html). Specifically, Checkmate is a series of [Gradle Plugins](https://guides.gradle.org/designing-gradle-plugins/). The following OBI functionality exists in the [com.redpillanalytics.checkmate.obi](https://plugins.gradle.org/plugin/com.redpillanalytics.checkmate.obi) plugin: source control integration, content versioning and publishing, automated regression and integration testing, and automated deployments.
 
-A real delivery pipeline will likely have a Continuous Delivery server involved in this process, such as Jenkins, Travis CI, Google CloudBuild, etc. All of these CD servers have Gradle integration which makes Checkmate easy to use. But honestly, all CD servers also provide simple CLI integration for any tool, and this is the usual way we integrate Checkmate, especially when using [Jenkins Pipeline](https://jenkins.io/doc/book/pipeline/) configurations.
+A real delivery pipeline will likely have a Continuous Delivery server involved in this process, such as Jenkins, Travis CI, Google CloudBuild, etc. All of these CD servers have Gradle integration which makes Checkmate easy to use.
 
 # Docker Compose for OBIEE
-We have configured all the necessary steps for building an OBIEE 12.2.1.4 environment on Docker for use with this Quickstart. Beware: OBIEE is resource-intensive, and requires a considerable amount of memory and CPU for your Docker daemon. In my Docker configuration on my Mac, I set `CPUs:4` and `Memory:8GB`, but you might be able to make it work with smaller configurations.
+We have configured all the necessary steps for starting an OBIEE 12.2.1.4 environment on Docker for use with this Quickstart. Beware: OBIEE is resource-intensive, and requires a considerable amount of memory and CPU for your Docker daemon. We recommend the following settings: `CPUs:4` and `Memory:8GB`.
 
 First, clone the repository from GitHub using your favoriate Git client, or use the command-line:
 
@@ -82,7 +82,7 @@ The `plugins` block is the first and most important aspect to the build script: 
 
 ```groovy
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version '9.2.2'
+  id 'com.redpillanalytics.checkmate.obi' version '10.0.4'
   id 'com.avast.gradle.docker-compose' version "0.8.14"
   id 'com.adarshr.test-logger' version '1.6.0'
 }
@@ -109,72 +109,6 @@ assemble - Assembles the outputs of this project.
 build - Build all OBI content for this project.
 clean - Deletes the build directory.
 
-Checkmate Build tasks
----------------------
-barBuild - Build and assemble the components for the BI Archive (BAR) file from SCM.
-barSync - Synchronize the BAR build directory from SCM.
-catalogBuild - Copy catalog from SCM to 'catalog/current' and generate catalog archive file 'catalog/current.catalog'.
-metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM.
-
-Checkmate Distribution tasks
-----------------------------
-barZip - Create a BI Archive (BAR) file from the assembled component.
-buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
-deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
-
-Checkmate Export tasks
-----------------------
-barExport - Execute barStage followed by barSource.
-barSource - Synchronize the staged BAR with SCM.
-barStage - Export BI Archive (BAR) File using the 'ssi' Service Instance.
-catalogExport - Export the online presentation catalog into SCM by calling 'catalogStage' followed by 'catalogSource'
-catalogSource - Synchronize the staged catalog with the offline presentation catalog in SCM.
-catalogStage - Stage the online presentation catalog at 'catalog/current'.
-connPoolsExport - Export target OBIEE server connection pool information in JSON format to 'repository/conn-pools.json'.
-export - Execute all configured export tasks.
-metadataExport - Export the online metadata repository into SCM by calling 'metadataStage' followed by 'metadataSource'
-metadataSource - Synchronize the staged repository with the repository in SCM.
-metadataStage - Stage the online metadata repository to 'repository/current.rpd'.
-variablesExport - Export target OBIEE server variable information in JSON format to 'repository/variables.json'.
-
-Checkmate Import tasks
-----------------------
-applyVersionJson - Set the 'project_version' repository variable to version 'unspecified'.
-barImport - Import BI Archive (BAR) File into the 'ssi' Service Instance.
-barImportSAL - Import SampleAppLite.bar BI Archive (BAR) File into the 'ssi' Service Instance.
-barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
-catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current'.
-connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
-generateVersionJson - Generate JSON patch of version 'unspecified' for 'project_version' repository variable.
-import - Execute all configured import tasks.
-metadataImport - Import 'repository/current.rpd' into the online metadata repository.
-variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
-
-Checkmate SCM tasks
--------------------
-catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
-metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
-scmCheckout - Checkout a branch in the local SCM repository.
-scmCommit - Issue a commit to the local SCM repository. Customize with 'scmMessage', 'scmCommitter', 'scmEmail', and 'scmCommitPath' build parameters.
-scmPush - Push to the origin for the local SCM repository. Requires 'sourceBase' build parameter pointing to Git repo root directory, if running task outside of a Git repository.
-
-Checkmate Services tasks
-------------------------
-metadataReload - Execute the 'Reload Files and Metadata' web service.
-
-Checkmate Testing tasks
------------------------
-baselineTest - Execute all Baseline regression tests for the entire project.
-compareTest - Execute all Compare regression tests for the entire project.
-extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
-revisionTest - Execute all Revision regression tests for the entire project.
-
-Checkmate Workflow tasks
-------------------------
-baselineWorkflow - Import 'current' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
-importWorkflow - Import 'current' metadata and catalog artifacts while managing connection pools.
-revisionWorkflow - Import 'current' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
-
 Docker tasks
 ------------
 composeBuild - Builds images for services of docker-compose project
@@ -198,6 +132,73 @@ projects - Displays the sub-projects of project ':obi'.
 properties - Displays the properties of project ':obi'.
 tasks - Displays the tasks runnable from project ':obi'.
 
+OBI Build tasks
+---------------
+barBuild - Build and assemble the components for the BI Archive (BAR) file from SCM.
+barSync - Synchronize the BAR build directory from SCM.
+catalogBuild - Copy catalog from SCM to 'catalog/current' and generate catalog archive file 'catalog/current.catalog'.
+metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM.
+
+OBI Distribution tasks
+----------------------
+barZip - Create a BI Archive (BAR) file from the assembled component.
+buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
+deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
+
+OBI Export tasks
+----------------
+barExport - Execute barStage followed by barSource.
+barSource - Synchronize the staged BAR with SCM.
+barStage - Export BI Archive (BAR) File using the 'ssi' Service Instance.
+catalogExport - Export the online presentation catalog into SCM by calling 'catalogStage' followed by 'catalogSource'
+catalogSource - Synchronize the staged catalog with the offline presentation catalog in SCM.
+catalogStage - Stage the online presentation catalog at 'catalog/current'.
+connPoolsExport - Export target OBIEE server connection pool information in JSON format to 'repository/conn-pools.json'.
+export - Execute all configured export tasks.
+metadataExport - Export the online metadata repository into SCM by calling 'metadataStage' followed by 'metadataSource'
+metadataSource - Synchronize the staged repository with the repository in SCM.
+metadataStage - Stage the online metadata repository to 'repository/current.rpd'.
+variablesExport - Export target OBIEE server variable information in JSON format to 'repository/variables.json'.
+
+OBI Import tasks
+----------------
+applyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
+barImport - Import BI Archive (BAR) File into the 'ssi' Service Instance.
+barImportSAL - Import SampleAppLite.bar BI Archive (BAR) File into the 'ssi' Service Instance.
+barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
+catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current'.
+connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
+generateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
+import - Execute all configured import tasks.
+metadataImport - Import 'repository/current.rpd' into the online metadata repository.
+variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
+
+OBI SCM tasks
+-------------
+catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
+metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
+scmCheckout - Checkout a branch in the local SCM repository.
+scmCommit - Issue a commit to the local SCM repository. Customize with 'scmMessage', 'scmCommitter', 'scmEmail', and 'scmCommitPath' build parameters.
+scmPush - Push to the origin for the local SCM repository. Requires 'sourceBase' build parameter pointing to Git repo root directory, if running task outside of a Git repository.
+
+OBI Services tasks
+------------------
+metadataReload - Execute the 'Reload Files and Metadata' web service.
+
+OBI Testing tasks
+-----------------
+compareTest - Execute all Compare regression tests for the entire project.
+extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
+regressionCompareTest - Compare the differences between the Baseline and Revision regression test results for Test Group 'regression'.
+regressionResultsLibrary - Create the Results regression test library CSV file for Test Group 'regression'.
+regressionResultsTest - Execute the Results regression test library file for Test Group 'regression'.
+resultsTest - Execute all Results regression tests for the entire project.
+
+OBI Workflow tasks
+------------------
+importWorkflow - Import 'current' metadata and catalog artifacts while managing connection pools.
+resultsWorkflow - Import 'current' metadata and catalog content and execute the Revision test library.
+
 Publishing tasks
 ----------------
 generateMetadataFileForBuildPublication - Generates the Gradle metadata file for publication 'build'.
@@ -206,7 +207,9 @@ generatePomFileForBuildPublication - Generates the Maven POM file for publicatio
 generatePomFileForDeployPublication - Generates the Maven POM file for publication 'deploy'.
 publish - Publishes all publications produced by this project.
 publishBuildPublicationToMavenLocal - Publishes Maven publication 'build' to the local Maven repository.
+publishBuildPublicationToMavenLocalRepository - Publishes Maven publication 'build' to Maven repository 'MavenLocal'.
 publishDeployPublicationToMavenLocal - Publishes Maven publication 'deploy' to the local Maven repository.
+publishDeployPublicationToMavenLocalRepository - Publishes Maven publication 'deploy' to Maven repository 'MavenLocal'.
 publishToMavenLocal - Publishes all Maven publications produced by this project to the local Maven cache.
 
 Verification tasks
@@ -222,12 +225,10 @@ Pattern: upload<ConfigurationName>: Assembles and uploads the artifacts belongin
 To see all tasks and more detail, run gradlew tasks --all
 
 To see more detail about a task, run gradlew help --task <task>
-
-BUILD SUCCESSFUL in 2s
 ```
 
 Checkmate for OBI enables the following Task Groups:
-* **Checkmate Distribution**: Managing of different types of OBIEE *artifacts* of OBIEE content: *distribution files* and *BAR* files. Distribution files are the ZIP artifacts of OBIEE content that Checkmate generates. Depending on the workflow, a distribution contains a binary metadata repository, the full catalog, an archive represenetation of the `/Shared` folders of the catalog, incremental patches for both the repository and the catalog, and the results files from any regression tests run while building the artifact. We'll dive more into distirubtion files later on. BAR files are zip files that were introduced in OBIEE 12c.
+* **Checkmate Distribution**: Management of *artifacts* of OBIEE content: *distribution files* and *BAR* files. Distribution files are the ZIP artifacts of OBIEE content that Checkmate generates. Depending on the workflow, a distribution contains a binary metadata repository, the full catalog, an archive represenetation of the `/Shared` folders of the catalog, incremental patches for both the repository and the catalog, and the results files from any regression tests run while building the artifact. We'll dive more into distirubtion files later on. BAR files are zip files that were introduced in OBIEE 12c.
 * **Checkmate Export**: Tasks that facilitate exporting content from an OBIEE instance into the build directory and eventually into source control.
 * **Checkmate Import**: Tasks that facilitate importing content into an OBIEE instance from source control, or from artifacts downloaded from Maven.
 * **Checkmate SCM**: Tasks for integrating 'checkout' and 'commit' workflows with [Git](https://git-scm.com). These tasks are for very complex workflows, and are generally unnecessary when using standard CI/CD processes.
@@ -263,29 +264,28 @@ obi {
   adminUser = 'weblogic'
   adminPassword = 'Admin123'
   repositoryPassword = 'Admin123'
-  contentPolicy = 'legacy'
+  contentPolicy = 'distribution'
 }
 ```
 
 Notes on a few of the parameters below:
 * **domainHome:** Defaults to `<obi.middlewareHome>/user_projects/domains/bi`, but can be configured separately as we've done here.
 * **compatibility:** Options are `12.2.1.4, 12.2.1.3, 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7`. There are subtle and not-so-subtle differences in the way Checkmate interacts with OBIEE in the different releases, so this parameter controls that behavior. The 11.x functionality and parameters will likely disappear in the near future.
-* **contentPolicy:** This parameter controls the relationship between legacy import/export features, and the **BAR** functionality that exists in newer versions of 12c. Possible values include: `bar, mixed, legacy, legacy-metadata, legacy-catalog`. The main values for this parmater are `legacy` or `bar`, with all others being for mostly depracated use cases. Currently, we have the value set to `legacy`, which means we are building distribution files, instead of BAR files.
+* **contentPolicy:** This parameter controls whether we are primarily importing, exporting and publishing traditional OBIEE content, which generates *distribution* files, or using the nwe *BAR* functionality introduced in OBIEE 12c. Possible values include: `distribution, bar, mixed, distribution-metadata, distribution-catalog`. The main values for this parmater are `distribution` or `bar`, with all others being for mostly depracated use cases. We are using the `distribution` setting, which is also the default
 
 # Building and Publishing
 The workflow for building OBIEE content usually occurs in the following steps:
 * **Build:** The building of OBIEE deployment artifacts from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involve building a binary RPD, as well as a catalog archive file of the `/Shared` folders of the catalog. Depending on the value of `contentPolicy`, we either build a distribution file or a 12c BAR file. Either a distribrution file, or a BAR file, is supported in working with OBIEE 12c environments.
+* **Test (Optional):** After building our content, and prior to publishing it, we'll run a series of unit and/or regression tests to make sure our new content works as expected, and hasn't broken anything. We'll discuss regression testing further later on... so we'll exclude from our process at the moment.
 * **Publish:** Publishing distribution files or BAR files to one or more [Maven repositories](https://maven.apache.org/pom.html#Repositories).
 
-Currently, we have the publication repositories and a version number configured but commented out in our `build.gradle`. Let's uncomment these lines to turn on our publication functionality:
+Currently, we have the publication repositories and a version number configured in our `build.gradle`:
 
 ```gradle
 version = '1.0.0'
 
 publishing {
   repositories {
-    // publish to Maven local repository, which is usually ~/.m2
-    // This is only for testing purposes
     mavenLocal()
   }
 }
@@ -322,7 +322,7 @@ We'll run the `obi:build` task again, but this time we'll use the `--console=pla
 > Task :obi:metadataBuild
 > Task :obi:build
 
-BUILD SUCCESSFUL in 32s
+BUILD SUCCESSFUL in 45s
 3 actionable tasks: 3 executed
 ```
 
@@ -345,7 +345,7 @@ Furthermore... we can run the entire Build and Publish workflow by simply runnin
 > Task :obi:publishDeployPublicationToMavenLocalRepository
 > Task :obi:publish
 
-BUILD SUCCESSFUL in 29s
+BUILD SUCCESSFUL in 34s
 8 actionable tasks: 6 executed, 2 up-to-date
 ```
 
@@ -400,36 +400,21 @@ A build group allows us to declare a dependency on a prior artifact, and then ge
 
 Because these build groups are already built-in, we don't have to do much to enable them; all we have to do is declare a dependency on a prior artifact version, and the tasks in this build group will magically appear. Since we now have the `1.0.0` distribution published to our Maven Local repository, we can use that distribution as our dependency for these build groups. We could also define custom build groups using the `obi.buildGroups {}` DSL structure if for some reason the combination of **feature**, **release** and **promote** was not sufficient for our workflow.
 
-The first thing we have to tell Checkmate for OBI is where to go looking for our artifacts. We're still using Maven Local for this. So let's comment out the following lines:
+The first thing we have to tell Checkmate for OBI is where to go looking for our artifacts. We're still using Maven Local for this, so we see that in our `repositories{}` closure:
 
 ```gradle
 repositories {
-  // local maven repository for artifacts, which is usually ~/.m2
-  //  this is really only for testing purposes
   mavenLocal()
-  // maven {
-  //   url "https://plugins.gradle.org/m2/"
-  // }
 }
 ```
 
-We'll make the following changes to our [`build.gradle`](build.gradle) file, which should be possible by simply commenting out a few lines:
+We'll make the following changes to our [`build.gradle`](build.gradle) file, which should be possible by simply uncommenting a few lines:
 
 ```gradle
 dependencies {
-  // Using the Checkmate Testing library which is recommended.
-  // obiee "com.redpillanalytics:checkmate-obi:9.1.15"
-  // You can also use Baseline Validation Tool
-  // The installation ZIP needs to be available in a Maven repository
-  // obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
-
-  // Dependencies on previous OBIEE builds
+  obiee 'com.redpillanalytics:checkmate-obi:+'
   feature 'obiee:obi-build:+'
-  // feature 'obiee:obi-bar:+'
   release 'obiee:obi-build:1.0.0'
-  // release 'obiee:obi-bar:1.0.0'
-  // promote 'obiee:obi-deploy:+'
-  // promote 'obiee:obi-bar:+'
 }
 ```
 
@@ -457,117 +442,6 @@ assemble - Assembles the outputs of this project.
 build - Build all OBI content for this project.
 clean - Deletes the build directory.
 
-Checkmate Build tasks
----------------------
-barBuild - Build and assemble the components for the BI Archive (BAR) file from SCM.
-barSync - Synchronize the BAR build directory from SCM.
-catalogBuild - Copy catalog from SCM to 'catalog/current' and generate catalog archive file 'catalog/current.catalog'.
-featureCatalogCompare - Build incremental file 'catalog/feature-diff.txt' and 'catalog/feature-undiff.txt' using the 'feature' configuration.
-featureCompare - Execute 'featureCatalogCompare' and 'featureMetadataCompare'.
-featureMetadataCompare - Build incremental files 'repository/feature-patch.xml', 'repository/feature-unpatch.xml' and 'repository/feature-compare.csv' using the 'feature' configuration.
-metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM.
-releaseCatalogCompare - Build incremental file 'catalog/release-diff.txt' and 'catalog/release-undiff.txt' using the 'release' configuration.
-releaseCompare - Execute 'releaseCatalogCompare' and 'releaseMetadataCompare'.
-releaseMetadataCompare - Build incremental files 'repository/release-patch.xml', 'repository/release-unpatch.xml' and 'repository/release-compare.csv' using the 'release' configuration.
-
-Checkmate Distribution tasks
-----------------------------
-barZip - Create a BI Archive (BAR) file from the assembled component.
-buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
-deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
-featureExtractBuild - Extract OBIEE dependencies for 'feature'.
-releaseExtractBuild - Extract OBIEE dependencies for 'release'.
-
-Checkmate Export tasks
-----------------------
-barExport - Execute barStage followed by barSource.
-barSource - Synchronize the staged BAR with SCM.
-barStage - Export BI Archive (BAR) File using the 'ssi' Service Instance.
-catalogExport - Export the online presentation catalog into SCM by calling 'catalogStage' followed by 'catalogSource'
-catalogSource - Synchronize the staged catalog with the offline presentation catalog in SCM.
-catalogStage - Stage the online presentation catalog at 'catalog/current'.
-connPoolsExport - Export target OBIEE server connection pool information in JSON format to 'repository/conn-pools.json'.
-export - Execute all configured export tasks.
-metadataExport - Export the online metadata repository into SCM by calling 'metadataStage' followed by 'metadataSource'
-metadataSource - Synchronize the staged repository with the repository in SCM.
-metadataStage - Stage the online metadata repository to 'repository/current.rpd'.
-variablesExport - Export target OBIEE server variable information in JSON format to 'repository/variables.json'.
-
-Checkmate Import tasks
-----------------------
-applyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
-barImport - Import BI Archive (BAR) File into the 'ssi' Service Instance.
-barImportSAL - Import SampleAppLite.bar BI Archive (BAR) File into the 'ssi' Service Instance.
-barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
-catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current'.
-connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
-featureApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
-featureCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/feature'.
-featureGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
-featureImport - Execute all configured import tasks for buildGroup 'feature'.
-featureMetadataImport - Import 'repository/feature.rpd' into the online metadata repository.
-generateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
-import - Execute all configured import tasks.
-metadataImport - Import 'repository/current.rpd' into the online metadata repository.
-releaseApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
-releaseCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/release'.
-releaseGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
-releaseImport - Execute all configured import tasks for buildGroup 'release'.
-releaseMetadataImport - Import 'repository/release.rpd' into the online metadata repository.
-variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
-
-Checkmate Patch tasks
----------------------
-featureCatalogPatch - Apply 'catalog/feature-diff.txt' to the online presentation catalog.
-featureCatalogUnpatch - Apply 'catalog/feature-diff.txt' to the online presentation catalog.
-featureMetadataPatch - Apply 'repository/feature-patch.xml' to the metadata repository in offline mode.
-featureMetadataUnpatch - Apply 'repository/feature-unpatch.xml' to the metadata repository in offline mode
-featurePatch - Execute all configured patch tasks for buildGroup 'feature'.
-featureUnpatch - Execute all configured unpatch tasks for buildGroup 'feature'.
-releaseCatalogPatch - Apply 'catalog/release-diff.txt' to the online presentation catalog.
-releaseCatalogUnpatch - Apply 'catalog/release-diff.txt' to the online presentation catalog.
-releaseMetadataPatch - Apply 'repository/release-patch.xml' to the metadata repository in offline mode.
-releaseMetadataUnpatch - Apply 'repository/release-unpatch.xml' to the metadata repository in offline mode
-releasePatch - Execute all configured patch tasks for buildGroup 'release'.
-releaseUnpatch - Execute all configured unpatch tasks for buildGroup 'release'.
-
-Checkmate SCM tasks
--------------------
-catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
-featureCatalogMerge - Use OBIEE merging instead of SCM merging for presentation catalog.
-featureMerge - Execute 'featureMetadataMerge' and 'featureCatalogMerge'.
-metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
-releaseCatalogMerge - Use OBIEE merging instead of SCM merging for presentation catalog.
-releaseMerge - Execute 'releaseMetadataMerge' and 'releaseCatalogMerge'.
-scmCheckout - Checkout a branch in the local SCM repository.
-scmCommit - Issue a commit to the local SCM repository. Customize with 'scmMessage', 'scmCommitter', 'scmEmail', and 'scmCommitPath' build parameters.
-scmPush - Push to the origin for the local SCM repository. Requires 'sourceBase' build parameter pointing to Git repo root directory, if running task outside of a Git repository.
-
-Checkmate Services tasks
-------------------------
-metadataReload - Execute the 'Reload Files and Metadata' web service.
-
-Checkmate Testing tasks
------------------------
-baselineTest - Execute all Baseline regression tests for the entire project.
-compareTest - Execute all Compare regression tests for the entire project.
-extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
-revisionTest - Execute all Revision regression tests for the entire project.
-
-Checkmate Workflow tasks
-------------------------
-baselineWorkflow - Import 'current' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
-featureBaselineWorkflow - Import 'feature' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
-featureImportWorkflow - Import 'feature' metadata and catalog artifacts while managing connection pools.
-featureRevisionPatchWorkflow - Apply 'feature' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
-featureRevisionWorkflow - Import 'feature' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
-importWorkflow - Import 'current' metadata and catalog artifacts while managing connection pools.
-releaseBaselineWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
-releaseImportWorkflow - Import 'release' metadata and catalog artifacts while managing connection pools.
-releaseRevisionPatchWorkflow - Apply 'release' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
-releaseRevisionWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
-revisionWorkflow - Import 'current' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
-
 Docker tasks
 ------------
 composeBuild - Builds images for services of docker-compose project
@@ -590,6 +464,116 @@ model - Displays the configuration model of project ':obi'. [incubating]
 projects - Displays the sub-projects of project ':obi'.
 properties - Displays the properties of project ':obi'.
 tasks - Displays the tasks runnable from project ':obi'.
+
+OBI Build tasks
+---------------
+barBuild - Build and assemble the components for the BI Archive (BAR) file from SCM.
+barSync - Synchronize the BAR build directory from SCM.
+catalogBuild - Copy catalog from SCM to 'catalog/current' and generate catalog archive file 'catalog/current.catalog'.
+featureCatalogCompare - Build incremental file 'catalog/feature-diff.txt' and 'catalog/feature-undiff.txt' using the 'feature' configuration.
+featureCompare - Execute 'featureCatalogCompare' and 'featureMetadataCompare'.
+featureMetadataCompare - Build incremental files 'repository/feature-patch.xml', 'repository/feature-unpatch.xml' and 'repository/feature-compare.csv' using the 'feature' configuration.
+metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM.
+releaseCatalogCompare - Build incremental file 'catalog/release-diff.txt' and 'catalog/release-undiff.txt' using the 'release' configuration.
+releaseCompare - Execute 'releaseCatalogCompare' and 'releaseMetadataCompare'.
+releaseMetadataCompare - Build incremental files 'repository/release-patch.xml', 'repository/release-unpatch.xml' and 'repository/release-compare.csv' using the 'release' configuration.
+
+OBI Distribution tasks
+----------------------
+barZip - Create a BI Archive (BAR) file from the assembled component.
+buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
+deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
+featureExtractBuild - Extract OBIEE dependencies for 'feature'.
+releaseExtractBuild - Extract OBIEE dependencies for 'release'.
+
+OBI Export tasks
+----------------
+barExport - Execute barStage followed by barSource.
+barSource - Synchronize the staged BAR with SCM.
+barStage - Export BI Archive (BAR) File using the 'ssi' Service Instance.
+catalogExport - Export the online presentation catalog into SCM by calling 'catalogStage' followed by 'catalogSource'
+catalogSource - Synchronize the staged catalog with the offline presentation catalog in SCM.
+catalogStage - Stage the online presentation catalog at 'catalog/current'.
+connPoolsExport - Export target OBIEE server connection pool information in JSON format to 'repository/conn-pools.json'.
+export - Execute all configured export tasks.
+metadataExport - Export the online metadata repository into SCM by calling 'metadataStage' followed by 'metadataSource'
+metadataSource - Synchronize the staged repository with the repository in SCM.
+metadataStage - Stage the online metadata repository to 'repository/current.rpd'.
+variablesExport - Export target OBIEE server variable information in JSON format to 'repository/variables.json'.
+
+OBI Import tasks
+----------------
+applyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
+barImport - Import BI Archive (BAR) File into the 'ssi' Service Instance.
+barImportSAL - Import SampleAppLite.bar BI Archive (BAR) File into the 'ssi' Service Instance.
+barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
+catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current'.
+connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
+featureApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
+featureCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/feature'.
+featureGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
+featureImport - Execute all configured import tasks for buildGroup 'feature'.
+featureMetadataImport - Import 'repository/feature.rpd' into the online metadata repository.
+generateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
+import - Execute all configured import tasks.
+metadataImport - Import 'repository/current.rpd' into the online metadata repository.
+releaseApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
+releaseCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/release'.
+releaseGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
+releaseImport - Execute all configured import tasks for buildGroup 'release'.
+releaseMetadataImport - Import 'repository/release.rpd' into the online metadata repository.
+variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
+
+OBI Patch tasks
+---------------
+featureCatalogPatch - Apply 'catalog/feature-diff.txt' to the online presentation catalog.
+featureCatalogUnpatch - Apply 'catalog/feature-diff.txt' to the online presentation catalog.
+featureMetadataPatch - Apply 'repository/feature-patch.xml' to the metadata repository in offline mode.
+featureMetadataUnpatch - Apply 'repository/feature-unpatch.xml' to the metadata repository in offline mode
+featurePatch - Execute all configured patch tasks for buildGroup 'feature'.
+featureUnpatch - Execute all configured unpatch tasks for buildGroup 'feature'.
+releaseCatalogPatch - Apply 'catalog/release-diff.txt' to the online presentation catalog.
+releaseCatalogUnpatch - Apply 'catalog/release-diff.txt' to the online presentation catalog.
+releaseMetadataPatch - Apply 'repository/release-patch.xml' to the metadata repository in offline mode.
+releaseMetadataUnpatch - Apply 'repository/release-unpatch.xml' to the metadata repository in offline mode
+releasePatch - Execute all configured patch tasks for buildGroup 'release'.
+releaseUnpatch - Execute all configured unpatch tasks for buildGroup 'release'.
+
+OBI SCM tasks
+-------------
+catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
+featureCatalogMerge - Use OBIEE merging instead of SCM merging for presentation catalog.
+featureMerge - Execute 'featureMetadataMerge' and 'featureCatalogMerge'.
+metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
+releaseCatalogMerge - Use OBIEE merging instead of SCM merging for presentation catalog.
+releaseMerge - Execute 'releaseMetadataMerge' and 'releaseCatalogMerge'.
+scmCheckout - Checkout a branch in the local SCM repository.
+scmCommit - Issue a commit to the local SCM repository. Customize with 'scmMessage', 'scmCommitter', 'scmEmail', and 'scmCommitPath' build parameters.
+scmPush - Push to the origin for the local SCM repository. Requires 'sourceBase' build parameter pointing to Git repo root directory, if running task outside of a Git repository.
+
+OBI Services tasks
+------------------
+metadataReload - Execute the 'Reload Files and Metadata' web service.
+
+OBI Testing tasks
+-----------------
+compareTest - Execute all Compare regression tests for the entire project.
+extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
+regressionCompareTest - Compare the differences between the Baseline and Revision regression test results for Test Group 'regression'.
+regressionResultsLibrary - Create the Results regression test library CSV file for Test Group 'regression'.
+regressionResultsTest - Execute the Results regression test library file for Test Group 'regression'.
+resultsTest - Execute all Results regression tests for the entire project.
+
+OBI Workflow tasks
+------------------
+featureCompareWorkflow - Extract Baseline test library and results from the 'feature' artifact and run Compare tests.
+featureImportWorkflow - Import 'feature' metadata and catalog artifacts while managing connection pools.
+featureTestWorkflow - Execute ':resultsWorkflow', ':featureCompareWorfklow' and ':publish'.
+importWorkflow - Import 'current' metadata and catalog artifacts while managing connection pools.
+releaseCompareWorkflow - Extract Baseline test library and results from the 'release' artifact and run Compare tests.
+releaseImportWorkflow - Import 'release' metadata and catalog artifacts while managing connection pools.
+releaseTestWorkflow - Execute ':resultsWorkflow', ':releaseCompareWorfklow' and ':publish'.
+resultsWorkflow - Import 'current' metadata and catalog content and execute the Revision test library.
 
 Publishing tasks
 ----------------
@@ -618,7 +602,7 @@ To see all tasks and more detail, run gradlew tasks --all
 
 To see more detail about a task, run gradlew help --task <task>
 
-BUILD SUCCESSFUL in 5s
+BUILD SUCCESSFUL in 6s
 1 actionable task: 1 executed
 ```
 
@@ -643,7 +627,7 @@ You should see a bunch of new tasks enabled that begin with *feature* and *relea
 > Task :obi:publishDeployPublicationToMavenLocalRepository
 > Task :obi:publish
 
-BUILD SUCCESSFUL in 1m 28s
+BUILD SUCCESSFUL in 1m 42s
 11 actionable tasks: 8 executed, 3 up-to-date
 ```
 
@@ -692,19 +676,10 @@ Now, let's enable the **promote** build group distribution file, which is what w
 
 ```gradle
 dependencies {
-  // Using the Checkmate Testing library which is recommended.
-  // obiee "com.redpillanalytics:checkmate-obi:9.1.15"
-  // You can also use Baseline Validation Tool
-  // The installation ZIP needs to be available in a Maven repository
-  // obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
-
-  // Dependencies on previous OBIEE builds
+  obiee 'com.redpillanalytics:checkmate-obi:+'
   feature 'obiee:obi-build:+'
-  // feature 'obiee:obi-bar:+'
   release 'obiee:obi-build:1.0.0'
-  // release 'obiee:obi-bar:1.0.0'
   promote 'obiee:obi-deploy:+'
-  // promote 'obiee:obi-bar:+'
 }
 ```
 
@@ -717,7 +692,7 @@ This gives us a series of new tasks to work with the **promote** build group. We
 > Task :obi:promoteCatalogPatch
 > Task :obi:promotePatch
 
-BUILD SUCCESSFUL in 44s
+BUILD SUCCESSFUL in 55s
 3 actionable tasks: 3 executed
 ```
 
@@ -736,7 +711,7 @@ Promoting to downstream environments using incremental patches is a great soluti
 > Task :obi:promoteImport
 > Task :obi:promoteImportWorkflow
 
-BUILD SUCCESSFUL in 30s
+BUILD SUCCESSFUL in 36s
 6 actionable tasks: 6 executed
 ```
 Notice that our `promoteImportWorkflow` task manages connection pools for us. Before our new metadata content is imported into the instance, we save the connection pool information as a JSON file, and then reapply it once the import process is complete. You can see the connection pool files in the build directory:
@@ -762,185 +737,166 @@ cat obi/build/repository/*.json
 }
 ```
 
-The connection pool metadata included in SampleApp isn't the most compelling as it uses XML files, but you can see that the encrypted password is included, and although there are no variables included in this connection pool, if there were, our JSON file would capture those as well.
+The connection pool metadata included in SampleApp isn't the most compelling as it uses XML data files, but you can see that the encrypted password is included, and although there are no variables included in this connection pool, if there were, our JSON file would capture those as well.
 
-# Regression Testing
-Regression testing in OBIEE means ensuring that nothing in our new development breaks anything developed previously. In Checkmate, a regression test is simply a web catalog analysis that we've written to test some aspect of our analytics system. To fully execute the test, we need to capture the results of that analysis *before and after* our most recent changes, and then compare those results. If results match, the test is successful; otherwise, it's not. We typically run these results in response to Git commits, and more specifically, either *pull requests* or *branch merges*.
-
-Checkmate has a pluggable regression testing framework, which currently supports using either the standard Checkmate framework built in to the Gradle plugin, or the Baseline Validation Tool (BVT) which is offered from Oracle. We prefer our built-in regression testing framework, so we'll configure that, first by telling Checkmate that the library is available in the Gradle Plugin Maven repo:
+# Testing
+Checkmate has a pluggable testing framework that supports either the standard Checkmate testing library built in to the Gradle plugin, or the Baseline Validation Tool (BVT) which is offered from Oracle. We prefer our built-in testing framework, so we'll configure that, first by telling Checkmate that the library is available in the Gradle Plugin Maven repo, which is specified with the `maven { url "https://plugins.gradle.org/m2/" }` line:
 
 ```gradle
 repositories {
-  // local maven repository for artifacts, which is usually ~/.m2
-  //  this is really only for testing purposes
   mavenLocal()
-  // Plugin portal Maven repo
-  maven {
-    url "https://plugins.gradle.org/m2/"
-  }
+  maven { url "https://plugins.gradle.org/m2/" }
 }
 ```
-
-Then we use built-in Gradle dependency management to tell Checkmate that the `obiee` configuration requires the Checkmate regression testing library:
+Then we tell Checkmate that the `obiee` configuration requires the Checkmate regression testing library, which is specified with the `com.redpillanalytics:checkmate-obi:+` dependency:
 
 ```gradle
 dependencies {
-  // Using the Checkmate Testing library which is recommended.
-  obiee 'gradle.plugin.com.redpillanalytics:checkmate:+'
-  // You can also use Baseline Validation Tool
-  // The installation ZIP needs to be available in a Maven repository
-  // obiee group: 'com.oracle', name: 'oracle-bvt', version: '12.2.1.0.0'
-
-  // Dependencies on previous OBIEE builds
+  obiee 'com.redpillanalytics:checkmate-obi:+'
   feature 'obiee:obi-build:+'
-  // feature 'obiee:obi-bar:+'
   release 'obiee:obi-build:1.0.0'
-  // release 'obiee:obi-bar:1.0.0'
   promote 'obiee:obi-deploy:+'
-  // promote 'obiee:obi-bar:+'
 }
 ```
+In Checkmate, a test is simply a web catalog analysis that we've written to test some aspect of our analytics system. In the analysis, we can join together a series of tables and ensure that they join correctly, or make calculations across multiple hierarchies and ensure that the query results make sense. This analysis will be processed using two different types of tests in Checkmate:
+* **Results Tests:** extract the *logical SQL* from the analysis and execute it against the BI Server. We store the logical SQL, the full results from the analysis, and the hash value from the results in the build directory, and also collect it in our distribution file. This gives us access to the test results whenever we pull the artifact. You can think of results tests as similar to *unit tests* in other development paradigms.
+* **Compare Tests:** compare the results tests from our current branch with the results tests extracted from our distribution file to see if either the logical SQL changes, or the execution results change. This comparision can be done using the hash value initially calculated (faster), or a full textual comparison of the results. You can think of compare tests as similar to *regression tests* in other development paradigms.
 
-Later on we'll look at a streamlined and optimzied regression testing workflow, but unforunately for that to make sense, we'll first have to walk through the less optimized version. At a high-level, our less-optimized regresstion testing workflow looks like this:
-* Pull down an OBI artifact (distribution or BAR) published previously to a Maven repository.
-* Upload the previous content into an OBIEE environment, which we refer to as the OBIEE *build server*.
-* Run a series of analyses, saving the logical SQL and query results. We call this the *baseline* testing phase, because it's run against our *baseline* of content... or the previous artifact.
-* Build and deploy the current version of content from our Git repository into the OBIEE environment, either using incremental patches, or by deploying whole catalogs and repositories.
-* Run the same series of analyses that we ran during the baseline phase, saving the output. This is called the *revision* phase, because it's run using our most recent content, which contains all of our *revisions*.
-* Compare the output generated from the baseline phase with the output generated from the revision phase. Naturally, we call this the *compare* phase.
+To fully execute the test, we need to capture the results of that analysis *before and after* our most recent changes, and then compare those results. If results match, the test is successful; otherwise, it's not. We typically run these results in response to Git commits, and more specifically, either *pull requests* or *branch merges*. Additionally, Checkmate generates JUnit XML files for every unit and regression test it executes with the result of the test (*success, failed, skipped*) as well as the execution time, and the standard output and error of the process. Most continuous integration servers and development IDEs are able to parse JUnit files and report back on the success and failure of each test.
 
-For regression testing, Checkmate for OBI has the concept of a **test group**, which is configured using the `obi.testGroups {}` DSL structure. The default test group called **regression** is already built in, and by default tests any analyses in the `/Shared/Regression` folder. So out of the box, if we have any analyses that we want to run before and after our committed changes, we just add those analyses to `/Shared/Regression` and the testing tasks we call below will test them. It doesn't matter what visualizations we create for these analyses... it's only the logical SQL that we care about, so table views are fine.
+Checkmate for OBI has the concept of a **test group**, which is configured using the `obi.testGroups {}` DSL structure. The default test group called **regression** is already built in, and by default recursively tests any analyses in the `/Shared/Regression` folder. So out of the box, if we have any analyses that we want to run before and after our committed changes, we just add those analyses to `/Shared/Regression` and the testing tasks we call below will test them. An example test group configuration would look like this:
 
-Since our out-of-the-box **SampleAppLite** content doesn't have anything in the `/Shared/Regression` folder, we'll just test the entire `/Shared` folder. We'll make some slight changes to our default **regression** test group:
-
-```groovy
+```gradle
 obi.testGroups {
   regression {
-    // the catalog folder to test. Recursively tests all analyses in that folder
-    // accepts a colon (:) separeted list of directories
-    libraryFolder = '/shared'
-    // By default, hash values are used for comparision of results
-    // You can force the full comparision of logical SQL and results (takes longer)
+    libraryFolder = '/shared/sales-analytics:/shared/sales-reports'
     compareText = false
-    // Provide more output
     showOutput = false
+    impersonateUser = 'sales-admin'
   }
 }
 ```
 
-Let's take a look at some of the parameters configured here, as well as one other that is not shown, but still worth mentioning:
-* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate recursively includes every analysis in those folders.
-* **compareText:** By default, Checkmate uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results.
-* **showOutput:** Output more information about the execution of each regression test. Feel free to set this to `true` to see the logical SQL being executed, any error stack generated, etc.
+Here are a few of the configurations we can define in `obi.testGroups{}`:
+* **libraryFolder:** The folder(s) in the presentation catalog that we want to regression test. This can be a colon (:) separated list of catalog folders, and Checkmate recursively includes every analysis in those folders. `/shared/regression` is also the default, but we are specifiying it here for clarity.
+* **compareText:** By default, Checkmate uses hash values of logical SQL and query results to facilitate faster comparisons, which improves performance when logical SQL is very complicated, or the analysis returns a lot of records in the result set. Setting this to `true` enables the full text search of the results. We are using the default value of `false`.
+* **showOutput:** Output more information about the execution of each regression test. Feel free to set this to `true` to see the logical SQL being executed, any error stack generated, etc. We are using the default value of `false`.
 * **impersonateUser:** Specify a user that you want to impersonate for this test group. This allows us to configure multiple test groups that run the same regression tests but with different security profiles. This requires that the `adminUser` specified above be granted the `impersonate` privilege, which is not granted by default.
 
-Regression testing involves some reasonably complex workflows, but we've tried to make that easier with several container tasks that provide the dependencies and ordering to put all of this together. First, let's take a look at the granular testing tasks:
+To start with, we'll import our content from Git into OBIEE and then run results tests and include the results in our distribution file:
 
 ```bash
-./gradlew obi:tasks --group "Checkmate Testing"
+./gradlew obi:resultsWorkflow publish --console=plain
+> Task :obi:connPoolsExport
+> Task :obi:metadataBuild UP-TO-DATE
+> Task :obi:metadataImport
+> Task :obi:catalogBuild
+> Task :obi:catalogImport
+> Task :obi:connPoolsImport
+> Task :obi:import
+> Task :obi:metadataReload
+> Task :obi:importWorkflow
+> Task :obi:regressionResultsLibrary
+> Task :obi:extractTestSuites UP-TO-DATE
 
-> Task :obi:tasks
+> Task :obi:regressionResultsTest
 
-------------------------------------------------------------
-Tasks runnable from project :obi
-------------------------------------------------------------
+com.redpillanalytics.obi.regression.suites.ResultsTest
 
-Checkmate Testing tasks
------------------------
-baselineTest - Execute all Baseline regression tests for the entire project.
-compareTest - Execute all Compare regression tests for the entire project.
-extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
-regressionBaselineLibrary - Create the Baseline regression test library CSV file for Test Group 'regression'.
-regressionBaselineTest - Execute the Baseline regression test library file for Test Group 'regression'.
-regressionCompareTest - Compare the differences between the Baseline and Revision regression test results for Test Group 'regression'.
-regressionRevisionLibrary - Create the Revision regression test library CSV file for Test Group 'regression'.
-regressionRevisionTest - Execute the Revision regression test library file for Test Group 'regression'.
-revisionTest - Execute all Revision regression tests for the entire project.
+  Test revision execution: /shared/Regression/Hierarchies/Product Hierarchy with Custom Group PASSED (5.1s)
+  Test revision execution: /shared/Regression/Level Based/Level Based Measures : Full Products Revenue PASSED (3.7s)
+  Test revision execution: /shared/Regression/Level Based/Level Based Measures : Full Qtr Revenue PASSED (3.6s)
+  Test revision execution: /shared/Regression/Trellis/Trellis Charts 3 PASSED (3.9s)
+  Test revision execution: /shared/Regression/Trellis/Trellis5 PASSED (3.7s)
 
-To see all tasks and more detail, run gradlew tasks --all
+SUCCESS: Executed 5 tests in 24.7s
 
-To see more detail about a task, run gradlew help --task <task>
 
-BUILD SUCCESSFUL in 4s
-1 actionable task: 1 executed
+> Task :obi:resultsTest
+> Task :obi:resultsWorkflow
+> Task :obi:assemble UP-TO-DATE
+> Task :obi:check UP-TO-DATE
+> Task :obi:build
+> Task :obi:buildZip
+> Task :obi:generatePomFileForBuildPublication
+> Task :obi:publishBuildPublicationToMavenLocalRepository
+> Task :obi:deployZip
+> Task :obi:generatePomFileForDeployPublication
+> Task :obi:publishDeployPublicationToMavenLocalRepository
+> Task :obi:publish
+
+BUILD SUCCESSFUL in 2m 25s
+16 actionable tasks: 14 executed, 2 up-to-date
 ```
-
-And, the workflow tasks, with many of them for regression testing:
+We now have the results of our tests saved in the distribution file. We can compare our results to the prior run by simply pulling that distribution file, running the current test results, and then comparing them. We use the *feature* version of our task, because that tells checkmate we are interested in the test results associated with the `feature` buildgroup, which is `1.0.0`:
 
 ```bash
-./gradlew obi:tasks --group "Checkmate Workflow"
+./gradlew obi:featureTestWorkflow --console=plain
+> Task :obi:connPoolsExport
+> Task :obi:featureExtractBuild
+> Task :obi:metadataBuild UP-TO-DATE
+> Task :obi:metadataImport
+> Task :obi:catalogBuild UP-TO-DATE
+> Task :obi:catalogImport
+> Task :obi:connPoolsImport
+> Task :obi:metadataReload
+> Task :obi:regressionResultsLibrary
+> Task :obi:extractTestSuites UP-TO-DATE
 
-> Task :obi:tasks
+> Task :obi:regressionResultsTest
 
-------------------------------------------------------------
-Tasks runnable from project :obi
-------------------------------------------------------------
+com.redpillanalytics.obi.regression.suites.ResultsTest
 
-Checkmate Workflow tasks
-------------------------
-baselineWorkflow - Import 'current' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
-featureBaselineWorkflow - Import 'feature' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
-featureImportWorkflow - Import 'feature' metadata and catalog artifacts while managing connection pools.
-featureRevisionPatchWorkflow - Apply 'feature' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
-featureRevisionWorkflow - Import 'feature' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
-importWorkflow - Import 'current' metadata and catalog artifacts while managing connection pools.
-promoteImportWorkflow - Import 'promote' metadata and catalog artifacts while managing connection pools.
-releaseBaselineWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Baseline Test Library.
-releaseImportWorkflow - Import 'release' metadata and catalog artifacts while managing connection pools.
-releaseRevisionPatchWorkflow - Apply 'release' metadata and catalog patches, manage connection pools, and execute the Revision Test Library.
-releaseRevisionWorkflow - Import 'release' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
-revisionWorkflow - Import 'current' metadata and catalog artifacts, manage connection pools, and execute the Revision Test Library.
+  Test revision execution: /shared/Regression/Hierarchies/Product Hierarchy with Custom Group PASSED (10s)
+  Test revision execution: /shared/Regression/Level Based/Level Based Measures : Full Products Revenue PASSED (6s)
+  Test revision execution: /shared/Regression/Level Based/Level Based Measures : Full Qtr Revenue PASSED (5.7s)
+  Test revision execution: /shared/Regression/Trellis/Trellis Charts 3 PASSED (6.9s)
+  Test revision execution: /shared/Regression/Trellis/Trellis5 PASSED (6.6s)
 
-To see all tasks and more detail, run gradlew tasks --all
+SUCCESS: Executed 5 tests in 40.3s
 
-To see more detail about a task, run gradlew help --task <task>
 
-BUILD SUCCESSFUL in 4s
-1 actionable task: 1 executed
+> Task :obi:resultsTest
+
+> Task :obi:regressionCompareTest
+
+com.redpillanalytics.obi.regression.suites.CompareTest
+
+  Test logical SQL comparison: /shared/Regression/Level Based/Level Based Measures : Full Products Revenue PASSED
+  Test logical SQL comparison: /shared/Regression/Level Based/Level Based Measures : Full Qtr Revenue PASSED
+  Test logical SQL comparison: /shared/Regression/Hierarchies/Product Hierarchy with Custom Group PASSED
+  Test logical SQL comparison: /shared/Regression/Trellis/Trellis Charts 3 PASSED
+  Test logical SQL comparison: /shared/Regression/Trellis/Trellis5 PASSED
+  Test hash value comparison of results: /shared/Regression/Level Based/Level Based Measures : Full Products Revenue PASSED
+  Test hash value comparison of results: /shared/Regression/Level Based/Level Based Measures : Full Qtr Revenue PASSED
+  Test hash value comparison of results: /shared/Regression/Hierarchies/Product Hierarchy with Custom Group PASSED
+  Test hash value comparison of results: /shared/Regression/Trellis/Trellis Charts 3 PASSED
+  Test hash value comparison of results: /shared/Regression/Trellis/Trellis5 PASSED
+  Test text comparison of results file: #path SKIPPED
+
+SUCCESS: Executed 11 tests in 5s (1 skipped)
+
+
+> Task :obi:compareTest
+> Task :obi:featureCompareWorkflow
+> Task :obi:assemble UP-TO-DATE
+> Task :obi:check UP-TO-DATE
+> Task :obi:build UP-TO-DATE
+> Task :obi:buildZip
+> Task :obi:generatePomFileForBuildPublication
+> Task :obi:publishBuildPublicationToMavenLocalRepository
+> Task :obi:deployZip
+> Task :obi:generatePomFileForDeployPublication
+> Task :obi:publishDeployPublicationToMavenLocalRepository
+> Task :obi:publish
+> Task :obi:import
+> Task :obi:importWorkflow
+> Task :obi:resultsWorkflow
+> Task :obi:featureTestWorkflow
+
+BUILD SUCCESSFUL in 2m 33s
+18 actionable tasks: 15 executed, 3 up-to-date
 ```
-
-Executing a regression testing workflow, managing all three phases of the process (**baseline**, **revision**, **compare**), is as easy as executing the following two workflow tasks.
-
-```bash
-./gradlew -p obi/sample-12c releaseBaselineWorkflow --console=plain
-:connPoolsExport
-:releaseExtractBuild
-:releaseMetadataImport
-:releaseCatalogImport
-:releaseImport
-:connPoolsImport
-:regressionBaselineLibrary
-:extractTestSuites
-:regressionBaselineTest
-Results: SUCCESS (42 tests, 42 successes, 0 failures, 0 skipped)
-:baselineTest
-:releaseBaselineWorkflow
-
-BUILD SUCCESSFUL in 3m 11s
-8 actionable tasks: 7 executed, 1 up-to-date
-
-./gradlew -p obi/sample-12c releaseRevisionWorkflow --console=plain
-:metadataBuild UP-TO-DATE
-:metadataImport
-:catalogBuild UP-TO-DATE
-:catalogImport
-:import
-:connPoolsImport
-:regressionRevisionLibrary
-:extractTestSuites UP-TO-DATE
-:regressionRevisionTest
-Results: SUCCESS (42 tests, 42 successes, 0 failures, 0 skipped)
-:revisionTest
-:regressionCompareTest
-Results: SUCCESS (85 tests, 84 successes, 0 failures, 1 skipped)
-:compareTest
-:releaseRevisionWorkflow
-
-BUILD SUCCESSFUL in 3m 8s
-9 actionable tasks: 6 executed, 3 up-to-date
-```
-
-Notice that the `releaseRevisionWorkflow` task goes ahead and executes the *compare* phase of the regression testing, which is why we see more tests executed during that phase. This is the default, and is of course configurable. It's also worth noting that Checkmate for OBI generates JUnit XML files during this process, which is the industry-standard way of expressing a testing result: all Continuous Delivery and DevOps platforms recognize this standard, and can be configured to act on the results of those files.
 
 # OBIEE 12c BAR Files
 The first releases of Checkmate for OBI pre-dated OBIEE 12c, and therefore, pre-dated the new BAR file functionality in 12c. In a way, the Checkmate for OBI distribution file was our way of building a BAR file... we were just slightly ahead of the game. There's an interesting decision to be made when configuring deployment workflows... to use the BAR file or the distribution file.
