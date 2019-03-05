@@ -15,7 +15,7 @@ git clone https://github.com/RedPillAnalytics/checkmate-examples.git
 cd checkmate-examples
 ```
 
-We've configured all the Docker Compose functionality to be usable with Gradle. Since we are working with the `obi` subproject folder, all of the Gradle tasks we call are prefixed with `obi:`. Additionally, I'm adding the `-q` option to remove some of the noise output to the screen by Docker Compose. This step starts up a Linux-based OBIEE instance, so it can be time-consuming. Also, the first time this statement is run, the rather-large OBIEE and database Docker images have to be downloaded, which can also take a long time:
+We've configured all the Docker Compose functionality to be usable with Gradle. Since we are working with the `obi` subproject folder, all of the Gradle tasks we call are prefixed with `obi:`. Additionally, I'm adding the `-q` option to remove some of the noise output to the screen by Docker Compose. This step starts up a Linux-based OBIEE instance, so it can be time-consuming. Also, the first time this statement is run, the rather-large OBIEE and Oracle XE database Docker images have to be downloaded, which can also take a long time:
 
 ```bash
 ./gradlew obi:composeUp -q
@@ -76,9 +76,9 @@ BUILD SUCCESSFUL in 30s
 ```
 
 # Basic Configuration
-The heart of a Gradle build is the [build script](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), which by default is defined using a `build.gradle` file. This repository subdirectory already contains a functioning [build script](https://github.com/RedPillAnalytics/checkmate-examples/blob/master/obi/build.gradle), with all the necessary configurations already made, with several of the advanced features that we will apply later commented out.
+The heart of a Gradle build is the [build script](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), which by default is defined using a [`build.gradle`](https://github.com/RedPillAnalytics/checkmate-examples/blob/master/obi/build.gradle) file, with all the necessary configurations already made, with a few advanced features that we need later commented out.
 
-The `plugins` block is the first and most important aspect to the build script: it applies any desired plugins from the [Gradle Plugin Portal](https://plugins.gradle.org) using the unique ID associated with that plugin:
+The `plugins{}` closure applies any desired plugins from the [Gradle Plugin Portal](https://plugins.gradle.org) using the unique ID associated with that plugin:
 
 ```groovy
 plugins {
@@ -88,11 +88,13 @@ plugins {
 }
 ```
 
-* `com.redpillanalytics.checkmate.obi`: this is the Checkmate for OBI plugin. It enables all the features in this Quickstart.
+* `com.redpillanalytics.checkmate.obi`: this is the Checkmate for OBI plugin. It enables all the features demonstrated in this Quickstart.
 * `com.avast.gradle.docker-compose`: enables running the OBIEE 12.2.1.4 on Docker environment for this Quickstart.
 * `com.adarshr.test-logger`: improves readability of output from *regression tests*. We'll discuss testing later on.
 
-With the Checkmate for OBI plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) exists with all the core tasks enabled. We can use the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) checked in the root of this repository to see all the tasks associated with the `obi` project subdirectory, specified with the `obi:tasks` command. If we comment everything else out of the `build.gradle` file below the warning comment, the `obi:tasks` command gives us the basic default tasks for the plugin:
+With the Checkmate for OBI plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) will contain all the tasks, properties and configurations necessary to manage an Oracle Analytics lifecycle. Checked into the Git repository is the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) which is a lightweight CLI used to interact with our Gradle project. The wrapper automatically downloads the full Gradle distribution the first time it's executed by a user, and it also downloads all the required plugins fro the plugin portal. This makes Checkmate very portable: there is no installation necessary to run all the backend processes.
+
+Let's use the wrapper and execute the `obi:tasks` command, which will show us all the configured tasks in the `obi` subdirectory:
 
 ```bash
 ./gradlew obi:tasks
@@ -225,15 +227,18 @@ Pattern: upload<ConfigurationName>: Assembles and uploads the artifacts belongin
 To see all tasks and more detail, run gradlew tasks --all
 
 To see more detail about a task, run gradlew help --task <task>
+
+BUILD SUCCESSFUL in 6s
 ```
 
-Checkmate for OBI enables the following Task Groups:
-* **Checkmate Distribution**: Management of *artifacts* of OBIEE content: *distribution files* and *BAR* files. Distribution files are the ZIP artifacts of OBIEE content that Checkmate generates. Depending on the workflow, a distribution contains a binary metadata repository, the full catalog, an archive represenetation of the `/Shared` folders of the catalog, incremental patches for both the repository and the catalog, and the results files from any regression tests run while building the artifact. We'll dive more into distirubtion files later on. BAR files are zip files that were introduced in OBIEE 12c.
-* **Checkmate Export**: Tasks that facilitate exporting content from an OBIEE instance into the build directory and eventually into source control.
-* **Checkmate Import**: Tasks that facilitate importing content into an OBIEE instance from source control, or from artifacts downloaded from Maven.
+You can scroll through all the tasks to get an idea of the completeness of what Checkmate handles. We'll discuss many of these tasks in detail, but at a high level, Checkmate for OBI enables the following [task groups](https://docs.gradle.org/current/dsl/org.gradle.api.Task.html#org.gradle.api.Task:group):
+
+* **Checkmate Distribution**: Management of *artifacts* of OBIEE content: *distribution* files and *BAR* files. Distribution files are ZIP artifacts that Checkmate has been generating since back in the OBIEE 11g days. Depending on the workflow, a distribution artifact can contain any of the following: a binary metadata repository, the full web catalog, a catalog archive of the `/Shared` folders of the web catalog, incremental patches for both the metadata repository and the web catalog, and the results files from any tests run while building the artifact. We'll discuss distribution files, and the testing framework, later on. BAR files are ZIP files that were introduced in OBIEE 12c as well as tooling for importing and exporting them from OBI instances.
+* **Checkmate Export**: Tasks that facilitate exporting content from an OBIEE instance into the build directory and eventually into source control. Although exports into source control can be run from the backend, this is usually part of the developer experience managed by [Checkmate Studio](https://github.com/RedPillAnalytics/checkmate-examples#checkmate-studio-18x).
+* **Checkmate Import**: Tasks that facilitate importing content into an OBIEE instance from source control, or from artifacts downloaded from Maven. Although imports from source control can be run from the backend, this is usually part of the developer experience managed by [Checkmate Studio](https://github.com/RedPillAnalytics/checkmate-examples#checkmate-studio-18x).
 * **Checkmate SCM**: Tasks for integrating 'checkout' and 'commit' workflows with [Git](https://git-scm.com). These tasks are for very complex workflows, and are generally unnecessary when using standard CI/CD processes.
 * **Checkmate Services**: The `metadataReload` task, which executes *Reload Files and Metadata* in OBIEE.
-* **Checkmate Testing**: Tasks for regression testing OBIEE.
+* **Checkmate Testing**: Tasks for executing and reporting on unit and regression tests.
 
 The Maven Publish plugin enables the following Task Groups:
 * **Publishing**: Publishing content to Maven repositories.
@@ -244,17 +249,18 @@ Gradle enables certain default Task Groups as well:
 * **Verification**: Runs any configured checks enabled in the project.
 
 # OBIEE Environment Configuration
-Checkmate for OBI needs to know the basics about the OBIEE environment it will execute against. Keep in mind: with the Gradle Wrapper in the source control repository, we can use Checkmate for OBI on any environment where we can check out a Git repository without doing a Checkmate-specific installation. We use Checkmate **build parameters** to configure  properties for the OBIEE environment, as well as other things we'll see later.
+Checkmate needs to know the basics about the OBIEE environment it will execute against. We use Checkmate **build parameters** to configure properties for the OBIEE environment, as well as other things we'll see later.
 
-Build parameters can be enabled one of four ways, in reverse-prioritized order... meaning the last item in the list overrides the second-to-the-last item, and so forth:
+Build parameters can be enabled one of five ways, in reverse-prioritized order... meaning the last item in the list overrides the second-to-the-last item, and so forth:
 * Specified in the `build.gradle` file
-* Specified in a `gradle.properties` file, which is a standard Java properties file existing in the project directory, or in the `$HOME/.gradle` directory.
+* Specified in a `gradle.properties` file, which is a standard Java properties file existing in the project directory
+* A `gradle.properties` file in the `GRADLE_HOME` directory which defaults to the `$HOME/.gradle` directory of the executing user.
 * Specified with environment variables
 * Specified using Gradle project properties, which are passed to the Gradle Wrapper command-line using `-P<property>=<value>`
 
 Checkmate provides this degree of flexibility because many build properties are environment specific, and may need to change from one environment to the next. Additionally, some parameters--such as passwords--are sensitive, and need to be treated as such. For instance, [Jenkins Credentials](https://jenkins.io/doc/book/pipeline/syntax/#environment), which are typically used to store passwords in Continuous Delivery environments, are exposed as environment variables, so this is a very handy way to pass sensitive build parameters to Checkmate for OBI.
 
-For the sake of simplicity and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember... you would want to use another approach in a real delivery pipeline. We'll use the `obi{}` closure to define these properties:
+For the sake of simplicity and clarity, we'll declare all the build parameters in the `build.gradle` file... even the sensitive ones. Just remember: you would want to use another approach in a real delivery pipeline. We'll use the `obi{}` closure to define these properties:
 
 ```gradle
 obi {
@@ -270,16 +276,16 @@ obi {
 
 Notes on a few of the parameters below:
 * **domainHome:** Defaults to `<obi.middlewareHome>/user_projects/domains/bi`, but can be configured separately as we've done here.
-* **compatibility:** Options are `12.2.1.4, 12.2.1.3, 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7`. There are subtle and not-so-subtle differences in the way Checkmate interacts with OBIEE in the different releases, so this parameter controls that behavior. The 11.x functionality and parameters will likely disappear in the near future.
-* **contentPolicy:** This parameter controls whether we are primarily importing, exporting and publishing traditional OBIEE content, which generates *distribution* files, or using the nwe *BAR* functionality introduced in OBIEE 12c. Possible values include: `distribution, bar, mixed, distribution-metadata, distribution-catalog`. The main values for this parmater are `distribution` or `bar`, with all others being for mostly depracated use cases. We are using the `distribution` setting, which is also the default
+* **compatibility:** Options are `12.2.1.4, 12.2.1.3, 12.2.1.2, 12.2.1.1, 12.2.1.0, 11.1.1.9 and 11.1.1.7`. There are subtle and not-so-subtle differences in the way Checkmate interacts with OBIEE in the different releases, so this parameter controls that behavior. The `11.x` functionality and corresponding parameter values will likely disappear in the near future.
+* **contentPolicy:** This parameter controls whether we are primarily importing, exporting and publishing OBIEE content using traditional tools and APIs, therefore generating distribution files. Or, whether we are using the new BAR utilities and APIs introduced in OBIEE 12c. Possible values include: `distribution, bar, mixed, distribution-metadata, distribution-catalog`. The main values for this parmater are `distribution` or `bar`, with all others being for mostly depracated use cases. We are using the `distribution` setting, which is also the default
 
 # Building and Publishing
 The workflow for building OBIEE content usually occurs in the following steps:
-* **Build:** The building of OBIEE deployment artifacts from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involve building a binary RPD, as well as a catalog archive file of the `/Shared` folders of the catalog. Depending on the value of `contentPolicy`, we either build a distribution file or a 12c BAR file. Either a distribrution file, or a BAR file, is supported in working with OBIEE 12c environments.
-* **Test (Optional):** After building our content, and prior to publishing it, we'll run a series of unit and/or regression tests to make sure our new content works as expected, and hasn't broken anything. We'll discuss regression testing further later on... so we'll exclude from our process at the moment.
+* **Build:** The building of OBIEE content from source control. In source control we have the following checked in: the metadata repository as MDS-XML, and the presentation catalog in filesystem structure. The **build** steps involve building a binary RPD, as well as a catalog archive file of the `/Shared` folders of the catalog. Depending on the value of `contentPolicy`, we package this up as either a distribution file or a BAR file. Both artifact types are fully supported in OBIEE 12c.
+* **Test (Optional):** After building our content, and prior to publishing it, we'll run a series of unit and/or regression tests to make sure our new content works as expected, and hasn't broken anything. We'll discuss testing more later on... so for now we'll exclude testing results from our distribution files.
 * **Publish:** Publishing distribution files or BAR files to one or more [Maven repositories](https://maven.apache.org/pom.html#Repositories).
 
-Currently, we have the publication repositories and a version number configured in our `build.gradle`:
+Currently, we have the `publishing{}` closure with a `repositories{}` closure describing our publication location, as well as a version number:
 
 ```gradle
 version = '1.0.0'
@@ -291,13 +297,13 @@ publishing {
 }
 ```
 
-This will publish our OBI distribution files or BAR files to a [Maven Local](https://docs.gradle.org/current/userguide/publishing_maven.html#publishing_maven:install) repository, which defaults to `$HOME/.m2`. Obviously, this is for testing purposes only. In a real continuous delivery pipeline, content should be published to a real Maven-compatible repository. At the very least, publish to an S3 bucket, which Gradle supports, using the following syntax:
+This will publish our OBI distribution files or BAR files to a [Maven Local](https://docs.gradle.org/current/userguide/publishing_maven.html#publishing_maven:install) repository, which defaults to `$HOME/.m2`. Obviously, this is for testing purposes only. In a real continuous delivery pipeline, content should be published to a resilient Maven-compatible repository. At the very least, publish to an S3 bucket, which Gradle supports, using the following syntax:
 
 ```gradle
 publishing {
   repositories {
     maven {
-      url 's3://bucket-name/path/to/directory'
+      url 's3://bucket-name/path/to/repository'
       credentials(AwsCredentials) {
         accessKey 'access key'
         secretKey 'secret key'
@@ -307,11 +313,11 @@ publishing {
 }
 ```
 
-We're hard-coding our version number to `1.0.0` in the build.gradle file, although we would normally use a plugin such as the [axion-release-plugin](https://github.com/allegro/axion-release-plugin) to handle release management with semantic versioning and automatic version bumping
+We've hard-coding our version number to `1.0.0` just for ease and clarity: we would normally use a Gradle plugin such as the [axion-release-plugin](https://github.com/allegro/axion-release-plugin) to handle release management with semantic versioning and automatic version bumping.
 
-Why do we bother publishing our OBIEE distribution or BAR files as artifacts to Maven repositories? So we can pull that artifact later by simply referring to the version number. This allows us to automate deployments to downstream environments, as Checkmate can simply pull artifacts from Maven prior to deployment. It also allows us to automate regression testing. As you will see later in the Quickstart, we can declare published artifact versions as baselines for testing new builds generated by Checkmate for OBI. This gives us a convenient way to pull down any prior distribution for regression testing or integration testing purposes. We can also generate incremental patch files this way and include them in our distributin files: we simply pull down from Maven whatever distribution was last published to our **Production** server, and use that in the patch-creation process.
+Why do we bother publishing our artifacts to Maven repositories? So we can pull that artifact later as a depdendency by simply referring to it's coordinates and version number. This allows us to automate deployments to downstream environments using published artifacts. It also allows us to do some interesting things with our testing framework: we can pull prior artifacts and do comparisons of test results. We can also use artifacts to generate incremental patch files to include in new distribution files: we metadata and catalog content in the artifact to compare with current content in the production of these patches. These incremental patches can be used for deployment in highly-continuous environments.
 
-We'll run the `obi:build` task again, but this time we'll use the `--console=plain` option to get better screen output. We'll also add the `obi:clean` task to first clean out our build directory to ensure we re-generate all our artifacts:
+We'll run the `obi:build` task again, but this time we'll use the `--console=plain` option, which provides better screen output for documentation. We'll also add the `obi:clean` task to first clean our build directory from prior executions:
 
 ```bash
 ./gradlew obi:clean obi:build --console=plain
