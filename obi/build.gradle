@@ -44,7 +44,7 @@ dependencies {
   // Checkmate testing library
   obiee 'com.redpillanalytics:checkmate-obi:+'
   // Dependencies on previous OBIEE builds
-  //feature 'obiee:obi-build:+'
+  feature 'obiee:obi-build:+'
   // feature 'obiee:obi-bar:+'
   //release 'obiee:obi-build:1.0.0'
   // release 'obiee:obi-bar:1.0.0'

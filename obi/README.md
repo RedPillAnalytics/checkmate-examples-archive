@@ -408,202 +408,39 @@ repositories {
 }
 ```
 
-We'll make the following changes to our [`build.gradle`](build.gradle) file, which should be possible by simply uncommenting a few lines:
+We'll make the following changes to our [`build.gradle`](build.gradle) file, which should be possible by simply uncommenting the `feature 'obiee:obi-build:+'` line:
 
 ```gradle
 dependencies {
   obiee 'com.redpillanalytics:checkmate-obi:+'
   feature 'obiee:obi-build:+'
-  release 'obiee:obi-build:1.0.0'
 }
 ```
 
-There's a lot more in the dependencies closure that we'll discuss later. For now, we'll just focus on the two build group dependencies that we want to uncomment out:
-
-```gradle
-feature 'obiee:obi-build:+'
-release 'obiee:obi-build:1.0.0'
-```
-
-The DSL might be a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI artifacts. Basically, we use a Gradle [configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html) to declare dependencies on artifacts that we want Checkmate to pull down whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice for the **feature** build group, we simply have a plus sign (+): this signifies to Checkmate that we simply want to pull down the most recent distribution file. After you uncomment these two dependencies, pay attention to the new tasks that are enabled:
+The DSL might be a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI artifacts. Basically, we use a Gradle [configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html) to declare dependencies on artifacts that we want Checkmate to pull down whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice we simply have a '`+`' for the version number: this signifies that we simply want to pull down whatever the latest version is. We could have easily written `feature 'obiee:obi-build:1.0.0'`. We can look at all the new tasks now enabled by the `feature` build group:
 
 ```bash
-./gradlew obi:tasks
-
-> Task :obi:tasks
-
-------------------------------------------------------------
-Tasks runnable from project :obi
-------------------------------------------------------------
-
-Build tasks
------------
-assemble - Assembles the outputs of this project.
-build - Build all OBI content for this project.
-clean - Deletes the build directory.
-
-Docker tasks
-------------
-composeBuild - Builds images for services of docker-compose project
-composeDown - Stops and removes containers of docker-compose project (only if stopContainers is set to true)
-composeDownForced - Stops and removes containers of docker-compose project
-composeLogs - Stores log output from services in containers of docker-compose project
-composePull - Builds and pulls images of docker-compose project
-composePush - Pushes images for services of docker-compose project
-composeUp - Builds and starts containers of docker-compose project
-
-Help tasks
-----------
-buildEnvironment - Displays all buildscript dependencies declared in project ':obi'.
-components - Displays the components produced by project ':obi'. [incubating]
-dependencies - Displays all dependencies declared in project ':obi'.
-dependencyInsight - Displays the insight into a specific dependency in project ':obi'.
-dependentComponents - Displays the dependent components of components in project ':obi'. [incubating]
-help - Displays a help message.
-model - Displays the configuration model of project ':obi'. [incubating]
-projects - Displays the sub-projects of project ':obi'.
-properties - Displays the properties of project ':obi'.
-tasks - Displays the tasks runnable from project ':obi'.
-
-OBI Build tasks
----------------
-barBuild - Build and assemble the components for the BI Archive (BAR) file from SCM.
-barSync - Synchronize the BAR build directory from SCM.
-catalogBuild - Copy catalog from SCM to 'catalog/current' and generate catalog archive file 'catalog/current.catalog'.
+./gradlew tasks | grep feature
 featureCatalogCompare - Build incremental file 'catalog/feature-diff.txt' and 'catalog/feature-undiff.txt' using the 'feature' configuration.
 featureCompare - Execute 'featureCatalogCompare' and 'featureMetadataCompare'.
 featureMetadataCompare - Build incremental files 'repository/feature-patch.xml', 'repository/feature-unpatch.xml' and 'repository/feature-compare.csv' using the 'feature' configuration.
-metadataBuild - Build binary repository 'repository/current.rpd' from the MDS-XML repository in SCM.
-releaseCatalogCompare - Build incremental file 'catalog/release-diff.txt' and 'catalog/release-undiff.txt' using the 'release' configuration.
-releaseCompare - Execute 'releaseCatalogCompare' and 'releaseMetadataCompare'.
-releaseMetadataCompare - Build incremental files 'repository/release-patch.xml', 'repository/release-unpatch.xml' and 'repository/release-compare.csv' using the 'release' configuration.
-
-OBI Distribution tasks
-----------------------
-barZip - Create a BI Archive (BAR) file from the assembled component.
-buildZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts.
-deployZip - Create a ZIP distribution archive for downstream deployments containing metadata and catalog artifacts and incremental patches.
 featureExtractBuild - Extract OBIEE dependencies for 'feature'.
-releaseExtractBuild - Extract OBIEE dependencies for 'release'.
-
-OBI Export tasks
-----------------
-barExport - Execute barStage followed by barSource.
-barSource - Synchronize the staged BAR with SCM.
-barStage - Export BI Archive (BAR) File using the 'ssi' Service Instance.
-catalogExport - Export the online presentation catalog into SCM by calling 'catalogStage' followed by 'catalogSource'
-catalogSource - Synchronize the staged catalog with the offline presentation catalog in SCM.
-catalogStage - Stage the online presentation catalog at 'catalog/current'.
-connPoolsExport - Export target OBIEE server connection pool information in JSON format to 'repository/conn-pools.json'.
-export - Execute all configured export tasks.
-metadataExport - Export the online metadata repository into SCM by calling 'metadataStage' followed by 'metadataSource'
-metadataSource - Synchronize the staged repository with the repository in SCM.
-metadataStage - Stage the online metadata repository to 'repository/current.rpd'.
-variablesExport - Export target OBIEE server variable information in JSON format to 'repository/variables.json'.
-
-OBI Import tasks
-----------------
-applyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
-barImport - Import BI Archive (BAR) File into the 'ssi' Service Instance.
-barImportSAL - Import SampleAppLite.bar BI Archive (BAR) File into the 'ssi' Service Instance.
-barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
-catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current'.
-connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
 featureApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
 featureCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/feature'.
 featureGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
 featureImport - Execute all configured import tasks for buildGroup 'feature'.
 featureMetadataImport - Import 'repository/feature.rpd' into the online metadata repository.
-generateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
-import - Execute all configured import tasks.
-metadataImport - Import 'repository/current.rpd' into the online metadata repository.
-releaseApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
-releaseCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/release'.
-releaseGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
-releaseImport - Execute all configured import tasks for buildGroup 'release'.
-releaseMetadataImport - Import 'repository/release.rpd' into the online metadata repository.
-variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
-
-OBI Patch tasks
----------------
 featureCatalogPatch - Apply 'catalog/feature-diff.txt' to the online presentation catalog.
 featureCatalogUnpatch - Apply 'catalog/feature-diff.txt' to the online presentation catalog.
 featureMetadataPatch - Apply 'repository/feature-patch.xml' to the metadata repository in offline mode.
 featureMetadataUnpatch - Apply 'repository/feature-unpatch.xml' to the metadata repository in offline mode
 featurePatch - Execute all configured patch tasks for buildGroup 'feature'.
 featureUnpatch - Execute all configured unpatch tasks for buildGroup 'feature'.
-releaseCatalogPatch - Apply 'catalog/release-diff.txt' to the online presentation catalog.
-releaseCatalogUnpatch - Apply 'catalog/release-diff.txt' to the online presentation catalog.
-releaseMetadataPatch - Apply 'repository/release-patch.xml' to the metadata repository in offline mode.
-releaseMetadataUnpatch - Apply 'repository/release-unpatch.xml' to the metadata repository in offline mode
-releasePatch - Execute all configured patch tasks for buildGroup 'release'.
-releaseUnpatch - Execute all configured unpatch tasks for buildGroup 'release'.
-
-OBI SCM tasks
--------------
-catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
 featureCatalogMerge - Use OBIEE merging instead of SCM merging for presentation catalog.
 featureMerge - Execute 'featureMetadataMerge' and 'featureCatalogMerge'.
-metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
-releaseCatalogMerge - Use OBIEE merging instead of SCM merging for presentation catalog.
-releaseMerge - Execute 'releaseMetadataMerge' and 'releaseCatalogMerge'.
-scmCheckout - Checkout a branch in the local SCM repository.
-scmCommit - Issue a commit to the local SCM repository. Customize with 'scmMessage', 'scmCommitter', 'scmEmail', and 'scmCommitPath' build parameters.
-scmPush - Push to the origin for the local SCM repository. Requires 'sourceBase' build parameter pointing to Git repo root directory, if running task outside of a Git repository.
-
-OBI Services tasks
-------------------
-metadataReload - Execute the 'Reload Files and Metadata' web service.
-
-OBI Testing tasks
------------------
-compareTest - Execute all Compare regression tests for the entire project.
-extractTestSuites - Extract the compiled test suites and copy them to the 'build/classes' directory.
-regressionCompareTest - Compare the differences between the Baseline and Revision regression test results for Test Group 'regression'.
-regressionResultsLibrary - Create the Results regression test library CSV file for Test Group 'regression'.
-regressionResultsTest - Execute the Results regression test library file for Test Group 'regression'.
-resultsTest - Execute all Results regression tests for the entire project.
-
-OBI Workflow tasks
-------------------
 featureCompareWorkflow - Extract Baseline test library and results from the 'feature' artifact and run Compare tests.
 featureImportWorkflow - Import 'feature' metadata and catalog artifacts while managing connection pools.
 featureTestWorkflow - Execute ':resultsWorkflow', ':featureCompareWorfklow' and ':publish'.
-importWorkflow - Import 'current' metadata and catalog artifacts while managing connection pools.
-releaseCompareWorkflow - Extract Baseline test library and results from the 'release' artifact and run Compare tests.
-releaseImportWorkflow - Import 'release' metadata and catalog artifacts while managing connection pools.
-releaseTestWorkflow - Execute ':resultsWorkflow', ':releaseCompareWorfklow' and ':publish'.
-resultsWorkflow - Import 'current' metadata and catalog content and execute the Revision test library.
-
-Publishing tasks
-----------------
-generateMetadataFileForBuildPublication - Generates the Gradle metadata file for publication 'build'.
-generateMetadataFileForDeployPublication - Generates the Gradle metadata file for publication 'deploy'.
-generatePomFileForBuildPublication - Generates the Maven POM file for publication 'build'.
-generatePomFileForDeployPublication - Generates the Maven POM file for publication 'deploy'.
-publish - Publishes all publications produced by this project.
-publishBuildPublicationToMavenLocal - Publishes Maven publication 'build' to the local Maven repository.
-publishBuildPublicationToMavenLocalRepository - Publishes Maven publication 'build' to Maven repository 'MavenLocal'.
-publishDeployPublicationToMavenLocal - Publishes Maven publication 'deploy' to the local Maven repository.
-publishDeployPublicationToMavenLocalRepository - Publishes Maven publication 'deploy' to Maven repository 'MavenLocal'.
-publishToMavenLocal - Publishes all Maven publications produced by this project to the local Maven cache.
-
-Verification tasks
-------------------
-check - Runs all checks.
-
-Rules
------
-Pattern: clean<TaskName>: Cleans the output files of a task.
-Pattern: build<ConfigurationName>: Assembles the artifacts of a configuration.
-Pattern: upload<ConfigurationName>: Assembles and uploads the artifacts belonging to a configuration.
-
-To see all tasks and more detail, run gradlew tasks --all
-
-To see more detail about a task, run gradlew help --task <task>
-
-BUILD SUCCESSFUL in 6s
-1 actionable task: 1 executed
 ```
 
 You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate requires, but will use the content inside the artifact to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Let's also publish again, so we can create a *deploy* distribution, which contains all the patch files, as well as the original repository and catalog artifacts. Expect to see some *UP-TO-DATE* checks as Checkmate for OBI skips tasks that don't need to be rerun:
