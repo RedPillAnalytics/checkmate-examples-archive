@@ -748,11 +748,11 @@ BUILD SUCCESSFUL in 2m 33s
 ```
 
 # OBIEE 12c BAR Files
-The first releases of Checkmate for OBI pre-dated OBIEE 12c, and therefore, pre-dated the new BAR file functionality in 12c. In a way, the Checkmate for OBI distribution file was our way of building a BAR file... we were just slightly ahead of the game. There's an interesting decision to be made when configuring deployment workflows: to use the BAR file or the distribution file.
+The first release of Checkmate for OBI pre-dated OBIEE 12c, and therefore, pre-dated the new BAR file functionality introduced 12c. We understood the need for a singular artifact that expressed the content for an OBIEE environment, and built it years before Oracle did. There's an interesting decision to be made when configuring Checkmate workflows: use the distribution file, or the BAR file?
 
-The distribution file provides the added benefit of including incremental patch files and test result outcomes, neither of which can exist in the BAR file. And, the BAR import and export utilities take much, much longer to run. However, the BAR file contains a lot of content not available using traditional OBIEE utilities and APIs: datasets, authorization details, search, actions, etc. So it's not a simple choice on which paradigm to use.
+There are pros and cons for each approache. The distribution file provides the added benefit of including incremental patch files and test result outcomes, neither of which can exist in the BAR file. The BAR import and export utilities are also painfully slow. However, the BAR file contains a lot of content not available using traditional OBIEE utilities and APIs: datasets, authorization details, search, actions, etc. The choice is not cut and dry.
 
-In recent releases, Checkmate has consolidated the Git repository structure to be the same between the legacy utilities that are used with distribution files, and the BAR utilities. We use the BAR directory structure as the inspiration for how we store our content in Git, and we've modified our legacy distribution tools to understand that directory structure and use it for interacting with the metadata and catalog in Git. The content in this Quickstart was exported using `barExport`, so we can use either the distribution tools or the BAR tools for interacting with it.
+In recent releases, Checkmate has consolidated the Git repository structure so that it's consistent whether we are using traditional utilties and APIs used in distribution file workflows, and those used with the BAR file. Checkmate adopted the BAR directory structure as the inspiration for how we store our content in Git, and we've modified our legacy distribution tools to understand that directory structure and use it for interacting content checked into Git. The content in this Quickstart was exported using `barExport`, so we can use either the distribution tools or the BAR tools for interacting with it.
 
 So first, let's build a BAR file. We need to change our `contentPolicy` to `bar` so we can use all the high level container tasks:
 
@@ -768,7 +768,11 @@ obi {
 }
 ```
 
-With OBI's traditional BAR tooling, BAR files have to be generated from an OBIEE instance, but we've written Checkmate to be able to generate BAR files directory from source control. Similar to what we did with distribution files, we'll build and publish our BAR file:
+When using OBIEE's BAR utilities, the only way to create the BAR file is by exporting it from an instance of OBIEE. This was an unfortunate choice because it reinforces the pattern common in aging legacy tools that the *gold copy* of our content and code exist *in environments* instead of in source control systems like Git. And checking whole BAR files into source control is silly: it would be unusable with even the simplies branching strategy.
+
+We've written Checkmate to enhance the BAR process by dismantling the BAR file on the way into source control, and reassembling on the way out. The BAR file is really just a zip file with a manifest, so of course we unzip before copying it to source control. But we also convert the binary metadata file into MDS-XML for storage in Git, and rebuild the binary during the BAR assembly process.
+
+So let's build an publish a BAR file from source control, similar to what we did with distribution files:
 
 ```bash
 ./gradlew obi:publish --console=plain
@@ -782,7 +786,7 @@ With OBI's traditional BAR tooling, BAR files have to be generated from an OBIEE
 BUILD SUCCESSFUL in 37s
 5 actionable tasks: 5 executed
 ```
-We can take a look at our build directory and see a subset of the generated content:
+We can take a look at our build directory and see a subset of the generated content. Although a BAR file is different from a distribution file, the final artifact exists in the same `distributions` directory:
 
 ```bash
 ls -ltr obi/build/*
@@ -803,7 +807,7 @@ total 0
 drwxr-xr-x 3 oracle dba 96 Mar  5 08:13 bar
 ```
 
-BAR files are really just ZIP files, so we continue to use that extension instead of the `.bar` extension, renaming the artifacts if necessary prior to calling any of the BAR utilities. Let's add a BAR artifact dependency on the `promote` build group, so we can use a BAR file for downstream deployments:
+Since BAR files are really just ZIP files, we continue to use that extension instead of the `.bar` extension, renaming the artifacts if necessary prior to calling any of the BAR utilities. Let's add a BAR artifact dependency on the `promote` build group, so we can use a BAR file for downstream deployments:
 
 ```gradle
 dependencies {
