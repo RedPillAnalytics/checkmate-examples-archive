@@ -75,6 +75,8 @@ BUILD SUCCESSFUL in 30s
 2 actionable tasks: 2 executed
 ```
 
+At any time throughout this Quickstart, we can add the `-i` option to any of our Gradle task executions. The output generated with this option is more verbose, which isn't great for documentation, but would be helpful in understanding some of the things going on under the covers.
+
 # Basic Configuration
 The heart of a Gradle build is the [build script](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:hello_world), which by default is defined using a [`build.gradle`](https://github.com/RedPillAnalytics/checkmate-examples/blob/master/obi/build.gradle) file, with all the necessary configurations already made, with a few advanced features that we need later commented out.
 
@@ -357,7 +359,7 @@ BUILD SUCCESSFUL in 34s
 
 In the output, you'll notice the *UP-TO-DATE* status that Checkmate is reporting when running the dependent tasks. Checkmate is written to take advantage of the [Gradle Incremental Build](https://docs.gradle.org/current/userguide/more_about_tasks.html#sec:up_to_date_checks) feature. The catalog and metadata build tasks are not executed again, because none of the task input and output files have changed. This keeps Checkmate from re-running tasks that it doesn't have to. Rerunning tasks can always be forced by providing the `--rerun-tasks` command-line option.
 
-Let's take a look at what our Build, Bundle and Publish process generated. If we look at the `obi/build` directory, we can see all the things that Checkmate built, with a subset displayed below:
+Let's take a look at what our Build and Publish process generated. If we look at the `obi/build` directory, we can see all the things that Checkmate built, with a subset displayed below:
 
 ```bash
 ls -l obi/build/*
@@ -399,14 +401,14 @@ Later on, we'll expore the differences between the **build** and the **deploy** 
 # Build Groups
 Checkmate for OBI uses the concept of a **build group**: a collection of tasks associated with a particular dependency, which in our case, is a dependency on a published artifact: either a distribution file or a BAR file. Up until now, all the tasks demonstrated exist without being tied to a dependency: they are the core Checkmate for OBI tasks that revolve around working with content checked into a Git repository.
 
-A build group allows us to declare a dependency on a prior artifact, and then get a bunch of new, dynamically generated tasks that belong to that build group. Checkmate contains three build groups by default:
-* **feature:** used primarily to regression test new feature branches prior to their being merged into a mainline of code, usually the **develop** or **master** branch.
-* **release:** used to regression test new releases prior to being deployed to downstream environments, or prior to being merged into release branches such as **master** or **release.x.x.x**.
-* **promote:** used for promoting content to downstream environments.
+A build group allows us to declare a dependency on a prior version of an artifact, and then get a bunch of new, dynamically generated tasks that belong to that build group. Checkmate contains three build groups by default:
+* **feature:** used primarily to test new feature branches prior to their being merged into a mainline of code, usually the **develop** or **master** branch.
+* **release:** used to test new releases prior to being deployed to downstream environments, or prior to being merged into release branches such as **master** or **release.x.x.x**.
+* **promote:** used for promoting content to downstream environments, and do smoke-testing of those environments.
 
 Because these build groups are already built-in, we don't have to do much to enable them; all we have to do is declare a dependency on a prior artifact version, and the tasks in this build group will magically appear. Since we now have the `1.0.0` distribution published to our Maven Local repository, we can use that distribution as our dependency for these build groups. We could also define custom build groups using the `obi.buildGroups {}` DSL structure if for some reason the combination of **feature**, **release** and **promote** was not sufficient for our workflow.
 
-The first thing we have to tell Checkmate for OBI is where to go looking for our artifacts. We're still using Maven Local for this, so we see that in our `repositories{}` closure:
+The first thing we have to tell Checkmate is where to go looking for our artifacts. We're still using Maven Local for this, so we see that in our `repositories{}` closure:
 
 ```gradle
 repositories {
@@ -414,7 +416,7 @@ repositories {
 }
 ```
 
-We'll make the following changes to our [`build.gradle`](build.gradle) file, which should be possible by simply uncommenting the `feature 'obiee:obi-build:+'` line:
+We'll make the following changes to our `build.gradle` file, which should be possible by simply uncommenting the `feature 'obiee:obi-build:+'` line:
 
 ```gradle
 dependencies {
@@ -423,7 +425,7 @@ dependencies {
 }
 ```
 
-The DSL might be a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI artifacts. Basically, we use a Gradle [configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html) to declare dependencies on artifacts that we want Checkmate to pull down whenever we use one of the tasks in that build group. We are declaring a particular distribution file... in this case, the **build** distribution, with a particular version. Notice we simply have a '`+`' for the version number: this signifies that we simply want to pull down whatever the latest version is. We could have easily written `feature 'obiee:obi-build:1.0.0'`. We can look at all the new tasks now enabled by the `feature` build group:
+The DSL might be a bit confusing, because we are using Gradle's built-in dependency resolution functionality to resolve our OBI artifacts. Basically, we use a Gradle [configuration](https://docs.gradle.org/current/dsl/org.gradle.api.artifacts.Configuration.html) to declare a dependency on a particular artifact... in this case, the **build** distribution file at a particular version. Notice we have a '`+`' for the version number: this signifies that we want to download whatever the latest version of the artifat is. We could have easily written `feature 'obiee:obi-build:1.0.0'` if we wanted to be exact. We can look at all the new tasks now enabled by the `feature` build group:
 
 ```bash
 ./gradlew tasks | grep feature
@@ -449,7 +451,7 @@ featureImportWorkflow - Import 'feature' metadata and catalog artifacts while ma
 featureTestWorkflow - Execute ':resultsWorkflow', ':featureCompareWorfklow' and ':publish'.
 ```
 
-You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate requires, but will use the content inside the artifact to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. Let's also publish again, so we can create a *deploy* distribution, which contains all the patch files, as well as the original repository and catalog artifacts. Expect to see some *UP-TO-DATE* checks as Checkmate for OBI skips tasks that don't need to be rerun:
+You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate requires, but will use the content inside the artifact to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `releaseCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. We execute this task, and also publish again so we can create a *deploy* distribution, which contains all the patch files, as well as the original repository and catalog artifacts. Expect to see some *UP-TO-DATE* checks as Checkmate for OBI skips tasks that don't need to be rerun:
 
 ```bash
 ./gradlew obi:releaseCompare obi:publish --console=plain
@@ -513,9 +515,9 @@ total 108
 -rwxr----- 1 oracle dba 29624 Feb 22 23:18 release.rpd
 ```
 
-We generated all the incremental patch files, including the rollback patches, but the content of those patch files is empty, because there is currently no difference in what was published to version `1.0.0` and what is currently in source control; but you get the idea.
+We generated all the incremental patch files, including the rollback patches, but the content of those patch files is basically empty, because there is currently no difference in what was published to version `1.0.0` and what is currently in source control; but you get the idea.
 
-Now, let's enable the **promote** build group distribution file, which is what we use for deploying content to downstream environments. So we just need to uncomment the `promote 'obiee:obi-deploy:+'` line from our `build.gradle` file:
+Now, let's enable the **promote** build group, which is what we use for deploying content to downstream environments. So we just need to uncomment the `promote 'obiee:obi-deploy:+'` line from our `build.gradle` file:
 
 ```gradle
 dependencies {
@@ -526,7 +528,7 @@ dependencies {
 }
 ```
 
-This gives us a series of new tasks to work with the **promote** build group. We'll use the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
+We'll execute the `promotePatch` task, which uses the metadata and catalog incremental patches from the **deploy** distribution file, and applies them to the online OBIEE instance:
 
 ```bash
 ./gradlew obi:promotePatch --console=plain
@@ -557,7 +559,7 @@ Promoting to downstream environments using incremental patches is a great soluti
 BUILD SUCCESSFUL in 36s
 6 actionable tasks: 6 executed
 ```
-Notice that our `promoteImportWorkflow` task manages connection pools for us. Before our new metadata content is imported into the instance, we save the connection pool information as a JSON file, and then reapply it once the import process is complete. You can see the connection pool files in the build directory:
+Notice that this *workflow* task manages connection pools for us. Before our new metadata content is imported into the instance, we save the connection pool information as a JSON file, and then reapply it once the import process is complete. You can see the connection pool files in the build directory:
 
 ```bash
 cat obi/build/repository/*.json
@@ -580,7 +582,7 @@ cat obi/build/repository/*.json
 }
 ```
 
-The connection pool metadata included in SampleApp isn't the most compelling as it uses XML data files, but you can see that the encrypted password is included, and although there are no variables included in this connection pool, if there were, our JSON file would capture those as well.
+The connection pool metadata included in SampleApp isn't very compelling as it uses XML data files, but you can see that the encrypted password is included, and although no variables are included in this connection pool, if they did, our JSON file would capture those as well.
 
 # Testing
 Checkmate has a pluggable testing framework that supports either the standard Checkmate testing library built in to the Gradle plugin, or the Baseline Validation Tool (BVT) which is offered from Oracle. We prefer our built-in testing framework, so we'll configure that, first by telling Checkmate that the library is available in the Gradle Plugin Maven repo, which is specified with the `maven { url "https://plugins.gradle.org/m2/" }` line:
