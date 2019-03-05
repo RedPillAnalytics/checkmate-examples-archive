@@ -20,8 +20,6 @@ obi {
   contentPolicy = 'distribution'
 }
 
-// DO NOT COMMENT OUT ANYTHING ABOVE THIS LINE
-
 version = '1.0.0'
 
 publishing {
@@ -49,5 +47,5 @@ dependencies {
   //release 'obiee:obi-build:1.0.0'
   // release 'obiee:obi-bar:1.0.0'
   //promote 'obiee:obi-deploy:+'
-  // promote 'obiee:obi-bar:+'
+  //promote 'obiee:obi-bar:+'
 }
