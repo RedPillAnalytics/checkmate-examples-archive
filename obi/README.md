@@ -454,13 +454,13 @@ featureTestWorkflow - Execute ':resultsWorkflow', ':featureCompareWorfklow' and 
 You should see a bunch of new tasks enabled that begin with *feature* and *release*. These tasks will perform whatever Checkmate requires, but will use the content inside the artifact to faciliate the tasks. In some cases... the build group tasks will use both the content in the distribution file as well as content checked into the Git repository. An example is `featureCompare`, which will generate incremental patch files for both the repository and the catalog by comparing the content in the distribution file with whatever is in source control. We execute this task, and also publish again so we can create a *deploy* distribution, which contains all the patch files, as well as the original repository and catalog artifacts. Expect to see some *UP-TO-DATE* checks as Checkmate for OBI skips tasks that don't need to be rerun:
 
 ```bash
-./gradlew obi:releaseCompare obi:publish --console=plain
-> Task :obi:releaseExtractBuild
+./gradlew obi:featureCompare obi:publish --console=plain
+> Task :obi:featureExtractBuild
 > Task :obi:catalogBuild UP-TO-DATE
-> Task :obi:releaseCatalogCompare
+> Task :obi:featureCatalogCompare
 > Task :obi:metadataBuild UP-TO-DATE
-> Task :obi:releaseMetadataCompare
-> Task :obi:releaseCompare
+> Task :obi:featureMetadataCompare
+> Task :obi:featureCompare
 > Task :obi:assemble UP-TO-DATE
 > Task :obi:check UP-TO-DATE
 > Task :obi:build UP-TO-DATE
@@ -472,7 +472,7 @@ You should see a bunch of new tasks enabled that begin with *feature* and *relea
 > Task :obi:publishDeployPublicationToMavenLocalRepository
 > Task :obi:publish
 
-BUILD SUCCESSFUL in 1m 42s
+BUILD SUCCESSFUL in 1m 44s
 11 actionable tasks: 8 executed, 3 up-to-date
 ```
 
@@ -481,38 +481,38 @@ Notice that `:buildZip` was *UP-TO-DATE* while `:deployZip` was not. This is bec
 ```bash
 ls -l obi/build/*
 obi/build/catalog:
-total 4240
-drwxr-xr-x 4 oracle dba     128 Feb 22 23:16 current
--rw-r----- 1 oracle dba 2163675 Feb 22 23:16 current.catalog
-drwx------ 3 oracle dba      96 Feb 22 23:18 init
-drwxr-xr-x 4 oracle dba     128 Feb 22 23:17 release
--rw-r----- 1 oracle dba    1693 Feb 22 23:18 release-diff.txt
--rw-r----- 1 oracle dba    1693 Feb 22 23:18 release-undiff.txt
--rw-r----- 1 oracle dba 2163675 Feb 22 23:17 release.catalog
+total 3648
+drwxr-xr-x 4 oracle dba     128 Mar  7 17:39 current
+-rw-r----- 1 oracle dba 1859984 Mar  7 17:39 current.catalog
+drwxr-xr-x 4 oracle dba     128 Mar  7 17:38 feature
+-rw-r----- 1 oracle dba    1711 Mar  7 17:40 feature-diff.txt
+-rw-r----- 1 oracle dba    1711 Mar  7 17:41 feature-undiff.txt
+-rw-r----- 1 oracle dba 1859874 Mar  7 17:38 feature.catalog
+drwx------ 3 oracle dba      96 Mar  7 17:40 init
 
 obi/build/distributions:
-total 15236
--rw-r--r-- 1 oracle dba 4888828 Feb 22 23:16 obi-build-1.0.0.zip
--rw-r--r-- 1 oracle dba 9809721 Feb 22 23:19 obi-deploy-1.0.0.zip
+total 13116
+-rw-r--r-- 1 oracle dba 4285624 Mar  7 17:42 obi-build-1.0.0.zip
+-rw-r--r-- 1 oracle dba 8603078 Mar  7 17:43 obi-deploy-1.0.0.zip
 
 obi/build/misc:
 total 0
-drwxr-xr-x 2 oracle dba 64 Feb 22 23:16 xml-variables
+drwxr-xr-x 2 oracle dba 64 Mar  7 17:41 xml-variables
 
 obi/build/publications:
 total 0
-drwxr-xr-x 3 oracle dba 96 Feb 22 23:16 build
-drwxr-xr-x 3 oracle dba 96 Feb 22 23:17 deploy
+drwxr-xr-x 3 oracle dba 96 Mar  7 17:42 build
+drwxr-xr-x 3 oracle dba 96 Mar  7 17:43 deploy
 
 obi/build/repository:
 total 108
--rwxr----- 1 oracle dba 29624 Feb 22 23:16 current.rpd
--rw------- 1 oracle dba     0 Feb 22 23:18 release-compare.csv
--rw------- 1 oracle dba    48 Feb 22 23:18 release-merge-decision.csv
--rwxr----- 1 oracle dba 29640 Feb 22 23:18 release-merge.rpd
--rwxr----- 1 oracle dba   126 Feb 22 23:18 release-patch.xml
--rwxr----- 1 oracle dba   126 Feb 22 23:18 release-unpatch.xml
--rwxr----- 1 oracle dba 29624 Feb 22 23:18 release.rpd
+-rwxr----- 1 oracle dba 29704 Mar  7 17:41 current.rpd
+-rw------- 1 oracle dba     0 Mar  7 17:41 feature-compare.csv
+-rw------- 1 oracle dba    48 Mar  7 17:41 feature-merge-decision.csv
+-rwxr----- 1 oracle dba 29736 Mar  7 17:41 feature-merge.rpd
+-rwxr----- 1 oracle dba   126 Mar  7 17:41 feature-patch.xml
+-rwxr----- 1 oracle dba   126 Mar  7 17:41 feature-unpatch.xml
+-rwxr----- 1 oracle dba 29704 Mar  7 17:39 feature.rpd
 ```
 
 We generated all the incremental patch files, including the rollback patches, but the content of those patch files is basically empty, because there is currently no difference in what was published to version `1.0.0` and what is currently in source control; but you get the idea.
