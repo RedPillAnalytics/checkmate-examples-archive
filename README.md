@@ -1,7 +1,7 @@
 # Checkmate Examples
-This repository includes examples for working with Checkmate from Red Pill Analytics. Checkmate enables Continuous Delivery for products or platforms that don't naturally support it.
+This repository includes examples for working with Checkmate from Red Pill Analytics. Checkmate enables Continuous Delivery for products or platforms that don't naturally support it. Checkmate is also used on real multi-user development with git for source control management (SCM).
 
-### Layout
+### Checkmate Quickstart
 The repository is designed to have a directory for each Checkmate plugin located in the project root (called the *plugin directory*), each containing one or more example projects located in separate directories (called the *project directory*.) The project directory contains a **README.md** file that contains the Quickstart description and exercises for working with Checkmate.
 
 Currently, we only have a single Quickstart configured: [Checkmate Build Framework for OBI using OBIEE 12.2.1.4](https://github.com/RedPillAnalytics/checkmate-examples/blob/master/obi/README.md). This Quickstart uses content from [SampleAppLite](https://docs.oracle.com/middleware/12213/biee/BIESG/GUID-7FCD90A3-E005-49BF-902F-30FBF9B41B07.htm#BIESG9340) already checked-in to the Git repository. If you'd like to run this Quickstart using your own content, then simply use Checkmate Studio to commit your own content into a new project directory.
@@ -10,9 +10,9 @@ Currently, we only have a single Quickstart configured: [Checkmate Build Framewo
 ![studio18](studio18.png)
 
 ### Installation
-To get started with Checkmate Studio, we simply download and install the latest version from the Red Pill Analytics [Downloads Page](http://redpillanalytics.com/checkmate-getstarted/) for our chosen host operating system: Windows or Linux.
+To get started with Checkmate Studio, we simply download and install the latest version from the Red Pill Analytics [Downloads Page](http://redpillanalytics.com/checkmate-getstarted/) for our chosen host operating system: Windows or Linux. We recommend installing [SourceTree] (https://www.sourcetreeapp.com/) to manage the exported\imported files from Checkmate Studio.
 
-### Getting Started / What is Checkmate Studio?
+### Getting Started / What is Checkmate Studio for OBI?
 A simple tool to import (load into OBI from source control) and export (save from OBI to source control) your catalog and metadata. It has other helpful functions but the most common functions used are the import and export tasks listed above.
 
 ### Typical User Workflow
@@ -25,15 +25,16 @@ A simple tool to import (load into OBI from source control) and export (save fro
 
 ### Standard / Default Settings
 source base: 'directory where you cloned git repo'  
-domain home: 'directory where you installed OBI'   
-checkmate version: 8.5.3 (latest as of time of writing)  
-obiee version: 'version of OBI you are working with'  
+domain home: 'directory where you installed OBI' Ex: c:\fmw\product\12.2.1.4\user_projects\domains\bi   
+checkmate version: 9.1.5 (latest as of time of writing)  
+obiee version: 'version of OBI you are working with' 
 source base type: MDS-XML (unless otherwise needed)  
 remote: localhost:9502  
 metadata project: 'blank'  
 admin user: weblogic (or as specified)  
 admin pass: Admin123 (or as specified)  
 repo pass: Admin123 (or as specified)
+Service instance: Ex: ssi
 
 ### Quickstart (New Feature)
 You can drag and drop .rpd and .catalog files onto the settings sidebar to initiate a quick import.
