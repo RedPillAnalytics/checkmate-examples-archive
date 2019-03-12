@@ -10,7 +10,7 @@ Currently, we only have a single Quickstart configured: [Checkmate Build Framewo
 ![studio18](studio18.png)
 
 ### Installation
-To get started with Checkmate Studio, we simply download and install the latest version from the Red Pill Analytics [Downloads Page](http://redpillanalytics.com/checkmate-getstarted/) for our chosen host operating system: Windows or Linux. We recommend installing [SourceTree] (https://www.sourcetreeapp.com/) to manage the exported\imported files from Checkmate Studio.
+To get started with Checkmate Studio, we simply download and install the latest version from the Red Pill Analytics [Downloads Page](http://redpillanalytics.com/checkmate-getstarted/) for our chosen host operating system: Windows or Linux. We recommend installing [SourceTree](https://www.sourcetreeapp.com/) to manage the exported\imported files from Checkmate Studio.
 
 ### Getting Started / What is Checkmate Studio for OBI?
 A simple tool to import (load into OBI from source control) and export (save from OBI to source control) your catalog and metadata. It has other helpful functions but the most common functions used are the import and export tasks listed above.
@@ -24,7 +24,7 @@ A simple tool to import (load into OBI from source control) and export (save fro
 4. Commit and push changes to develop branch SourceTree  
 
 ### Standard / Default Settings
-source base: 'directory where you cloned git repo'  
+source base: 'directory where you cloned git repo' Ex: c:\git 
 domain home: 'directory where you installed OBI' Ex: c:\fmw\product\12.2.1.4\user_projects\domains\bi   
 checkmate version: 9.1.5 (latest as of time of writing)  
 obiee version: 'version of OBI you are working with' 
