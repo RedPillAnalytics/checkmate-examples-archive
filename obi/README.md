@@ -84,7 +84,7 @@ The `plugins{}` closure applies any desired plugins from the [Gradle Plugin Port
 
 ```groovy
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version "10.0.5"
+  id 'com.redpillanalytics.checkmate.obi' version "10.0.7"
   id 'com.avast.gradle.docker-compose' version "0.8.14"
   id 'com.adarshr.test-logger' version "1.6.0"
 }
@@ -92,7 +92,7 @@ plugins {
 
 * `com.redpillanalytics.checkmate.obi`: this is the Checkmate for OBI plugin. It enables all the features demonstrated in this Quickstart.
 * `com.avast.gradle.docker-compose`: enables running the OBIEE 12.2.1.4 on Docker environment for this Quickstart.
-* `com.adarshr.test-logger`: improves readability of output from *regression tests*. We'll discuss testing later on.
+* `com.adarshr.test-logger`: improves readability of output from the *testing framework*. We'll discuss testing later on.
 
 With the Checkmate for OBI plugin applied, our Gradle [project](https://docs.gradle.org/current/userguide/tutorial_using_tasks.html#sec:projects_and_tasks) will contain all the tasks, properties and configurations necessary to manage an Oracle Analytics lifecycle. Checked into the Git repository is the [Gradle Wrapper](https://docs.gradle.org/current/userguide/gradle_wrapper.html) which is a lightweight CLI used to interact with our Gradle project. The wrapper automatically downloads the full Gradle distribution the first time it's executed by a user, and it also downloads all the required plugins fro the plugin portal. This makes Checkmate very portable: there is no installation necessary to run all the backend processes.
 
@@ -523,7 +523,6 @@ Now, let's enable the **promote** build group, which is what we use for deployin
 dependencies {
   obiee 'com.redpillanalytics:checkmate-obi:+'
   feature 'obiee:obi-build:+'
-  release 'obiee:obi-build:1.0.0'
   promote 'obiee:obi-deploy:+'
 }
 ```
@@ -599,7 +598,6 @@ Then we tell Checkmate that the `obiee` configuration requires the Checkmate tes
 dependencies {
   obiee 'com.redpillanalytics:checkmate-obi:+'
   feature 'obiee:obi-build:+'
-  release 'obiee:obi-build:1.0.0'
   promote 'obiee:obi-deploy:+'
 }
 ```
@@ -813,7 +811,6 @@ Since BAR files are really just ZIP files, we continue to use that extension ins
 dependencies {
   obiee 'com.redpillanalytics:checkmate-obi:+'
   feature 'obiee:obi-build:+'
-  release 'obiee:obi-build:1.0.0'
   promote 'obiee:obi-deploy:+'
   promote 'obiee:obi-bar:+'
 }
