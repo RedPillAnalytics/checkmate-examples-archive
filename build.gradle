@@ -1,3 +1,17 @@
 plugins {
   id "com.redpillanalytics.gradle-analytics" version "1.1.21"
+  //id "pl.allegro.tech.build.axion-release" version "1.10.0"
 }
+
+// scmVersion {
+
+//    tag {
+//       prefix = 'v'
+//       versionSeparator = ''
+//    }
+//    ignoreUncommittedChanges = true
+// }
+
+// allprojects {
+//    project.version = scmVersion.version
+// }

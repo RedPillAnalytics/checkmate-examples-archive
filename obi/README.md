@@ -251,7 +251,7 @@ Gradle enables certain default Task Groups as well:
 * **Verification**: Runs any configured checks enabled in the project.
 
 # OBIEE Environment Configuration
-Checkmate needs to know the basics about the OBIEE environment it will execute against. We use Checkmate **build parameters** to configure properties for the OBIEE environment, as well as other things we'll see later.
+Checkmate needs to know the basics about the OBIEE environment it will execute against. We use Checkmate [**build parameters**](https://s3.amazonaws.com/documentation.redpillanalytics.com/checkmate-obi/latest/com/redpillanalytics/obi/gradle/ObiPluginExtension.html) to configure properties for the OBIEE environment, as well as other things we'll see later. 
 
 Build parameters can be enabled one of five ways, in reverse-prioritized order... meaning the last item in the list overrides the second-to-the-last item, and so forth:
 * Specified in the `build.gradle` file

@@ -5,7 +5,7 @@ def projectDir = 'obi/sample-12c'
 
 pipeline {
   agent {
-    label 'amzn-obi-12.2.1.2'
+    label 'amzn-obi-12.2.1.4'
   }
   environment {
     // Jenkins credentials used to store sensitive information
@@ -19,12 +19,12 @@ pipeline {
       steps {
         // start up OBIEE while also doing the build
         parallel (
-          "OBIEE Startup": {
+          "OBI Startup": {
             sh "/home/oracle/fmw/config/domains/bi/bitools/bin/start.sh"
           },
 	
-          // Build brokerage project
-          "Brokerage Build": {
+          // Build SampleAppLite
+          "Build": {
             sh "${checkmate} -p ${projectDir} featureCompare"
           }
 	
