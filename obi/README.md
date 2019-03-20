@@ -565,10 +565,11 @@ total 108
 -rwxr----- 1 oracle dba   126 Mar  7 17:41 feature-unpatch.xml
 -rwxr----- 1 oracle dba 29704 Mar  7 17:39 feature.rpd
 ```
+You will notice the `feature` folder and some new `feature` files published.
 
 We generated all the incremental patch files, including the rollback patches, but the content of those patch files is basically empty, because there is currently no difference in what was published to version `1.0.0` and what is currently in source control; but you get the idea.
 
-Now, let's enable the **promote** build group, which is what we use for deploying content to downstream environments. So we just need to uncomment the `promote 'obiee:obi-deploy:+'` and `release obiee:obi-build:1.0.0` lines from our `build.gradle` file:
+Now, let's enable the **promote** build group, which is what we use for deploying content to downstream environments. So we just need to uncomment the `promote 'obiee:obi-deploy:+'` line from the `build.gradle` file:
 
 ```gradle
 dependencies {
