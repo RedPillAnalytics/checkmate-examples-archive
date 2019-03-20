@@ -173,15 +173,56 @@ barImportSAL - Import SampleAppLite.bar BI Archive (BAR) File into the 'ssi' Ser
 barReset - Reset the 'ssi' Service Instance, equivalent to using an empty BI Archive (BAR) File.
 catalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/current'.
 connPoolsImport - Import server connection pool information in JSON format from 'repository/conn-pools.json' to the target OBIEE server.
+featureApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
+featureCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/feature'.
+featureGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
+featureImport - Execute all configured import tasks for buildGroup 'feature'.
+featureMetadataImport - Import 'repository/feature.rpd' into the online metadata repository.
 generateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
 import - Execute all configured import tasks.
 metadataImport - Import 'repository/current.rpd' into the online metadata repository.
+promoteApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
+promoteBarImport - Import BI Archive (BAR) File for buildGroup 'promote' into the 'ssi' Service Instance.
+promoteCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/promote'.
+promoteGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
+promoteImport - Execute all configured import tasks for buildGroup 'promote'.
+promoteMetadataImport - Import 'repository/promote.rpd' into the online metadata repository.
+releaseApplyVersionJson - Set the 'project_version' repository variable to version '1.0.0'.
+releaseCatalogImport - Import the presentation catalog from SCM into the online presentation catalog using 'catalog/release'.
+releaseGenerateVersionJson - Generate JSON patch of version '1.0.0' for 'project_version' repository variable.
+releaseImport - Execute all configured import tasks for buildGroup 'release'.
+releaseMetadataImport - Import 'repository/release.rpd' into the online metadata repository.
 variablesImport - Import server variable information in JSON format from 'repository/variables.json' to the target OBIEE server.
+
+OBI Patch tasks
+---------------
+featureCatalogPatch - Apply 'catalog/feature-diff.txt' to the online presentation catalog.
+featureCatalogUnpatch - Apply 'catalog/feature-diff.txt' to the online presentation catalog.
+featureMetadataPatch - Apply 'repository/feature-patch.xml' to the metadata repository in offline mode.
+featureMetadataUnpatch - Apply 'repository/feature-unpatch.xml' to the metadata repository in offline mode
+featurePatch - Execute all configured patch tasks for buildGroup 'feature'.
+featureUnpatch - Execute all configured unpatch tasks for buildGroup 'feature'.
+promoteCatalogPatch - Apply 'catalog/promote-diff.txt' to the online presentation catalog.
+promoteCatalogUnpatch - Apply 'catalog/promote-diff.txt' to the online presentation catalog.
+promoteMetadataPatch - Apply 'repository/promote-patch.xml' to the metadata repository in offline mode.
+promoteMetadataUnpatch - Apply 'repository/promote-unpatch.xml' to the metadata repository in offline mode
+promotePatch - Execute all configured patch tasks for buildGroup 'promote'.
+promoteUnpatch - Execute all configured unpatch tasks for buildGroup 'promote'.
+releaseCatalogPatch - Apply 'catalog/release-diff.txt' to the online presentation catalog.
+releaseCatalogUnpatch - Apply 'catalog/release-diff.txt' to the online presentation catalog.
+releaseMetadataPatch - Apply 'repository/release-patch.xml' to the metadata repository in offline mode.
+releaseMetadataUnpatch - Apply 'repository/release-unpatch.xml' to the metadata repository in offline mode
+releasePatch - Execute all configured patch tasks for buildGroup 'release'.
+releaseUnpatch - Execute all configured unpatch tasks for buildGroup 'release'.
 
 OBI SCM tasks
 -------------
 catalogSCM - Synchronize 'catalog/current' with SCM and then commit.
+featureCatalogMerge - Use OBIEE merging instead of SCM merging for presentation catalog.
+featureMerge - Execute 'featureMetadataMerge' and 'featureCatalogMerge'.
 metadataSCM - Synchronize 'repository/current.rpd' with SCM and then commit.
+releaseCatalogMerge - Use OBIEE merging instead of SCM merging for presentation catalog.
+releaseMerge - Execute 'releaseMetadataMerge' and 'releaseCatalogMerge'.
 scmCheckout - Checkout a branch in the local SCM repository.
 scmCommit - Issue a commit to the local SCM repository. Customize with 'scmMessage', 'scmCommitter', 'scmEmail', and 'scmCommitPath' build parameters.
 scmPush - Push to the origin for the local SCM repository. Requires 'sourceBase' build parameter pointing to Git repo root directory, if running task outside of a Git repository.
@@ -201,8 +242,17 @@ resultsTest - Execute all Results regression tests for the entire project.
 
 OBI Workflow tasks
 ------------------
+featureCompareWorkflow - Extract Baseline test library and results from the 'feature' artifact and run Compare tests.
+featureImportWorkflow - Import 'feature' metadata and catalog artifacts while managing connection pools.
+featureTestWorkflow - Execute ':resultsWorkflow', ':featureCompareWorfklow' and ':publish'.
 importWorkflow - Import 'current' metadata and catalog artifacts while managing connection pools.
-resultsWorkflow - Import 'current' metadata and catalog content and execute the Revision test library.
+promoteCompareWorkflow - Extract Baseline test library and results from the 'promote' artifact and run Compare tests.
+promoteImportWorkflow - Import 'promote' metadata and catalog artifacts while managing connection pools.
+promoteTestWorkflow - Execute ':resultsWorkflow', ':promoteCompareWorfklow' and ':publish'.
+releaseCompareWorkflow - Extract Baseline test library and results from the 'release' artifact and run Compare tests.
+releaseImportWorkflow - Import 'release' metadata and catalog artifacts while managing connection pools.
+releaseTestWorkflow - Execute ':resultsWorkflow', ':releaseCompareWorfklow' and ':publish'.
+resultsWorkflow - Execute 'importWorkflow' followed by the Revision test library.
 
 Publishing tasks
 ----------------
