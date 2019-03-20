@@ -376,14 +376,13 @@ We'll run the `obi:build` task again, but this time we'll use the `--console=pla
 ./gradlew obi:clean obi:build --console=plain
 > Task :obi:clean
 > Task :obi:assemble UP-TO-DATE
-> Task :obi:barSync
-> Task :obi:barBuild
-> Task :obi:barZip
+> Task :obi:catalogBuild
 > Task :obi:check UP-TO-DATE
+> Task :obi:metadataBuild
 > Task :obi:build
 
-BUILD SUCCESSFUL in 41s
-4 actionable tasks: 4 executed
+BUILD SUCCESSFUL in 53s
+3 actionable tasks: 3 executed
 ```
 
 You'll notice that the `build` task doesn't really do anything on its own: it's really just a container for two other tasks that do all the work: `metadataBuild` and `catalogBuild`. This introduces Gradle's powerful dependencies and ordering features, which uses a [DAG](https://docs.gradle.org/current/userguide/build_lifecycle.html) implementation.
@@ -392,15 +391,21 @@ Furthermore... we can run the entire Build and Publish workflow by simply runnin
 
 ```bash
 ./gradlew obi:publish --console=plain
-> Task :obi:barSync UP-TO-DATE
-> Task :obi:barBuild UP-TO-DATE
-> Task :obi:barZip UP-TO-DATE
-> Task :obi:generatePomFileForBarPublication
-> Task :obi:publishBarPublicationToMavenLocalRepository
+> Task :obi:assemble UP-TO-DATE
+> Task :obi:catalogBuild UP-TO-DATE
+> Task :obi:check UP-TO-DATE
+> Task :obi:metadataBuild UP-TO-DATE
+> Task :obi:build UP-TO-DATE
+> Task :obi:buildZip
+> Task :obi:generatePomFileForBuildPublication
+> Task :obi:publishBuildPublicationToMavenLocalRepository
+> Task :obi:deployZip
+> Task :obi:generatePomFileForDeployPublication
+> Task :obi:publishDeployPublicationToMavenLocalRepository
 > Task :obi:publish
 
-BUILD SUCCESSFUL in 10s
-5 actionable tasks: 2 executed, 3 up-to-date
+BUILD SUCCESSFUL in 29s
+8 actionable tasks: 6 executed, 2 up-to-date
 ```
 
 In the output, you'll notice the *UP-TO-DATE* status that Checkmate is reporting when running the dependent tasks. Checkmate is written to take advantage of the [Gradle Incremental Build](https://docs.gradle.org/current/userguide/more_about_tasks.html#sec:up_to_date_checks) feature. The catalog and metadata build tasks are not executed again, because none of the task input and output files have changed. This keeps Checkmate from re-running tasks that it doesn't have to. Rerunning tasks can always be forced by providing the `--rerun-tasks` command-line option.
