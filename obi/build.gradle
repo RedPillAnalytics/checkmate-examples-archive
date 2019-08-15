@@ -1,5 +1,5 @@
 plugins {
-  id 'com.redpillanalytics.checkmate.obi' version "10.0.7"
+  id 'com.redpillanalytics.checkmate.obi' version "10.1.4"
   id 'com.avast.gradle.docker-compose' version "0.8.14"
   id 'com.adarshr.test-logger' version "1.6.0"
 }
