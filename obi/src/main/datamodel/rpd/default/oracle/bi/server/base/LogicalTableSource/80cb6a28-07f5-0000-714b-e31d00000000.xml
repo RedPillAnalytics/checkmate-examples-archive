@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <LogicalTableSource mdsid="m80cb6a28-07f5-0000-714b-e31d00000000" name="LTS1 Targets" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" isActive="true" logicalTableRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a3-07f3-0000-714b-e31d00000000">
 <Description><![CDATA["1 - Sample App"."D2 Offices"."D1k  Office Key" <19]]></Description>
 <ColumnMapping>

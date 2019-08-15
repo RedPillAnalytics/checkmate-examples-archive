@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Database mdsid="m80ca62c4-0bcf-0000-714b-e31d00000000" name="Sample App Lite Data" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="XMLDirect" dbName="XML" dbTypeId="21">
 <Feature name="LEFT_OUTER_JOIN_SUPPORTED" value="false"/>
 <Feature name="RIGHT_OUTER_JOIN_SUPPORTED" value="false"/>

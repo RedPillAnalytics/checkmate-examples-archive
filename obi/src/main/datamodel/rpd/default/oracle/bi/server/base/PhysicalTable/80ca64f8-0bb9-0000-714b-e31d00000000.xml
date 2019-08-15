@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <PhysicalTable mdsid="m80ca64f8-0bb9-0000-714b-e31d00000000" name="SAMP_OFFICES_D" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" type="none" x="298" y="638" rowCount="0.0" uri="VALUEOF(NQ_SESSION.SERVICEINSTANCEROOT)/data/SAMP_OFFICES_D.xml" maxConn="0" containerRef="/oracle/bi/server/base/Database/80ca62c4-0bcf-0000-714b-e31d00000000.xml#m80ca62c4-0bcf-0000-714b-e31d00000000">
 <Description><![CDATA[OFFICES Dimension Physical table. This table is not directly used by the logical model, it is accessed via the aliases setup in the physical diagram. The database is of XML type, the setup of this physical table leverages the value of an RPD variable : NQ_SESSION.SERVICEINSTANCEROOT (see the XML tab in this dialog box).]]></Description>
 <PhysicalColumn mdsid="m80cb29b1-0bbb-0000-714b-e31d00000000" name="Company_Key" dataType="INT" extName="//Table/SAMP_OFFICES_D/COMPANY_KEY" rowCount="0.0" specialType="none">

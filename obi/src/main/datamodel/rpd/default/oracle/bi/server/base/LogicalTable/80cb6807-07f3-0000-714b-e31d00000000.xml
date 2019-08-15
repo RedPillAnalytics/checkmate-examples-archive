@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <LogicalTable mdsid="m80cb6807-07f3-0000-714b-e31d00000000" name="D1 Products" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="538" y="388" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80cb6802-07d0-0000-714b-e31d00000000.xml#m80cb6802-07d0-0000-714b-e31d00000000">
 <Description><![CDATA[This logical table maps to the physical Products Dimension table with various attributes like Product Name, Brand, Type, LOBr and so on.]]></Description>
 <LogicalColumn mdsid="m80cb6808-07d6-0000-714b-e31d00000000" name="Product Number" isWriteable="false">

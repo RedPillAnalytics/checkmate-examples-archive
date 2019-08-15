@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <Group mdsid="m00000000-89f0-1521-ac27-0a9f5cb00000" name="BIContentAuthor" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" displayName="BI Content Author Role">
 <RefChildGroups>
 <RefGroup refId="m00000000-89f0-1521-ac27-0a9f5cb00000-mc0000001-89ea-1521-ac27-0a9f5cb00000" groupRef="/oracle/bi/server/base/Group/c0000001-89ea-1521-ac27-0a9f5cb00000.xml#mc0000001-89ea-1521-ac27-0a9f5cb00000"/>

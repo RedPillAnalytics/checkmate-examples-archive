@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Project mdsid="m40000000-6396-1755-806e-0a8e000e0000" name="Targets" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository">
+<RefCatalogs>
+<RefPresentationCatalog refId="m40000000-6396-1755-806e-0a8e000e0000-m80cb6c12-0fa4-0000-714b-e31d00000000" catalogRef="/oracle/bi/server/base/PresentationCatalog/80cb6c12-0fa4-0000-714b-e31d00000000.xml#m80cb6c12-0fa4-0000-714b-e31d00000000"/>
+</RefCatalogs>
+<RefFactTables>
+<RefLogicalTable refId="m40000000-6396-1755-806e-0a8e000e0000-m80cb68a3-07f3-0000-714b-e31d00000000" logicalTableRef="/oracle/bi/server/base/LogicalTable/80cb68a3-07f3-0000-714b-e31d00000000.xml#m80cb68a3-07f3-0000-714b-e31d00000000"/>
+<RefLogicalTable refId="m40000000-6396-1755-806e-0a8e000e0000-m80cb6833-07f3-0000-714b-e31d00000000" logicalTableRef="/oracle/bi/server/base/LogicalTable/80cb6833-07f3-0000-714b-e31d00000000.xml#m80cb6833-07f3-0000-714b-e31d00000000"/>
+</RefFactTables>
+</Project>

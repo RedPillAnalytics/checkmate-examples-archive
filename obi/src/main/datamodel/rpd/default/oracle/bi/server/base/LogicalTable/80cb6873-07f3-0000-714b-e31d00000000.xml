@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="ISO-8859-1" ?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <LogicalTable mdsid="m80cb6873-07f3-0000-714b-e31d00000000" name="D3 Orders (Facts Attributes)" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://www.oracle.com/obis/repository" x="1166" y="381" subjectAreaRef="/oracle/bi/server/base/BusinessModel/80cb6802-07d0-0000-714b-e31d00000000.xml#m80cb6802-07d0-0000-714b-e31d00000000">
 <Description><![CDATA[This logical table contains the attribute columns that are present in the Revenue fact table which are not measure columns but can be used as attributes in the report. 
 All the columns in this table are physically mapped to columns in the Revenue fact table, or are derived calculations from these objects.]]></Description>
